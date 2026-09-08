@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'CV. Beranda Teknologi Digital - Software House, Mobile App & AI Digital Agency')
+@section('title', 'SmartVerse (smartverse.id) - Umbrella Brand 5 Produk Digital Unggulan')
 
 @section('content')
 <!-- SECTION 1: HERO HEADER (FlyMotion Dynamic Style with Clean Mobile Layout & Crisp Typography) -->
@@ -78,24 +78,33 @@
                         <span>LIHAT PORTOFOLIO</span>
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7" />
-                        </svg>
+                <!-- Action Button Group -->
+                <div class="pt-2 sm:pt-4 flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-3 sm:gap-4">
+                    <a href="{{ route('products.index') }}" 
+                       style="background-color: #00B5B8 !important; color: #ffffff !important;"
+                       class="px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl font-black text-xs sm:text-sm uppercase tracking-wider shadow-lg shadow-cyan-500/30 hover:brightness-110 active:scale-95 transition-all text-center flex items-center justify-center gap-2">
+                        <span>🚀 Jelajahi 5 Produk Unggulan</span>
+                    </a>
+                    
+                    <a href="https://wa.me/6289695249089" target="_blank" 
+                       style="background-color: #fe6000 !important; color: #ffffff !important;"
+                       class="px-6 sm:px-7 py-3.5 sm:py-4 rounded-xl font-bold text-xs sm:text-sm uppercase tracking-wider shadow-lg shadow-orange-500/25 hover:brightness-110 active:scale-95 transition-all text-center flex items-center justify-center gap-2">
+                        <span>💬 Konsultasi WhatsApp</span>
                     </a>
                 </div>
 
-                <!-- Feature Mini Badges & Guarantee -->
-                <div class="pt-1 flex flex-wrap items-center justify-center lg:justify-start gap-2 text-[11px] text-slate-500 dark:text-slate-400 font-medium">
-                    <span class="inline-flex items-center gap-1 px-3 py-1 rounded-md bg-white/90 dark:bg-slate-800/90 border border-slate-200 dark:border-slate-700 shadow-xs font-semibold text-slate-700 dark:text-slate-300">
-                        <span class="text-amber-500 font-bold">★</span> Garansi 100% Selesai & Teruji
-                    </span>
-                    <span class="inline-flex items-center gap-1 px-3 py-1 rounded-md bg-white/90 dark:bg-slate-800/90 border border-slate-200 dark:border-slate-700 shadow-xs">
-                        🚀 Free Domain & SSD NVMe
-                    </span>
+                <!-- Trust Micro Badges -->
+                <div class="pt-2 sm:pt-3 flex flex-wrap items-center justify-center lg:justify-start gap-x-4 gap-y-2 text-[11px] sm:text-xs text-slate-500 dark:text-slate-400 font-semibold">
+                    <span class="inline-flex items-center gap-1.5"><span class="text-emerald-500 font-bold">✓</span> Sekali Bayar Lisensi Permanen</span>
+                    <span class="inline-flex items-center gap-1.5"><span class="text-cyan-500 font-bold">✓</span> Full Source Code & Database</span>
+                    <span class="inline-flex items-center gap-1.5"><span class="text-amber-500 font-bold">✓</span> Garansi Setup & Support</span>
                 </div>
+
             </div>
 
-            <!-- Right Column: FlyMotion Hero Person Showcase with Multi-layer Animation -->
-            <div class="lg:col-span-5 flex justify-center relative mt-4 lg:mt-0 hero-image">
-                <div class="relative w-full max-w-[310px] sm:max-w-sm md:max-w-md">
+            <!-- Right Column: Interactive Hero Mockup Card -->
+            <div class="lg:col-span-5 relative mt-4 lg:mt-0 reveal-on-scroll">
+                <div class="relative max-w-md mx-auto">
                     
                     <!-- Background Ambient Disk -->
                     <div class="absolute inset-0 bg-gradient-to-tr from-blue-300/40 via-purple-200/30 to-orange-200/40 dark:from-blue-800/20 dark:via-purple-900/20 dark:to-orange-900/20 rounded-full blur-2xl opacity-80 anim-logo-object" aria-hidden="true"></div>
@@ -109,22 +118,22 @@
                                 <span class="w-2.5 h-2.5 rounded-full bg-rose-400"></span>
                                 <span class="w-2.5 h-2.5 rounded-full bg-amber-400"></span>
                                 <span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
-                                <span class="font-bold text-[#07153f] dark:text-slate-200 ml-1.5 text-[10px] sm:text-[11px] mono">berandadigital.net</span>
+                                <span class="font-bold text-[#07153f] dark:text-slate-200 ml-1.5 text-[10px] sm:text-[11px] mono">smartverse.id</span>
                             </div>
-                            <span class="px-2 py-0.5 rounded-full bg-blue-50 dark:bg-blue-950/70 text-blue-700 dark:text-blue-400 dark:text-blue-300 font-bold text-[9px] sm:text-[10px]">Official Agency</span>
+                            <span class="px-2 py-0.5 rounded-full bg-cyan-50 dark:bg-cyan-950/70 text-cyan-700 dark:text-cyan-400 font-bold text-[9px] sm:text-[10px]">Umbrella Brand Ecosystem</span>
                         </div>
 
                         <!-- Hero Image (Explicit aspect ratio 700/617 to prevent CLS) -->
                         <div class="relative rounded-xl sm:rounded-2xl overflow-hidden bg-gradient-to-b from-blue-50 via-slate-50 to-indigo-50/60 dark:from-slate-800 dark:via-slate-900 dark:to-slate-950 p-2 sm:p-3 border border-slate-100 dark:border-slate-800 flex items-center justify-center">
-                            <img src="{{ asset($settings['hero_image'] ?? 'images/hero-person-old.webp') }}" alt="{{ $settings['site_title'] ?? 'CV. Beranda Teknologi Digital' }} Hero" fetchpriority="high" loading="eager" decoding="async" width="700" height="617" class="w-full h-auto object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-500" style="aspect-ratio: 700 / 617;" />
+                            <img src="{{ asset($settings['hero_image'] ?? 'images/hero-person-old.webp') }}" alt="{{ $settings['site_title'] ?? 'SmartVerse (smartverse.id)' }} Hero" fetchpriority="high" loading="eager" decoding="async" width="700" height="617" class="w-full h-auto object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-500" style="aspect-ratio: 700 / 617;" />
                             
                             <!-- Bottom Verified Badge -->
                             <div class="absolute bottom-2.5 left-2.5 right-2.5 p-2.5 rounded-xl bg-[#07153f]/95 dark:bg-slate-950/95 backdrop-blur-md text-white text-xs space-y-0.5 shadow-xl border border-white/10">
                                 <div class="flex items-center justify-between text-[9px] sm:text-[10px]">
-                                    <span class="text-amber-400 font-bold">★ Garansi 100% Selesai</span>
-                                    <span class="text-cyan-300 font-semibold">Palembang & Ogan Ilir</span>
+                                    <span class="text-amber-400 font-bold">★ 5 Produk Digital Unggulan</span>
+                                    <span class="text-cyan-300 font-semibold">smartverse.id</span>
                                 </div>
-                                <div class="font-bold text-white text-[11px] sm:text-xs">Jasa Website & Aplikasi IT Terpercaya</div>
+                                <div class="font-bold text-white text-[11px] sm:text-xs">Satu Ekosistem Solusi Digital & AI Nasional</div>
                             </div>
                         </div>
 
@@ -587,7 +596,7 @@
                 </h2>
                 
                 <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-medium">
-                    {!! nl2br(e($settings['about_description'] ?? 'CV. Beranda Teknologi Digital adalah Digital Creative Agency & Software House terpercaya yang mempunyai pengalaman pembuatan puluhan website bisnis, sistem informasi instansi, dan toko online secara elegan dan profesional. Kami hadir dengan desain website yang mengikuti tren terkini, user friendly, dan mudah dioperasikan.')) !!}
+                    {!! nl2br(e($settings['about_description'] ?? 'SmartVerse (smartverse.id) adalah umbrella brand produk digital terintegrasi yang menghadirkan solusi teknologi mutakhir untuk sektor media jurnalisme, institusi pendidikan Islam, manajemen SDM korporasi, otomatisasi konten visual AI, serta forensik digital saintifik. Didukung arsitektur software berstandar industri dan teknologi artificial intelligence modern.')) !!}
                 </p>
 
                 <div class="pt-2 flex justify-center lg:justify-start">
@@ -606,7 +615,7 @@
 
                 <div class="bg-white dark:bg-slate-800 p-5 rounded-3xl border border-slate-100 dark:border-slate-700 shadow-xl max-w-md w-full relative">
                     <div class="aspect-video rounded-2xl overflow-hidden border border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 shadow-xs p-2 flex items-center justify-center">
-                        <img src="{{ asset($settings['about_image'] ?? 'images/Ilustrasi-Homepage-1-1.png') }}" alt="{{ $settings['about_title'] ?? 'Beranda Digital Agency Showcase' }}" loading="lazy" decoding="async" width="881" height="661" class="w-full h-full object-contain" style="aspect-ratio: 881 / 661;" />
+                        <img src="{{ asset($settings['about_image'] ?? 'images/Ilustrasi-Homepage-1-1.webp') }}" alt="{{ $settings['about_title'] ?? 'SmartVerse Umbrella Brand Ecosystem' }}" loading="lazy" decoding="async" width="881" height="661" class="w-full h-full object-contain" style="aspect-ratio: 881 / 661;" />
                     </div>
                 </div>
             </div>
@@ -615,135 +624,177 @@
     </div>
 </section>
 
-<!-- SECTION 4.1: LEGALITAS & KREDIBILITAS BADAN USAHA (E-Katalog LKPP RI & Legal Documents) -->
+<!-- SECTION 4.1: EKOSISTEM 5 PRODUK UNGGULAN SMARTVERSE (Umbrella Brand Flagship Ecosystem) -->
 <section class="py-16 sm:py-20 bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800 transition-colors duration-300 relative overflow-hidden">
     
-    <!-- Decorative Watermark "Legal" -->
+    <!-- Decorative Watermark "SmartVerse" -->
     <div class="absolute top-4 left-1/2 -translate-x-1/2 text-8xl sm:text-9xl font-black text-slate-100/60 dark:text-slate-800/25 pointer-events-none select-none tracking-wider -z-0" aria-hidden="true">
-        Legality
+        SmartVerse
     </div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 relative z-10">
         
         <!-- Header -->
         <div class="text-center space-y-3 max-w-3xl mx-auto reveal-on-scroll">
-            <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200 dark:border-emerald-800/60 text-emerald-700 dark:text-emerald-400 text-xs font-extrabold uppercase tracking-wider">
-                <span>🏛️ LEGALITAS & BADAN USAHA RESMI</span>
+            <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-cyan-50 dark:bg-cyan-950/60 border border-cyan-200 dark:border-cyan-800/60 text-cyan-700 dark:text-cyan-400 text-xs font-extrabold uppercase tracking-wider">
+                <span>🚀 UMBRELLA BRAND EKOSISTEM DIGITAL</span>
             </div>
             <h2 class="text-3xl sm:text-4xl font-extrabold text-[#07153f] dark:text-white leading-tight">
-                Kredibilitas Hukum Sah & Terdaftar di E-Katalog LKPP RI
+                5 Pilar Inovasi Produk Digital Unggulan SmartVerse
             </h2>
             <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-medium">
-                CV. Beranda Teknologi Digital adalah badan usaha berbadan hukum resmi yang terdaftar di Kementerian Hukum dan HAM RI, memiliki NPWP perusahaan, serta terdaftar resmi sebagai penyedia barang/jasa di <strong>E-Katalog Lembaga Kebijakan Pengadaan Barang/Jasa Pemerintah (LKPP RI)</strong>.
+                <strong class="text-slate-800 dark:text-slate-100">SmartVerse (smartverse.id)</strong> menaungi 5 produk digital mandiri dengan lisensi kepemilikan permanen (sekali bayar tanpa sewa bulanan), arsitektur modern berstandar enterprise, dan integrasi Artificial Intelligence mutakhir.
             </p>
         </div>
 
-        <!-- 4 Legal Pillar Cards (Safe & 100% High Contrast in Light & Dark Mode) -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- 5 Flagship Product Cards Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             
-            <!-- Card 1: SK Kemenkumham -->
+            <!-- Card 1: SmartNews -->
             <div class="bg-white dark:bg-slate-800 p-6 rounded-3xl border-2 border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all space-y-3 reveal-on-scroll delay-75 flex flex-col justify-between items-center sm:items-stretch text-center sm:text-left">
                 <div class="space-y-3 w-full">
-                    <div class="w-14 h-14 rounded-2xl bg-blue-50 dark:bg-blue-950 text-blue-700 dark:text-blue-400 dark:text-blue-400 flex items-center justify-center text-3xl font-bold shadow-xs mx-auto sm:mx-0">
-                        📜
+                    <div class="w-14 h-14 rounded-2xl bg-sky-50 dark:bg-sky-950 text-sky-600 dark:text-sky-400 flex items-center justify-center text-3xl font-bold shadow-xs mx-auto sm:mx-0">
+                        📰
                     </div>
                     <div class="space-y-1">
-                        <span class="text-[10px] font-extrabold uppercase tracking-wider text-blue-700 dark:text-blue-400 dark:text-blue-400 block">Kemenkumham RI</span>
-                        <h3 class="text-base font-black text-[#07153f] dark:text-white">Pengesahan Badan Usaha</h3>
+                        <span class="text-[10px] font-extrabold uppercase tracking-wider text-sky-600 dark:text-sky-400 block">Jurnalisme & Media</span>
+                        <h3 class="text-base font-black text-[#07153f] dark:text-white">SmartNews CMS Portal Berita</h3>
                         <p class="text-xs font-mono font-bold text-slate-800 dark:text-slate-200 pt-0.5">
-                            {{ $siteSettings['company_ahu'] ?? 'AHU-0003819-AH.01.14 Tahun 2022' }}
+                            Standar Regulasi Dewan Pers & AI Writer
                         </p>
                     </div>
                     <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed pt-2 border-t border-slate-100 dark:border-slate-700">
-                        Pengesahan perseroan komanditer resmi oleh Ditjen Administrasi Hukum Umum Kemenkumham RI.
+                        CMS portal media online berkecepatan tinggi dengan integrasi AI SEO Writer, 6 slot monetisasi iklan mandiri, dan multi-role redaksi editorial.
                     </p>
                 </div>
-                <div class="pt-2 text-[10px] font-bold text-emerald-700 dark:text-emerald-400 dark:text-emerald-400 flex items-center justify-center sm:justify-start gap-1 w-full">
-                    <span>✓</span> <span>Status Sah & Terdaftar Aktif</span>
+                <div class="pt-3 flex items-center justify-between border-t border-slate-100 dark:border-slate-700 w-full">
+                    <span class="text-[10px] font-bold text-emerald-600 dark:text-emerald-400 flex items-center gap-1">✓ Sekali Bayar</span>
+                    <a href="{{ route('products.show', 'smartnews-cms-portal-berita') }}" class="text-xs font-bold text-sky-600 dark:text-sky-400 hover:underline inline-flex items-center gap-1">Detail Produk &rarr;</a>
                 </div>
             </div>
 
-            <!-- Card 2: Akta Notaris Pendirian -->
+            <!-- Card 2: SmartEdu SIT -->
             <div class="bg-white dark:bg-slate-800 p-6 rounded-3xl border-2 border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all space-y-3 reveal-on-scroll delay-150 flex flex-col justify-between items-center sm:items-stretch text-center sm:text-left">
                 <div class="space-y-3 w-full">
-                    <div class="w-14 h-14 rounded-2xl bg-emerald-50 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-400 dark:text-emerald-400 flex items-center justify-center text-3xl font-bold shadow-xs mx-auto sm:mx-0">
-                        ⚖️
+                    <div class="w-14 h-14 rounded-2xl bg-emerald-50 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-3xl font-bold shadow-xs mx-auto sm:mx-0">
+                        🎓
                     </div>
                     <div class="space-y-1">
-                        <span class="text-[10px] font-extrabold uppercase tracking-wider text-emerald-700 dark:text-emerald-400 dark:text-emerald-400 block">Notaris & PPAT</span>
-                        <h3 class="text-base font-black text-[#07153f] dark:text-white">Akta Pendirian Resmi</h3>
-                        <p class="text-xs font-mono font-bold text-slate-800 dark:text-slate-200 pt-0.5 truncate" title="{{ $siteSettings['company_notaris'] ?? 'Juwairiyah Handayani, S.H., M.Kn' }}">
-                            {{ $siteSettings['company_notaris'] ?? 'Akta Pendirian Badan Hukum CV' }}
+                        <span class="text-[10px] font-extrabold uppercase tracking-wider text-emerald-600 dark:text-emerald-400 block">Edukasi & Pesantren</span>
+                        <h3 class="text-base font-black text-[#07153f] dark:text-white">SmartEdu SIT Educational ERP</h3>
+                        <p class="text-xs font-mono font-bold text-slate-800 dark:text-slate-200 pt-0.5">
+                            25 Modul Terintegrasi & SafeSchool
                         </p>
                     </div>
                     <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed pt-2 border-t border-slate-100 dark:border-slate-700">
-                        Diresmikan di hadapan Pejabat Notaris Berwenang di Sumatera Selatan dengan klausul usaha IT.
+                        ERP lengkap sekolah Islam terpadu & pesantren dengan mutabaah yaumiyah, buku induk digital, SPP Virtual Account otomatis, dan kanal anti-bullying.
                     </p>
                 </div>
-                <div class="pt-2 text-[10px] font-bold text-emerald-700 dark:text-emerald-400 dark:text-emerald-400 flex items-center justify-center sm:justify-start gap-1 w-full">
-                    <span>✓</span> <span>Badan Usaha Resmi Berbadan Hukum</span>
+                <div class="pt-3 flex items-center justify-between border-t border-slate-100 dark:border-slate-700 w-full">
+                    <span class="text-[10px] font-bold text-emerald-600 dark:text-emerald-400 flex items-center gap-1">✓ Sekali Bayar</span>
+                    <a href="{{ route('products.show', 'smartedu-ekosistem-sekolah-terpadu') }}" class="text-xs font-bold text-emerald-600 dark:text-emerald-400 hover:underline inline-flex items-center gap-1">Detail Produk &rarr;</a>
                 </div>
             </div>
 
-            <!-- Card 3: Perpajakan Resmi NPWP (Aman & Tervalidasi) -->
+            <!-- Card 3: SmartFeed -->
             <div class="bg-white dark:bg-slate-800 p-6 rounded-3xl border-2 border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all space-y-3 reveal-on-scroll delay-200 flex flex-col justify-between items-center sm:items-stretch text-center sm:text-left">
                 <div class="space-y-3 w-full">
-                    <div class="w-14 h-14 rounded-2xl bg-amber-50 dark:bg-amber-950 text-amber-700 dark:text-amber-400 dark:text-amber-400 flex items-center justify-center text-3xl font-bold shadow-xs mx-auto sm:mx-0">
-                        💳
+                    <div class="w-14 h-14 rounded-2xl bg-purple-50 dark:bg-purple-950 text-purple-600 dark:text-purple-400 flex items-center justify-center text-3xl font-bold shadow-xs mx-auto sm:mx-0">
+                        ⚡
                     </div>
                     <div class="space-y-1">
-                        <span class="text-[10px] font-extrabold uppercase tracking-wider text-amber-700 dark:text-amber-400 dark:text-amber-400 block">Direktorat Jenderal Pajak</span>
-                        <h3 class="text-base font-black text-[#07153f] dark:text-white">NPWP Perusahaan Aktif</h3>
+                        <span class="text-[10px] font-extrabold uppercase tracking-wider text-purple-600 dark:text-purple-400 block">Kreatif & Pemasaran AI</span>
+                        <h3 class="text-base font-black text-[#07153f] dark:text-white">SmartFeed AI Visual Studio</h3>
                         <p class="text-xs font-mono font-bold text-slate-800 dark:text-slate-200 pt-0.5">
-                            {{ $siteSettings['company_npwp'] ?? '63.100.018.9-312.000' }}
+                            15+ Mode Kreatif & Multi-Slide Instan
                         </p>
                     </div>
                     <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed pt-2 border-t border-slate-100 dark:border-slate-700">
-                        Terdaftar aktif di KPP Pratama. Siap menerbitkan faktur dan dokumen perpajakan resmi instansi.
+                        Otomatisasi konten sosial media dalam hitungan detik. Hasilkan carousel swipeable, gridfeed branding, copywriting AIDA/PAS, dan video script affiliate.
                     </p>
                 </div>
-                <div class="pt-2 text-[10px] font-bold text-emerald-700 dark:text-emerald-400 dark:text-emerald-400 flex items-center justify-center sm:justify-start gap-1 w-full">
-                    <span>✓</span> <span>Kepatuhan Pajak & Validasi Ditjen Pajak</span>
+                <div class="pt-3 flex items-center justify-between border-t border-slate-100 dark:border-slate-700 w-full">
+                    <span class="text-[10px] font-bold text-emerald-600 dark:text-emerald-400 flex items-center gap-1">✓ Sekali Bayar</span>
+                    <a href="{{ route('products.show', 'smartfeed-ai-visual-studio') }}" class="text-xs font-bold text-purple-600 dark:text-purple-400 hover:underline inline-flex items-center gap-1">Detail Produk &rarr;</a>
                 </div>
             </div>
 
-            <!-- Card 4: E-Katalog LKPP RI (Pengadaan Pemerintah) -->
+            <!-- Card 4: SmartSDM -->
             <div class="bg-white dark:bg-slate-800 p-6 rounded-3xl border-2 border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all space-y-3 reveal-on-scroll delay-250 flex flex-col justify-between items-center sm:items-stretch text-center sm:text-left">
                 <div class="space-y-3 w-full">
-                    <div class="w-14 h-14 rounded-2xl bg-emerald-50 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-400 dark:text-emerald-400 flex items-center justify-center text-3xl font-bold shadow-xs mx-auto sm:mx-0">
-                        🏛️
+                    <div class="w-14 h-14 rounded-2xl bg-blue-50 dark:bg-blue-950 text-blue-600 dark:text-blue-400 flex items-center justify-center text-3xl font-bold shadow-xs mx-auto sm:mx-0">
+                        📱
                     </div>
                     <div class="space-y-1">
-                        <span class="text-[10px] font-extrabold uppercase tracking-wider text-emerald-700 dark:text-emerald-400 dark:text-emerald-400 block">LKPP Republik Indonesia</span>
-                        <h3 class="text-base font-black text-[#07153f] dark:text-white">Penyedia E-Katalog RI</h3>
+                        <span class="text-[10px] font-extrabold uppercase tracking-wider text-blue-600 dark:text-blue-400 block">HRIS & Operasional</span>
+                        <h3 class="text-base font-black text-[#07153f] dark:text-white">SmartSDM Mobile HRIS</h3>
                         <p class="text-xs font-mono font-bold text-slate-800 dark:text-slate-200 pt-0.5">
-                            {{ $siteSettings['company_lkpp_status'] ?? 'Terdaftar Resmi di E-Katalog LKPP RI' }}
+                            Biometrik Face Liveness & Radar GPS
                         </p>
                     </div>
                     <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed pt-2 border-t border-slate-100 dark:border-slate-700">
-                        Memudahkan dinas, kampus negeri, dan BUMD melakukan transaksi langsung (e-purchasing) secara sah.
+                        Aplikasi mobile absensi biometrik anti-titip absen dengan deteksi wajah liveness (kedipan mata), radius geofencing Haversine, dan penggajian otomatis.
                     </p>
                 </div>
-                <div class="pt-2 text-[10px] font-bold text-emerald-700 dark:text-emerald-400 dark:text-emerald-400 flex items-center justify-center sm:justify-start gap-1 w-full">
-                    <span>✓</span> <span>{{ $siteSettings['company_lkpp_status'] ?? 'Terdaftar Resmi di E-Katalog LKPP RI' }}</span>
+                <div class="pt-3 flex items-center justify-between border-t border-slate-100 dark:border-slate-700 w-full">
+                    <span class="text-[10px] font-bold text-emerald-600 dark:text-emerald-400 flex items-center gap-1">✓ Sekali Bayar</span>
+                    <a href="{{ route('products.show', 'smartsdm-mobile-hris-presensi') }}" class="text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline inline-flex items-center gap-1">Detail Produk &rarr;</a>
+                </div>
+            </div>
+
+            <!-- Card 5: SmartSynth -->
+            <div class="bg-white dark:bg-slate-800 p-6 rounded-3xl border-2 border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all space-y-3 reveal-on-scroll delay-300 flex flex-col justify-between items-center sm:items-stretch text-center sm:text-left sm:col-span-2 lg:col-span-1">
+                <div class="space-y-3 w-full">
+                    <div class="w-14 h-14 rounded-2xl bg-indigo-50 dark:bg-indigo-950 text-indigo-600 dark:text-indigo-400 flex items-center justify-center text-3xl font-bold shadow-xs mx-auto sm:mx-0">
+                        🔬
+                    </div>
+                    <div class="space-y-1">
+                        <span class="text-[10px] font-extrabold uppercase tracking-wider text-indigo-600 dark:text-indigo-400 block">AI & Forensik Digital</span>
+                        <h3 class="text-base font-black text-[#07153f] dark:text-white">SmartSynth Lab Forensik AI</h3>
+                        <p class="text-xs font-mono font-bold text-slate-800 dark:text-slate-200 pt-0.5">
+                            C2PA 2.4, Real ELA & 2D FFT Saintifik
+                        </p>
+                    </div>
+                    <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed pt-2 border-t border-slate-100 dark:border-slate-700">
+                        Suite pengujian keaslian foto digital secara saintifik melalui EXIF biner, kriptografi C2PA 2.4, Error Level Analysis (ELA), dan spektrogram 2D FFT.
+                    </p>
+                </div>
+                <div class="pt-3 flex items-center justify-between border-t border-slate-100 dark:border-slate-700 w-full">
+                    <span class="text-[10px] font-bold text-emerald-600 dark:text-emerald-400 flex items-center gap-1">✓ Sekali Bayar</span>
+                    <a href="{{ route('products.show', 'smartsynth-lab-forensik-ai') }}" class="text-xs font-bold text-indigo-600 dark:text-indigo-400 hover:underline inline-flex items-center gap-1">Detail Produk &rarr;</a>
+                </div>
+            </div>
+
+            <!-- Card 6: Custom Enterprise Software -->
+            <div class="bg-gradient-to-br from-[#07153f] to-[#0d2360] dark:from-slate-950 dark:to-[#07153f] p-6 rounded-3xl text-white shadow-xl hover:-translate-y-1 transition-all space-y-3 reveal-on-scroll delay-350 flex flex-col justify-between items-center sm:items-stretch text-center sm:text-left sm:col-span-2 lg:col-span-1 border border-cyan-500/30">
+                <div class="space-y-3 w-full">
+                    <div class="w-14 h-14 rounded-2xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center text-3xl font-bold shadow-xs mx-auto sm:mx-0">
+                        🏢
+                    </div>
+                    <div class="space-y-1">
+                        <span class="text-[10px] font-extrabold uppercase tracking-wider text-cyan-300 block">Custom Architecture</span>
+                        <h3 class="text-base font-black text-white">Custom Software & AI Solution</h3>
+                        <p class="text-xs font-mono font-bold text-slate-300 pt-0.5">
+                            Tailor-Made Sesuai Kebutuhan Anda
+                        </p>
+                    </div>
+                    <p class="text-xs text-slate-300 leading-relaxed pt-2 border-t border-white/10">
+                        Butuh kustomisasi sistem khusus atau integrasi enterprise? Tim software engineer SmartVerse siap mendampingi dari tahap arsitektur hingga deployment.
+                    </p>
+                </div>
+                <div class="pt-3 flex items-center justify-between border-t border-white/10 w-full">
+                    <span class="text-[10px] font-bold text-cyan-300 flex items-center gap-1">✓ Dedicated Team</span>
+                    <a href="https://wa.me/6289695249089" target="_blank" class="text-xs font-bold text-orange-400 hover:underline inline-flex items-center gap-1">Konsultasi &rarr;</a>
                 </div>
             </div>
 
         </div>
 
-        <!-- Security & Legal Data Protection Notice Banner -->
-        <div class="p-4 sm:p-5 rounded-2xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 flex flex-col sm:flex-row items-center sm:items-start gap-3 text-xs text-slate-600 dark:text-slate-300 text-center sm:text-left">
-            <span class="text-2xl shrink-0">🔒</span>
-            <div class="leading-relaxed font-medium">
-                <strong class="text-[#07153f] dark:text-white font-bold">Keamanan & Kerahasiaan Dokumen Perusahaan:</strong> Untuk mencegah pencatutan identitas oleh pihak yang tidak bertanggung jawab, salinan resmi dokumen legalitas lengkap (SK Kemenkumham, Akta Notaris, NPWP Perusahaan, NIB OSS, dan Rekening Bank Perusahaan) dilampirkan resmi saat penyerahan dokumen proposal teknis / SPK kontrak kerja sama.
-            </div>
-        </div>
-
-        <!-- 5 Keunggulan Jasa Kami (Page 6 Profile) -->
+        <!-- 5 Keunggulan SmartVerse -->
         <div class="p-6 sm:p-8 rounded-3xl bg-[#f8faff] dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-700/80 space-y-6 reveal-on-scroll">
             <div class="text-center sm:text-left space-y-1">
                 <span class="text-xs font-bold text-orange-700 dark:text-orange-400 uppercase tracking-wider mono block text-center sm:text-left">KENAPA MEMILIH KAMI</span>
-                <h3 class="text-lg sm:text-xl font-extrabold text-[#07153f] dark:text-white">5 Jaminan Keunggulan Layanan CV. Beranda Teknologi Digital</h3>
+                <h3 class="text-lg sm:text-xl font-extrabold text-[#07153f] dark:text-white">5 Jaminan Keunggulan Layanan SmartVerse</h3>
             </div>
             
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
@@ -755,7 +806,7 @@
                 <div class="space-y-2 p-4 sm:p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/60 dark:border-slate-700 shadow-2xs text-center sm:text-left flex flex-col items-center sm:items-start">
                     <div class="w-10 h-10 rounded-xl bg-amber-50 dark:bg-amber-950/60 text-2xl flex items-center justify-center mx-auto sm:mx-0 shadow-2xs">✨</div>
                     <h4 class="font-extrabold text-xs text-[#07153f] dark:text-white">Hasil Memuaskan</h4>
-                    <p class="text-[11px] text-slate-500 dark:text-slate-400 leading-relaxed">Desain unik, responsif semua perangkat, modern, dan bebas bug.</p>
+                    <p class="text-[11px] text-slate-500 dark:text-slate-400 leading-relaxed">Desain modern, UI responsif seluruh perangkat, dan kode berkualitas tinggi.</p>
                 </div>
                 <div class="space-y-2 p-4 sm:p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/60 dark:border-slate-700 shadow-2xs text-center sm:text-left flex flex-col items-center sm:items-start">
                     <div class="w-10 h-10 rounded-xl bg-orange-50 dark:bg-orange-950/60 text-2xl flex items-center justify-center mx-auto sm:mx-0 shadow-2xs">🏷️</div>
@@ -768,9 +819,9 @@
                     <p class="text-[11px] text-slate-500 dark:text-slate-400 leading-relaxed">Diskusi arsitektur dan kebutuhan sistem tanpa ikatan komitmen awal.</p>
                 </div>
                 <div class="space-y-2 p-4 sm:p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/60 dark:border-slate-700 shadow-2xs text-center sm:text-left flex flex-col items-center sm:items-start">
-                    <div class="w-10 h-10 rounded-xl bg-blue-50 dark:bg-blue-950/60 text-2xl flex items-center justify-center mx-auto sm:mx-0 shadow-2xs">🛡️</div>
-                    <h4 class="font-extrabold text-xs text-[#07153f] dark:text-white">Legalitas Kuat</h4>
-                    <p class="text-[11px] text-slate-500 dark:text-slate-400 leading-relaxed">Terdaftar resmi Kemenkumham, NPWP, Notaris, dan E-Katalog LKPP.</p>
+                    <div class="w-10 h-10 rounded-xl bg-cyan-50 dark:bg-cyan-950/60 text-2xl flex items-center justify-center mx-auto sm:mx-0 shadow-2xs">💎</div>
+                    <h4 class="font-extrabold text-xs text-[#07153f] dark:text-white">Lisensi Permanen</h4>
+                    <p class="text-[11px] text-slate-500 dark:text-slate-400 leading-relaxed">Sekali bayar kepemilikan penuh tanpa biaya langganan bulanan yang membebani.</p>
                 </div>
             </div>
         </div>
@@ -890,7 +941,7 @@
 
                     $sliderScreens = $project->slider_screens;
                     $slidesJson = json_encode($sliderScreens);
-                    $waProductUrl = "https://wa.me/6289695249089?text=" . urlencode("Halo CV. Beranda Teknologi Digital, saya tertarik konsultasi portofolio sistem: {$displayTitle}");
+                    $waProductUrl = "https://wa.me/6289695249089?text=" . urlencode("Halo SmartVerse, saya tertarik konsultasi portofolio sistem: {$displayTitle}");
                 @endphp
 
                 <div class="bg-white dark:bg-slate-900 rounded-3xl overflow-hidden border border-slate-200/90 dark:border-slate-800 shadow-sm hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group reveal-on-scroll">
@@ -1126,7 +1177,7 @@
                             <span class="w-2.5 h-2.5 rounded-full bg-emerald-500/90"></span>
                         </div>
                         <div class="flex-grow max-w-xs mx-auto bg-slate-900/80 rounded-md py-0.5 px-3 text-[10px] text-slate-400 font-mono truncate text-center">
-                            https://berandadigital.net/system-preview
+                            https://smartverse.id/system-preview
                         </div>
                     </div>
                     <!-- Image Content -->
@@ -1256,7 +1307,7 @@
             },
             
             getWhatsAppLink() {
-                let text = 'Halo CV. Beranda Teknologi Digital, saya ingin konsultasi estimasi proyek yang saya hitung di website:\n\n';
+                let text = 'Halo SmartVerse, saya ingin konsultasi estimasi proyek yang saya hitung di website:\n\n';
                 text += '📌 Platform: ' + this.platformName + '\n';
                 text += '⏱️ Waktu: ' + this.timelineName + '\n';
                 text += '✨ Fasilitas Gratis: Free Domain, Hosting SSD, SSL Let\'s Encrypt, Desain Logo, Revisi Sepuasnya Sampai Sesuai Keinginan, & Responsif Semua Device\n';
@@ -1817,7 +1868,7 @@
                     id: 1, 
                     title: 'Insight Talks Bersama Komdigi RI & Media Indonesia', 
                     category: 'webinar', 
-                    image: '/images/Insight-Talks-Komdigi.jpeg', 
+                    image: '/images/Insight-Talks-Komdigi.webp', 
                     tag: 'Webinar Nasional',
                     organizer: 'Komdigi RI & Media Indonesia'
                 },
@@ -1825,7 +1876,7 @@
                     id: 2, 
                     title: 'The Era of Vibe Coding: AI Pembelajaran & Manajemen Informasi', 
                     category: 'pelatihan', 
-                    image: '/images/631476506_1210308331315502_7735877304621369529_n.jpg', 
+                    image: '/images/631476506_1210308331315502_7735877304621369529_n.webp', 
                     tag: 'Pelatihan Dosen IT',
                     organizer: 'Politeknik Akamigas Palembang'
                 },
@@ -1833,7 +1884,7 @@
                     id: 3, 
                     title: 'Lecturer Development Program: Pembuatan Aplikasi AI Tanpa Coding', 
                     category: 'pelatihan', 
-                    image: '/images/626271180_17940187239113665_1282635413631214268_n.jpg', 
+                    image: '/images/626271180_17940187239113665_1282635413631214268_n.webp', 
                     tag: 'Pelatihan Dosen',
                     organizer: 'Politeknik Akamigas Palembang'
                 },
@@ -1841,7 +1892,7 @@
                     id: 4, 
                     title: 'Pelatihan Coding & AI Tenaga Pendidik SD & SMP OKU Timur', 
                     category: 'pelatihan', 
-                    image: '/images/545410148_1090108853335451_8582489098678183559_n.jpg', 
+                    image: '/images/545410148_1090108853335451_8582489098678183559_n.webp', 
                     tag: 'Pelatihan Guru',
                     organizer: 'Dinas Pendidikan OKU Timur'
                 },
@@ -1849,7 +1900,7 @@
                     id: 5, 
                     title: 'Pelatihan Coding & AI Optimalisasi SDM SIT Robbani', 
                     category: 'pelatihan', 
-                    image: '/images/561378805_1119891467023856_3474954454940095689_n.jpg', 
+                    image: '/images/561378805_1119891467023856_3474954454940095689_n.webp', 
                     tag: 'Pelatihan Guru',
                     organizer: 'SIT Robbani Ogan Ilir'
                 },
@@ -1857,7 +1908,7 @@
                     id: 6, 
                     title: 'Workshop Online: Menciptakan Chatbot AI dengan Python', 
                     category: 'webinar', 
-                    image: '/images/486603910_961047622908242_7404185485069841584_n.jpg', 
+                    image: '/images/486603910_961047622908242_7404185485069841584_n.webp', 
                     tag: 'Workshop Online 32 JP',
                     organizer: 'IGI Kab. Ogan Ilir'
                 },
@@ -1865,7 +1916,7 @@
                     id: 7, 
                     title: 'Online Training of Trainer: Coding for Kids IGI Ogan Ilir', 
                     category: 'webinar', 
-                    image: '/images/485185738_958093913203613_4067422706425259653_n.jpg', 
+                    image: '/images/485185738_958093913203613_4067422706425259653_n.webp', 
                     tag: 'Online Training 32 JP',
                     organizer: 'IGI Kab. Ogan Ilir'
                 },
@@ -1873,7 +1924,7 @@
                     id: 8, 
                     title: 'Pelatihan Website & Aplikasi Administrasi Surat Desa Senuro Timur', 
                     category: 'pelatihan', 
-                    image: '/images/495965916_995856726093998_1582227333173346053_n.jpg', 
+                    image: '/images/495965916_995856726093998_1582227333173346053_n.webp', 
                     tag: 'Digitalisasi Desa',
                     organizer: 'Pemdes Senuro Timur'
                 },
@@ -1881,7 +1932,7 @@
                     id: 9, 
                     title: 'Augmented Reality for Education: Pembuatan Media Pembelajaran AR', 
                     category: 'pelatihan', 
-                    image: '/images/Flyer-AR-New-1-scaled.jpg', 
+                    image: '/images/Flyer-AR-New-1-scaled.webp', 
                     tag: 'Workshop AR',
                     organizer: 'Ralenta Learning Center'
                 },
@@ -1889,7 +1940,7 @@
                     id: 10, 
                     title: 'Pelatihan Coding for Kids: Belajar Koding Mudah & Menyenangkan', 
                     category: 'pelatihan', 
-                    image: '/images/FlyerCoding-for-Kids2023-scaled.jpg', 
+                    image: '/images/FlyerCoding-for-Kids2023-scaled.webp', 
                     tag: 'Coding for Kids',
                     organizer: 'Ralenta Learning Center'
                 },
@@ -1897,7 +1948,7 @@
                     id: 11, 
                     title: 'Training for Trainer Coding for Kids Guru SIT Robbani', 
                     category: 'pelatihan', 
-                    image: '/images/Flyer-Coding-for-Kids-3.png', 
+                    image: '/images/Flyer-Coding-for-Kids-3.webp', 
                     tag: 'ToT Guru Sekolah',
                     organizer: 'SIT Robbani Ogan Ilir'
                 }
@@ -1978,7 +2029,7 @@
                             x-text="item.title">
                         </h3>
                         <div class="pt-2 border-t border-slate-100 dark:border-slate-700 flex items-center justify-between text-[11px] font-semibold text-blue-700 dark:text-blue-400 dark:text-blue-400">
-                            <span>CV. Beranda Teknologi Digital</span>
+                            <span>SmartVerse (smartverse.id)</span>
                             <span class="text-xs">&rarr;</span>
                         </div>
                     </div>
@@ -2011,7 +2062,7 @@
             </div>
             
             <p class="text-white text-sm sm:text-base md:text-lg leading-relaxed max-w-2xl mx-auto font-medium drop-shadow-md opacity-100">
-                {{ $settings['cta_description'] ?? $siteSettings['cta_description'] ?? 'Revolusi Teknologi mengubah aspek kehidupan kita, dan struktur masyarakat itu sendiri. Konsultasikan rencana pembuatan website perusahaan, aplikasi mobile Flutter, sistem informasi, atau pelatihan IT bersama CV. Beranda Teknologi Digital.' }}
+                {{ $settings['cta_description'] ?? $siteSettings['cta_description'] ?? 'Konsultasikan rencana implementasi 5 produk digital unggulan SmartVerse (SmartNews, SmartEdu, SmartFeed, SmartSDM, SmartSynth) atau perancangan custom software enterprise bersama tim teknologi kami.' }}
             </p>
             
             <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 relative z-10">

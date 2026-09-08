@@ -76,7 +76,7 @@
 
                 <div class="space-y-1.5">
                     <label class="block text-xs font-bold text-[#071330]">Alamat Email Login *</label>
-                    <input type="email" name="email" required placeholder="email@berandadigital.net" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs focus:ring-2 focus:ring-[#3E5CE7] focus:outline-none font-mono" />
+                    <input type="email" name="email" required placeholder="email@smartverse.id" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs focus:ring-2 focus:ring-[#3E5CE7] focus:outline-none font-mono" />
                 </div>
 
                 <div class="space-y-1.5">

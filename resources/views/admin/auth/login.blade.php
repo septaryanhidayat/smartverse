@@ -3,13 +3,13 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Login Administrator - CV. Beranda Teknologi Digital</title>
+    <title>Login Administrator - SmartVerse (smartverse.id)</title>
     
     @php
-        $siteFavicon = \App\Models\Setting::where('key', 'site_favicon')->value('value') ?? 'favicon.png';
+        $siteFavicon = \App\Models\Setting::where('key', 'site_favicon')->value('value') ?? 'images/smartverse/logo-smartverse.jpg';
     @endphp
     <!-- Favicon & App Icons -->
-    <link rel="icon" type="image/png" href="{{ asset($siteFavicon) }}">
+    <link rel="icon" type="image/jpeg" href="{{ asset($siteFavicon) }}">
     <link rel="shortcut icon" href="{{ asset($siteFavicon) }}">
     <link rel="apple-touch-icon" href="{{ asset($siteFavicon) }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -53,12 +53,12 @@
             
             <!-- Logo & Title -->
             <div class="text-center space-y-3">
-                <a href="{{ route('home') }}" class="inline-block hover:scale-105 transition-transform" title="CV. Beranda Teknologi Digital">
-                    <img src="{{ asset('images/Logo-BTD.png') }}" alt="CV. Beranda Teknologi Digital" class="h-16 sm:h-20 w-auto mx-auto object-contain drop-shadow-xs" />
+                <a href="{{ route('home') }}" class="inline-block hover:scale-105 transition-transform" title="SmartVerse">
+                    <img src="{{ asset('images/smartverse/logo-smartverse.jpg') }}" alt="SmartVerse" class="h-16 w-16 mx-auto object-cover rounded-2xl shadow-md" />
                 </a>
                 <div class="space-y-1">
                     <h1 class="text-xl font-extrabold text-[#071330] tracking-tight">Portal CMS Administrator</h1>
-                    <p class="text-xs text-slate-500 font-medium">CV. Beranda Teknologi Digital &bull; Masuk untuk mengelola sistem</p>
+                    <p class="text-xs text-slate-500 font-medium">SmartVerse (smartverse.id) &bull; Masuk untuk mengelola sistem</p>
                 </div>
             </div>
 
@@ -153,7 +153,7 @@
 
         <!-- Footer Notice -->
         <div class="text-center text-xs text-slate-400">
-            &copy; {{ date('Y') }} <strong>CV. Beranda Teknologi Digital</strong> &bull; All Rights Reserved.
+            &copy; {{ date('Y') }} <strong>SmartVerse (smartverse.id)</strong> &bull; All Rights Reserved.
         </div>
 
     </div>

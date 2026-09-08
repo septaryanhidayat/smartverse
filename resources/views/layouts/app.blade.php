@@ -7,8 +7,8 @@
 
     <title>@yield('title', ($settings['site_title'] ?? 'SmartVerse (smartverse.id) - Umbrella Brand 5 Produk Digital Unggulan'))</title>
     <meta name="description" content="@yield('meta_description', $settings['hero_description'] ?? 'SmartVerse (smartverse.id) adalah umbrella brand ekosistem digital Indonesia yang menaungi 5 inovasi produk unggulan: SmartNews, SmartEdu, SmartFeed, SmartSDM, dan SmartSynth.')">
-    <meta name="keywords" content="smartverse, smartverse.id, smartnews, smartedu, smartsdm, smartfeed, smartsynth, lab forensik ai, portal berita dewan pers, erp sekolah, presensi wajah gps, studio visual ai, cv beranda teknologi digital">
-    <meta name="author" content="SmartVerse (CV. Beranda Teknologi Digital)">
+    <meta name="keywords" content="smartverse, smartverse.id, smartnews, smartedu, smartsdm, smartfeed, smartsynth, lab forensik ai, portal berita dewan pers, erp sekolah islam terpadu, presensi wajah gps, studio visual ai">
+    <meta name="author" content="SmartVerse (smartverse.id)">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <link rel="canonical" href="{{ url()->current() }}">
 
@@ -23,17 +23,17 @@
     <link rel="preload" as="image" href="{{ asset($settings['hero_image'] ?? 'images/hero-person-old.webp') }}" type="image/webp" fetchpriority="high">
 
     <!-- Favicon & App Icons (Dynamic from Settings) -->
-    <link rel="icon" type="image/jpeg" href="{{ asset('images/smartverse/logo-smartverse.jpg') }}">
-    <link rel="apple-touch-icon" href="{{ asset('images/smartverse/logo-smartverse.jpg') }}">
-    <link rel="shortcut icon" href="{{ asset('images/smartverse/logo-smartverse.jpg') }}">
+    <link rel="icon" type="image/webp" href="{{ asset($settings['site_logo'] ?? 'images/smartverse/logo-smartverse.webp') }}">
+    <link rel="apple-touch-icon" href="{{ asset($settings['site_logo'] ?? 'images/smartverse/logo-smartverse.webp') }}">
+    <link rel="shortcut icon" href="{{ asset($settings['site_logo'] ?? 'images/smartverse/logo-smartverse.webp') }}">
 
     <!-- OpenGraph (OG) Meta Tags for WhatsApp, Facebook, LinkedIn, Telegram -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ url()->current() }}">
     <meta property="og:title" content="@yield('title', ($settings['site_title'] ?? 'SmartVerse (smartverse.id)') . ' - Umbrella Brand 5 Produk Digital Unggulan')">
     <meta property="og:description" content="@yield('meta_description', $settings['hero_description'] ?? 'SmartVerse (smartverse.id) adalah umbrella brand inovasi digital: SmartNews, SmartEdu, SmartFeed, SmartSDM, dan SmartSynth.')">
-    <meta property="og:image" content="{{ asset($settings['og_image'] ?? 'images/smartverse/logo-smartverse.jpg') }}">
-    <meta property="og:image:secure_url" content="{{ asset($settings['og_image'] ?? 'images/smartverse/logo-smartverse.jpg') }}">
+    <meta property="og:image" content="{{ asset($settings['og_image'] ?? $settings['site_logo'] ?? 'images/smartverse/logo-smartverse.webp') }}">
+    <meta property="og:image:secure_url" content="{{ asset($settings['og_image'] ?? $settings['site_logo'] ?? 'images/smartverse/logo-smartverse.webp') }}">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:alt" content="{{ $settings['site_title'] ?? 'SmartVerse' }}">
@@ -43,51 +43,33 @@
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="{{ url()->current() }}">
-    <meta name="twitter:title" content="@yield('title', ($settings['site_title'] ?? 'CV. Beranda Teknologi Digital') . ' - Software House & Solusi AI')">
-    <meta name="twitter:description" content="@yield('meta_description', $settings['site_description'] ?? 'Jasa pembuatan website enterprise, aplikasi mobile Flutter, sistem informasi, solusi AI privat, dan pelatihan IT.')">
-    <meta name="twitter:image" content="{{ asset($settings['og_image'] ?? $settings['site_logo'] ?? 'images/Logo-BTD.png') }}">
+    <meta name="twitter:title" content="@yield('title', ($settings['site_title'] ?? 'SmartVerse (smartverse.id)') . ' - Umbrella Brand 5 Produk Digital Unggulan')">
+    <meta name="twitter:description" content="@yield('meta_description', $settings['site_description'] ?? 'SmartVerse (smartverse.id) menghadirkan 5 ekosistem produk digital unggulan: SmartNews, SmartEdu, SmartFeed, SmartSDM, dan SmartSynth.')">
+    <meta name="twitter:image" content="{{ asset($settings['og_image'] ?? $settings['site_logo'] ?? 'images/smartverse/logo-smartverse.webp') }}">
 
     <!-- Schema.org JSON-LD Structured Data for Google Rich Snippets -->
     <script type="application/ld+json">
     {
       "@@context": "https://schema.org",
-      "@@type": "ProfessionalService",
-      "name": "CV. Beranda Teknologi Digital",
-      "image": "{{ asset('images/Logo-BTD.png') }}",
-      "@@id": "https://berandadigital.net",
-      "url": "https://berandadigital.net",
+      "@@type": "Organization",
+      "name": "SmartVerse",
+      "image": "{{ asset($settings['site_logo'] ?? 'images/smartverse/logo-smartverse.webp') }}",
+      "@@id": "https://smartverse.id",
+      "url": "https://smartverse.id",
       "telephone": "+6289695249089",
-      "priceRange": "Rp 3.000.000 - Rp 10.000.000",
+      "email": "info@smartverse.id",
       "address": {
         "@@type": "PostalAddress",
-        "streetAddress": "Ogan Ilir & Palembang Hub",
+        "streetAddress": "Jl. Sarjana Blok A No. 25 Timbangan",
         "addressLocality": "Ogan Ilir",
         "addressRegion": "Sumatera Selatan",
-        "postalCode": "30662",
+        "postalCode": "30862",
         "addressCountry": "ID"
       },
-      "geo": {
-        "@@type": "GeoCoordinates",
-        "latitude": -3.2458,
-        "longitude": 104.6644
-      },
-      "openingHoursSpecification": {
-        "@@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday",
-          "Saturday"
-        ],
-        "opens": "08:00",
-        "closes": "17:00"
-      },
       "sameAs": [
-        "https://www.instagram.com/bteknologi_digital",
-        "https://linkedin.com/company/berandadigital",
-        "https://github.com/septaryanhidayat/btd"
+        "https://instagram.com/smartverse.id",
+        "https://linkedin.com/company/smartverse-id",
+        "https://github.com/septaryanhidayat/smartverse"
       ]
     }
     </script>
@@ -319,7 +301,7 @@
             
             <!-- Official SmartVerse Brand Logo -->
             <a href="{{ route('home') }}" class="flex items-center gap-2.5 py-0.5 group focus:outline-none shrink-0" aria-label="SmartVerse.id Home">
-                <img src="{{ asset('images/smartverse/logo-smartverse.jpg') }}" alt="SmartVerse Logo" width="120" height="120" fetchpriority="high" class="h-10 sm:h-11 w-10 sm:w-11 rounded-xl shadow-xs object-cover hover:scale-105 transition-transform" />
+                <img src="{{ asset($settings['site_logo'] ?? 'images/smartverse/logo-smartverse.webp') }}" alt="SmartVerse Logo" width="120" height="120" fetchpriority="high" class="h-10 sm:h-11 w-10 sm:w-11 rounded-xl shadow-xs object-cover hover:scale-105 transition-transform" />
                 <div class="flex flex-col text-left">
                     <span class="text-base sm:text-lg font-black tracking-tight leading-tight text-[#0A1C3C] dark:text-white group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors">
                         Smart<span class="text-cyan-600 dark:text-cyan-400">Verse</span>
@@ -495,31 +477,33 @@
                 <!-- Column 1: Brand & Legalitas (lg:col-span-4) -->
                 <div class="lg:col-span-4 space-y-4 flex flex-col items-center md:items-start">
                     <a href="{{ route('home') }}" class="inline-flex items-center gap-3 py-1 group" aria-label="SmartVerse.id">
-                        <img src="{{ asset('images/smartverse/logo-smartverse.jpg') }}" alt="SmartVerse" width="120" height="120" loading="lazy" decoding="async" class="h-11 w-11 rounded-xl shadow-xs object-cover hover:scale-105 transition-transform" />
+                        <img src="{{ asset($settings['site_logo'] ?? 'images/smartverse/logo-smartverse.webp') }}" alt="SmartVerse" width="120" height="120" loading="lazy" decoding="async" class="h-11 w-11 rounded-xl shadow-xs object-cover hover:scale-105 transition-transform" />
                         <div class="text-left">
                             <span class="text-lg font-black tracking-tight text-[#0A1C3C] dark:text-white">Smart<span class="text-cyan-600 dark:text-cyan-400">Verse</span></span>
                             <span class="block text-[10px] uppercase tracking-widest text-slate-500 dark:text-slate-400 mono font-extrabold">smartverse.id</span>
                         </div>
                     </a>
                     <p class="text-xs sm:text-sm leading-relaxed max-w-sm font-medium" style="color: var(--text-muted);">
-                        <strong style="color: var(--text);">SmartVerse (smartverse.id)</strong> — Umbrella brand teknologi terpadu yang menaungi 5 inovasi produk digital nasional. Didukung arsitektur software enterprise dari CV. Beranda Teknologi Digital.
+                        <strong style="color: var(--text);">SmartVerse (smartverse.id)</strong> — Umbrella brand teknologi terpadu yang menaungi 5 ekosistem produk digital unggulan: SmartNews, SmartEdu, SmartFeed, SmartSDM, dan SmartSynth.
                     </p>
                     
-                    <!-- Legalitas Badan Usaha Compact Pill Card -->
+                    <!-- SmartVerse Umbrella Brand Ecosystem Pill Card -->
                     <div class="p-3.5 rounded-2xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200/80 dark:border-slate-700/80 text-[11px] space-y-2 w-full max-w-sm text-left shadow-2xs">
                         <div class="font-bold text-[#07153f] dark:text-white flex items-center justify-between text-xs">
                             <span class="flex items-center gap-1.5">
-                                <span class="w-5 h-5 rounded-md bg-cyan-100 dark:bg-cyan-950 text-cyan-600 dark:text-cyan-400 flex items-center justify-center text-xs shrink-0">🏛️</span>
-                                <span>Holding Badan Usaha (CV)</span>
+                                <span class="w-5 h-5 rounded-md bg-cyan-100 dark:bg-cyan-950 text-cyan-600 dark:text-cyan-400 flex items-center justify-center text-xs shrink-0">✨</span>
+                                <span>Umbrella Brand Ecosystem</span>
                             </span>
-                            <span class="inline-flex items-center gap-1 text-emerald-600 dark:text-emerald-400 font-extrabold text-[10px] bg-emerald-50 dark:bg-emerald-950/60 px-2 py-0.5 rounded-full border border-emerald-200 dark:border-emerald-800">
-                                ✓ LKPP RI
+                            <span class="inline-flex items-center gap-1 text-cyan-600 dark:text-cyan-400 font-extrabold text-[10px] bg-cyan-50 dark:bg-cyan-950/60 px-2 py-0.5 rounded-full border border-cyan-200 dark:border-cyan-800">
+                                5 Produk Unggulan
                             </span>
                         </div>
-                        <div class="grid grid-cols-1 gap-0.5 text-slate-600 dark:text-slate-300 text-[10px] pl-6.5">
-                            <div><strong class="text-slate-700 dark:text-slate-200">Badan Usaha:</strong> CV. Beranda Teknologi Digital</div>
-                            <div><strong class="text-slate-700 dark:text-slate-200">SK Kemenkumham:</strong> AHU-0003819-AH.01.14 Th 2022</div>
-                            <div><strong class="text-slate-700 dark:text-slate-200">NPWP:</strong> 63.100.018.9-312.000</div>
+                        <div class="flex flex-wrap gap-1.5 pt-0.5">
+                            <span class="px-2 py-0.5 rounded-md bg-sky-100 dark:bg-sky-950/80 text-sky-700 dark:text-sky-300 text-[10px] font-bold">SmartNews</span>
+                            <span class="px-2 py-0.5 rounded-md bg-emerald-100 dark:bg-emerald-950/80 text-emerald-700 dark:text-emerald-300 text-[10px] font-bold">SmartEdu</span>
+                            <span class="px-2 py-0.5 rounded-md bg-purple-100 dark:bg-purple-950/80 text-purple-700 dark:text-purple-300 text-[10px] font-bold">SmartFeed</span>
+                            <span class="px-2 py-0.5 rounded-md bg-blue-100 dark:bg-blue-950/80 text-blue-700 dark:text-blue-300 text-[10px] font-bold">SmartSDM</span>
+                            <span class="px-2 py-0.5 rounded-md bg-indigo-100 dark:bg-indigo-950/80 text-indigo-700 dark:text-indigo-300 text-[10px] font-bold">SmartSynth</span>
                         </div>
                     </div>
 
@@ -527,12 +511,12 @@
                     <div class="pt-1 space-y-2 w-full max-w-sm">
                         <div class="flex items-center justify-center md:justify-start gap-2.5">
                             <!-- Instagram -->
-                            <a href="https://www.instagram.com/bteknologi_digital" target="_blank" rel="noopener noreferrer" aria-label="Instagram @bteknologi_digital" title="Instagram @bteknologi_digital"
+                            <a href="https://instagram.com/smartverse.id" target="_blank" rel="noopener noreferrer" aria-label="Instagram SmartVerse" title="Instagram SmartVerse"
                                class="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800/90 text-slate-600 dark:text-slate-300 hover:text-white hover:bg-gradient-to-tr hover:from-amber-500 hover:via-pink-500 hover:to-purple-600 border border-slate-200/80 dark:border-slate-700/80 flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-md hover:shadow-pink-500/25">
                                 <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
                             </a>
                             <!-- LinkedIn -->
-                            <a href="https://linkedin.com/company/berandadigital" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Beranda Digital" title="LinkedIn Beranda Digital"
+                            <a href="https://linkedin.com/company/smartverse-id" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn SmartVerse" title="LinkedIn SmartVerse"
                                class="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800/90 text-slate-600 dark:text-slate-300 hover:text-white hover:bg-[#0A66C2] border border-slate-200/80 dark:border-slate-700/80 flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-md hover:shadow-blue-500/25">
                                 <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
                             </a>
@@ -595,14 +579,14 @@
                             </div>
                         </a>
 
-                        <a href="mailto:{{ $siteSettings['contact_email'] ?? 'info@berandadigital.net' }}" 
+                        <a href="mailto:{{ $siteSettings['contact_email'] ?? 'info@smartverse.id' }}" 
                            class="flex items-center justify-center md:justify-start gap-2.5 p-2 rounded-xl bg-slate-50 dark:bg-slate-800/60 hover:bg-blue-50 dark:hover:bg-blue-950/40 border border-slate-200/60 dark:border-slate-700/60 hover:border-blue-300 dark:hover:border-blue-800 transition-all group">
                             <span class="w-7 h-7 rounded-lg bg-blue-100 dark:bg-blue-950 text-blue-600 dark:text-blue-400 flex items-center justify-center shrink-0">
                                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
                             </span>
                             <div class="text-left leading-tight">
                                 <span class="text-[9px] uppercase tracking-wider text-slate-600 dark:text-slate-400 block font-bold">Email Bisnis</span>
-                                <span class="font-bold text-slate-800 dark:text-slate-200 text-xs">{{ $siteSettings['contact_email'] ?? 'info@berandadigital.net' }}</span>
+                                <span class="font-bold text-slate-800 dark:text-slate-200 text-xs">{{ $siteSettings['contact_email'] ?? 'info@smartverse.id' }}</span>
                             </div>
                         </a>
 
@@ -611,7 +595,7 @@
                                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
                             </span>
                             <div class="text-[10px] leading-relaxed text-slate-600 dark:text-slate-300 font-medium">
-                                {{ $siteSettings['contact_address'] ?? 'Jl. Sarjana Kel. Timbangan Blok A No. 15, Indralaya Utara, Ogan Ilir, Sumatera Selatan' }}
+                                {{ $siteSettings['contact_address'] ?? 'Jl. Sarjana Blok A No. 25 Timbangan, Ogan Ilir, Sumatera Selatan' }}
                             </div>
                         </div>
                     </div>
@@ -638,7 +622,7 @@
 
             <!-- Bottom Copyright -->
             <div class="flex flex-col sm:flex-row items-center justify-between gap-3 text-xs font-medium" style="color: var(--text-dim);">
-                <p>&copy; {{ date('Y') }} <a href="{{ route('home') }}" class="font-bold hover:underline hover:text-[#3E5CE7] transition-colors" style="color: var(--text);">CV. Beranda Teknologi Digital</a>. All Rights Reserved.</p>
+                <p>&copy; {{ date('Y') }} <a href="{{ route('home') }}" class="font-bold hover:underline hover:text-[#3E5CE7] transition-colors" style="color: var(--text);">SmartVerse (smartverse.id)</a>. All Rights Reserved.</p>
                 <div class="flex items-center gap-2">
                     <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 border border-slate-200/60 dark:border-slate-700/60 text-[10px] font-bold tracking-wider" style="color: var(--text-dim);">🇮🇩 MADE IN INDONESIA</span>
                     <span class="px-2.5 py-1 rounded-md bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200/60 dark:border-emerald-800/60 text-emerald-600 dark:text-emerald-400 text-[10px] font-bold tracking-wider">🔒 SSL SECURED</span>

@@ -56,7 +56,7 @@
                     </label>
                     <div class="flex items-center gap-4">
                         <div class="w-16 h-16 rounded-xl border border-slate-300 bg-white p-1 flex items-center justify-center overflow-hidden shrink-0 shadow-xs">
-                            <img id="preview_site_logo" src="{{ asset($settings['site_logo']->value ?? 'images/Logo-BTD.png') }}" alt="Logo Preview" class="max-w-full max-h-full object-contain" />
+                            <img id="preview_site_logo" src="{{ asset($settings['site_logo']->value ?? 'images/smartverse/logo-smartverse.jpg') }}" alt="Logo Preview" class="max-w-full max-h-full object-contain" />
                         </div>
                         <div class="flex-1 min-w-0">
                             <input type="file" name="site_logo_file" accept="image/*" onchange="previewImage(this, 'preview_site_logo')" class="block w-full text-xs text-slate-500 file:mr-2 file:py-1.5 file:px-3 file:rounded-lg file:border-0 file:text-[11px] file:font-extrabold file:bg-blue-50 file:text-[#3E5CE7] hover:file:bg-blue-100" />
@@ -88,7 +88,7 @@
                     </label>
                     <div class="flex items-center gap-4">
                         <div class="w-20 h-14 rounded-xl border border-slate-300 bg-white p-1 flex items-center justify-center overflow-hidden shrink-0 shadow-xs">
-                            <img id="preview_og_image" src="{{ asset($settings['og_image']->value ?? $settings['site_logo']->value ?? 'images/Logo-BTD.png') }}" alt="OG Preview" class="max-w-full max-h-full object-contain" />
+                            <img id="preview_og_image" src="{{ asset($settings['og_image']->value ?? $settings['site_logo']->value ?? 'images/smartverse/logo-smartverse.jpg') }}" alt="OG Preview" class="max-w-full max-h-full object-contain" />
                         </div>
                         <div class="flex-1 min-w-0">
                             <input type="file" name="og_image_file" accept="image/*" onchange="previewImage(this, 'preview_og_image')" class="block w-full text-xs text-slate-500 file:mr-2 file:py-1.5 file:px-3 file:rounded-lg file:border-0 file:text-[11px] file:font-extrabold file:bg-blue-50 file:text-[#3E5CE7] hover:file:bg-blue-100" />
@@ -101,18 +101,18 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-3 border-t border-slate-100">
                 <div class="space-y-1.5">
                     <label class="block text-xs font-bold text-[#071330]">Judul Meta SEO Website (Site Meta Title) *</label>
-                    <input type="text" name="site_title" value="{{ $settings['site_title']->value ?? 'CV. Beranda Teknologi Digital' }}" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs focus:ring-2 focus:ring-[#3E5CE7] focus:outline-none font-medium" />
+                    <input type="text" name="site_title" value="{{ $settings['site_title']->value ?? 'SmartVerse (smartverse.id) - Umbrella Brand 5 Produk Digital Unggulan' }}" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs focus:ring-2 focus:ring-[#3E5CE7] focus:outline-none font-medium" />
                     <span class="text-[11px] text-slate-400">Judul utama yang diindeks oleh Google Search.</span>
                 </div>
 
                 <div class="space-y-1.5">
                     <label class="block text-xs font-bold text-[#071330]">Tagline Utama Perusahaan</label>
-                    <input type="text" name="site_tagline" value="{{ $settings['site_tagline']->value ?? 'Software House, Mobile App Flutter & Solusi AI' }}" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs focus:ring-2 focus:ring-[#3E5CE7] focus:outline-none font-medium" />
+                    <input type="text" name="site_tagline" value="{{ $settings['site_tagline']->value ?? 'Umbrella Brand Produk Digital Terpadu & AI Solutions - SmartVerse.id' }}" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs focus:ring-2 focus:ring-[#3E5CE7] focus:outline-none font-medium" />
                 </div>
 
                 <div class="space-y-1.5 md:col-span-2">
                     <label class="block text-xs font-bold text-[#071330]">Deskripsi Meta SEO & OpenGraph (Meta Description) *</label>
-                    <textarea name="site_description" rows="2" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs focus:ring-2 focus:ring-[#3E5CE7] focus:outline-none leading-relaxed">{{ $settings['site_description']->value ?? 'CV. Beranda Teknologi Digital adalah agensi teknologi digital modern di Indonesia. Jasa pembuatan website, aplikasi Android/iOS, solusi AI privat, dan workshop IT profesional.' }}</textarea>
+                    <textarea name="site_description" rows="2" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs focus:ring-2 focus:ring-[#3E5CE7] focus:outline-none leading-relaxed">{{ $settings['site_description']->value ?? 'SmartVerse (smartverse.id) adalah umbrella brand inovasi digital: SmartNews, SmartEdu, SmartFeed, SmartSDM, dan SmartSynth.' }}</textarea>
                 </div>
             </div>
         </div>
@@ -210,7 +210,7 @@
 
                     <div class="space-y-1.5">
                         <label class="block text-xs font-bold text-[#071330]">Deskripsi Panjang Profil Perusahaan *</label>
-                        <textarea name="about_description" rows="4" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs focus:ring-2 focus:ring-[#3E5CE7] focus:outline-none leading-relaxed">{{ $settings['about_description']->value ?? 'CV. Beranda Teknologi Digital adalah Digital Creative Agency & Software House terpercaya yang mempunyai pengalaman pembuatan puluhan website bisnis, sistem informasi instansi, dan toko online secara elegan dan profesional. Kami hadir dengan desain website yang mengikuti tren terkini, user friendly, dan mudah dioperasikan.' }}</textarea>
+                        <textarea name="about_description" rows="4" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs focus:ring-2 focus:ring-[#3E5CE7] focus:outline-none leading-relaxed">{{ $settings['about_description']->value ?? 'SmartVerse (smartverse.id) adalah umbrella brand produk digital terintegrasi yang menghadirkan solusi teknologi mutakhir untuk sektor media jurnalisme, institusi pendidikan Islam, manajemen SDM korporasi, otomatisasi konten visual AI, serta forensik digital saintifik.' }}</textarea>
                     </div>
 
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2 border-t border-slate-100">
@@ -265,7 +265,7 @@
 
                 <div class="space-y-1.5">
                     <label class="block text-xs font-bold text-[#071330]">Deskripsi Panjang Ajakan Konsultasi *</label>
-                    <textarea name="cta_description" rows="3" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs focus:ring-2 focus:ring-[#fe6000] focus:outline-none leading-relaxed">{{ $settings['cta_description']->value ?? 'Revolusi Teknologi mengubah aspek kehidupan kita, dan struktur masyarakat itu sendiri. Konsultasikan rencana pembuatan website perusahaan, aplikasi mobile Flutter, sistem informasi, atau pelatihan IT bersama CV. Beranda Teknologi Digital.' }}</textarea>
+                    <textarea name="cta_description" rows="3" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs focus:ring-2 focus:ring-[#fe6000] focus:outline-none leading-relaxed">{{ $settings['cta_description']->value ?? 'Konsultasikan kebutuhan implementasi 5 produk digital unggulan SmartVerse (SmartNews, SmartEdu, SmartFeed, SmartSDM, SmartSynth) atau perancangan custom software enterprise bersama tim engineer kami.' }}</textarea>
                 </div>
             </div>
         </div>
@@ -340,7 +340,7 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div class="space-y-1.5">
                     <label class="block text-xs font-bold text-[#071330]">Nama Badan Usaha *</label>
-                    <input type="text" name="company_name" value="{{ $settings['company_name']->value ?? 'CV. Beranda Teknologi Digital' }}" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs focus:ring-2 focus:ring-[#3E5CE7] focus:outline-none font-bold" />
+                    <input type="text" name="company_name" value="{{ $settings['company_name']->value ?? 'SmartVerse' }}" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs focus:ring-2 focus:ring-[#3E5CE7] focus:outline-none font-bold" />
                 </div>
 
                 <div class="space-y-1.5">
@@ -360,7 +360,7 @@
 
                 <div class="space-y-1.5">
                     <label class="block text-xs font-bold text-[#071330]">Alamat Website *</label>
-                    <input type="text" name="site_website" value="{{ $settings['site_website']->value ?? 'www.berandadigital.net' }}" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs font-mono focus:ring-2 focus:ring-[#3E5CE7] focus:outline-none" />
+                    <input type="text" name="site_website" value="{{ $settings['site_website']->value ?? 'smartverse.id' }}" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs font-mono focus:ring-2 focus:ring-[#3E5CE7] focus:outline-none" />
                 </div>
 
                 <div class="space-y-1.5">

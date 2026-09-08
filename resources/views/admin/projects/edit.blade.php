@@ -45,7 +45,7 @@
             <div class="space-y-1.5 md:col-span-2">
                 <label class="block text-xs font-bold text-[#07153f]">Foto Sampul / Thumbnail Proyek</label>
                 <div class="flex flex-col sm:flex-row sm:items-center gap-4 p-4 rounded-2xl bg-slate-50 border border-slate-200">
-                    <img id="thumb_preview" src="{{ $project->thumbnail ?? '/btd/sekolah.png' }}" alt="Preview Thumbnail" class="w-28 h-20 rounded-xl object-cover border-2 border-white shadow-sm shrink-0 bg-slate-200" />
+                    <img id="thumb_preview" src="{{ $project->thumbnail ?? '/btd/sekolah.webp' }}" alt="Preview Thumbnail" class="w-28 h-20 rounded-xl object-cover border-2 border-white shadow-sm shrink-0 bg-slate-200" />
                     <div class="space-y-2 flex-1">
                         <div class="flex items-center gap-3">
                             <input type="file" name="thumbnail_file" accept="image/*" onchange="previewImage(this, 'thumb_preview')" class="block w-full text-xs text-slate-500 file:mr-4 file:py-2.5 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-extrabold file:bg-[#3E5CE7] file:text-white hover:file:bg-blue-700 cursor-pointer shadow-sm" />

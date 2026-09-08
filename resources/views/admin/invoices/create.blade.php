@@ -321,7 +321,7 @@
             <!-- Notes -->
             <div class="space-y-1.5 pt-2">
                 <label class="block text-xs font-bold text-[#071330]">Catatan Tambahan / Ucapan Terima Kasih</label>
-                <textarea name="notes" rows="2" placeholder="Terima kasih atas kerja sama dan kepercayaan Anda bersama CV. Beranda Teknologi Digital." class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs focus:ring-2 focus:ring-[#3E5CE7] focus:outline-none">{{ old('notes', 'Terima kasih atas kerja sama dan kepercayaan Anda bersama CV. Beranda Teknologi Digital.') }}</textarea>
+                <textarea name="notes" rows="2" placeholder="Terima kasih atas kerja sama dan kepercayaan Anda bersama SmartVerse (smartverse.id)." class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs focus:ring-2 focus:ring-[#3E5CE7] focus:outline-none">{{ old('notes', 'Terima kasih atas kerja sama dan kepercayaan Anda bersama SmartVerse (smartverse.id).') }}</textarea>
             </div>
         </div>
 

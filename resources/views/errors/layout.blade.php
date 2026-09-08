@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title', 'Pemberitahuan Sistem') - CV. Beranda Teknologi Digital</title>
-    <link rel="icon" type="image/png" href="/images/Logo-BTD-Blue.png">
+    <title>@yield('title', 'Pemberitahuan Sistem') - SmartVerse (smartverse.id)</title>
+    <link rel="icon" type="image/webp" href="/images/smartverse/logo-smartverse.webp">
     
     <!-- Tailwind CSS CDN Fallback & Preconnect -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -56,8 +56,8 @@
     <!-- Top Minimal Navigation -->
     <header class="w-full max-w-6xl mx-auto px-6 py-6 flex items-center justify-between z-20 shrink-0">
         <a href="/" class="flex items-center gap-3 group">
-            <img src="/images/Logo-BTD.png" alt="CV. Beranda Teknologi Digital" class="h-10 w-auto object-contain dark:hidden transition-transform group-hover:scale-105" />
-            <img src="/images/Logo-BTD-white.png" alt="CV. Beranda Teknologi Digital" class="h-10 w-auto object-contain hidden dark:block transition-transform group-hover:scale-105" />
+            <img src="/images/smartverse/logo-smartverse.webp" alt="SmartVerse" class="h-10 w-10 rounded-xl object-cover transition-transform group-hover:scale-105" />
+            <span class="font-black text-lg tracking-tight text-[#07153f] dark:text-white">Smart<span class="text-cyan-600 dark:text-cyan-400">Verse</span></span>
         </a>
 
         <div class="flex items-center gap-3">
@@ -129,7 +129,7 @@
 
     <!-- Footer Copyright -->
     <footer class="py-6 text-center text-xs text-slate-400 dark:text-slate-500 z-10">
-        <p>&copy; {{ date('Y') }} <strong>CV. Beranda Teknologi Digital</strong>. All rights reserved.</p>
+        <p>&copy; {{ date('Y') }} <strong>SmartVerse (smartverse.id)</strong>. All rights reserved.</p>
         <p class="text-[10px] mt-1 font-mono text-slate-400/80">Ref ID: {{ strtoupper(substr(md5(url()->current() . microtime()), 0, 8)) }}</p>
     </footer>
 

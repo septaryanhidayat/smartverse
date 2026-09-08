@@ -33,7 +33,7 @@
                 </h1>
                 
                 <p class="text-xs text-slate-300 font-normal leading-relaxed">
-                    Pusat Komando <strong>CV. Beranda Teknologi Digital</strong>. Pantau metrik website, terbitkan portofolio terbaru, kelola modul pelatihan, dan cetak invoice resmi klien dalam satu dasbor terpadu.
+                    Pusat Komando <strong>SmartVerse (smartverse.id)</strong>. Pantau metrik website, 5 produk digital unggulan, terbitkan portofolio terbaru, dan kelola invoice resmi dalam satu dasbor terpadu.
                 </p>
             </div>
 

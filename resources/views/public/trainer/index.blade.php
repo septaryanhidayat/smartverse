@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Tentang Kami & Trainer IT - CV. Beranda Teknologi Digital')
+@section('title', 'Tentang Kami & Trainer IT - SmartVerse (smartverse.id)')
 
 @section('content')
 <!-- SECTION 1: ABOUT US & TRAINER HERO (FlyMotion About Layout with Illustration & Watermark) -->
@@ -27,7 +27,7 @@
                 </h1>
 
                 <p class="text-base text-slate-600 dark:text-slate-300 leading-relaxed font-medium">
-                    <strong class="text-[#07153f] dark:text-white font-bold">CV. Beranda Teknologi Digital</strong> didukung oleh tim software engineer, UI/UX designer, dan AI specialist yang berpengalaman bertahun-tahun dalam perancangan arsitektur software enterprise, aplikasi mobile Flutter, implementasi Artificial Intelligence, serta narasumber workshop IT untuk Kementerian Komdigi RI, Politeknik Akamigas, dan berbagai instansi di Indonesia.
+                    <strong class="text-[#07153f] dark:text-white font-bold">SmartVerse (smartverse.id)</strong> didukung oleh tim software engineer, UI/UX designer, dan AI specialist yang berpengalaman bertahun-tahun dalam perancangan arsitektur software enterprise, 5 produk digital unggulan (SmartNews, SmartEdu, SmartFeed, SmartSDM, SmartSynth), implementasi Artificial Intelligence, serta narasumber workshop IT untuk Kementerian Komdigi RI, Politeknik Akamigas, dan berbagai institusi di Indonesia.
                 </p>
 
                 <!-- Stats Badges -->
@@ -60,9 +60,9 @@
                 <div class="relative w-full max-w-md">
                     <div class="bg-white dark:bg-slate-800 p-5 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-2xl relative anim-logo-top">
                         <div class="aspect-square rounded-2xl overflow-hidden bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 relative flex items-center justify-center p-3">
-                            <img src="/images/hero-person-old.png" alt="Tim Trainer Beranda Digital" class="w-full h-full object-contain" />
+                            <img src="/images/hero-person-old.webp" alt="Tim Trainer SmartVerse" class="w-full h-full object-contain" />
                             <div class="absolute bottom-3 left-3 right-3 p-3 rounded-xl bg-[#07153f]/90 backdrop-blur-md text-white text-xs text-center font-bold shadow-md">
-                                ★ Tim Trainer & Konsultan IT Beranda Digital
+                                ★ Tim Trainer & Konsultan IT SmartVerse
                             </div>
                         </div>
                     </div>

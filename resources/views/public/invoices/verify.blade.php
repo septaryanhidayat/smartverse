@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Verifikasi Invoice #{{ $invoice->invoice_number }} - CV. Beranda Teknologi Digital</title>
+    <title>Verifikasi Invoice #{{ $invoice->invoice_number }} - SmartVerse (smartverse.id)</title>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -331,11 +331,14 @@
 <body>
 
 @php
-    $logoPath = public_path('images/Logo-BTD-white.png');
+    $logoRel = \App\Models\Setting::getValue('site_logo', 'images/smartverse/logo-smartverse.jpg');
+    $logoPath = public_path(ltrim($logoRel, '/'));
     if (!file_exists($logoPath)) {
-        $logoPath = public_path('images/Logo-BTD.png');
+        $logoPath = public_path('images/smartverse/logo-smartverse.jpg');
     }
-    $logoSrc = file_exists($logoPath) ? 'data:image/png;base64,' . base64_encode(file_get_contents($logoPath)) : asset('images/Logo-BTD.png');
+    $ext = strtolower(pathinfo($logoPath, PATHINFO_EXTENSION));
+    $mime = $ext === 'png' ? 'image/png' : ($ext === 'webp' ? 'image/webp' : 'image/jpeg');
+    $logoSrc = file_exists($logoPath) ? ('data:' . $mime . ';base64,' . base64_encode(file_get_contents($logoPath))) : asset('images/smartverse/logo-smartverse.jpg');
 
     // Helper for SVG base64
     $getBankLogo = function($name) {
@@ -353,7 +356,7 @@
     <div class="verify-card">
         <!-- Header -->
         <div class="verify-header">
-            <img src="{{ $logoSrc }}" alt="CV. Beranda Teknologi Digital" class="logo-img" />
+            <img src="{{ $logoSrc }}" alt="SmartVerse" class="logo-img" />
             <div>
                 <span class="verify-badge">
                     <span>✓</span> Dokumen Terverifikasi Resmi
@@ -380,7 +383,7 @@
 
             <div class="detail-row">
                 <div class="detail-label">Penerbit Resmi</div>
-                <div class="detail-value">{{ $settings['company_legal_name'] ?? 'CV. Beranda Teknologi Digital' }}</div>
+                <div class="detail-value">{{ $settings['company_legal_name'] ?? 'SmartVerse (smartverse.id)' }}</div>
             </div>
 
             <div class="detail-row">
@@ -427,7 +430,7 @@
                         <span>✓</span> <span>TAGIHAN TELAH LUNAS (PAID)</span>
                     </div>
                     <div style="color: #065f46; font-size: 12px; line-height: 1.45;">
-                        Terima kasih, seluruh pembayaran telah diterima dengan baik. Dokumen invoice ini merupakan bukti transaksi yang sah dari <strong>{{ $settings['company_legal_name'] ?? 'CV. Beranda Teknologi Digital' }}</strong>.
+                        Terima kasih, seluruh pembayaran telah diterima dengan baik. Dokumen invoice ini merupakan bukti transaksi yang sah dari <strong>{{ $settings['company_legal_name'] ?? 'SmartVerse (smartverse.id)' }}</strong>.
                     </div>
                 </div>
             @else
@@ -528,18 +531,18 @@
                 <a href="{{ route('invoices.public-print', $invoice->invoice_number) }}" target="_blank" class="btn btn-primary">
                     🖨️ Lihat / Cetak Invoice Asli
                 </a>
-                <a href="https://wa.me/6289695249089?text={{ urlencode('Halo CV. Beranda Teknologi Digital, saya ingin konfirmasi perihal Invoice #' . $invoice->invoice_number . ' atas nama ' . $invoice->client_name) }}" target="_blank" class="btn btn-secondary">
+                <a href="https://wa.me/6289695249089?text={{ urlencode('Halo SmartVerse, saya ingin konfirmasi perihal Invoice #' . $invoice->invoice_number . ' atas nama ' . $invoice->client_name) }}" target="_blank" class="btn btn-secondary">
                     💬 Konfirmasi via WhatsApp
                 </a>
                 <a href="/" class="btn btn-outline">
-                    🌐 Beranda CV. Beranda Teknologi Digital
+                    🌐 Beranda SmartVerse (smartverse.id)
                 </a>
             </div>
         </div>
     </div>
 
     <div class="verify-footer">
-        &copy; {{ date('Y') }} CV. Beranda Teknologi Digital &bull; Sistem Verifikasi Dokumen Digital
+        &copy; {{ date('Y') }} SmartVerse (smartverse.id) &bull; Sistem Verifikasi Dokumen Digital
     </div>
 
     <!-- SweetAlert2 & 1-Click Clipboard Copy Handler -->

@@ -124,15 +124,15 @@
 <section class="py-16 bg-white dark:bg-slate-950 transition-colors duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
         
-        @if($product->slug === 'smartnews-cms-portal-berita')
+        @if(str_contains($product->slug, 'smartnews'))
             @include('public.products.partials.smartnews')
-        @elseif($product->slug === 'smartedu-ekosistem-sekolah-terpadu')
+        @elseif(str_contains($product->slug, 'smartedu'))
             @include('public.products.partials.smartedu')
-        @elseif($product->slug === 'smartfeed-ai-visual-studio')
+        @elseif(str_contains($product->slug, 'smartfeed'))
             @include('public.products.partials.smartfeed')
-        @elseif($product->slug === 'smartsdm-mobile-hris-presensi')
+        @elseif(str_contains($product->slug, 'smartsdm'))
             @include('public.products.partials.smartsdm')
-        @elseif($product->slug === 'smartsynth-lab-forensik-ai')
+        @elseif(str_contains($product->slug, 'smartsynth'))
             @include('public.products.partials.smartsynth')
         @else
             <!-- Generic Feature Showcase for standard products -->

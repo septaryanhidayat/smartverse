@@ -12,13 +12,13 @@
         <tr>
             <td style="background-color: #22282a; padding: 25px 30px; text-align: center;">
                 <h2 style="color: #ffffff; margin: 0; font-size: 20px; font-weight: 800; letter-spacing: 0.5px;">
-                    {{ $settings['company_legal_name'] ?? 'CV. Beranda Teknologi Digital' }}
+                    {{ $settings['company_legal_name'] ?? 'SmartVerse (smartverse.id)' }}
                 </h2>
                 <div style="color: #cbd5e1; font-size: 12px; margin-top: 5px;">
-                    Jl. Sarjana, Timbangan, Ogan Ilir, Sumatera Selatan, Indonesia
+                    Jl. Sarjana Blok A No. 25 Timbangan, Ogan Ilir, Sumatera Selatan, Indonesia
                 </div>
                 <div style="color: #269DB9; font-size: 12px; margin-top: 4px; font-weight: 600;">
-                    Software House &bull; Mobile Apps &bull; AI Solutions
+                    Umbrella Brand Produk Digital &bull; AI Solutions
                 </div>
             </td>
         </tr>
@@ -35,7 +35,7 @@
                     </p>
                 @endif
                 <p style="font-size: 13.5px; color: #475569; margin-bottom: 24px;">
-                    Berikut kami sampaikan dokumen invoice resmi <strong>#{{ $invoice->invoice_number }}</strong> terkait layanan pengembangan teknologi yang telah diterbitkan oleh CV. Beranda Teknologi Digital.
+                    Berikut kami sampaikan dokumen invoice resmi <strong>#{{ $invoice->invoice_number }}</strong> terkait layanan pengembangan teknologi yang telah diterbitkan oleh SmartVerse (smartverse.id).
                 </p>
 
                 <!-- Invoice Summary Card -->
@@ -112,7 +112,7 @@
                             ✓ STATUS: TAGIHAN TELAH LUNAS (PAID)
                         </div>
                         <div>
-                            Terima kasih atas pembayaran penuh yang telah Anda lakukan. Dokumen invoice ini merupakan bukti transaksi yang sah dari <strong>{{ $settings['company_legal_name'] ?? 'CV. Beranda Teknologi Digital' }}</strong>.
+                            Terima kasih atas pembayaran penuh yang telah Anda lakukan. Dokumen invoice ini merupakan bukti transaksi yang sah dari <strong>{{ $settings['company_legal_name'] ?? 'SmartVerse (smartverse.id)' }}</strong>.
                         </div>
                     </div>
                 @else
@@ -246,13 +246,13 @@
         <tr>
             <td style="background-color: #f8fafc; padding: 20px 30px; text-align: center; font-size: 11px; color: #94a3b8; border-top: 1px solid #e2e8f0;">
                 <div style="font-weight: 700; color: #475569; margin-bottom: 4px;">
-                    {{ $settings['company_legal_name'] ?? 'CV. Beranda Teknologi Digital' }}
+                    {{ $settings['company_legal_name'] ?? 'SmartVerse (smartverse.id)' }}
                 </div>
                 <div>
-                    Jl. Sarjana, Timbangan, Ogan Ilir, Sumatera Selatan, Indonesia
+                    Jl. Sarjana Blok A No. 25 Timbangan, Ogan Ilir, Sumatera Selatan, Indonesia
                 </div>
                 <div style="margin-top: 4px;">
-                    Website: <a href="https://www.berandadigital.net" style="color: #269DB9; text-decoration: none;">www.berandadigital.net</a> &bull; Email: info@berandadigital.net
+                    Website: <a href="https://smartverse.id" style="color: #269DB9; text-decoration: none;">smartverse.id</a> &bull; Email: info@smartverse.id
                 </div>
             </td>
         </tr>

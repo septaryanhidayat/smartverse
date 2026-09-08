@@ -54,12 +54,12 @@
             <div class="space-y-1.5 md:col-span-2">
                 <label class="block text-xs font-bold text-[#07153f]">File Foto Dokumentasi *</label>
                 <div class="flex flex-col sm:flex-row sm:items-center gap-4 p-4 rounded-2xl bg-slate-50 border border-slate-200">
-                    <img id="gallery_preview" src="/images/Insight-Talks-Komdigi.jpeg" alt="Preview Foto" class="w-28 h-20 rounded-xl object-cover border-2 border-white shadow-sm shrink-0 bg-slate-200" />
+                    <img id="gallery_preview" src="/images/Insight-Talks-Komdigi.webp" alt="Preview Foto" class="w-28 h-20 rounded-xl object-cover border-2 border-white shadow-sm shrink-0 bg-slate-200" />
                     <div class="space-y-2 flex-1">
                         <input type="file" name="image_file" accept="image/*" onchange="previewImage(this, 'gallery_preview')" class="block w-full text-xs text-slate-500 file:mr-4 file:py-2.5 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-extrabold file:bg-[#3E5CE7] file:text-white hover:file:bg-blue-700 cursor-pointer shadow-sm" />
                         <div class="flex items-center gap-2">
                             <span class="text-[11px] text-slate-400">Atau path/URL:</span>
-                            <input type="text" name="image_path" value="{{ old('image_path', '/images/Insight-Talks-Komdigi.jpeg') }}" class="flex-1 px-3 py-1.5 rounded-lg border border-slate-200 text-[11px] mono text-slate-600 focus:outline-none" />
+                            <input type="text" name="image_path" value="{{ old('image_path', '/images/Insight-Talks-Komdigi.webp') }}" class="flex-1 px-3 py-1.5 rounded-lg border border-slate-200 text-[11px] mono text-slate-600 focus:outline-none" />
                         </div>
                     </div>
                 </div>

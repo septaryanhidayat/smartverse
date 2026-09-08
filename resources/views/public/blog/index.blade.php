@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Insights & Blog Teknologi - CV. Beranda Teknologi Digital')
+@section('title', 'Insights & Blog Teknologi - SmartVerse (smartverse.id)')
 
 @section('content')
 <!-- SECTION: BLOG & NEWS (FlyMotion Style with Watermark & Search) -->
@@ -100,7 +100,7 @@
                 Let's Work Together
             </h2>
             <p class="text-slate-200 text-xs sm:text-base leading-relaxed max-w-2xl mx-auto font-medium" style="color: #e2e8f0 !important;">
-                Konsultasikan rencana pembuatan website, aplikasi mobile Flutter, sistem informasi, atau pelatihan IT bersama CV. Beranda Teknologi Digital.
+                Konsultasikan rencana implementasi 5 produk digital unggulan (SmartNews, SmartEdu, SmartFeed, SmartSDM, SmartSynth) atau custom software enterprise bersama SmartVerse (smartverse.id).
             </p>
             <div class="pt-4">
                 <a href="https://wa.me/6289695249089" target="_blank" 

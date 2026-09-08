@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Layanan Jasa Pembuatan Website & Aplikasi - CV. Beranda Teknologi Digital')
+@section('title', 'Layanan IT & Solusi Software Enterprise - SmartVerse (smartverse.id)')
 
 @section('content')
 <!-- SECTION 1: HERO HEADER (FlyMotion Service Hero with Illustration) -->
@@ -48,7 +48,7 @@
                 <div class="relative w-full max-w-md">
                     <div class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-xl relative anim-logo-top">
                         <div class="aspect-video rounded-2xl overflow-hidden bg-slate-50 dark:bg-slate-900 p-2 flex items-center justify-center">
-                            <img src="/images/Ilustrasi-Homepage-1-1.png" alt="Service Showcase" class="w-full h-full object-contain" />
+                            <img src="/images/Ilustrasi-Homepage-1-1.webp" alt="Service Showcase" class="w-full h-full object-contain" />
                         </div>
                     </div>
                 </div>

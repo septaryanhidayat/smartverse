@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Invoice #{{ $invoice->invoice_number }} - CV. Beranda Teknologi Digital</title>
+    <title>Invoice #{{ $invoice->invoice_number }} - SmartVerse (smartverse.id)</title>
     
     <!-- Google Fonts: Plus Jakarta Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -695,12 +695,18 @@
     $formattedPhone = trim(preg_replace('/\s+/', ' ', $cleanPhone));
 
     // Guaranteed Logo Embedding via Base64 or Asset
-    $logoSrc = asset('images/Logo-BTD.png');
-    $logoFile = public_path('images/Logo-BTD.png');
+    $logoRel = \App\Models\Setting::getValue('site_logo', 'images/smartverse/logo-smartverse.jpg');
+    $logoFile = public_path(ltrim($logoRel, '/'));
+    if (!file_exists($logoFile)) {
+        $logoFile = public_path('images/smartverse/logo-smartverse.jpg');
+    }
+    $logoSrc = asset('images/smartverse/logo-smartverse.jpg');
     if (file_exists($logoFile)) {
         $content = @file_get_contents($logoFile);
         if ($content !== false) {
-            $logoSrc = 'data:image/png;base64,' . base64_encode($content);
+            $ext = strtolower(pathinfo($logoFile, PATHINFO_EXTENSION));
+            $mime = $ext === 'png' ? 'image/png' : ($ext === 'webp' ? 'image/webp' : 'image/jpeg');
+            $logoSrc = 'data:' . $mime . ';base64,' . base64_encode($content);
         }
     }
 
@@ -851,15 +857,15 @@
         <!-- Header: Logo & Company Address (Symmetrical, Email on Top, Flush Right) -->
         <div class="invoice-header">
             <div class="company-logo-area">
-                <img src="{{ $logoSrc }}" alt="{{ $settings['company_name'] ?? 'CV. Beranda Teknologi Digital' }}" class="logo-img" />
+                <img src="{{ $logoSrc }}" alt="{{ $settings['company_name'] ?? 'SmartVerse' }}" class="logo-img" />
             </div>
 
             <!-- Kop Nama CV di Kanan Atas: Rapi, Alamat Jl. Sarjana Timbangan Ogan Ilir, Sumatera Selatan, Indonesia -->
             <div class="company-meta-area">
-                <div class="company-name">{{ $settings['company_legal_name'] ?? ($settings['company_name'] ?? 'CV. Beranda Teknologi Digital') }}</div>
-                <div class="company-addr">Jl. Sarjana, Timbangan, Ogan Ilir</div>
-                <div class="company-addr">Sumatera Selatan, Indonesia</div>
-                <div class="company-email">{{ $settings['contact_email'] ?? 'info@berandadigital.net' }}</div>
+                <div class="company-name">{{ $settings['company_legal_name'] ?? ($settings['company_name'] ?? 'SmartVerse (smartverse.id)') }}</div>
+                <div class="company-addr">Jl. Sarjana Blok A No. 25 Timbangan</div>
+                <div class="company-addr">Ogan Ilir, Sumatera Selatan, Indonesia</div>
+                <div class="company-email">{{ $settings['contact_email'] ?? 'info@smartverse.id' }}</div>
                 <div class="company-phone">{{ $formattedPhone }}</div>
             </div>
         </div>
@@ -987,7 +993,7 @@
                     <span>✓</span> <span>TAGIHAN TELAH LUNAS (PAID)</span>
                 </div>
                 <div class="paid-reassurance-desc">
-                    Seluruh kewajiban pembayaran telah diselesaikan dengan penuh. Dokumen ini adalah bukti transaksi resmi yang diterbitkan secara sah oleh <strong>{{ $settings['company_legal_name'] ?? ($settings['company_name'] ?? 'CV. Beranda Teknologi Digital') }}</strong>.
+                    Seluruh kewajiban pembayaran telah diselesaikan dengan penuh. Dokumen ini adalah bukti transaksi resmi yang diterbitkan secara sah oleh <strong>{{ $settings['company_legal_name'] ?? ($settings['company_name'] ?? 'SmartVerse (smartverse.id)') }}</strong>.
                 </div>
             </div>
         @else
@@ -1075,9 +1081,9 @@
         <div class="invoice-footer-container">
             <div class="invoice-footer-row">
                 <div class="footer-left">
-                    <div class="company-name-bottom">{{ $settings['company_legal_name'] ?? ($settings['company_name'] ?? 'CV. Beranda Teknologi Digital') }}</div>
+                    <div class="company-name-bottom">{{ $settings['company_legal_name'] ?? ($settings['company_name'] ?? 'SmartVerse (smartverse.id)') }}</div>
                     <div class="website-line">
-                        <a href="https://{{ $settings['site_website'] ?? 'www.berandadigital.net' }}" target="_blank">{{ $settings['site_website'] ?? 'www.berandadigital.net' }}</a>
+                        <a href="https://{{ $settings['site_website'] ?? 'smartverse.id' }}" target="_blank">{{ $settings['site_website'] ?? 'smartverse.id' }}</a>
                     </div>
                     <div class="doc-legal-note">
                         Dokumen ini diterbitkan resmi melalui sistem komputerisasi dan sah tanpa tanda tangan basah.

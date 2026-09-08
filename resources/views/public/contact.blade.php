@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Hubungi Kami & Konsultasi Anggaran - CV. Beranda Teknologi Digital')
+@section('title', 'Hubungi Kami & Konsultasi Anggaran - SmartVerse (smartverse.id)')
 
 @section('content')
 <!-- SECTION: CONTACT & MODULAR ESTIMATOR -->
@@ -98,13 +98,13 @@
                 </div>
             </a>
 
-            <a href="mailto:info@berandadigital.net" class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all group flex items-center gap-4">
+            <a href="mailto:info@smartverse.id" class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all group flex items-center gap-4">
                 <div class="w-14 h-14 rounded-2xl bg-blue-100 dark:bg-blue-950 text-[#3E5CE7] flex items-center justify-center font-bold text-2xl shrink-0">
                     ✉️
                 </div>
                 <div>
                     <h3 class="text-sm font-bold text-[#07153f] dark:text-white">Email Resmi</h3>
-                    <p class="text-xs font-mono font-bold text-[#3E5CE7] dark:text-blue-400">info@berandadigital.net</p>
+                    <p class="text-xs font-mono font-bold text-[#3E5CE7] dark:text-blue-400">info@smartverse.id</p>
                     <span class="text-[11px] text-slate-500 dark:text-slate-400 font-semibold">Pengajuan Proposal & SPK &rarr;</span>
                 </div>
             </a>
@@ -114,7 +114,7 @@
                     🏢
                 </div>
                 <div>
-                    <h3 class="text-sm font-bold text-[#07153f] dark:text-white">CV. Beranda Teknologi Digital</h3>
+                    <h3 class="text-sm font-bold text-[#07153f] dark:text-white">SmartVerse (smartverse.id)</h3>
                     <p class="text-xs text-slate-600 dark:text-slate-300 leading-tight font-medium">Ogan Ilir & Palembang, Sumsel</p>
                     <span class="text-[11px] text-[#fe6000] font-bold">Sen - Sab (08.00 - 17.00 WIB)</span>
                 </div>

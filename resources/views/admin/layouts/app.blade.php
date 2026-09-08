@@ -3,15 +3,15 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>@yield('title', 'Admin Dashboard') - CV. Beranda Teknologi Digital</title>
+    <title>@yield('title', 'Admin Dashboard') - SmartVerse (smartverse.id)</title>
     
     @php
-        $siteFavicon = \App\Models\Setting::where('key', 'site_favicon')->value('value') ?? 'favicon.png';
+        $siteFavicon = \App\Models\Setting::where('key', 'site_favicon')->value('value') ?? 'images/smartverse/logo-smartverse.jpg';
     @endphp
     <!-- Favicon & App Icons -->
-    <link rel="icon" type="image/png" href="{{ asset($siteFavicon) }}">
-    <link rel="shortcut icon" href="{{ asset($siteFavicon) }}">
-    <link rel="apple-touch-icon" href="{{ asset($siteFavicon) }}">
+    <link rel="icon" type="image/jpeg" href="{{ asset('images/smartverse/logo-smartverse.jpg') }}">
+    <link rel="shortcut icon" href="{{ asset('images/smartverse/logo-smartverse.jpg') }}">
+    <link rel="apple-touch-icon" href="{{ asset('images/smartverse/logo-smartverse.jpg') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -71,7 +71,8 @@
             <!-- Logo Brand -->
             <div class="flex items-center justify-between border-b border-white/10 pb-5">
                 <a href="{{ route('admin.dashboard') }}" class="flex items-center gap-3 group">
-                    <img src="{{ asset('images/Logo-BTD-white.png') }}" alt="CV. Beranda Teknologi Digital" class="h-11 w-auto object-contain transition-transform group-hover:scale-105" />
+                    <img src="{{ asset('images/smartverse/logo-smartverse.jpg') }}" alt="SmartVerse" class="h-10 w-10 rounded-xl object-cover transition-transform group-hover:scale-105" />
+                    <span class="font-black text-lg text-white">Smart<span class="text-cyan-400">Verse</span></span>
                 </a>
                 <button @click="sidebarOpen = false" class="lg:hidden text-slate-400 hover:text-white p-1 rounded-lg hover:bg-white/10 transition-colors">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
@@ -203,7 +204,7 @@
                 </div>
                 <div class="overflow-hidden flex-1">
                     <div class="text-xs font-bold text-white group-hover:text-blue-300 transition-colors truncate">{{ Auth::user()->name ?? 'Administrator' }}</div>
-                    <div class="text-[10px] text-slate-400 truncate mono">{{ Auth::user()->email ?? 'admin@berandadigital.net' }}</div>
+                    <div class="text-[10px] text-slate-400 truncate mono">{{ Auth::user()->email ?? 'admin@smartverse.id' }}</div>
                 </div>
                 <svg class="w-3.5 h-3.5 text-slate-400 group-hover:text-white transition-colors shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
             </a>
@@ -239,7 +240,7 @@
                 <div class="flex items-center gap-2 text-xs font-semibold text-slate-500">
                     <span>Portal Admin</span>
                     <span class="text-slate-300">/</span>
-                    <span class="font-bold text-[#07153f]">CV. Beranda Teknologi Digital</span>
+                    <span class="font-bold text-[#07153f]">SmartVerse (smartverse.id)</span>
                 </div>
             </div>
 
@@ -284,7 +285,7 @@
 
         <!-- Admin Footer -->
         <footer class="py-4 px-8 border-t border-slate-200 text-center text-xs text-slate-400 bg-white flex flex-col sm:flex-row items-center justify-between gap-2">
-            <span>&copy; {{ date('Y') }} <strong>CV. Beranda Teknologi Digital</strong> &bull; All rights reserved.</span>
+            <span>&copy; {{ date('Y') }} <strong>SmartVerse (smartverse.id)</strong> &bull; All rights reserved.</span>
             <span class="text-[11px] mono text-slate-400">Laravel v12 &bull; PHP v8.3+</span>
         </footer>
 

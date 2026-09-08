@@ -29,7 +29,7 @@
             </div>
 
             <div class="w-72 h-auto shrink-0 relative z-10 hidden md:block anim-logo-top">
-                <img src="{{ asset('images/smartverse/logo-smartverse.jpg') }}" alt="SmartVerse Store" class="w-full h-auto object-contain rounded-2xl drop-shadow-2xl" />
+                <img src="{{ asset('images/smartverse/logo-smartverse.webp') }}" alt="SmartVerse Store" class="w-full h-auto object-contain rounded-2xl drop-shadow-2xl" />
             </div>
 
             <!-- Ambient Glow -->
@@ -97,7 +97,7 @@
                             @if($product->thumbnail)
                                 <img src="{{ asset($product->thumbnail) }}" alt="{{ $product->title }}" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500" />
                             @else
-                                <img src="/btd/{{ ($loop->index % 12) }}.png" alt="{{ $product->title }}" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" />
+                                <img src="/btd/{{ ($loop->index % 12) }}.webp" alt="{{ $product->title }}" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" />
                             @endif
                             <div class="absolute top-2 left-2">
                                 <span class="px-2.5 py-0.5 rounded-full bg-[#3E5CE7] text-white font-bold text-[9px] shadow-xs">
@@ -156,9 +156,9 @@
             <div class="space-y-2 relative z-10">
                 <span class="text-[10px] font-extrabold uppercase tracking-widest text-amber-400">MEMBERSHIP PASS</span>
                 <h3 class="text-2xl sm:text-3xl font-extrabold text-white" style="color: #ffffff !important;">Akses Semua Produk & Template Tanpa Batas!</h3>
-                <p class="text-xs text-slate-300 max-w-xl font-medium" style="color: #cbd5e1 !important;">Dapatkan lisensi komersial dan pembaruan seumur hidup untuk seluruh produk software CV. Beranda Teknologi Digital.</p>
+                <p class="text-xs text-slate-300 max-w-xl font-medium" style="color: #cbd5e1 !important;">Dapatkan lisensi komersial dan pembaruan seumur hidup untuk seluruh produk software SmartVerse (smartverse.id).</p>
             </div>
-            <a href="https://wa.me/6289695249089?text=Halo%20CV.%20Beranda%20Teknologi%20Digital,%20saya%20tertarik%20membership%20akses%20semua%20produk" 
+            <a href="https://wa.me/6289695249089?text=Halo%20SmartVerse,%20saya%20tertarik%20membership%20akses%20semua%20produk" 
                target="_blank" 
                style="background-color: #fe6000 !important; color: #ffffff !important;"
                class="px-7 py-3.5 rounded-xl font-bold text-xs uppercase tracking-wider shrink-0 shadow-lg hover:brightness-110 active:scale-95 transition-all relative z-10">

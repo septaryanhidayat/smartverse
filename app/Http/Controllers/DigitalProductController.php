@@ -27,7 +27,11 @@ class DigitalProductController extends Controller
 
     public function show($slug)
     {
-        $product = DigitalProduct::with('category')->where('slug', $slug)->firstOrFail();
+        $product = DigitalProduct::with('category')
+            ->where('slug', $slug)
+            ->orWhere('slug', 'like', $slug . '-%')
+            ->orWhere('slug', 'like', '%' . $slug . '%')
+            ->firstOrFail();
 
         $relatedProducts = DigitalProduct::where('id', '!=', $product->id)
             ->orderBy('order', 'asc')

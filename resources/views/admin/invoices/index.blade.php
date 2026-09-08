@@ -13,7 +13,7 @@
                 <span>Faktur & Invoice Klien</span>
             </h1>
             <p class="text-xs text-slate-500 font-medium mt-1">
-                Kelola data penagihan, kwitansi pembayaran, dan cetak invoice resmi klien format standar CV. Beranda Teknologi Digital.
+                Kelola data penagihan, kwitansi pembayaran, dan cetak invoice resmi klien format standar SmartVerse (smartverse.id).
             </p>
         </div>
         <a href="{{ route('admin.invoices.create') }}" class="px-5 py-2.5 rounded-xl bg-[#3E5CE7] hover:bg-blue-700 text-white font-extrabold text-xs uppercase tracking-wider shadow-md hover:shadow-blue-600/30 transition-all flex items-center gap-2">

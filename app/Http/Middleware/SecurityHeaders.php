@@ -85,9 +85,9 @@ class SecurityHeaders
         // LAYER 6: Remove Revealing Server Headers
         // Prevents hacker reconnaissance of server software
         // ══════════════════════════════════════════════════════
-        if (function_exists('header_remove')) {
-            header_remove('X-Powered-By');
-            header_remove('Server');
+        if (function_exists('header_remove') && !headers_sent()) {
+            @header_remove('X-Powered-By');
+            @header_remove('Server');
         }
         $response->headers->remove('X-Powered-By');
         $response->headers->remove('Server');

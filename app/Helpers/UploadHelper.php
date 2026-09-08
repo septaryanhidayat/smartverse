@@ -9,9 +9,9 @@ class UploadHelper
 {
     /**
      * Upload an incoming file with automatic WebP conversion and intelligent
-     * compression guaranteed under 100KB for all image uploads.
+     * compression guaranteed with high visual fidelity and compact file size.
      */
-    public static function upload(?UploadedFile $file, string $folder = 'general', int $maxSizeBytes = 102400): ?string
+    public static function upload(?UploadedFile $file, string $folder = 'general', int $maxSizeBytes = 307200): ?string
     {
         if (!$file || !$file->isValid()) {
             return null;
@@ -32,22 +32,80 @@ class UploadHelper
             return '/uploads/' . $folder . '/' . $filename;
         }
 
-        // Automatic conversion to WebP and compression <= 100KB
+        // Automatic conversion to WebP
         $filenameWebp = time() . '_' . Str::random(8) . '.webp';
         $destinationPath = $targetDir . DIRECTORY_SEPARATOR . $filenameWebp;
 
-        $fileContent = @file_get_contents($file->getRealPath());
-        if (!$fileContent) {
-            $filename = time() . '_' . Str::random(8) . '.' . strtolower($file->getClientOriginalExtension());
-            $file->move($targetDir, $filename);
-            return '/uploads/' . $folder . '/' . $filename;
+        $maxDim = ($folder === 'avatars' || $folder === 'icons') ? 600 : 1920;
+        $success = static::convertFile($file->getRealPath(), $destinationPath, $maxDim, 82, $maxSizeBytes);
+
+        if ($success && file_exists($destinationPath)) {
+            return '/uploads/' . $folder . '/' . $filenameWebp;
         }
 
-        $srcImage = @imagecreatefromstring($fileContent);
+        // Fallback to direct move if conversion fails
+        $filename = time() . '_' . Str::random(8) . '.' . strtolower($file->getClientOriginalExtension());
+        $file->move($targetDir, $filename);
+        return '/uploads/' . $folder . '/' . $filename;
+    }
+
+    /**
+     * Convert an existing image file on disk to WebP with auto-orientation,
+     * transparency preservation, and optimal compression.
+     */
+    public static function convertFile(string $sourcePath, string $destWebpPath, int $maxDimension = 1920, int $quality = 82, int $maxSizeBytes = 307200): bool
+    {
+        if (!file_exists($sourcePath) || !is_readable($sourcePath)) {
+            return false;
+        }
+
+        $ext = strtolower(pathinfo($sourcePath, PATHINFO_EXTENSION));
+        $srcImage = null;
+
+        if ($ext === 'png' && function_exists('imagecreatefrompng')) {
+            $srcImage = @imagecreatefrompng($sourcePath);
+        } elseif (($ext === 'jpg' || $ext === 'jpeg') && function_exists('imagecreatefromjpeg')) {
+            $srcImage = @imagecreatefromjpeg($sourcePath);
+        } elseif ($ext === 'webp' && function_exists('imagecreatefromwebp')) {
+            $srcImage = @imagecreatefromwebp($sourcePath);
+        }
+
         if (!$srcImage) {
-            $filename = time() . '_' . Str::random(8) . '.' . strtolower($file->getClientOriginalExtension());
-            $file->move($targetDir, $filename);
-            return '/uploads/' . $folder . '/' . $filename;
+            $fileContent = @file_get_contents($sourcePath);
+            if (!$fileContent) {
+                return false;
+            }
+            $srcImage = @imagecreatefromstring($fileContent);
+            unset($fileContent);
+        }
+
+        if (!$srcImage) {
+            return false;
+        }
+
+        // Auto-orient JPEG based on EXIF if available
+        if (function_exists('exif_read_data')) {
+            $exif = @exif_read_data($sourcePath);
+            if (!empty($exif['Orientation'])) {
+                switch ($exif['Orientation']) {
+                    case 3:
+                        $srcImage = imagerotate($srcImage, 180, 0);
+                        break;
+                    case 6:
+                        $srcImage = imagerotate($srcImage, -90, 0);
+                        break;
+                    case 8:
+                        $srcImage = imagerotate($srcImage, 90, 0);
+                        break;
+                }
+            }
+        }
+
+        // Convert palette images to true color if necessary (webp requires true color)
+        if (!imageistruecolor($srcImage)) {
+            if (function_exists('imagepalettetotruecolor')) {
+                imagepalettetotruecolor($srcImage);
+            }
         }
 
         // Preserve alpha transparency
@@ -57,12 +115,10 @@ class UploadHelper
         $origWidth = imagesx($srcImage);
         $origHeight = imagesy($srcImage);
 
-        // Calculate max dimension depending on type/folder
-        $maxDimension = ($folder === 'avatars' || $folder === 'icons') ? 600 : 1600;
-        
         $currentWidth = $origWidth;
         $currentHeight = $origHeight;
 
+        // Downscale if exceeds max dimension
         if ($origWidth > $maxDimension || $origHeight > $maxDimension) {
             $ratio = min($maxDimension / $origWidth, $maxDimension / $origHeight);
             $currentWidth = (int) round($origWidth * $ratio);
@@ -76,40 +132,23 @@ class UploadHelper
             $srcImage = $resizedImage;
         }
 
-        // Iterative compression to ensure file size <= 100 KB
-        $quality = 82;
-        imagewebp($srcImage, $destinationPath, $quality);
-
-        while (file_exists($destinationPath) && filesize($destinationPath) > $maxSizeBytes && $quality > 25) {
-            $quality -= 12;
-            imagewebp($srcImage, $destinationPath, $quality);
+        // Make sure destination directory exists
+        $destDir = dirname($destWebpPath);
+        if (!file_exists($destDir)) {
+            @mkdir($destDir, 0755, true);
         }
 
-        // If still > 100KB, downscale dimensions further
-        if (file_exists($destinationPath) && filesize($destinationPath) > $maxSizeBytes && ($currentWidth > 500 || $currentHeight > 500)) {
-            $scaleDown = 0.75;
-            $newW = (int) round($currentWidth * $scaleDown);
-            $newH = (int) round($currentHeight * $scaleDown);
+        // Encode to WebP
+        imagewebp($srcImage, $destWebpPath, $quality);
 
-            $smaller = imagecreatetruecolor($newW, $newH);
-            imagealphablending($smaller, false);
-            imagesavealpha($smaller, true);
-            imagecopyresampled($smaller, $srcImage, 0, 0, 0, 0, $newW, $newH, $currentWidth, $currentHeight);
-            
-            imagedestroy($srcImage);
-            $srcImage = $smaller;
-            
-            $quality = 70;
-            imagewebp($srcImage, $destinationPath, $quality);
-
-            while (file_exists($destinationPath) && filesize($destinationPath) > $maxSizeBytes && $quality > 20) {
-                $quality -= 10;
-                imagewebp($srcImage, $destinationPath, $quality);
-            }
+        // If file size exceeds target threshold, incrementally decrease quality down to 40
+        $curQuality = $quality;
+        while (file_exists($destWebpPath) && filesize($destWebpPath) > $maxSizeBytes && $curQuality > 40) {
+            $curQuality -= 8;
+            imagewebp($srcImage, $destWebpPath, $curQuality);
         }
 
         imagedestroy($srcImage);
-
-        return '/uploads/' . $folder . '/' . $filenameWebp;
+        return file_exists($destWebpPath);
     }
 }

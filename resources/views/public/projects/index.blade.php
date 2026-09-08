@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Portofolio Proyek Digital - CV. Beranda Teknologi Digital')
+@section('title', 'Portofolio Proyek Digital - SmartVerse (smartverse.id)')
 
 @section('content')
 <!-- SECTION 1: PORTOFOLIO HERO & 12-GRID SHOWCASE (4 Columns x 3 Rows with Interactive Modal Slider) -->
@@ -105,7 +105,7 @@
 
                     $sliderScreens = $project->slider_screens;
                     $slidesJson = json_encode($sliderScreens);
-                    $waProductUrl = "https://wa.me/6289695249089?text=" . urlencode("Halo CV. Beranda Teknologi Digital, saya tertarik konsultasi portofolio sistem: {$displayTitle}");
+                    $waProductUrl = "https://wa.me/6289695249089?text=" . urlencode("Halo SmartVerse, saya tertarik konsultasi portofolio sistem: {$displayTitle}");
                 @endphp
 
                 <div class="bg-white dark:bg-slate-900 rounded-2xl sm:rounded-3xl overflow-hidden border border-slate-200/90 dark:border-slate-800 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group">
@@ -326,7 +326,7 @@
                                     <div class="w-3 h-3 rounded-full bg-emerald-500"></div>
                                 </div>
                                 <div class="mx-auto w-3/5 sm:w-1/2 bg-white dark:bg-slate-900 px-3 py-0.5 rounded-md text-[10px] text-slate-400 font-mono text-center truncate border border-slate-200 dark:border-slate-700">
-                                    https://berandadigital.net/system-demo
+                                    https://smartverse.id/system-demo
                                 </div>
                             </div>
                             <div class="aspect-video bg-slate-950 flex items-center justify-center overflow-hidden">
