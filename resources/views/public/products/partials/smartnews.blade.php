@@ -172,15 +172,15 @@
         </div>
     </div>
 
-    <!-- 3 Investment Packages -->
+    <!-- 3 Implementation Editions -->
     <div class="space-y-6">
         <div class="text-center max-w-2xl mx-auto space-y-2">
-            <span class="text-xs font-black uppercase tracking-widest text-emerald-600 dark:text-emerald-400">PILIHAN LISENSI INVESTASI</span>
+            <span class="text-xs font-black uppercase tracking-widest text-emerald-600 dark:text-emerald-400">SKEMA IMPLEMENTASI &amp; LISENSI</span>
             <h3 class="text-2xl sm:text-3xl font-black text-[#07153f] dark:text-white">
-                Paket Pembuatan Website Portal Berita SmartNews
+                Skema Implementasi Portal Berita SmartNews
             </h3>
             <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300">
-                Lisensi penuh sekali bayar (permanent ownership). Tanpa biaya sewa bulanan.
+                Pilihan implementasi fleksibel sesuai skala redaksi Anda, didukung lisensi enterprise penuh tanpa sewa bulanan.
             </p>
         </div>
 
@@ -190,43 +190,43 @@
             <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-5 flex flex-col justify-between">
                 <div class="space-y-3">
                     <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-bold text-xs">Paket 1: Starter</span>
-                    <h4 class="text-xl font-bold text-[#07153f] dark:text-white">Source Code Saja</h4>
-                    <div class="text-2xl font-black text-blue-600 font-mono">Rp 1.500.000</div>
+                    <h4 class="text-xl font-bold text-[#07153f] dark:text-white">Source Code Mandiri</h4>
+                    <div class="text-base font-black text-blue-600 dark:text-cyan-400">Lisensi Source Code Penuh</div>
                     <p class="text-xs text-slate-500">Pilihan ideal bagi developer atau tim IT internal yang ingin melakukan setup mandiri di server sendiri.</p>
                     <ul class="text-xs space-y-2 pt-2 border-t border-slate-100 dark:border-slate-800 text-slate-600 dark:text-slate-300">
-                        <li>✓ Full Source Code Laravel 13 & PHP 8.4</li>
-                        <li>✓ Database Migration & Seeders Lengkap</li>
-                        <li>✓ Modul AI SEO Writer & Multi-Role</li>
-                        <li>✓ Panduan Instalasi PDF & Video Setup</li>
+                        <li>✓ Full Source Code Laravel 13 &amp; PHP 8.4</li>
+                        <li>✓ Database Migration &amp; Seeders Lengkap</li>
+                        <li>✓ Modul AI SEO Writer &amp; Multi-Role Redaksi</li>
+                        <li>✓ Panduan Instalasi PDF &amp; Video Setup Lengkap</li>
                     </ul>
                 </div>
-                <a href="https://wa.me/6289695249089?text=Halo%20SmartVerse,%20saya%20tertarik%20pesan%20SmartNews%20Paket%201%20(Source%20Code%201,5%20Juta)" 
+                <a href="https://wa.me/6289695249089?text=Halo%20SmartVerse,%20saya%20tertarik%20konsultasi%20SmartNews%20Paket%20Starter%20Source%20Code" 
                    target="_blank" class="w-full py-2.5 rounded-xl border border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white text-xs font-bold text-center transition-all">
-                    Pilih Paket Starter &rarr;
+                    Minta Penawaran Starter &rarr;
                 </a>
             </div>
 
             <!-- Tier 2 (Featured) -->
             <div class="p-7 rounded-3xl bg-gradient-to-b from-blue-50 via-white to-indigo-50/50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 border-2 border-blue-600 shadow-xl space-y-5 flex flex-col justify-between relative">
                 <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-blue-600 text-white font-black text-[10px] uppercase tracking-wider shadow-md">
-                    🔥 PALING POPULER & BEST VALUE
+                    🔥 REKOMENDASI TERBAIK
                 </div>
                 <div class="space-y-3 pt-2">
                     <span class="px-2.5 py-1 rounded-md bg-blue-100 text-blue-800 font-bold text-xs">Paket 2: Siap Terbit</span>
-                    <h4 class="text-2xl font-black text-[#07153f] dark:text-white">Siap Pakai + Server & Domain</h4>
-                    <div class="text-3xl font-black text-blue-600 font-mono">Rp 3.000.000</div>
-                    <p class="text-xs text-slate-600 dark:text-slate-300">Tinggal terima beres! Kami pasang di server cloud, hubungkan domain, dan siap publikasi berita hari ini juga.</p>
+                    <h4 class="text-2xl font-black text-[#07153f] dark:text-white">Turnkey Cloud &amp; Domain</h4>
+                    <div class="text-base font-black text-blue-600 dark:text-blue-400">Solusi Turnkey Siap Publikasi</div>
+                    <p class="text-xs text-slate-600 dark:text-slate-300">Terima beres! Kami deploy di cloud server berkecepatan tinggi, integrasikan domain pilihan, dan siap publikasi berita hari ini juga.</p>
                     <ul class="text-xs space-y-2 pt-2 border-t border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 font-medium">
                         <li>✓ Semua Fasilitas Paket Starter</li>
-                        <li>✓ <strong>Gratis Domain .com / .co.id / .id Pilihan</strong> (1 Tahun)</li>
-                        <li>✓ <strong>Cloud Hosting NVMe SSD Super Cepat</strong> (1 Tahun)</li>
-                        <li>✓ Setup SSL HTTPS & Email Bisnis Redaksi</li>
-                        <li>✓ Pendampingan Setup Google Search Console & AdSense</li>
+                        <li>✓ <strong>Gratis Domain Pilihan</strong> (.com / .co.id / .id)</li>
+                        <li>✓ <strong>Cloud Hosting NVMe SSD Berkecepatan Tinggi</strong></li>
+                        <li>✓ Setup SSL HTTPS &amp; Email Bisnis Redaksi</li>
+                        <li>✓ Pendampingan Google Search Console &amp; Google News</li>
                     </ul>
                 </div>
-                <a href="https://wa.me/6289695249089?text=Halo%20SmartVerse,%20saya%20tertarik%20pesan%20SmartNews%20Paket%202%20(Siap%20Pakai%203%20Juta)" 
+                <a href="https://wa.me/6289695249089?text=Halo%20SmartVerse,%20saya%20tertarik%20konsultasi%20SmartNews%20Paket%20Turnkey%20Siap%20Terbit" 
                    target="_blank" style="background-color: #fe6000 !important; color: #ffffff !important;" class="w-full py-3.5 rounded-xl font-black text-xs text-center shadow-lg hover:brightness-110 active:scale-95 transition-all">
-                    Pesan Paket Siap Pakai &rarr;
+                    Konsultasi Paket Siap Pakai &rarr;
                 </a>
             </div>
 
@@ -234,20 +234,20 @@
             <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-5 flex flex-col justify-between">
                 <div class="space-y-3">
                     <span class="px-2.5 py-1 rounded-md bg-purple-100 text-purple-800 font-bold text-xs">Paket 3: VIP Enterprise</span>
-                    <h4 class="text-xl font-bold text-[#07153f] dark:text-white">VIP Lifetime & Full Servis</h4>
-                    <div class="text-2xl font-black text-blue-600 font-mono">Rp 5.000.000</div>
-                    <p class="text-xs text-slate-500">Solusi menyeluruh bagi korporasi media dengan pendampingan teknis prioritas dan update fitur selamanya.</p>
+                    <h4 class="text-xl font-bold text-[#07153f] dark:text-white">Corporate Media Network</h4>
+                    <div class="text-base font-black text-purple-600 dark:text-purple-400">Lisensi Jaringan Multi-Portal</div>
+                    <p class="text-xs text-slate-500">Solusi menyeluruh korporasi media dengan pendampingan teknis prioritas, multi-portal sindikasi, dan update fitur berkelanjutan.</p>
                     <ul class="text-xs space-y-2 pt-2 border-t border-slate-100 dark:border-slate-800 text-slate-600 dark:text-slate-300">
-                        <li>✓ Semua Fasilitas Paket 2 Siap Pakai</li>
-                        <li>✓ <strong>Gratis Lifetime Update Patch & Fitur Baru</strong></li>
-                        <li>✓ Training Meja Redaksi via Zoom untuk 10 Wartawan</li>
-                        <li>✓ Custom Fitur & Integrasi API Eksternal</li>
-                        <li>✓ Support Prioritas VIP WhatsApp 24/7</li>
+                        <li>✓ Semua Fasilitas Paket Siap Pakai</li>
+                        <li>✓ <strong>Dukungan Sindikasi Berita Multi-Domain</strong></li>
+                        <li>✓ Training Meja Redaksi via Zoom untuk Tim Jurnalis</li>
+                        <li>✓ Kustomisasi Fitur &amp; Integrasi API Pihak Ketiga</li>
+                        <li>✓ Layanan Prioritas VIP Support Engineer 24/7</li>
                     </ul>
                 </div>
-                <a href="https://wa.me/6289695249089?text=Halo%20SmartVerse,%20saya%20tertarik%20pesan%20SmartNews%20Paket%203%20(VIP%20Enterprise%205%20Juta)" 
+                <a href="https://wa.me/6289695249089?text=Halo%20SmartVerse,%20saya%20tertarik%20konsultasi%20SmartNews%20Paket%20Corporate%20Media%20Network" 
                    target="_blank" class="w-full py-2.5 rounded-xl border border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white text-xs font-bold text-center transition-all">
-                    Pilih Paket Enterprise VIP &rarr;
+                    Diskusi Skema Enterprise VIP &rarr;
                 </a>
             </div>
 

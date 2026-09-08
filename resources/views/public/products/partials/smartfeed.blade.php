@@ -135,6 +135,117 @@
         </div>
     </div>
 
+    <!-- Automated Video & Broadcast Engine Section -->
+    <div class="space-y-6">
+        <div class="text-center sm:text-left space-y-2">
+            <span class="text-xs font-black uppercase tracking-widest text-orange-600 dark:text-orange-400">STUDIO OTOMASI VIDEO</span>
+            <h3 class="text-2xl sm:text-3xl font-black text-[#07153f] dark:text-white">
+                Engine News-to-Video &amp; Motion Graphic Studio Instan
+            </h3>
+            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300">
+                Teknologi terpadu pengubah naskah berita menjadi video multimedia broadcast siap tayang dalam 1 klik.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Feature 1 -->
+            <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-3 flex flex-col justify-between">
+                <div class="space-y-2.5">
+                    <div class="w-12 h-12 rounded-xl bg-orange-100 dark:bg-orange-950/70 text-orange-600 dark:text-orange-400 flex items-center justify-center text-2xl font-black shadow-inner">
+                        🌐
+                    </div>
+                    <h4 class="text-lg font-bold text-[#07153f] dark:text-white">1-Click URL / Article to Video</h4>
+                    <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                        Cukup masukkan link berita atau naskah artikel, SmartFeed otomatis merangkum poin penting, memilih aset visual relevan, dan menyusun storyboard video siap produksi.
+                    </p>
+                </div>
+                <div class="pt-3 border-t border-slate-100 dark:border-slate-800 text-xs text-emerald-600 dark:text-emerald-400 flex items-center gap-2">
+                    ✓ <span>Ekstraksi Cepat &amp; Ringkas Otomatis</span>
+                </div>
+            </div>
+
+            <!-- Feature 2 -->
+            <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-3 flex flex-col justify-between">
+                <div class="space-y-2.5">
+                    <div class="w-12 h-12 rounded-xl bg-amber-100 dark:bg-amber-950/70 text-amber-600 dark:text-amber-400 flex items-center justify-center text-2xl font-black shadow-inner">
+                        🎙️
+                    </div>
+                    <h4 class="text-lg font-bold text-[#07153f] dark:text-white">Multilingual Neural Voiceover</h4>
+                    <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                        Pengisi suara kecerdasan buatan dengan intonasi presenter berita profesional (Bahasa Indonesia &amp; Inggris), artikulasi jernih, dan ritme bicara natural tanpa nada robot kaku.
+                    </p>
+                </div>
+                <div class="pt-3 border-t border-slate-100 dark:border-slate-800 text-xs text-emerald-600 dark:text-emerald-400 flex items-center gap-2">
+                    ✓ <span>Pilihan Karakter Suara Pria &amp; Wanita</span>
+                </div>
+            </div>
+
+            <!-- Feature 3 -->
+            <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-3 flex flex-col justify-between">
+                <div class="space-y-2.5">
+                    <div class="w-12 h-12 rounded-xl bg-purple-100 dark:bg-purple-950/70 text-purple-600 dark:text-purple-400 flex items-center justify-center text-2xl font-black shadow-inner">
+                        💬
+                    </div>
+                    <h4 class="text-lg font-bold text-[#07153f] dark:text-white">Whisper Kinetic Subtitle Animasi</h4>
+                    <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                        Transkripsi otomatis kata per kata menggunakan model Whisper AI. Menghasilkan animasi subtitle bergaya kekinian (TikTok / Alex Hormozi style) dengan highlight warna dinamis.
+                    </p>
+                </div>
+                <div class="pt-3 border-t border-slate-100 dark:border-slate-800 text-xs text-emerald-600 dark:text-emerald-400 flex items-center gap-2">
+                    ✓ <span>Sinkronisasi Presisi Milidetik</span>
+                </div>
+            </div>
+
+            <!-- Feature 4 -->
+            <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-3 flex flex-col justify-between">
+                <div class="space-y-2.5">
+                    <div class="w-12 h-12 rounded-xl bg-rose-100 dark:bg-rose-950/70 text-rose-600 dark:text-rose-400 flex items-center justify-center text-2xl font-black shadow-inner">
+                        📐
+                    </div>
+                    <h4 class="text-lg font-bold text-[#07153f] dark:text-white">Dual Aspect Ratio (16:9 &amp; 9:16)</h4>
+                    <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                        Beralih format instan antara rasio horizontal 16:9 (YouTube Landscape / Web Portal) dan vertikal 9:16 (Instagram Reels, TikTok, YouTube Shorts) dalam 1 kali klik.
+                    </p>
+                </div>
+                <div class="pt-3 border-t border-slate-100 dark:border-slate-800 text-xs text-emerald-600 dark:text-emerald-400 flex items-center gap-2">
+                    ✓ <span>Auto Framing &amp; Re-centering Subjek</span>
+                </div>
+            </div>
+
+            <!-- Feature 5 -->
+            <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-3 flex flex-col justify-between">
+                <div class="space-y-2.5">
+                    <div class="w-12 h-12 rounded-xl bg-blue-100 dark:bg-blue-950/70 text-blue-600 dark:text-blue-400 flex items-center justify-center text-2xl font-black shadow-inner">
+                        📺
+                    </div>
+                    <h4 class="text-lg font-bold text-[#07153f] dark:text-white">Broadcast Lower-Third &amp; Ticker</h4>
+                    <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                        Grafis siaran ala stasiun televisi: running text breaking news bergerak halus di bagian bawah, plat nama narasumber otomatis, dan animasi logo watermark transparan.
+                    </p>
+                </div>
+                <div class="pt-3 border-t border-slate-100 dark:border-slate-800 text-xs text-emerald-600 dark:text-emerald-400 flex items-center gap-2">
+                    ✓ <span>Grafis Standar TV Berita Nasional</span>
+                </div>
+            </div>
+
+            <!-- Feature 6 -->
+            <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-3 flex flex-col justify-between">
+                <div class="space-y-2.5">
+                    <div class="w-12 h-12 rounded-xl bg-teal-100 dark:bg-teal-950/70 text-teal-600 dark:text-teal-400 flex items-center justify-center text-2xl font-black shadow-inner">
+                        ⚡
+                    </div>
+                    <h4 class="text-lg font-bold text-[#07153f] dark:text-white">High-Speed FFmpeg &amp; WebGL Render</h4>
+                    <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                        Pipeline rendering super cepat berbasis WebGL di sisi browser dan akselerasi FFmpeg GPU di sisi server untuk ekspor video Full HD 1080p tanpa kompromi kualitas.
+                    </p>
+                </div>
+                <div class="pt-3 border-t border-slate-100 dark:border-slate-800 text-xs text-emerald-600 dark:text-emerald-400 flex items-center gap-2">
+                    ✓ <span>Export MP4 Siap Upload Tanpa Watermark Luar</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Tech Stack Specs -->
     <div class="p-8 rounded-3xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-6">
         <div class="space-y-2">
@@ -145,24 +256,106 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 text-xs">
             <div class="p-4 rounded-xl bg-white dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700 space-y-1">
                 <span class="text-slate-400 font-semibold block">Frontend Architecture</span>
-                <span class="font-bold text-[#07153f] dark:text-white text-sm">React 18 & Vite 5</span>
+                <span class="font-bold text-[#07153f] dark:text-white text-sm">React 18 &amp; Vite 5</span>
                 <p class="text-[11px] text-slate-500">Rendering visual instan tanpa lag di browser.</p>
             </div>
             <div class="p-4 rounded-xl bg-white dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700 space-y-1">
-                <span class="text-slate-400 font-semibold block">Image Processing</span>
-                <span class="font-bold text-[#07153f] dark:text-white text-sm">HTML5 Canvas + Sharp Engine</span>
+                <span class="text-slate-400 font-semibold block">Image &amp; Video Engine</span>
+                <span class="font-bold text-[#07153f] dark:text-white text-sm">HTML5 Canvas + FFmpeg</span>
                 <p class="text-[11px] text-slate-500">Export multi-dimensi tanpa pecah (HD/4K).</p>
             </div>
             <div class="p-4 rounded-xl bg-white dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700 space-y-1">
-                <span class="text-slate-400 font-semibold block">Archiving System</span>
-                <span class="font-bold text-[#07153f] dark:text-white text-sm">JSZip Client-Side</span>
-                <p class="text-[11px] text-slate-500">Unduh bundle paket gambar dalam 1 arsip ZIP.</p>
+                <span class="text-slate-400 font-semibold block">Voice Synthesis</span>
+                <span class="font-bold text-[#07153f] dark:text-white text-sm">Neural TTS &amp; Whisper</span>
+                <p class="text-[11px] text-slate-500">Narasi suara broadcast &amp; auto subtitle.</p>
             </div>
             <div class="p-4 rounded-xl bg-white dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700 space-y-1">
                 <span class="text-slate-400 font-semibold block">Deployment Model</span>
-                <span class="font-bold text-[#07153f] dark:text-white text-sm">SPA / PWA / cPanel Ready</span>
-                <p class="text-[11px] text-slate-500">Dapat di-host di cPanel, Vercel, maupun VPS.</p>
+                <span class="font-bold text-[#07153f] dark:text-white text-sm">On-Premise / Cloud VPS</span>
+                <p class="text-[11px] text-slate-500">Dapat di-host mandiri tanpa ketergantungan sewa.</p>
             </div>
+        </div>
+    </div>
+
+    <!-- 3 Implementation Editions -->
+    <div class="space-y-6">
+        <div class="text-center max-w-2xl mx-auto space-y-2">
+            <span class="text-xs font-black uppercase tracking-widest text-orange-600 dark:text-orange-400">SKEMA LISENSI &amp; IMPLEMENTASI</span>
+            <h3 class="text-2xl sm:text-3xl font-black text-[#07153f] dark:text-white">
+                Pilihan Skema Implementasi SmartFeed
+            </h3>
+            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300">
+                Lisensi penuh sekali bayar. Hasilkan konten video dan visual tanpa batas setiap hari tanpa tagihan bulanan.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            
+            <!-- Tier 1 -->
+            <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-5 flex flex-col justify-between">
+                <div class="space-y-3">
+                    <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-bold text-xs">Edisi 1: Creator</span>
+                    <h4 class="text-xl font-bold text-[#07153f] dark:text-white">Creator Studio Mandiri</h4>
+                    <div class="text-base font-black text-orange-600 dark:text-orange-400">Lisensi Web App Studio Penuh</div>
+                    <p class="text-xs text-slate-500">Bagi content creator, affiliate marketer, dan bisnis perorangan yang ingin memproduksi konten secara mandiri.</p>
+                    <ul class="text-xs space-y-2 pt-2 border-t border-slate-100 dark:border-slate-800 text-slate-600 dark:text-slate-300">
+                        <li>✓ Full Source Code React 18 &amp; Vite Studio</li>
+                        <li>✓ 15+ Mode Visual Media Sosial Terintegrasi</li>
+                        <li>✓ Export Resolusi Tinggi PNG &amp; ZIP Otomatis</li>
+                        <li>✓ Panduan Instalasi Lokal / Hosting Sendiri</li>
+                    </ul>
+                </div>
+                <a href="https://wa.me/6289695249089?text=Halo%20SmartVerse,%20saya%20tertarik%20konsultasi%20SmartFeed%20Edisi%20Creator%20Studio" 
+                   target="_blank" class="w-full py-2.5 rounded-xl border border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white text-xs font-bold text-center transition-all">
+                    Minta Penawaran Creator &rarr;
+                </a>
+            </div>
+
+            <!-- Tier 2 (Featured) -->
+            <div class="p-7 rounded-3xl bg-gradient-to-b from-orange-50 via-white to-amber-50/50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 border-2 border-orange-600 shadow-xl space-y-5 flex flex-col justify-between relative">
+                <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-orange-600 text-white font-black text-[10px] uppercase tracking-wider shadow-md">
+                    🔥 POPULER UNTUK AGENSI &amp; MEDIA
+                </div>
+                <div class="space-y-3 pt-2">
+                    <span class="px-2.5 py-1 rounded-md bg-orange-100 text-orange-800 font-bold text-xs">Edisi 2: Turnkey Publisher</span>
+                    <h4 class="text-2xl font-black text-[#07153f] dark:text-white">Media Publisher &amp; Agency</h4>
+                    <div class="text-base font-black text-orange-600 dark:text-orange-400">Siap Pakai + Cloud VPS Dedicated</div>
+                    <p class="text-xs text-slate-600 dark:text-slate-300">Terima beres! Kami deploy studio di Cloud Server dedicated berkecepatan tinggi dengan integrasi pipeline video instan.</p>
+                    <ul class="text-xs space-y-2 pt-2 border-t border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 font-medium">
+                        <li>✓ Semua Fasilitas Edisi Creator</li>
+                        <li>✓ <strong>Engine Video News-to-Video &amp; Voiceover TTS</strong></li>
+                        <li>✓ <strong>Cloud Hosting NVMe Siap Akses Multi-User</strong></li>
+                        <li>✓ Custom Preset Branding &amp; Template Identitas Kantor</li>
+                        <li>✓ Pemeliharaan Server &amp; Bugfix 1 Tahun Penuh</li>
+                    </ul>
+                </div>
+                <a href="https://wa.me/6289695249089?text=Halo%20SmartVerse,%20saya%20tertarik%20konsultasi%20SmartFeed%20Edisi%20Publisher%20Agency" 
+                   target="_blank" style="background-color: #fe6000 !important; color: #ffffff !important;" class="w-full py-3.5 rounded-xl font-black text-xs text-center shadow-lg hover:brightness-110 active:scale-95 transition-all">
+                    Konsultasi Paket Publisher &rarr;
+                </a>
+            </div>
+
+            <!-- Tier 3 -->
+            <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-5 flex flex-col justify-between">
+                <div class="space-y-3">
+                    <span class="px-2.5 py-1 rounded-md bg-purple-100 text-purple-800 font-bold text-xs">Edisi 3: Enterprise</span>
+                    <h4 class="text-xl font-bold text-[#07153f] dark:text-white">White-Label &amp; API Integration</h4>
+                    <div class="text-base font-black text-purple-600 dark:text-purple-400">Lisensi White-Label &amp; Render Worker</div>
+                    <p class="text-xs text-slate-500">Solusi skala besar untuk jaringan media nasional, agensi dengan ratusan klien, dan integrasi webhook CMS otomatis.</p>
+                    <ul class="text-xs space-y-2 pt-2 border-t border-slate-100 dark:border-slate-800 text-slate-600 dark:text-slate-300">
+                        <li>✓ Semua Fasilitas Edisi Publisher</li>
+                        <li>✓ <strong>White-Label Penuh Tanpa Brand SmartVerse</strong></li>
+                        <li>✓ API Webhook Auto-Generate Video dari CMS Portal Berita</li>
+                        <li>✓ Multi-Server Render Queue Worker untuk High-Load</li>
+                        <li>✓ Dedicated Engineer Support 24/7</li>
+                    </ul>
+                </div>
+                <a href="https://wa.me/6289695249089?text=Halo%20SmartVerse,%20saya%20tertarik%20konsultasi%20SmartFeed%20Edisi%20Enterprise%20White-Label" 
+                   target="_blank" class="w-full py-2.5 rounded-xl border border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white text-xs font-bold text-center transition-all">
+                    Diskusi Skema Enterprise VIP &rarr;
+                </a>
+            </div>
+
         </div>
     </div>
 

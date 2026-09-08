@@ -18,7 +18,7 @@
                     Jl. Sarjana Blok A No. 25 Timbangan, Ogan Ilir, Sumatera Selatan, Indonesia
                 </div>
                 <div style="color: #269DB9; font-size: 12px; margin-top: 4px; font-weight: 600;">
-                    Umbrella Brand Produk Digital &bull; AI Solutions
+                    Ekosistem Produk Digital &bull; AI Solutions
                 </div>
             </td>
         </tr>

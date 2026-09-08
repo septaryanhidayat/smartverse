@@ -45,16 +45,16 @@
                     {{ $product->description }}
                 </p>
 
-                <!-- Price & CTA Bar -->
+                <!-- Model Lisensi & CTA Bar -->
                 <div class="pt-4 p-5 rounded-2xl bg-white dark:bg-slate-800/90 border border-slate-200/80 dark:border-slate-700 shadow-md space-y-4">
                     <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                         <div>
-                            <span class="text-xs text-slate-400 uppercase tracking-wider font-semibold block">Harga Lisensi Resmi</span>
+                            <span class="text-xs text-slate-400 uppercase tracking-wider font-semibold block">Skema Implementasi &amp; Lisensi</span>
                             <div class="flex items-baseline gap-2">
-                                <span class="text-2xl sm:text-3xl font-black text-[#07153f] dark:text-white font-mono">
-                                    Rp {{ number_format($product->price, 0, ',', '.') }}
+                                <span class="text-xl sm:text-2xl font-black text-[#07153f] dark:text-white">
+                                    Lisensi Enterprise Penuh
                                 </span>
-                                <span class="text-xs text-slate-500">/ lisensi penuh</span>
+                                <span class="text-xs text-emerald-600 dark:text-emerald-400 font-bold bg-emerald-50 dark:bg-emerald-950 px-2 py-0.5 rounded-full border border-emerald-200 dark:border-emerald-800">On-Premise / Cloud</span>
                             </div>
                         </div>
 
@@ -228,7 +228,7 @@
                                 <p class="text-[11px] text-slate-500 line-clamp-2">{{ $rel->tagline }}</p>
                             </div>
                             <div class="pt-2 border-t border-slate-200/60 dark:border-slate-800 flex items-center justify-between">
-                                <span class="text-xs font-black text-blue-600 font-mono">Rp {{ number_format($rel->price, 0, ',', '.') }}</span>
+                                <span class="text-xs font-black text-cyan-600 dark:text-cyan-400">Solusi Enterprise</span>
                                 <a href="{{ route('products.show', $rel->slug) }}" class="text-[11px] font-bold text-blue-600 dark:text-blue-400 hover:underline">Detail &rarr;</a>
                             </div>
                         </div>

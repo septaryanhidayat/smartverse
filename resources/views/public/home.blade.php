@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'SmartVerse (smartverse.id) - Umbrella Brand 5 Produk Digital Unggulan')
+@section('title', 'SmartVerse (smartverse.id) - Solusi Digital Enterprise & 5 Produk Unggulan')
 
 @section('content')
 <!-- SECTION 1: HERO HEADER (FlyMotion Dynamic Style with Clean Mobile Layout & Crisp Typography) -->
@@ -18,139 +18,124 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center">
             
-            <!-- Left Column: Typography & FlyMotion Action Buttons -->
+            <!-- Left Column: Typography & Action Buttons -->
             <div class="lg:col-span-7 space-y-4 sm:space-y-6 text-center lg:text-left hero-content">
                 
-                <!-- Subtitle / Tagline Badge (Corporate Eyebrow) -->
+                <!-- Subtitle / Eyebrow Badge -->
                 <div class="flex items-center justify-center lg:justify-start">
-                    <div class="inline-flex items-center gap-2 px-3 sm:px-3.5 py-1 sm:py-1.5 rounded-full bg-blue-50/90 dark:bg-blue-950/50 border border-blue-200/80 dark:border-blue-800/60 text-blue-700 dark:text-blue-400 dark:text-blue-400 text-[11px] sm:text-xs font-extrabold tracking-wide uppercase shadow-xs">
-                        <span class="w-2 h-2 rounded-full bg-[#3E5CE7] dark:bg-blue-400 animate-pulse"></span>
-                        <span>{{ $settings['hero_badge'] ?? 'Digital Agency & Software House Terpercaya' }}</span>
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50/90 dark:bg-blue-950/50 border border-blue-200/80 dark:border-blue-800/60 text-blue-700 dark:text-blue-400 text-[11px] sm:text-xs font-extrabold tracking-wide uppercase shadow-xs">
+                        <span class="w-2 h-2 rounded-full bg-cyan-500 animate-pulse"></span>
+                        <span>Enterprise Digital Agency &amp; Technology Solution</span>
                     </div>
                 </div>
 
-                <!-- Main Dynamic Headline (Spacious & Balanced 2-Line Flow) -->
-                <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] xl:text-[48px] font-black tracking-tight text-[#07153f] dark:text-white leading-[1.35] max-w-2xl">
-                    <span class="inline-block whitespace-normal sm:whitespace-nowrap pb-1">{{ $settings['hero_title_1'] ?? 'Bangun Ekosistem Digital' }}</span>
-                    <span class="block text-blue-700 dark:text-blue-400 dark:text-blue-400 pt-1 sm:pt-1.5">{{ $settings['hero_title_2'] ?? 'yang Berdampak Nyata' }}</span>
+                <!-- Main Dynamic Headline -->
+                <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-[52px] xl:text-[58px] font-black tracking-tight text-[#07153f] dark:text-white leading-[1.15] max-w-2xl">
+                    SMARTVERSE<span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-600">.ID</span>
+                    <span class="block text-xl sm:text-2xl md:text-3xl lg:text-[30px] font-extrabold text-blue-700 dark:text-blue-400 pt-2 sm:pt-3 leading-snug tracking-normal">
+                        Mitra Solusi Digital Enterprise &amp; Transformasi Teknologi Terpadu
+                    </span>
                 </h1>
 
-                <!-- Subtitle Description -->
+                <!-- Subtitle Description (General agency & transformation, without individual product listing) -->
                 <p class="text-xs sm:text-sm md:text-base text-slate-600 dark:text-slate-300 max-w-xl mx-auto lg:mx-0 leading-relaxed font-medium">
-                    {{ $settings['hero_description'] ?? 'Kami mengintegrasikan solusi perangkat lunak mutakhir dan program edukasi untuk mentransformasi operasional bisnis Anda. Mulai dari perancangan web korporat, pengembangan aplikasi seluler, solusi otomasi cerdas, hingga penciptaan talenta digital profesional.' }}
+                    Kami merancang, membangun, dan mengakselerasi ekosistem teknologi masa depan untuk korporasi, institusi, dan organisasi modern. Menghadirkan solusi rekayasa perangkat lunak enterprise, infrastruktur cloud andal, otomatisasi cerdas, hingga adopsi artificial intelligence yang berdampak nyata dan berdaya saing tinggi.
                 </p>
 
-                <!-- 4 Quick Feature / Service Circular Icons Row (FlyMotion Signature) -->
-                <div class="pt-1 pb-1 flex flex-wrap items-center justify-center lg:justify-start gap-2 sm:gap-3">
-                    <div class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50/90 dark:bg-blue-950/50 border border-blue-100 dark:border-blue-800/60 text-[11px] font-extrabold text-blue-700 dark:text-blue-400 dark:text-blue-300 shadow-xs">
+                <!-- 4 Quick Service Pillars -->
+                <div class="pt-1 pb-1 flex flex-wrap items-center justify-center lg:justify-start gap-2 sm:gap-2.5">
+                    <div class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50/90 dark:bg-blue-950/50 border border-blue-100 dark:border-blue-800/60 text-[11px] font-extrabold text-blue-700 dark:text-blue-300 shadow-xs">
                         <span>🌐</span>
-                        <span>Web Enterprise</span>
+                        <span>Enterprise Web &amp; Cloud</span>
                     </div>
-                    <div class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-orange-50/90 dark:bg-orange-950/50 border border-orange-100 dark:border-orange-800/60 text-[11px] font-extrabold text-orange-700 dark:text-orange-400 dark:text-orange-400 shadow-xs">
+                    <div class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-cyan-50/90 dark:bg-cyan-950/50 border border-cyan-100 dark:border-cyan-800/60 text-[11px] font-extrabold text-cyan-700 dark:text-cyan-400 shadow-xs">
                         <span>📱</span>
-                        <span>Mobile Flutter</span>
+                        <span>Mobile &amp; App Architecture</span>
                     </div>
                     <div class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-purple-50/90 dark:bg-purple-950/50 border border-purple-100 dark:border-purple-800/60 text-[11px] font-extrabold text-purple-700 dark:text-purple-300 shadow-xs">
                         <span>🤖</span>
-                        <span>AI Automation</span>
+                        <span>AI Automation &amp; Forensic</span>
                     </div>
                     <div class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50/90 dark:bg-emerald-950/50 border border-emerald-100 dark:border-emerald-800/60 text-[11px] font-extrabold text-emerald-700 dark:text-emerald-300 shadow-xs">
                         <span>🎓</span>
-                        <span>IT Training</span>
+                        <span>Consulting &amp; Keynote Trainer</span>
                     </div>
                 </div>
 
-                <!-- Strategic 2-CTA Hierarchy (Clear Road, High Conversion, Zero Clutter) -->
-                <div class="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3.5">
-                    <!-- Primary CTA: Konsultasi Gratis (Solid Orange) -->
-                    <a href="#kalkulator" 
+                <!-- Strategic 2-CTA Hierarchy -->
+                <div class="pt-3 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3.5">
+                    <!-- Primary CTA: Konsultasi Proyek (Solid Orange) -->
+                    <a href="https://wa.me/6289695249089?text=Halo%20SmartVerse,%20saya%20tertarik%20konsultasi%20kebutuhan%20solusi%20digital%20dan%20teknologi" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
                        class="w-full sm:w-auto px-7 py-3.5 sm:px-8 sm:py-4 rounded-xl font-black text-xs sm:text-sm uppercase tracking-wider shadow-xl shadow-orange-500/30 hover:shadow-orange-500/50 hover:scale-105 active:scale-98 transition-all flex items-center justify-center gap-2 border border-orange-300"
                        style="background: linear-gradient(135deg, #fe6000 0%, #ff7a29 100%) !important; color: #ffffff !important;">
-                        <span class="font-black drop-shadow-xs" style="color: #ffffff !important;">KONSULTASI GRATIS</span>
+                        <span class="font-black drop-shadow-xs" style="color: #ffffff !important;">💬 KONSULTASI PROYEK</span>
                         <svg class="w-4 h-4" style="color: #ffffff !important;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                         </svg>
                     </a>
                     
-                    <!-- Secondary CTA: Lihat Portofolio (Clean Corporate Outline Button) -->
-                    <a href="{{ route('projects.index') }}" 
-                       class="w-full sm:w-auto px-7 py-3.5 sm:px-8 sm:py-4 rounded-xl font-black text-xs sm:text-sm uppercase tracking-wider border-2 border-[#3E5CE7] dark:border-blue-400 text-blue-700 dark:text-blue-400 dark:text-blue-400 hover:bg-[#3E5CE7] hover:text-white dark:hover:bg-blue-600 dark:hover:text-white active:scale-98 transition-all flex items-center justify-center gap-2 shadow-xs">
-                        <span>LIHAT PORTOFOLIO</span>
+                    <!-- Secondary CTA: Jelajahi Solusi Digital -->
+                    <a href="#flagship-products" 
+                       class="w-full sm:w-auto px-7 py-3.5 sm:px-8 sm:py-4 rounded-xl font-black text-xs sm:text-sm uppercase tracking-wider border-2 border-[#3E5CE7] dark:border-cyan-400 text-blue-700 dark:text-cyan-400 hover:bg-[#3E5CE7] hover:text-white dark:hover:bg-cyan-500 dark:hover:text-slate-950 active:scale-98 transition-all flex items-center justify-center gap-2 shadow-xs">
+                        <span>🚀 JELAJAHI SOLUSI DIGITAL</span>
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7" />
-                <!-- Action Button Group -->
-                <div class="pt-2 sm:pt-4 flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-3 sm:gap-4">
-                    <a href="{{ route('products.index') }}" 
-                       style="background-color: #00B5B8 !important; color: #ffffff !important;"
-                       class="px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl font-black text-xs sm:text-sm uppercase tracking-wider shadow-lg shadow-cyan-500/30 hover:brightness-110 active:scale-95 transition-all text-center flex items-center justify-center gap-2">
-                        <span>🚀 Jelajahi 5 Produk Unggulan</span>
-                    </a>
-                    
-                    <a href="https://wa.me/6289695249089" target="_blank" 
-                       style="background-color: #fe6000 !important; color: #ffffff !important;"
-                       class="px-6 sm:px-7 py-3.5 sm:py-4 rounded-xl font-bold text-xs sm:text-sm uppercase tracking-wider shadow-lg shadow-orange-500/25 hover:brightness-110 active:scale-95 transition-all text-center flex items-center justify-center gap-2">
-                        <span>💬 Konsultasi WhatsApp</span>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
+                        </svg>
                     </a>
                 </div>
 
                 <!-- Trust Micro Badges -->
                 <div class="pt-2 sm:pt-3 flex flex-wrap items-center justify-center lg:justify-start gap-x-4 gap-y-2 text-[11px] sm:text-xs text-slate-500 dark:text-slate-400 font-semibold">
-                    <span class="inline-flex items-center gap-1.5"><span class="text-emerald-500 font-bold">✓</span> Sekali Bayar Lisensi Permanen</span>
-                    <span class="inline-flex items-center gap-1.5"><span class="text-cyan-500 font-bold">✓</span> Full Source Code & Database</span>
-                    <span class="inline-flex items-center gap-1.5"><span class="text-amber-500 font-bold">✓</span> Garansi Setup & Support</span>
+                    <span class="inline-flex items-center gap-1.5"><span class="text-emerald-500 font-bold">✓</span> Arsitektur Enterprise Berstandar Global</span>
+                    <span class="inline-flex items-center gap-1.5"><span class="text-cyan-500 font-bold">✓</span> Full Source Code &amp; On-Premise / Cloud</span>
+                    <span class="inline-flex items-center gap-1.5"><span class="text-amber-500 font-bold">✓</span> Tim Engineer &amp; Trainer Tersertifikasi</span>
                 </div>
 
             </div>
 
-            <!-- Right Column: Interactive Hero Mockup Card -->
-            <div class="lg:col-span-5 relative mt-4 lg:mt-0 reveal-on-scroll">
-                <div class="relative max-w-md mx-auto">
+            <!-- Right Column: Clean Frameless Cutout Photo with Organic Ambient Lighting & Floating Badges -->
+            <div class="lg:col-span-5 relative mt-6 lg:mt-0 flex items-center justify-center reveal-on-scroll">
+                <div class="relative w-full max-w-md mx-auto flex items-end justify-center">
                     
-                    <!-- Background Ambient Disk -->
-                    <div class="absolute inset-0 bg-gradient-to-tr from-blue-300/40 via-purple-200/30 to-orange-200/40 dark:from-blue-800/20 dark:via-purple-900/20 dark:to-orange-900/20 rounded-full blur-2xl opacity-80 anim-logo-object" aria-hidden="true"></div>
+                    <!-- Soft Ambient Glow Disk (Behind Trainer) -->
+                    <div class="absolute inset-0 -top-8 w-72 sm:w-96 h-72 sm:h-96 mx-auto bg-gradient-to-tr from-cyan-400/30 via-blue-600/25 to-orange-400/20 dark:from-cyan-500/25 dark:via-blue-600/20 dark:to-indigo-900/30 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
                     
-                    <!-- Hero Person Card Container -->
-                    <div class="relative bg-white/95 dark:bg-slate-900/95 backdrop-blur-md rounded-2xl sm:rounded-3xl p-3.5 sm:p-5 shadow-2xl border border-slate-100 dark:border-slate-800">
-                        
-                        <!-- Top Mini Browser Bar -->
-                        <div class="flex items-center justify-between pb-2.5 border-b border-slate-100 dark:border-slate-800 text-xs mb-3">
-                            <div class="flex items-center gap-1.5">
-                                <span class="w-2.5 h-2.5 rounded-full bg-rose-400"></span>
-                                <span class="w-2.5 h-2.5 rounded-full bg-amber-400"></span>
-                                <span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
-                                <span class="font-bold text-[#07153f] dark:text-slate-200 ml-1.5 text-[10px] sm:text-[11px] mono">smartverse.id</span>
-                            </div>
-                            <span class="px-2 py-0.5 rounded-full bg-cyan-50 dark:bg-cyan-950/70 text-cyan-700 dark:text-cyan-400 font-bold text-[9px] sm:text-[10px]">Umbrella Brand Ecosystem</span>
+                    <!-- Floating Badge: Speaker & Tech Consultant (Top Left) -->
+                    <div class="absolute -top-3 left-1 sm:top-2 sm:-left-4 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md px-3 sm:px-3.5 py-1.5 sm:py-2 rounded-2xl shadow-xl border border-slate-200/80 dark:border-slate-800 flex items-center gap-2.5 z-20 hover:scale-105 transition-transform">
+                        <span class="w-8 h-8 rounded-xl bg-blue-100 dark:bg-blue-950 text-blue-600 dark:text-blue-400 flex items-center justify-center text-sm font-black shadow-xs">🎤</span>
+                        <div class="text-left">
+                            <div class="text-[11px] font-black text-[#07153f] dark:text-white leading-tight">Septa Ryan Hidayat</div>
+                            <div class="text-[9px] text-slate-500 dark:text-slate-400 font-bold">Direktur &amp; Lead AI Trainer</div>
                         </div>
-
-                        <!-- Hero Image (Explicit aspect ratio 700/617 to prevent CLS) -->
-                        <div class="relative rounded-xl sm:rounded-2xl overflow-hidden bg-gradient-to-b from-blue-50 via-slate-50 to-indigo-50/60 dark:from-slate-800 dark:via-slate-900 dark:to-slate-950 p-2 sm:p-3 border border-slate-100 dark:border-slate-800 flex items-center justify-center">
-                            <img src="{{ asset($settings['hero_image'] ?? 'images/hero-person-old.webp') }}" alt="{{ $settings['site_title'] ?? 'SmartVerse (smartverse.id)' }} Hero" fetchpriority="high" loading="eager" decoding="async" width="700" height="617" class="w-full h-auto object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-500" style="aspect-ratio: 700 / 617;" />
-                            
-                            <!-- Bottom Verified Badge -->
-                            <div class="absolute bottom-2.5 left-2.5 right-2.5 p-2.5 rounded-xl bg-[#07153f]/95 dark:bg-slate-950/95 backdrop-blur-md text-white text-xs space-y-0.5 shadow-xl border border-white/10">
-                                <div class="flex items-center justify-between text-[9px] sm:text-[10px]">
-                                    <span class="text-amber-400 font-bold">★ 5 Produk Digital Unggulan</span>
-                                    <span class="text-cyan-300 font-semibold">smartverse.id</span>
-                                </div>
-                                <div class="font-bold text-white text-[11px] sm:text-xs">Satu Ekosistem Solusi Digital & AI Nasional</div>
-                            </div>
-                        </div>
-
-                        <!-- Floating Badges (Contained & Responsive) -->
-                        <div class="absolute -top-3 left-2 sm:-top-4 sm:-left-4 bg-white dark:bg-slate-800 px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-xl sm:rounded-2xl shadow-xl border border-slate-100 dark:border-slate-700 flex items-center gap-1.5 text-[10px] sm:text-xs font-bold text-orange-700 dark:text-orange-400 anim-logo-top" aria-hidden="true">
-                            <span>🎨 Figma UI Design</span>
-                        </div>
-
-                        <div class="absolute -top-3 right-2 sm:-top-4 sm:-right-4 bg-white dark:bg-slate-800 px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-xl sm:rounded-2xl shadow-xl border border-slate-100 dark:border-slate-700 flex items-center gap-1.5 text-[10px] sm:text-xs font-bold text-pink-600 dark:text-pink-400 anim-logo-bottom" aria-hidden="true">
-                            <span>⚡ Web Builder</span>
-                        </div>
-
-                        <div class="absolute -bottom-3 right-2 sm:-bottom-4 sm:-right-4 bg-white dark:bg-slate-800 px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-xl sm:rounded-2xl shadow-xl border border-slate-100 dark:border-slate-700 flex items-center gap-1.5 text-[10px] sm:text-xs font-bold text-blue-700 dark:text-blue-400 dark:text-blue-400 anim-logo-top" aria-hidden="true">
-                            <span>🚀 Laravel & Flutter</span>
-                        </div>
-
                     </div>
+
+                    <!-- Floating Badge: Certifications (Bottom Right) -->
+                    <div class="absolute bottom-6 right-0 sm:bottom-8 sm:-right-4 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md px-3 sm:px-3.5 py-1.5 sm:py-2 rounded-2xl shadow-xl border border-slate-200/80 dark:border-slate-800 flex items-center gap-2.5 z-20 hover:scale-105 transition-transform">
+                        <span class="w-8 h-8 rounded-xl bg-emerald-100 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-sm font-black shadow-xs">🏆</span>
+                        <div class="text-left">
+                            <div class="text-[11px] font-black text-emerald-600 dark:text-emerald-400 leading-tight">Certified Professional</div>
+                            <div class="text-[9px] text-slate-500 dark:text-slate-400 font-bold">Microsoft • AWS • Red Hat</div>
+                        </div>
+                    </div>
+
+                    <!-- Floating Badge: Enterprise Ready (Bottom Center/Left) -->
+                    <div class="absolute -bottom-2 left-2 sm:bottom-2 sm:left-0 bg-gradient-to-r from-[#07153f] to-slate-900 text-white px-3 sm:px-3.5 py-1.5 rounded-xl shadow-2xl border border-white/10 flex items-center gap-2 z-20">
+                        <span class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
+                        <span class="text-[10px] font-extrabold tracking-wide uppercase text-cyan-300">Enterprise Ready Solutions</span>
+                    </div>
+
+                    <!-- Clean Isolated Cutout: Trainer Photo Floating Naturally (No frame, no box) -->
+                    <img src="{{ asset('images/smartverse/ryan-trainer-hero.webp') }}" 
+                         alt="Septa Ryan Hidayat - Direktur &amp; Lead AI Consultant SmartVerse" 
+                         fetchpriority="high" 
+                         loading="eager" 
+                         decoding="async" 
+                         width="600" 
+                         height="800" 
+                         class="relative z-10 w-auto max-h-[380px] sm:max-h-[460px] lg:max-h-[530px] object-contain drop-shadow-[0_20px_35px_rgba(7,21,63,0.3)] dark:drop-shadow-[0_20px_45px_rgba(6,182,212,0.25)] hover:scale-[1.02] transition-transform duration-500 select-none" />
+
                 </div>
             </div>
 
@@ -242,13 +227,13 @@
                     <div class="pt-5 mt-5 border-t border-slate-100 dark:border-slate-700/60 space-y-3">
                         <div class="flex items-center justify-between">
                             <div>
-                                <span class="text-[10px] text-slate-400 uppercase tracking-wider font-semibold block">Harga Lisensi</span>
-                                <span class="text-base sm:text-lg font-black text-[#07153f] dark:text-white font-mono">
-                                    Rp {{ number_format($prod->price, 0, ',', '.') }}
+                                <span class="text-[10px] text-slate-400 uppercase tracking-wider font-semibold block">Model Lisensi</span>
+                                <span class="text-xs sm:text-sm font-black text-[#07153f] dark:text-white">
+                                    Solusi Enterprise
                                 </span>
                             </div>
                             <span class="text-[10px] font-bold px-2 py-0.5 rounded-md bg-emerald-50 text-emerald-700 dark:bg-emerald-950/60 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800">
-                                Permanent
+                                Full Source Code
                             </span>
                         </div>
 
@@ -596,7 +581,7 @@
                 </h2>
                 
                 <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-medium">
-                    {!! nl2br(e($settings['about_description'] ?? 'SmartVerse (smartverse.id) adalah umbrella brand produk digital terintegrasi yang menghadirkan solusi teknologi mutakhir untuk sektor media jurnalisme, institusi pendidikan Islam, manajemen SDM korporasi, otomatisasi konten visual AI, serta forensik digital saintifik. Didukung arsitektur software berstandar industri dan teknologi artificial intelligence modern.')) !!}
+                    {!! nl2br(e($settings['about_description'] ?? 'SmartVerse (smartverse.id) adalah ekosistem solusi teknologi dan produk digital terintegrasi yang menghadirkan solusi rekayasa perangkat lunak mutakhir untuk sektor media jurnalisme, institusi pendidikan Islam, manajemen SDM korporasi, otomatisasi konten visual AI, serta forensik digital saintifik. Didukung arsitektur software berstandar industri dan teknologi artificial intelligence modern.')) !!}
                 </p>
 
                 <div class="pt-2 flex justify-center lg:justify-start">
@@ -615,7 +600,7 @@
 
                 <div class="bg-white dark:bg-slate-800 p-5 rounded-3xl border border-slate-100 dark:border-slate-700 shadow-xl max-w-md w-full relative">
                     <div class="aspect-video rounded-2xl overflow-hidden border border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 shadow-xs p-2 flex items-center justify-center">
-                        <img src="{{ asset($settings['about_image'] ?? 'images/Ilustrasi-Homepage-1-1.webp') }}" alt="{{ $settings['about_title'] ?? 'SmartVerse Umbrella Brand Ecosystem' }}" loading="lazy" decoding="async" width="881" height="661" class="w-full h-full object-contain" style="aspect-ratio: 881 / 661;" />
+                        <img src="{{ asset($settings['about_image'] ?? 'images/Ilustrasi-Homepage-1-1.webp') }}" alt="{{ $settings['about_title'] ?? 'SmartVerse Solusi Digital & AI' }}" loading="lazy" decoding="async" width="881" height="661" class="w-full h-full object-contain" style="aspect-ratio: 881 / 661;" />
                     </div>
                 </div>
             </div>
@@ -624,7 +609,7 @@
     </div>
 </section>
 
-<!-- SECTION 4.1: EKOSISTEM 5 PRODUK UNGGULAN SMARTVERSE (Umbrella Brand Flagship Ecosystem) -->
+<!-- SECTION 4.1: EKOSISTEM 5 PRODUK UNGGULAN SMARTVERSE (Flagship Digital Ecosystem) -->
 <section class="py-16 sm:py-20 bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800 transition-colors duration-300 relative overflow-hidden">
     
     <!-- Decorative Watermark "SmartVerse" -->
@@ -637,13 +622,13 @@
         <!-- Header -->
         <div class="text-center space-y-3 max-w-3xl mx-auto reveal-on-scroll">
             <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-cyan-50 dark:bg-cyan-950/60 border border-cyan-200 dark:border-cyan-800/60 text-cyan-700 dark:text-cyan-400 text-xs font-extrabold uppercase tracking-wider">
-                <span>🚀 UMBRELLA BRAND EKOSISTEM DIGITAL</span>
+                <span>🚀 EKOSISTEM TEKNOLOGI &amp; PRODUK DIGITAL</span>
             </div>
             <h2 class="text-3xl sm:text-4xl font-extrabold text-[#07153f] dark:text-white leading-tight">
                 5 Pilar Inovasi Produk Digital Unggulan SmartVerse
             </h2>
             <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-medium">
-                <strong class="text-slate-800 dark:text-slate-100">SmartVerse (smartverse.id)</strong> menaungi 5 produk digital mandiri dengan lisensi kepemilikan permanen (sekali bayar tanpa sewa bulanan), arsitektur modern berstandar enterprise, dan integrasi Artificial Intelligence mutakhir.
+                <strong class="text-slate-800 dark:text-slate-100">SmartVerse (smartverse.id)</strong> menghadirkan 5 ekosistem produk digital mandiri dengan lisensi enterprise penuh, arsitektur modern berstandar industri, dan integrasi Artificial Intelligence mutakhir.
             </p>
         </div>
 

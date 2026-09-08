@@ -120,12 +120,15 @@
                                 {{ $product->description }}
                             </p>
 
-                            <div class="pt-2 flex items-baseline gap-2">
-                                <span class="text-base font-extrabold text-[#fe6000] mono">
-                                    Rp {{ number_format($product->price, 0, ',', '.') }}
-                                </span>
-                                <span class="text-[11px] text-slate-400 line-through mono">
-                                    Rp {{ number_format($product->price * 1.5, 0, ',', '.') }}
+                            <div class="pt-2 flex items-center justify-between">
+                                <div>
+                                    <span class="text-[10px] text-slate-400 uppercase tracking-wider font-semibold block">Model Lisensi</span>
+                                    <span class="text-xs sm:text-sm font-black text-cyan-600 dark:text-cyan-400">
+                                        Solusi Enterprise
+                                    </span>
+                                </div>
+                                <span class="text-[10px] font-bold px-2 py-0.5 rounded-md bg-emerald-50 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800">
+                                    Full Source Code
                                 </span>
                             </div>
                         </div>
@@ -135,7 +138,7 @@
                         <a href="{{ route('products.show', $product->slug) }}" 
                            style="background-color: #3E5CE7 !important; color: #ffffff !important;"
                            class="block w-full py-2.5 text-center rounded-xl font-bold text-xs uppercase shadow-xs hover:brightness-110 active:scale-95 transition-all">
-                            <span style="color: #ffffff !important;">Beli / Detail &rarr;</span>
+                            <span style="color: #ffffff !important;">Lihat Spesifikasi &amp; Demo &rarr;</span>
                         </a>
                     </div>
                 </div>

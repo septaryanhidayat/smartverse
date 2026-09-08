@@ -101,18 +101,18 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-3 border-t border-slate-100">
                 <div class="space-y-1.5">
                     <label class="block text-xs font-bold text-[#071330]">Judul Meta SEO Website (Site Meta Title) *</label>
-                    <input type="text" name="site_title" value="{{ $settings['site_title']->value ?? 'SmartVerse (smartverse.id) - Umbrella Brand 5 Produk Digital Unggulan' }}" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs focus:ring-2 focus:ring-[#3E5CE7] focus:outline-none font-medium" />
+                    <input type="text" name="site_title" value="{{ $settings['site_title']->value ?? 'SmartVerse (smartverse.id) - Solusi Digital Enterprise & 5 Produk Unggulan' }}" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs focus:ring-2 focus:ring-[#3E5CE7] focus:outline-none font-medium" />
                     <span class="text-[11px] text-slate-400">Judul utama yang diindeks oleh Google Search.</span>
                 </div>
 
                 <div class="space-y-1.5">
                     <label class="block text-xs font-bold text-[#071330]">Tagline Utama Perusahaan</label>
-                    <input type="text" name="site_tagline" value="{{ $settings['site_tagline']->value ?? 'Umbrella Brand Produk Digital Terpadu & AI Solutions - SmartVerse.id' }}" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs focus:ring-2 focus:ring-[#3E5CE7] focus:outline-none font-medium" />
+                    <input type="text" name="site_tagline" value="{{ $settings['site_tagline']->value ?? 'Ekosistem Produk Digital Enterprise & AI Solutions - SmartVerse.id' }}" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs focus:ring-2 focus:ring-[#3E5CE7] focus:outline-none font-medium" />
                 </div>
 
                 <div class="space-y-1.5 md:col-span-2">
                     <label class="block text-xs font-bold text-[#071330]">Deskripsi Meta SEO & OpenGraph (Meta Description) *</label>
-                    <textarea name="site_description" rows="2" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs focus:ring-2 focus:ring-[#3E5CE7] focus:outline-none leading-relaxed">{{ $settings['site_description']->value ?? 'SmartVerse (smartverse.id) adalah umbrella brand inovasi digital: SmartNews, SmartEdu, SmartFeed, SmartSDM, dan SmartSynth.' }}</textarea>
+                    <textarea name="site_description" rows="2" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs focus:ring-2 focus:ring-[#3E5CE7] focus:outline-none leading-relaxed">{{ $settings['site_description']->value ?? 'SmartVerse (smartverse.id) adalah ekosistem inovasi digital: SmartNews, SmartEdu, SmartFeed, SmartSDM, dan SmartSynth.' }}</textarea>
                 </div>
             </div>
         </div>
@@ -210,7 +210,7 @@
 
                     <div class="space-y-1.5">
                         <label class="block text-xs font-bold text-[#071330]">Deskripsi Panjang Profil Perusahaan *</label>
-                        <textarea name="about_description" rows="4" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs focus:ring-2 focus:ring-[#3E5CE7] focus:outline-none leading-relaxed">{{ $settings['about_description']->value ?? 'SmartVerse (smartverse.id) adalah umbrella brand produk digital terintegrasi yang menghadirkan solusi teknologi mutakhir untuk sektor media jurnalisme, institusi pendidikan Islam, manajemen SDM korporasi, otomatisasi konten visual AI, serta forensik digital saintifik.' }}</textarea>
+                        <textarea name="about_description" rows="4" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs focus:ring-2 focus:ring-[#3E5CE7] focus:outline-none leading-relaxed">{{ $settings['about_description']->value ?? 'SmartVerse (smartverse.id) adalah ekosistem inovasi teknologi dan solusi digital terintegrasi yang menghadirkan solusi perangkat lunak mutakhir untuk sektor media jurnalisme, institusi pendidikan Islam, manajemen SDM korporasi, otomatisasi konten visual AI, serta forensik digital saintifik.' }}</textarea>
                     </div>
 
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2 border-t border-slate-100">

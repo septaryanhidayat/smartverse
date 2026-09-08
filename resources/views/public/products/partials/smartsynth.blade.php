@@ -181,4 +181,86 @@
         </div>
     </div>
 
+    <!-- 3 Implementation Editions -->
+    <div class="space-y-6">
+        <div class="text-center max-w-2xl mx-auto space-y-2">
+            <span class="text-xs font-black uppercase tracking-widest text-indigo-600 dark:text-indigo-400">SKEMA IMPLEMENTASI FORENSIK DIGITAL</span>
+            <h3 class="text-2xl sm:text-3xl font-black text-[#07153f] dark:text-white">
+                Pilihan Skema Implementasi SmartSynth
+            </h3>
+            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300">
+                Pilihan integrasi fleksibel untuk meja redaksi media massa, instansi hukum, tim verifikasi fakta, dan korporat.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            
+            <!-- Tier 1 -->
+            <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-5 flex flex-col justify-between">
+                <div class="space-y-3">
+                    <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-bold text-xs">Edisi 1: Standalone Lab</span>
+                    <h4 class="text-xl font-bold text-[#07153f] dark:text-white">Web Lab &amp; Berita Acara</h4>
+                    <div class="text-base font-black text-indigo-600 dark:text-cyan-400">Lisensi Mandiri Tim Redaksi</div>
+                    <p class="text-xs text-slate-500">Antarmuka lab forensik web lengkap siap pakai untuk verifikasi manual foto harian wartawan &amp; editor foto.</p>
+                    <ul class="text-xs space-y-2 pt-2 border-t border-slate-100 dark:border-slate-800 text-slate-600 dark:text-slate-300">
+                        <li>✓ 4 Lapis Pengujian (EXIF, C2PA, ELA, 2D FFT)</li>
+                        <li>✓ Generator Dokumen Berita Acara Resmi (PDF)</li>
+                        <li>✓ Berjalan di Browser Modern Tanpa Install Software</li>
+                        <li>✓ Panduan Lengkap SOP Verifikasi Foto Jurnalistik</li>
+                    </ul>
+                </div>
+                <a href="https://wa.me/6289695249089?text=Halo%20SmartVerse,%20saya%20tertarik%20konsultasi%20SmartSynth%20Edisi%20Standalone%20Lab" 
+                   target="_blank" class="w-full py-2.5 rounded-xl border border-indigo-600 text-indigo-600 hover:bg-indigo-600 hover:text-white text-xs font-bold text-center transition-all">
+                    Minta Penawaran Standalone &rarr;
+                </a>
+            </div>
+
+            <!-- Tier 2 (Featured) -->
+            <div class="p-7 rounded-3xl bg-gradient-to-b from-indigo-50 via-white to-cyan-50/50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 border-2 border-indigo-600 shadow-xl space-y-5 flex flex-col justify-between relative">
+                <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-indigo-600 text-white font-black text-[10px] uppercase tracking-wider shadow-md">
+                    🔥 REKOMENDASI MEDIA &amp; REDAKSI
+                </div>
+                <div class="space-y-3 pt-2">
+                    <span class="px-2.5 py-1 rounded-md bg-indigo-100 text-indigo-800 font-bold text-xs">Edisi 2: Turnkey Newsroom</span>
+                    <h4 class="text-2xl font-black text-[#07153f] dark:text-white">Lab Dedicated + Training</h4>
+                    <div class="text-base font-black text-indigo-600 dark:text-cyan-400">Turnkey Appliance + Cloud / On-Prem</div>
+                    <p class="text-xs text-slate-600 dark:text-slate-300">Instalasi dedicated di infrastruktur perusahaan Anda, disertai sesi pelatihan investigasi forensik untuk jurnalis.</p>
+                    <ul class="text-xs space-y-2 pt-2 border-t border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 font-medium">
+                        <li>✓ Semua Fasilitas Edisi Standalone Lab</li>
+                        <li>✓ <strong>Dedicated Private Cloud / On-Premise Server</strong></li>
+                        <li>✓ <strong>Workshop &amp; Pelatihan Sertifikasi Analis Forensik</strong></li>
+                        <li>✓ Custom Header Berita Acara dengan Logo Media Anda</li>
+                        <li>✓ Pembaruan Pattern Model Deepfake AI Terbaru 1 Tahun</li>
+                    </ul>
+                </div>
+                <a href="https://wa.me/6289695249089?text=Halo%20SmartVerse,%20saya%20tertarik%20konsultasi%20SmartSynth%20Edisi%20Turnkey%20Newsroom" 
+                   target="_blank" class="w-full py-3 rounded-xl bg-gradient-to-r from-indigo-600 to-cyan-600 hover:from-indigo-700 hover:to-cyan-700 text-white font-black text-xs uppercase tracking-wider text-center shadow-lg shadow-indigo-500/30 transition-all">
+                    Konsultasi Turnkey Redaksi &rarr;
+                </a>
+            </div>
+
+            <!-- Tier 3 -->
+            <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-5 flex flex-col justify-between">
+                <div class="space-y-3">
+                    <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-bold text-xs">Edisi 3: Enterprise</span>
+                    <h4 class="text-xl font-bold text-[#07153f] dark:text-white">API &amp; Automated Pipeline</h4>
+                    <div class="text-base font-black text-indigo-600 dark:text-cyan-400">High-Throughput Batch Engine</div>
+                    <p class="text-xs text-slate-500">Integrasikan mesin analisis forensik langsung ke CMS penerbitan berita atau sistem KYC/KYB korporasi.</p>
+                    <ul class="text-xs space-y-2 pt-2 border-t border-slate-100 dark:border-slate-800 text-slate-600 dark:text-slate-300">
+                        <li>✓ RESTful API &amp; Webhook Real-time Verification</li>
+                        <li>✓ Batch Ingestion Processing untuk Puluhan Ribu Foto</li>
+                        <li>✓ Auto-Flagging Foto Suspect AI sebelum Publish di CMS</li>
+                        <li>✓ Integrasi Kriptografi C2PA Content Credentials Signing</li>
+                        <li>✓ SLA Teknis 24/7 &amp; Dedicated Solutions Engineer</li>
+                    </ul>
+                </div>
+                <a href="https://wa.me/6289695249089?text=Halo%20SmartVerse,%20saya%20tertarik%20konsultasi%20SmartSynth%20Edisi%20Enterprise%20API" 
+                   target="_blank" class="w-full py-2.5 rounded-xl border border-indigo-600 text-indigo-600 hover:bg-indigo-600 hover:text-white text-xs font-bold text-center transition-all">
+                    Hubungi Enterprise Architect &rarr;
+                </a>
+            </div>
+
+        </div>
+    </div>
+
 </div>

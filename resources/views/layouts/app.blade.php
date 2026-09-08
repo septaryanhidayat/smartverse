@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>@yield('title', ($settings['site_title'] ?? 'SmartVerse (smartverse.id) - Umbrella Brand 5 Produk Digital Unggulan'))</title>
-    <meta name="description" content="@yield('meta_description', $settings['hero_description'] ?? 'SmartVerse (smartverse.id) adalah umbrella brand ekosistem digital Indonesia yang menaungi 5 inovasi produk unggulan: SmartNews, SmartEdu, SmartFeed, SmartSDM, dan SmartSynth.')">
+    <title>@yield('title', ($settings['site_title'] ?? 'SmartVerse (smartverse.id) - Solusi Digital Enterprise & 5 Produk Unggulan'))</title>
+    <meta name="description" content="@yield('meta_description', $settings['hero_description'] ?? 'SmartVerse (smartverse.id) adalah mitra teknologi dan ekosistem digital Indonesia yang menghadirkan solusi software enterprise, cloud computing, serta 5 inovasi produk unggulan: SmartNews, SmartEdu, SmartFeed, SmartSDM, dan SmartSynth.')">
     <meta name="keywords" content="smartverse, smartverse.id, smartnews, smartedu, smartsdm, smartfeed, smartsynth, lab forensik ai, portal berita dewan pers, erp sekolah islam terpadu, presensi wajah gps, studio visual ai">
     <meta name="author" content="SmartVerse (smartverse.id)">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
@@ -20,7 +20,7 @@
     <meta name="apple-mobile-web-app-title" content="SmartVerse">
 
     <!-- Preload Critical LCP Hero Image -->
-    <link rel="preload" as="image" href="{{ asset($settings['hero_image'] ?? 'images/hero-person-old.webp') }}" type="image/webp" fetchpriority="high">
+    <link rel="preload" as="image" href="{{ asset('images/smartverse/ryan-trainer-hero.webp') }}" type="image/webp" fetchpriority="high">
 
     <!-- Favicon & App Icons (Dynamic from Settings) -->
     <link rel="icon" type="image/webp" href="{{ asset($settings['site_logo'] ?? 'images/smartverse/logo-smartverse.webp') }}">
@@ -30,8 +30,8 @@
     <!-- OpenGraph (OG) Meta Tags for WhatsApp, Facebook, LinkedIn, Telegram -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ url()->current() }}">
-    <meta property="og:title" content="@yield('title', ($settings['site_title'] ?? 'SmartVerse (smartverse.id)') . ' - Umbrella Brand 5 Produk Digital Unggulan')">
-    <meta property="og:description" content="@yield('meta_description', $settings['hero_description'] ?? 'SmartVerse (smartverse.id) adalah umbrella brand inovasi digital: SmartNews, SmartEdu, SmartFeed, SmartSDM, dan SmartSynth.')">
+    <meta property="og:title" content="@yield('title', ($settings['site_title'] ?? 'SmartVerse (smartverse.id)') . ' - Solusi Digital Enterprise')">
+    <meta property="og:description" content="@yield('meta_description', $settings['hero_description'] ?? 'SmartVerse (smartverse.id) menghadirkan inovasi digital enterprise: SmartNews, SmartEdu, SmartFeed, SmartSDM, dan SmartSynth.')">
     <meta property="og:image" content="{{ asset($settings['og_image'] ?? $settings['site_logo'] ?? 'images/smartverse/logo-smartverse.webp') }}">
     <meta property="og:image:secure_url" content="{{ asset($settings['og_image'] ?? $settings['site_logo'] ?? 'images/smartverse/logo-smartverse.webp') }}">
     <meta property="og:image:width" content="1200">
@@ -43,7 +43,7 @@
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="{{ url()->current() }}">
-    <meta name="twitter:title" content="@yield('title', ($settings['site_title'] ?? 'SmartVerse (smartverse.id)') . ' - Umbrella Brand 5 Produk Digital Unggulan')">
+    <meta name="twitter:title" content="@yield('title', ($settings['site_title'] ?? 'SmartVerse (smartverse.id)') . ' - Solusi Digital Enterprise')">
     <meta name="twitter:description" content="@yield('meta_description', $settings['site_description'] ?? 'SmartVerse (smartverse.id) menghadirkan 5 ekosistem produk digital unggulan: SmartNews, SmartEdu, SmartFeed, SmartSDM, dan SmartSynth.')">
     <meta name="twitter:image" content="{{ asset($settings['og_image'] ?? $settings['site_logo'] ?? 'images/smartverse/logo-smartverse.webp') }}">
 
@@ -280,7 +280,7 @@
                 <span class="chip chip-attention text-[10px] py-0.5 px-2 font-bold tracking-wider" style="background: linear-gradient(135deg, #00B5B8 0%, #0A1C3C 100%); color: #ffffff;">
                     SMARTVERSE.ID
                 </span>
-                <span class="hidden sm:inline text-slate-300 font-medium text-xs">Umbrella Brand 5 Produk Digital: SmartNews &bull; SmartEdu &bull; SmartFeed &bull; SmartSDM &bull; SmartSynth</span>
+                <span class="hidden sm:inline text-slate-300 font-medium text-xs">Ekosistem 5 Produk Digital: SmartNews &bull; SmartEdu &bull; SmartFeed &bull; SmartSDM &bull; SmartSynth</span>
                 <span class="inline sm:hidden text-slate-300 font-medium text-[11px] truncate">5 Produk Digital Utama</span>
             </div>
             <div class="flex items-center gap-3 text-[11px] sm:text-xs font-bold shrink-0">
@@ -471,10 +471,10 @@
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             
-            <!-- Main Content Grid: 4 Balanced Columns with Clean Horizontal & Vertical Alignment -->
+            <!-- Main Content Grid: 4 Balanced Columns with Clean Horizontal & Vertical Alignment (4+3+2+3 = 12 cols) -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-8 pb-12 items-start text-center md:text-left">
                 
-                <!-- Column 1: Brand & Legalitas (lg:col-span-4) -->
+                <!-- Column 1: Brand & About (lg:col-span-4) -->
                 <div class="lg:col-span-4 space-y-4 flex flex-col items-center md:items-start">
                     <a href="{{ route('home') }}" class="inline-flex items-center gap-3 py-1 group" aria-label="SmartVerse.id">
                         <img src="{{ asset($settings['site_logo'] ?? 'images/smartverse/logo-smartverse.webp') }}" alt="SmartVerse" width="120" height="120" loading="lazy" decoding="async" class="h-11 w-11 rounded-xl shadow-xs object-cover hover:scale-105 transition-transform" />
@@ -484,26 +484,26 @@
                         </div>
                     </a>
                     <p class="text-xs sm:text-sm leading-relaxed max-w-sm font-medium" style="color: var(--text-muted);">
-                        <strong style="color: var(--text);">SmartVerse (smartverse.id)</strong> — Umbrella brand teknologi terpadu yang menaungi 5 ekosistem produk digital unggulan: SmartNews, SmartEdu, SmartFeed, SmartSDM, dan SmartSynth.
+                        <strong style="color: var(--text);">SmartVerse (smartverse.id)</strong> — Ekosistem solusi teknologi dan rekayasa perangkat lunak enterprise yang menaungi 5 inovasi produk digital unggulan: SmartNews, SmartEdu, SmartFeed, SmartSDM, dan SmartSynth.
                     </p>
                     
-                    <!-- SmartVerse Umbrella Brand Ecosystem Pill Card -->
+                    <!-- SmartVerse 5 Flagship Products Pill Card -->
                     <div class="p-3.5 rounded-2xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200/80 dark:border-slate-700/80 text-[11px] space-y-2 w-full max-w-sm text-left shadow-2xs">
                         <div class="font-bold text-[#07153f] dark:text-white flex items-center justify-between text-xs">
                             <span class="flex items-center gap-1.5">
                                 <span class="w-5 h-5 rounded-md bg-cyan-100 dark:bg-cyan-950 text-cyan-600 dark:text-cyan-400 flex items-center justify-center text-xs shrink-0">✨</span>
-                                <span>Umbrella Brand Ecosystem</span>
+                                <span>Solusi Digital Terpadu</span>
                             </span>
                             <span class="inline-flex items-center gap-1 text-cyan-600 dark:text-cyan-400 font-extrabold text-[10px] bg-cyan-50 dark:bg-cyan-950/60 px-2 py-0.5 rounded-full border border-cyan-200 dark:border-cyan-800">
                                 5 Produk Unggulan
                             </span>
                         </div>
                         <div class="flex flex-wrap gap-1.5 pt-0.5">
-                            <span class="px-2 py-0.5 rounded-md bg-sky-100 dark:bg-sky-950/80 text-sky-700 dark:text-sky-300 text-[10px] font-bold">SmartNews</span>
-                            <span class="px-2 py-0.5 rounded-md bg-emerald-100 dark:bg-emerald-950/80 text-emerald-700 dark:text-emerald-300 text-[10px] font-bold">SmartEdu</span>
-                            <span class="px-2 py-0.5 rounded-md bg-purple-100 dark:bg-purple-950/80 text-purple-700 dark:text-purple-300 text-[10px] font-bold">SmartFeed</span>
-                            <span class="px-2 py-0.5 rounded-md bg-blue-100 dark:bg-blue-950/80 text-blue-700 dark:text-blue-300 text-[10px] font-bold">SmartSDM</span>
-                            <span class="px-2 py-0.5 rounded-md bg-indigo-100 dark:bg-indigo-950/80 text-indigo-700 dark:text-indigo-300 text-[10px] font-bold">SmartSynth</span>
+                            <a href="{{ route('products.show', 'smartnews-cms-portal-berita') }}" class="px-2 py-0.5 rounded-md bg-sky-100 dark:bg-sky-950/80 text-sky-700 dark:text-sky-300 text-[10px] font-bold hover:bg-sky-200">SmartNews</a>
+                            <a href="{{ route('products.show', 'smartedu-ekosistem-sekolah-terpadu') }}" class="px-2 py-0.5 rounded-md bg-emerald-100 dark:bg-emerald-950/80 text-emerald-700 dark:text-emerald-300 text-[10px] font-bold hover:bg-emerald-200">SmartEdu</a>
+                            <a href="{{ route('products.show', 'smartfeed-ai-visual-studio') }}" class="px-2 py-0.5 rounded-md bg-purple-100 dark:bg-purple-950/80 text-purple-700 dark:text-purple-300 text-[10px] font-bold hover:bg-purple-200">SmartFeed</a>
+                            <a href="{{ route('products.show', 'smartsdm-mobile-hris-presensi') }}" class="px-2 py-0.5 rounded-md bg-blue-100 dark:bg-blue-950/80 text-blue-700 dark:text-blue-300 text-[10px] font-bold hover:bg-blue-200">SmartSDM</a>
+                            <a href="{{ route('products.show', 'smartsynth-lab-forensik-ai') }}" class="px-2 py-0.5 rounded-md bg-indigo-100 dark:bg-indigo-950/80 text-indigo-700 dark:text-indigo-300 text-[10px] font-bold hover:bg-indigo-200">SmartSynth</a>
                         </div>
                     </div>
 
@@ -559,8 +559,8 @@
                     </ul>
                 </div>
 
-                <!-- Column 4: Kontak & Mulai Proyek (lg:col-span-4) -->
-                <div class="lg:col-span-4 space-y-4 flex flex-col items-center md:items-start">
+                <!-- Column 4: Kontak & Mulai Proyek (lg:col-span-3) -->
+                <div class="lg:col-span-3 space-y-4 flex flex-col items-center md:items-start">
                     <p class="font-extrabold text-xs tracking-wider uppercase mono text-orange-700 dark:text-orange-400 flex items-center gap-2">
                         <span class="w-4 h-0.5 bg-[#fe6000] rounded-full hidden md:block"></span>
                         Kontak & Kantor
@@ -650,7 +650,7 @@
         </button>
 
         <!-- Floating WhatsApp Launcher Button (Icon Only Circle) -->
-        <a href="https://wa.me/6289695249089?text=Halo%20CV.%20Beranda%20Teknologi%20Digital,%20saya%20ingin%20konsultasi%20pembuatan%20sistem" 
+        <a href="https://wa.me/6289695249089?text=Halo%20SmartVerse,%20saya%20ingin%20konsultasi%20kebutuhan%20solusi%20digital" 
            target="_blank" 
            aria-label="Chat WhatsApp Resmi"
            title="Chat WhatsApp: 0896 9524 9089"
