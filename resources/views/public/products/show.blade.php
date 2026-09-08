@@ -120,121 +120,119 @@
     </div>
 </section>
 
-<!-- SECTION: PRODUCT FEATURES & SCIENTIFIC MODULES -->
+<!-- SECTION: DEEP PROMOTIONAL SPECIFICATIONS (Dedicated by Flagship Product) -->
 <section class="py-16 bg-white dark:bg-slate-950 transition-colors duration-300">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
         
-        <!-- Features List -->
-        @if($product->features)
-            @php
-                $featuresList = is_array($product->features) ? $product->features : (json_decode($product->features, true) ?? []);
-            @endphp
-            <div class="space-y-6">
-                <div class="space-y-2">
-                    <span class="text-xs font-black tracking-wider uppercase text-blue-600 dark:text-blue-400">FITUR UTAMA</span>
-                    <h2 class="text-2xl sm:text-3xl font-extrabold text-[#07153f] dark:text-white">
-                        Kemampuan & Spesifikasi Lengkap
-                    </h2>
-                </div>
+        @if($product->slug === 'smartnews-cms-portal-berita')
+            @include('public.products.partials.smartnews')
+        @elseif($product->slug === 'smartedu-ekosistem-sekolah-terpadu')
+            @include('public.products.partials.smartedu')
+        @elseif($product->slug === 'smartfeed-ai-visual-studio')
+            @include('public.products.partials.smartfeed')
+        @elseif($product->slug === 'smartsdm-mobile-hris-presensi')
+            @include('public.products.partials.smartsdm')
+        @elseif($product->slug === 'smartsynth-lab-forensik-ai')
+            @include('public.products.partials.smartsynth')
+        @else
+            <!-- Generic Feature Showcase for standard products -->
+            @if($product->features)
+                @php
+                    $featuresList = is_array($product->features) ? $product->features : (json_decode($product->features, true) ?? []);
+                @endphp
+                <div class="space-y-6">
+                    <div class="space-y-2">
+                        <span class="text-xs font-black tracking-wider uppercase text-blue-600 dark:text-blue-400">FITUR UTAMA</span>
+                        <h2 class="text-2xl sm:text-3xl font-extrabold text-[#07153f] dark:text-white">
+                            Kemampuan & Spesifikasi Lengkap
+                        </h2>
+                    </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                    @foreach($featuresList as $feat)
-                        <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800 flex items-start gap-3 shadow-xs hover:border-blue-400 transition-colors">
-                            <div class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-600 dark:bg-emerald-950/60 dark:text-emerald-400 flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">
-                                ✓
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                        @foreach($featuresList as $feat)
+                            <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800 flex items-start gap-3 shadow-xs hover:border-blue-400 transition-colors">
+                                <div class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-600 dark:bg-emerald-950/60 dark:text-emerald-400 flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">
+                                    ✓
+                                </div>
+                                <span class="text-xs sm:text-sm font-semibold text-slate-700 dark:text-slate-200 leading-snug">
+                                    {{ $feat }}
+                                </span>
                             </div>
-                            <span class="text-xs sm:text-sm font-semibold text-slate-700 dark:text-slate-200 leading-snug">
-                                {{ $feat }}
-                            </span>
-                        </div>
-                    @endforeach
+                        @endforeach
+                    </div>
                 </div>
-            </div>
+            @endif
         @endif
 
-        <!-- SPECIAL SHOWCASE: SMARTSYNTH FORENSIC MODULES -->
-        @if($product->slug === 'smartsynth-lab-forensik-ai')
-            <div class="mt-12 p-8 sm:p-10 rounded-3xl bg-gradient-to-br from-slate-900 via-indigo-950 to-[#07153f] text-white border border-indigo-500/30 shadow-2xl space-y-8">
-                <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-6 border-b border-white/10">
-                    <div class="space-y-2">
-                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/20 text-cyan-300 text-xs font-mono font-bold">
-                            <span>🔬 MULTI-LAYER SCIENTIFIC VERIFICATION ENGINE</span>
-                        </div>
-                        <h3 class="text-2xl sm:text-3xl font-black text-white">
-                            Metodologi Pengujian Forensik Gambar Digital
-                        </h3>
-                        <p class="text-slate-300 text-xs sm:text-sm max-w-2xl leading-relaxed">
-                            Alat kerja nyata yang menguji keaslian foto digital secara saintifik melalui 4 lapis pembuktian matematis dan kriptografi standar industri jurnalisme investigasi.
-                        </p>
-                    </div>
+        <!-- GUARANTEE & SERVICE ASSURANCE BAR -->
+        <div class="p-8 sm:p-10 rounded-3xl bg-slate-50 dark:bg-slate-900/90 border border-slate-200/80 dark:border-slate-800 space-y-6">
+            <div class="text-center max-w-2xl mx-auto space-y-2">
+                <span class="text-xs font-black uppercase tracking-widest text-emerald-600 dark:text-emerald-400">JAMINAN LAYANAN SMARTVERSE</span>
+                <h3 class="text-xl sm:text-2xl font-black text-[#07153f] dark:text-white">
+                    Mengapa Memilih Solusi Digital dari SmartVerse?
+                </h3>
+            </div>
 
-                    <a href="{{ asset('forensic/index.html') }}" 
-                       target="_blank" 
-                       class="px-6 py-3.5 rounded-xl font-black text-xs uppercase tracking-wider text-slate-900 bg-cyan-400 hover:bg-cyan-300 transition-all shadow-lg shadow-cyan-400/30 hover:scale-105 active:scale-95 text-center shrink-0 flex items-center justify-center gap-2">
-                        <span>Luncurkan Lab Forensik</span>
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs">
+                <div class="p-5 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700 space-y-2">
+                    <span class="text-2xl">🔒</span>
+                    <h4 class="font-bold text-[#07153f] dark:text-white">Hak Milik Penuh (Lifetime)</h4>
+                    <p class="text-slate-500 text-[11px] leading-relaxed">Tanpa biaya langganan software bulanan yang membebani. Beli sekali dan gunakan selamanya.</p>
+                </div>
+                <div class="p-5 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700 space-y-2">
+                    <span class="text-2xl">🛠️</span>
+                    <h4 class="font-bold text-[#07153f] dark:text-white">Setup & Pendampingan</h4>
+                    <p class="text-slate-500 text-[11px] leading-relaxed">Didampingi proses deployment ke hosting/VPS, konfigurasi database, hingga live online.</p>
+                </div>
+                <div class="p-5 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700 space-y-2">
+                    <span class="text-2xl">⚡</span>
+                    <h4 class="font-bold text-[#07153f] dark:text-white">Arsitektur Teruji</h4>
+                    <p class="text-slate-500 text-[11px] leading-relaxed">Dibangun di atas standar Laravel 13, PHP 8.4, dan React Native dengan keamanan data tinggi.</p>
+                </div>
+                <div class="p-5 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700 space-y-2">
+                    <span class="text-2xl">💬</span>
+                    <h4 class="font-bold text-[#07153f] dark:text-white">Layanan Konsultasi 24/7</h4>
+                    <p class="text-slate-500 text-[11px] leading-relaxed">Dukungan komunikasi langsung via WhatsApp untuk kendala teknis dan kustomisasi fitur.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- RELATED / OTHER FLAGSHIP PRODUCTS -->
+        @if(isset($relatedProducts) && $relatedProducts->count() > 0)
+            <div class="space-y-6 pt-6">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <span class="text-xs font-black uppercase tracking-wider text-blue-600 dark:text-blue-400">EKOSISTEM DIGITAL TERKAIT</span>
+                        <h3 class="text-xl sm:text-2xl font-black text-[#07153f] dark:text-white">Produk Unggulan SmartVerse Lainnya</h3>
+                    </div>
+                    <a href="{{ route('products.index') }}" class="text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline">
+                        Lihat Semua &rarr;
                     </a>
                 </div>
 
-                <!-- 4 Layers Cards Grid -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <!-- Layer 1 -->
-                    <div class="p-5 rounded-2xl bg-white/5 border border-white/10 space-y-3 hover:bg-white/10 transition-colors">
-                        <div class="w-10 h-10 rounded-xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center text-xl font-bold">
-                            1
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    @foreach($relatedProducts as $rel)
+                        <div class="bg-slate-50 dark:bg-slate-900 rounded-2xl p-4 border border-slate-200/80 dark:border-slate-800 hover:border-blue-400 hover:shadow-lg transition-all space-y-3 flex flex-col justify-between">
+                            <div class="space-y-2">
+                                <div class="h-32 rounded-xl bg-white dark:bg-slate-800 p-2 flex items-center justify-center overflow-hidden">
+                                    @if($rel->thumbnail)
+                                        <img src="{{ asset($rel->thumbnail) }}" alt="{{ $rel->title }}" class="max-h-full max-w-full object-contain">
+                                    @else
+                                        <div class="text-4xl">🚀</div>
+                                    @endif
+                                </div>
+                                <span class="px-2 py-0.5 rounded-md bg-blue-100 text-blue-800 dark:bg-blue-950 dark:text-blue-300 font-bold text-[9px]">
+                                    {{ $rel->badge }}
+                                </span>
+                                <h4 class="text-xs font-bold text-[#07153f] dark:text-white line-clamp-2">{{ $rel->title }}</h4>
+                                <p class="text-[11px] text-slate-500 line-clamp-2">{{ $rel->tagline }}</p>
+                            </div>
+                            <div class="pt-2 border-t border-slate-200/60 dark:border-slate-800 flex items-center justify-between">
+                                <span class="text-xs font-black text-blue-600 font-mono">Rp {{ number_format($rel->price, 0, ',', '.') }}</span>
+                                <a href="{{ route('products.show', $rel->slug) }}" class="text-[11px] font-bold text-blue-600 dark:text-blue-400 hover:underline">Detail &rarr;</a>
+                            </div>
                         </div>
-                        <h4 class="font-bold text-sm text-cyan-300">EXIF Biner Scanner</h4>
-                        <p class="text-xs text-slate-300 leading-relaxed">
-                            Membaca biner ArrayBuffer gambar untuk mendeteksi kamera asli, lensa, koordinat GPS, segmen XMP, serta software prompt AI (Midjourney, DALL-E, ComfyUI).
-                        </p>
-                    </div>
-
-                    <!-- Layer 2 -->
-                    <div class="p-5 rounded-2xl bg-white/5 border border-white/10 space-y-3 hover:bg-white/10 transition-colors">
-                        <div class="w-10 h-10 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center text-xl font-bold">
-                            2
-                        </div>
-                        <h4 class="font-bold text-sm text-purple-300">Kriptografi C2PA 2.4</h4>
-                        <p class="text-xs text-slate-300 leading-relaxed">
-                            Memindai blok biner JUMBF (jumb & c2pa) guna memverifikasi sertifikat tanda tangan digital manifest provenance resmi penerbit (OpenAI, Adobe, dll).
-                        </p>
-                    </div>
-
-                    <!-- Layer 3 -->
-                    <div class="p-5 rounded-2xl bg-white/5 border border-white/10 space-y-3 hover:bg-white/10 transition-colors">
-                        <div class="w-10 h-10 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-xl font-bold">
-                            3
-                        </div>
-                        <h4 class="font-bold text-sm text-amber-300">Real ELA (Error Level 80%)</h4>
-                        <p class="text-xs text-slate-300 leading-relaxed">
-                            Mengompresi kanvas pada rasio matematis 80% JPEG untuk menghitung selisih differensial |original - compressed|, mengungkap anomali editan/sambungan objek.
-                        </p>
-                    </div>
-
-                    <!-- Layer 4 -->
-                    <div class="p-5 rounded-2xl bg-white/5 border border-white/10 space-y-3 hover:bg-white/10 transition-colors">
-                        <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xl font-bold">
-                            4
-                        </div>
-                        <h4 class="font-bold text-sm text-emerald-300">2D FFT Spektrogram</h4>
-                        <p class="text-xs text-slate-300 leading-relaxed">
-                            Menghitung Fast Fourier Transform 2D spektrum frekuensi untuk mendeteksi pola kisi periodik (checkerboard artifacts) khas dekonvolusi generator AI.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- SOP Generator Highlight -->
-                <div class="p-4 rounded-xl bg-indigo-900/40 border border-indigo-400/20 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
-                    <div class="flex items-center gap-3">
-                        <span class="text-2xl">📋</span>
-                        <div>
-                            <span class="font-bold text-white block">Ekspor Otomatis Berita Acara SOP Redaksi Resmi</span>
-                            <span class="text-slate-300">Menghasilkan dokumen Berita Acara Forensik siap cetak PDF dengan skor probabilitas AI & rekomendasi redaksi.</span>
-                        </div>
-                    </div>
-                    <a href="{{ asset('forensic/index.html') }}" target="_blank" class="text-cyan-300 hover:underline font-bold whitespace-nowrap">
-                        Coba Demo Forensik &rarr;
-                    </a>
+                    @endforeach
                 </div>
             </div>
         @endif
@@ -251,8 +249,8 @@
                 <a href="https://wa.me/6289695249089?text=Halo%20SmartVerse,%20saya%20ingin%20konsultasi%20implementasi%20produk%20{{ urlencode($product->title) }}" 
                    target="_blank"
                    style="background-color: #059669 !important; color: #ffffff !important;"
-                   class="px-8 py-3.5 rounded-xl font-bold text-xs uppercase tracking-wider shadow-lg shadow-emerald-500/25 hover:brightness-110 active:scale-95 transition-all">
-                    Hubungi Tim Penjualan via WhatsApp
+                   class="px-8 py-3.5 rounded-xl font-bold text-xs uppercase tracking-wider shadow-lg shadow-emerald-500/25 hover:brightness-110 active:scale-95 transition-all text-white">
+                    Hubungi Tim Penjualan via WhatsApp &rarr;
                 </a>
                 <a href="{{ route('products.index') }}" 
                    class="px-6 py-3.5 rounded-xl border border-slate-300 dark:border-slate-700 font-bold text-xs text-[#07153f] dark:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-all">

@@ -30,7 +30,8 @@ class DigitalProductController extends Controller
         $product = DigitalProduct::with('category')->where('slug', $slug)->firstOrFail();
 
         $relatedProducts = DigitalProduct::where('id', '!=', $product->id)
-            ->take(3)
+            ->orderBy('order', 'asc')
+            ->take(4)
             ->get();
 
         return view('public.products.show', compact('product', 'relatedProducts'));
