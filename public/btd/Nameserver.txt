@@ -1,0 +1,2 @@
+ns1.mysecurecloudhost.com
+ns2.mysecurecloudhost.com

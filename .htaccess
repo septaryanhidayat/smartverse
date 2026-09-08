@@ -1,0 +1,175 @@
+DirectoryIndex index.php
+
+# ----------------------------------------------------------------------
+# 1. Force PHP 8.4 / 8.3 Execution on cPanel, CloudLinux & LiteSpeed
+# ----------------------------------------------------------------------
+<IfModule mime_module>
+  AddHandler application/x-httpd-ea-php84 .php .php8 .phtml
+  AddHandler application/x-httpd-ea-php84___lsphp .php .php8 .phtml
+  AddHandler application/x-httpd-alt-php84 .php .php8 .phtml
+  AddHandler application/x-httpd-alt-php84___lsphp .php .php8 .phtml
+  AddHandler application/x-httpd-ea-php83 .php .php8 .phtml
+  AddHandler application/x-httpd-ea-php83___lsphp .php .php8 .phtml
+  AddHandler application/x-httpd-alt-php83 .php .php8 .phtml
+  AddHandler application/x-httpd-alt-php83___lsphp .php .php8 .phtml
+</IfModule>
+
+# ----------------------------------------------------------------------
+# 2. Apache URL Rewriting & Front Controller
+# ----------------------------------------------------------------------
+<IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews -Indexes
+    </IfModule>
+
+    RewriteEngine On
+    RewriteBase /
+
+    # Force HTTPS Redirect
+    RewriteCond %{HTTPS} off
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+    # ══════════════════════════════════════════════════════════
+    # SECURITY LAYER 1: Block Access to Sensitive Files
+    # ══════════════════════════════════════════════════════════
+    <FilesMatch "\.(env|git|cpanel\.yml|sql|log|bak|old|swp|dist|orig|save|tmp|DS_Store)$">
+        Require all denied
+    </FilesMatch>
+
+    <FilesMatch "^(composer\.(json|lock)|package(-lock)?\.json|phpunit\.xml|\.gitignore|\.gitattributes|\.editorconfig|\.npmrc|artisan|berandadigital\.sql|phpinfo\.php|design\.md|README\.md)$">
+        Require all denied
+    </FilesMatch>
+
+    # ══════════════════════════════════════════════════════════
+    # SECURITY LAYER 2: Block Direct Access to Sensitive Dirs
+    # ══════════════════════════════════════════════════════════
+    RewriteRule ^storage(/|$) - [F,L]
+    RewriteRule ^database(/|$) - [F,L]
+    RewriteRule ^bootstrap(/|$) - [F,L]
+    RewriteRule ^vendor(/|$) - [F,L]
+    RewriteRule ^config(/|$) - [F,L]
+    RewriteRule ^resources(/|$) - [F,L]
+    RewriteRule ^app(/|$) - [F,L]
+    RewriteRule ^routes(/|$) - [F,L]
+    RewriteRule ^tests(/|$) - [F,L]
+    RewriteRule ^node_modules(/|$) - [F,L]
+
+    # ══════════════════════════════════════════════════════════
+    # SECURITY LAYER 3: Block Common Attack Patterns
+    # ══════════════════════════════════════════════════════════
+    # Block path traversal attempts
+    RewriteCond %{QUERY_STRING} (\.\./|\.\.) [NC]
+    RewriteRule .* - [F,L]
+
+    # Block null byte injection
+    RewriteCond %{QUERY_STRING} %00 [NC]
+    RewriteRule .* - [F,L]
+
+    # Block common exploit scanners
+    RewriteCond %{REQUEST_URI} (wp-admin|wp-login|wp-content|xmlrpc\.php) [NC]
+    RewriteRule .* - [R=404,L]
+
+    # ══════════════════════════════════════════════════════════
+    # SECURITY LAYER 4: Apache Security Headers (Fallback)
+    # ══════════════════════════════════════════════════════════
+    <IfModule mod_headers.c>
+        Header always set X-Frame-Options "SAMEORIGIN"
+        Header always set X-Content-Type-Options "nosniff"
+        Header always set X-XSS-Protection "1; mode=block"
+        Header always set Referrer-Policy "strict-origin-when-cross-origin"
+        Header always unset X-Powered-By
+        Header always unset Server
+    </IfModule>
+
+    # Handle Authorization Header
+    RewriteCond %{HTTP:Authorization} .
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+    # Handle X-XSRF-Token Header
+    RewriteCond %{HTTP:x-xsrf-token} .
+    RewriteRule .* - [E=HTTP_X_XSRF_TOKEN:%{HTTP:X-XSRF-Token}]
+
+    # Fallback to public folder for static assets if missing in root
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{DOCUMENT_ROOT}/public%{REQUEST_URI} -f
+    RewriteRule ^ public%{REQUEST_URI} [L]
+
+    # Redirect Trailing Slashes If Not A Folder...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_URI} (.+)/$
+    RewriteRule ^ %1 [L,R=301]
+
+    # Send Requests To Front Controller...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
+</IfModule>
+
+# ----------------------------------------------------------------------
+# 3. Disable Server Signature & Directory Listing
+# ----------------------------------------------------------------------
+ServerSignature Off
+
+# ----------------------------------------------------------------------
+# 4. Enable Gzip / Deflate Compression
+# ----------------------------------------------------------------------
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE text/javascript
+    AddOutputFilterByType DEFLATE text/xml
+    AddOutputFilterByType DEFLATE text/plain
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/x-javascript
+    AddOutputFilterByType DEFLATE application/json
+    AddOutputFilterByType DEFLATE application/xml
+    AddOutputFilterByType DEFLATE application/xhtml+xml
+    AddOutputFilterByType DEFLATE application/rss+xml
+    AddOutputFilterByType DEFLATE application/atom+xml
+    AddOutputFilterByType DEFLATE application/vnd.ms-fontobject
+    AddOutputFilterByType DEFLATE font/ttf
+    AddOutputFilterByType DEFLATE font/otf
+    AddOutputFilterByType DEFLATE font/x-woff
+    AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
+
+# ----------------------------------------------------------------------
+# 5. Leverage Browser Caching via mod_expires & Cache-Control
+# ----------------------------------------------------------------------
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresDefault "access plus 1 month"
+
+    # CSS & JavaScript (Vite content-hashed)
+    ExpiresByType text/css "access plus 1 year"
+    ExpiresByType application/javascript "access plus 1 year"
+    ExpiresByType text/javascript "access plus 1 year"
+
+    # Web Fonts
+    ExpiresByType font/woff2 "access plus 1 year"
+    ExpiresByType font/woff "access plus 1 year"
+    ExpiresByType font/ttf "access plus 1 year"
+    ExpiresByType font/otf "access plus 1 year"
+    ExpiresByType application/vnd.ms-fontobject "access plus 1 year"
+
+    # Images & Media
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/jpg "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType image/x-icon "access plus 1 year"
+
+    # HTML Documents
+    ExpiresByType text/html "access plus 0 seconds"
+</IfModule>
+
+<IfModule mod_headers.c>
+    <FilesMatch "\.(ico|pdf|flv|jpg|jpeg|png|gif|webp|js|css|swf|woff2|woff|ttf|svg)$">
+        Header set Cache-Control "max-age=31536000, public"
+    </FilesMatch>
+    <FilesMatch "\.(html|htm|php)$">
+        Header set Cache-Control "max-age=0, private, no-cache, no-store, must-revalidate"
+    </FilesMatch>
+</IfModule>
