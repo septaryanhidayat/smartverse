@@ -16,71 +16,88 @@
     <div class="hidden sm:block absolute top-20 right-20 text-blue-700 dark:text-blue-400/30 text-5xl font-black pointer-events-none select-none anim-shape-rotate" aria-hidden="true">✦</div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
             
-            <!-- Left Column: Typography & Action Buttons -->
+            <!-- Left Column: Typography, Competency Pillars & Action Buttons -->
             <div class="lg:col-span-7 space-y-4 sm:space-y-6 text-center lg:text-left hero-content">
                 
                 <!-- Subtitle / Eyebrow Badge -->
                 <div class="flex items-center justify-center lg:justify-start">
-                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50/90 dark:bg-blue-950/50 border border-blue-200/80 dark:border-blue-800/60 text-blue-700 dark:text-blue-400 text-[11px] sm:text-xs font-extrabold tracking-wide uppercase shadow-xs">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50/90 dark:bg-blue-950/60 border border-blue-200/80 dark:border-blue-800/60 text-blue-700 dark:text-blue-400 text-[11px] sm:text-xs font-extrabold tracking-wide uppercase shadow-xs">
                         <span class="w-2 h-2 rounded-full bg-cyan-500 animate-pulse"></span>
-                        <span>Enterprise Digital Agency &amp; Technology Solution</span>
+                        <span>Enterprise Software Solution &amp; Layanan Narasumber IT / AI</span>
                     </div>
                 </div>
 
                 <!-- Main Dynamic Headline -->
-                <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-[52px] xl:text-[58px] font-black tracking-tight text-[#07153f] dark:text-white leading-[1.15] max-w-2xl">
+                <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-[50px] xl:text-[56px] font-black tracking-tight text-[#07153f] dark:text-white leading-[1.12] max-w-2xl">
                     SMARTVERSE<span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-600">.ID</span>
-                    <span class="block text-xl sm:text-2xl md:text-3xl lg:text-[30px] font-extrabold text-blue-700 dark:text-blue-400 pt-2 sm:pt-3 leading-snug tracking-normal">
-                        Mitra Solusi Digital Enterprise &amp; Transformasi Teknologi Terpadu
+                    <span class="block text-xl sm:text-2xl md:text-3xl lg:text-[28px] font-extrabold text-blue-700 dark:text-blue-400 pt-2 sm:pt-2.5 leading-snug tracking-normal">
+                        Solusi Digital Enterprise &amp; Layanan Narasumber Ahli IT / AI
                     </span>
                 </h1>
 
-                <!-- Subtitle Description (General agency & transformation, without individual product listing) -->
+                <!-- Subtitle Description -->
                 <p class="text-xs sm:text-sm md:text-base text-slate-600 dark:text-slate-300 max-w-xl mx-auto lg:mx-0 leading-relaxed font-medium">
-                    Kami merancang, membangun, dan mengakselerasi ekosistem teknologi masa depan untuk korporasi, institusi, dan organisasi modern. Menghadirkan solusi rekayasa perangkat lunak enterprise, infrastruktur cloud andal, otomatisasi cerdas, hingga adopsi artificial intelligence yang berdampak nyata dan berdaya saing tinggi.
+                    Mitra strategis transformasi digital terpadu. Kami merancang dan membangun <strong>rekayasa perangkat lunak skala enterprise &amp; 5 produk digital siap pakai</strong>, sekaligus menghadirkan <strong>layanan narasumber, instruktur, dan pembicara ahli</strong> di bidang koding, rekayasa pemrograman web/mobile, arsitektur cloud, serta adopsi kecerdasan buatan (<em>Artificial Intelligence</em>) untuk seminar, workshop, dan in-house training korporasi.
                 </p>
 
-                <!-- 4 Quick Service Pillars -->
-                <div class="pt-1 pb-1 flex flex-wrap items-center justify-center lg:justify-start gap-2 sm:gap-2.5">
-                    <div class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50/90 dark:bg-blue-950/50 border border-blue-100 dark:border-blue-800/60 text-[11px] font-extrabold text-blue-700 dark:text-blue-300 shadow-xs">
-                        <span>🌐</span>
-                        <span>Enterprise Web &amp; Cloud</span>
+                <!-- 3 Dedicated Competency Pillars (Visual Cards) -->
+                <div class="pt-1 pb-1 grid grid-cols-1 sm:grid-cols-3 gap-2.5 text-left">
+                    <div class="p-2.5 sm:p-3 rounded-2xl bg-white/80 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800 shadow-xs flex items-center gap-2.5 hover:border-blue-300 dark:hover:border-blue-700 transition-all">
+                        <div class="w-9 h-9 rounded-xl bg-blue-100 dark:bg-blue-950 text-blue-600 dark:text-blue-400 flex items-center justify-center text-base shrink-0 font-bold">💻</div>
+                        <div class="leading-tight">
+                            <div class="text-[11px] font-black text-[#07153f] dark:text-white">Software Enterprise</div>
+                            <div class="text-[9px] text-slate-500 dark:text-slate-400 font-semibold">Web, Mobile, ERP &amp; Cloud</div>
+                        </div>
                     </div>
-                    <div class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-cyan-50/90 dark:bg-cyan-950/50 border border-cyan-100 dark:border-cyan-800/60 text-[11px] font-extrabold text-cyan-700 dark:text-cyan-400 shadow-xs">
-                        <span>📱</span>
-                        <span>Mobile &amp; App Architecture</span>
+                    <div class="p-2.5 sm:p-3 rounded-2xl bg-white/80 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800 shadow-xs flex items-center gap-2.5 hover:border-purple-300 dark:hover:border-purple-700 transition-all">
+                        <div class="w-9 h-9 rounded-xl bg-purple-100 dark:bg-purple-950 text-purple-600 dark:text-purple-400 flex items-center justify-center text-base shrink-0 font-bold">🎤</div>
+                        <div class="leading-tight">
+                            <div class="text-[11px] font-black text-[#07153f] dark:text-white">Narasumber Koding</div>
+                            <div class="text-[9px] text-slate-500 dark:text-slate-400 font-semibold">Laravel, React, Python, API</div>
+                        </div>
                     </div>
-                    <div class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-purple-50/90 dark:bg-purple-950/50 border border-purple-100 dark:border-purple-800/60 text-[11px] font-extrabold text-purple-700 dark:text-purple-300 shadow-xs">
-                        <span>🤖</span>
-                        <span>AI Automation &amp; Forensic</span>
-                    </div>
-                    <div class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50/90 dark:bg-emerald-950/50 border border-emerald-100 dark:border-emerald-800/60 text-[11px] font-extrabold text-emerald-700 dark:text-emerald-300 shadow-xs">
-                        <span>🎓</span>
-                        <span>Consulting &amp; Keynote Trainer</span>
+                    <div class="p-2.5 sm:p-3 rounded-2xl bg-white/80 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800 shadow-xs flex items-center gap-2.5 hover:border-cyan-300 dark:hover:border-cyan-700 transition-all">
+                        <div class="w-9 h-9 rounded-xl bg-cyan-100 dark:bg-cyan-950 text-cyan-600 dark:text-cyan-400 flex items-center justify-center text-base shrink-0 font-bold">🤖</div>
+                        <div class="leading-tight">
+                            <div class="text-[11px] font-black text-[#07153f] dark:text-white">Trainer AI Enterprise</div>
+                            <div class="text-[9px] text-slate-500 dark:text-slate-400 font-semibold">AI RAG, LLM &amp; Forensik</div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Strategic 2-CTA Hierarchy -->
-                <div class="pt-3 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3.5">
-                    <!-- Primary CTA: Konsultasi Proyek (Solid Orange) -->
-                    <a href="https://wa.me/6289695249089?text=Halo%20SmartVerse,%20saya%20tertarik%20konsultasi%20kebutuhan%20solusi%20digital%20dan%20teknologi" 
+                <!-- Strategic Action Buttons (3 High-Impact CTAs) -->
+                <div class="pt-3 flex flex-wrap items-center justify-center lg:justify-start gap-3">
+                    <!-- Primary CTA 1: Konsultasi Proyek (Solid Orange) -->
+                    <a href="https://wa.me/6289695249089?text=Halo%20SmartVerse,%20saya%20tertarik%20konsultasi%20kebutuhan%20solusi%20digital%20dan%20software%20enterprise" 
                        target="_blank" 
                        rel="noopener noreferrer"
-                       class="w-full sm:w-auto px-7 py-3.5 sm:px-8 sm:py-4 rounded-xl font-black text-xs sm:text-sm uppercase tracking-wider shadow-xl shadow-orange-500/30 hover:shadow-orange-500/50 hover:scale-105 active:scale-98 transition-all flex items-center justify-center gap-2 border border-orange-300"
+                       class="px-6 py-3.5 rounded-xl font-black text-xs uppercase tracking-wider shadow-xl shadow-orange-500/25 hover:shadow-orange-500/40 hover:scale-105 active:scale-98 transition-all flex items-center justify-center gap-2 border border-orange-300"
                        style="background: linear-gradient(135deg, #fe6000 0%, #ff7a29 100%) !important; color: #ffffff !important;">
                         <span class="font-black drop-shadow-xs" style="color: #ffffff !important;">💬 KONSULTASI PROYEK</span>
                         <svg class="w-4 h-4" style="color: #ffffff !important;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                         </svg>
                     </a>
+
+                    <!-- Primary CTA 2: Undang Narasumber IT/AI (Vibrant Indigo/Blue) -->
+                    <a href="https://wa.me/6289695249089?text=Halo%20SmartVerse,%20saya%20ingin%20mengundang%20Bapak%20Septa%20Ryan%20Hidayat%20sebagai%20narasumber/trainer%20IT%20(Koding/Pemrograman/AI)" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       class="px-6 py-3.5 rounded-xl font-black text-xs uppercase tracking-wider shadow-xl shadow-blue-600/25 hover:shadow-blue-600/40 hover:scale-105 active:scale-98 transition-all flex items-center justify-center gap-2 border border-blue-400/30 text-white"
+                       style="background: linear-gradient(135deg, #1d4ed8 0%, #3b82f6 100%) !important; color: #ffffff !important;">
+                        <span class="font-black" style="color: #ffffff !important;">🎤 UNDANG NARASUMBER</span>
+                        <svg class="w-4 h-4" style="color: #ffffff !important;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                    </a>
                     
-                    <!-- Secondary CTA: Jelajahi Solusi Digital -->
+                    <!-- Secondary CTA 3: Jelajahi 5 Produk -->
                     <a href="#flagship-products" 
-                       class="w-full sm:w-auto px-7 py-3.5 sm:px-8 sm:py-4 rounded-xl font-black text-xs sm:text-sm uppercase tracking-wider border-2 border-[#3E5CE7] dark:border-cyan-400 text-blue-700 dark:text-cyan-400 hover:bg-[#3E5CE7] hover:text-white dark:hover:bg-cyan-500 dark:hover:text-slate-950 active:scale-98 transition-all flex items-center justify-center gap-2 shadow-xs">
-                        <span>🚀 JELAJAHI SOLUSI DIGITAL</span>
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                       class="px-5 py-3.5 rounded-xl font-black text-xs uppercase tracking-wider border-2 border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-200 hover:border-blue-600 hover:text-blue-600 dark:hover:border-cyan-400 dark:hover:text-cyan-400 active:scale-98 transition-all flex items-center justify-center gap-1.5 shadow-xs">
+                        <span>🚀 5 PRODUK UNGGULAN</span>
+                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
                         </svg>
                     </a>
@@ -88,31 +105,31 @@
 
                 <!-- Trust Micro Badges -->
                 <div class="pt-2 sm:pt-3 flex flex-wrap items-center justify-center lg:justify-start gap-x-4 gap-y-2 text-[11px] sm:text-xs text-slate-500 dark:text-slate-400 font-semibold">
-                    <span class="inline-flex items-center gap-1.5"><span class="text-emerald-500 font-bold">✓</span> Arsitektur Enterprise Berstandar Global</span>
-                    <span class="inline-flex items-center gap-1.5"><span class="text-cyan-500 font-bold">✓</span> Full Source Code &amp; On-Premise / Cloud</span>
-                    <span class="inline-flex items-center gap-1.5"><span class="text-amber-500 font-bold">✓</span> Tim Engineer &amp; Trainer Tersertifikasi</span>
+                    <span class="inline-flex items-center gap-1.5"><span class="text-emerald-500 font-bold">✓</span> Narasumber Resmi Bank Indonesia, Komdigi &amp; Media Nasional</span>
+                    <span class="inline-flex items-center gap-1.5"><span class="text-cyan-500 font-bold">✓</span> Trainer Tersertifikasi Microsoft, AWS &amp; Red Hat</span>
+                    <span class="inline-flex items-center gap-1.5"><span class="text-amber-500 font-bold">✓</span> Full Source Code &amp; Standar Enterprise</span>
                 </div>
 
             </div>
 
-            <!-- Right Column: Clean Frameless Cutout Photo with Organic Ambient Lighting & Floating Badges -->
-            <div class="lg:col-span-5 relative mt-6 lg:mt-0 flex items-center justify-center reveal-on-scroll">
-                <div class="relative w-full max-w-md mx-auto flex items-end justify-center">
+            <!-- Right Column: Keynote Speaker Stage & Seamless Glass Pedestal (No cut-off image) -->
+            <div class="lg:col-span-5 relative mt-8 lg:mt-0 flex items-center justify-center reveal-on-scroll">
+                <div class="relative w-full max-w-md mx-auto">
                     
-                    <!-- Soft Ambient Glow Disk (Behind Trainer) -->
-                    <div class="absolute inset-0 -top-8 w-72 sm:w-96 h-72 sm:h-96 mx-auto bg-gradient-to-tr from-cyan-400/30 via-blue-600/25 to-orange-400/20 dark:from-cyan-500/25 dark:via-blue-600/20 dark:to-indigo-900/30 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
-                    
-                    <!-- Floating Badge: Speaker & Tech Consultant (Top Left) -->
-                    <div class="absolute -top-3 left-1 sm:top-2 sm:-left-4 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md px-3 sm:px-3.5 py-1.5 sm:py-2 rounded-2xl shadow-xl border border-slate-200/80 dark:border-slate-800 flex items-center gap-2.5 z-20 hover:scale-105 transition-transform">
+                    <!-- Soft Ambient Glow Disk Behind Stage -->
+                    <div class="absolute -inset-3 bg-gradient-to-tr from-cyan-500/25 via-blue-600/20 to-indigo-600/30 rounded-[44px] blur-3xl pointer-events-none" aria-hidden="true"></div>
+
+                    <!-- Floating Badge 1: Speaker & Tech Consultant (Top Left) -->
+                    <div class="absolute -top-4 -left-2 sm:-left-4 z-30 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md px-3.5 py-2 rounded-2xl shadow-xl border border-slate-200/80 dark:border-slate-800 flex items-center gap-2.5 hover:scale-105 transition-transform">
                         <span class="w-8 h-8 rounded-xl bg-blue-100 dark:bg-blue-950 text-blue-600 dark:text-blue-400 flex items-center justify-center text-sm font-black shadow-xs">🎤</span>
                         <div class="text-left">
-                            <div class="text-[11px] font-black text-[#07153f] dark:text-white leading-tight">Septa Ryan Hidayat</div>
-                            <div class="text-[9px] text-slate-500 dark:text-slate-400 font-bold">Direktur &amp; Lead AI Trainer</div>
+                            <div class="text-[11px] font-black text-[#07153f] dark:text-white leading-tight">Narasumber &amp; Speaker IT</div>
+                            <div class="text-[9px] text-slate-500 dark:text-slate-400 font-bold">Koding • Pemrograman • AI</div>
                         </div>
                     </div>
 
-                    <!-- Floating Badge: Certifications (Bottom Right) -->
-                    <div class="absolute bottom-6 right-0 sm:bottom-8 sm:-right-4 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md px-3 sm:px-3.5 py-1.5 sm:py-2 rounded-2xl shadow-xl border border-slate-200/80 dark:border-slate-800 flex items-center gap-2.5 z-20 hover:scale-105 transition-transform">
+                    <!-- Floating Badge 2: Certifications (Top Right) -->
+                    <div class="absolute top-6 -right-2 sm:-right-4 z-30 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md px-3.5 py-2 rounded-2xl shadow-xl border border-slate-200/80 dark:border-slate-800 flex items-center gap-2.5 hover:scale-105 transition-transform">
                         <span class="w-8 h-8 rounded-xl bg-emerald-100 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-sm font-black shadow-xs">🏆</span>
                         <div class="text-left">
                             <div class="text-[11px] font-black text-emerald-600 dark:text-emerald-400 leading-tight">Certified Professional</div>
@@ -120,22 +137,54 @@
                         </div>
                     </div>
 
-                    <!-- Floating Badge: Enterprise Ready (Bottom Center/Left) -->
-                    <div class="absolute -bottom-2 left-2 sm:bottom-2 sm:left-0 bg-gradient-to-r from-[#07153f] to-slate-900 text-white px-3 sm:px-3.5 py-1.5 rounded-xl shadow-2xl border border-white/10 flex items-center gap-2 z-20">
-                        <span class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
-                        <span class="text-[10px] font-extrabold tracking-wide uppercase text-cyan-300">Enterprise Ready Solutions</span>
+                    <!-- Keynote Arch Showcase Card -->
+                    <div class="relative rounded-[38px] bg-gradient-to-b from-slate-100/90 via-blue-50/50 to-slate-200/80 dark:from-slate-900/90 dark:via-[#07153f]/60 dark:to-slate-950 border border-slate-200/90 dark:border-blue-500/30 shadow-2xl overflow-hidden pt-10 sm:pt-12 px-4 sm:px-6 flex flex-col items-center justify-end">
+                        
+                        <!-- Tech Grid Lines & Watermark -->
+                        <div class="absolute inset-0 bg-[radial-gradient(#3b82f6_1px,transparent_1px)] [background-size:16px_16px] opacity-25 pointer-events-none" aria-hidden="true"></div>
+                        <div class="absolute top-5 right-6 font-mono text-[10px] font-bold text-blue-500/40 dark:text-cyan-400/30 select-none pointer-events-none tracking-widest">
+                            &lt;AI_ARCHITECTURE /&gt;
+                        </div>
+
+                        <!-- Speaker Photo with Gentle Bottom Feather/Fade (Blends seamlessly into pedestal) -->
+                        <div class="relative w-full flex justify-center items-end z-10 -mb-6">
+                            <img src="{{ asset('images/smartverse/ryan-trainer-hero.webp') }}" 
+                                 alt="Septa Ryan Hidayat - Direktur &amp; Narasumber Ahli IT/AI SmartVerse" 
+                                 fetchpriority="high" 
+                                 loading="eager" 
+                                 decoding="async" 
+                                 width="600" 
+                                 height="800" 
+                                 style="mask-image: linear-gradient(to bottom, black 65%, transparent 95%); -webkit-mask-image: linear-gradient(to bottom, black 65%, transparent 95%);"
+                                 class="relative w-auto max-h-[380px] sm:max-h-[430px] lg:max-h-[460px] object-contain drop-shadow-[0_20px_35px_rgba(7,21,63,0.35)] dark:drop-shadow-[0_20px_45px_rgba(6,182,212,0.3)] hover:scale-[1.02] transition-transform duration-500 select-none" />
+                        </div>
+
+                        <!-- Executive Presenter Console / Pedestal Bar (Anchors the photo bottom perfectly) -->
+                        <div class="w-full p-4 rounded-2xl bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl border border-slate-200/90 dark:border-slate-700 shadow-2xl relative z-20 space-y-2.5 mb-2">
+                            <div class="flex items-center justify-between gap-2">
+                                <div>
+                                    <h3 class="text-sm sm:text-base font-black text-[#07153f] dark:text-white leading-tight">
+                                        Septa Ryan Hidayat
+                                    </h3>
+                                    <p class="text-[11px] font-bold text-blue-700 dark:text-cyan-400">
+                                        Direktur &amp; Narasumber Nasional IT / AI
+                                    </p>
+                                </div>
+                                <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-600 dark:text-emerald-400 text-[10px] font-bold shrink-0">
+                                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
+                                    <span>Tersedia Diundang</span>
+                                </span>
+                            </div>
+
+                            <!-- Competencies Chips -->
+                            <div class="flex flex-wrap gap-1.5 pt-1.5 border-t border-slate-100 dark:border-slate-800 text-[10px] font-semibold">
+                                <span class="px-2 py-0.5 rounded-md bg-blue-50 dark:bg-blue-950/70 text-blue-700 dark:text-blue-300 border border-blue-200/60 dark:border-blue-800/60">💻 Koding &amp; Pemrograman</span>
+                                <span class="px-2 py-0.5 rounded-md bg-purple-50 dark:bg-purple-950/70 text-purple-700 dark:text-purple-300 border border-purple-200/60 dark:border-purple-800/60">🤖 AI RAG &amp; Otomasi</span>
+                                <span class="px-2 py-0.5 rounded-md bg-cyan-50 dark:bg-cyan-950/70 text-cyan-700 dark:text-cyan-300 border border-cyan-200/60 dark:border-cyan-800/60">🛡️ Digital Forensics</span>
+                            </div>
+                        </div>
+
                     </div>
-
-                    <!-- Clean Isolated Cutout: Trainer Photo Floating Naturally (No frame, no box) -->
-                    <img src="{{ asset('images/smartverse/ryan-trainer-hero.webp') }}" 
-                         alt="Septa Ryan Hidayat - Direktur &amp; Lead AI Consultant SmartVerse" 
-                         fetchpriority="high" 
-                         loading="eager" 
-                         decoding="async" 
-                         width="600" 
-                         height="800" 
-                         class="relative z-10 w-auto max-h-[380px] sm:max-h-[460px] lg:max-h-[530px] object-contain drop-shadow-[0_20px_35px_rgba(7,21,63,0.3)] dark:drop-shadow-[0_20px_45px_rgba(6,182,212,0.25)] hover:scale-[1.02] transition-transform duration-500 select-none" />
-
                 </div>
             </div>
 

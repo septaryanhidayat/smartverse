@@ -68,12 +68,11 @@ class DatabaseSeeder extends Seeder
             ['key' => 'trainer_stats_alumni', 'value' => '5,000+', 'group' => 'trainer', 'label' => 'Pengguna & Alumni', 'type' => 'text'],
 
             ['key' => 'contact_email', 'value' => 'info@smartverse.id', 'group' => 'contact', 'label' => 'Email Resmi', 'type' => 'text'],
-            ['key' => 'contact_phone', 'value' => '+62 896-9524-9089', 'group' => 'contact', 'label' => 'WhatsApp Utama', 'type' => 'text'],
-            ['key' => 'contact_phone_sec', 'value' => '+62 811-7448-447', 'group' => 'contact', 'label' => 'WhatsApp Sekunder', 'type' => 'text'],
-            ['key' => 'contact_address', 'value' => 'SmartVerse Hub (CV. Beranda Teknologi Digital) - Ogan Ilir & Palembang, Sumatra Selatan, Indonesia', 'group' => 'contact', 'label' => 'Alamat Kantor', 'type' => 'textarea'],
-            ['key' => 'social_linkedin', 'value' => 'https://linkedin.com/company/berandadigital', 'group' => 'social', 'label' => 'LinkedIn', 'type' => 'text'],
-            ['key' => 'social_github', 'value' => 'https://github.com/septaryanhidayat/smartverse', 'group' => 'social', 'label' => 'GitHub', 'type' => 'text'],
-            ['key' => 'social_instagram', 'value' => 'https://www.instagram.com/bteknologi_digital', 'group' => 'social', 'label' => 'Instagram', 'type' => 'text'],
+            ['key' => 'contact_phone', 'value' => '089695249089', 'group' => 'contact', 'label' => 'WhatsApp Utama', 'type' => 'text'],
+            ['key' => 'contact_phone_wa_profile', 'value' => '0896 9524 9089', 'group' => 'contact', 'label' => 'WhatsApp Profil', 'type' => 'text'],
+            ['key' => 'contact_address', 'value' => 'SmartVerse (smartverse.id) - Ogan Ilir & Palembang, Sumatera Selatan, Indonesia', 'group' => 'contact', 'label' => 'Alamat Kantor', 'type' => 'textarea'],
+            ['key' => 'social_facebook', 'value' => 'https://www.facebook.com/profile.php?id=61593862816388', 'group' => 'social', 'label' => 'Facebook Page', 'type' => 'text'],
+            ['key' => 'social_instagram', 'value' => 'https://instagram.com/smartverse.id', 'group' => 'social', 'label' => 'Instagram', 'type' => 'text'],
         ];
 
         foreach ($settings as $s) {

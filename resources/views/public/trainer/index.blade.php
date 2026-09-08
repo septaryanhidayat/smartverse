@@ -60,9 +60,9 @@
                 <div class="relative w-full max-w-md">
                     <div class="bg-white dark:bg-slate-800 p-5 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-2xl relative anim-logo-top">
                         <div class="aspect-square rounded-2xl overflow-hidden bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 relative flex items-center justify-center p-3">
-                            <img src="/images/hero-person-old.webp" alt="Tim Trainer SmartVerse" class="w-full h-full object-contain" />
+                            <img src="{{ asset('images/smartverse/ryan-trainer-hero.webp') }}" alt="Septa Ryan Hidayat - Trainer IT & Konsultan AI SmartVerse" class="w-full h-full object-contain" />
                             <div class="absolute bottom-3 left-3 right-3 p-3 rounded-xl bg-[#07153f]/90 backdrop-blur-md text-white text-xs text-center font-bold shadow-md">
-                                ★ Tim Trainer & Konsultan IT SmartVerse
+                                ★ Septa Ryan Hidayat — Lead Trainer IT & Konsultan AI SmartVerse
                             </div>
                         </div>
                     </div>
@@ -122,7 +122,7 @@
                     </div>
 
                     <div class="pt-4 border-t border-slate-100 dark:border-slate-700">
-                        <a href="https://wa.me/6289695249089?text=Halo%20CV.%20Beranda%20Teknologi%20Digital,%20saya%20tertarik%20mengundang%20trainer%20untuk%20materi%20{{ urlencode($training->title) }}" 
+                        <a href="https://wa.me/6289695249089?text=Halo%20SmartVerse,%20saya%20tertarik%20mengundang%20narasumber/trainer%20untuk%20materi%20{{ urlencode($training->title) }}" 
                            target="_blank" 
                            style="background-color: #fe6000 !important; color: #ffffff !important;"
                            class="block w-full text-center py-3.5 rounded-xl font-bold text-xs uppercase shadow-md transition-all">

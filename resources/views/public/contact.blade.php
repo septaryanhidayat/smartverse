@@ -79,7 +79,7 @@
                 <span class="w-8 h-1 bg-[#fe6000] rounded-full"></span>
                 <span class="text-sm font-bold tracking-wider uppercase text-[#fe6000]">Client / Contact</span>
             </div>
-            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#07153f] dark:text-white">Hubungi Tim Beranda Digital</h1>
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#07153f] dark:text-white">Hubungi Tim SmartVerse</h1>
             <p class="text-xs sm:text-sm md:text-base text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl font-medium">
                 Mari kita bicarakan ide digital Anda. Tim kami terdiri dari web designer dan software developer berpengalaman yang siap merancang solusi teknologi tepat guna sesuai kebutuhan instansi dan anggaran Anda.
             </p>
