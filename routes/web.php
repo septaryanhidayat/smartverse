@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminAnalyticsController;
 use App\Http\Controllers\Admin\AdminCategoryController;
+use App\Http\Controllers\Admin\AdminDomainRenewalController;
+use App\Http\Controllers\Admin\AdminFinanceController;
 use App\Http\Controllers\Admin\AdminGalleryController;
 use App\Http\Controllers\Admin\AdminInquiryController;
 use App\Http\Controllers\Admin\AdminInvoiceController;
@@ -74,6 +77,24 @@ Route::post('/admin/logout', [AuthController::class, 'logout'])->name('admin.log
 Route::prefix('admin')->name('admin.')->middleware(['auth', 'throttle:60,1'])->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
     
+    // Comprehensive Visitor Analytics & Reader Trends (Branding & Real-Time)
+    Route::get('/analytics', [AdminAnalyticsController::class, 'index'])->name('analytics.index');
+    Route::post('/analytics/clean-logs', [AdminAnalyticsController::class, 'cleanOldLogs'])->name('analytics.clean-logs');
+
+    // Institutional Finance, Cash Flow & Policy Maker Analytics
+    Route::get('/finances', [AdminFinanceController::class, 'index'])->name('finances.index');
+    Route::post('/finances', [AdminFinanceController::class, 'store'])->name('finances.store');
+    Route::put('/finances/{id}', [AdminFinanceController::class, 'update'])->name('finances.update');
+    Route::delete('/finances/{id}', [AdminFinanceController::class, 'destroy'])->name('finances.destroy');
+    Route::get('/finances/print', [AdminFinanceController::class, 'printReport'])->name('finances.print');
+
+    // Multi-Provider Domain & Hosting Asset Tracking & Expiry Reminders
+    Route::get('/domain-renewals', [AdminDomainRenewalController::class, 'index'])->name('domain-renewals.index');
+    Route::post('/domain-renewals', [AdminDomainRenewalController::class, 'store'])->name('domain-renewals.store');
+    Route::put('/domain-renewals/{id}', [AdminDomainRenewalController::class, 'update'])->name('domain-renewals.update');
+    Route::delete('/domain-renewals/{id}', [AdminDomainRenewalController::class, 'destroy'])->name('domain-renewals.destroy');
+    Route::post('/domain-renewals/{id}/renew-one-year', [AdminDomainRenewalController::class, 'renewOneYear'])->name('domain-renewals.renew-one-year');
+
     // Website Settings & Theme Customizer (Color Picker, Hero, Bio, Contact)
     Route::get('/settings', [SettingController::class, 'index'])->name('settings.index');
     Route::post('/settings', [SettingController::class, 'update'])->name('settings.update');

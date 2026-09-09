@@ -62,7 +62,7 @@
                         <div class="aspect-square rounded-2xl overflow-hidden bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 relative flex items-center justify-center p-3">
                             <img src="{{ asset('images/smartverse/ryan-trainer-hero.webp') }}" alt="Septa Ryan Hidayat - Trainer IT & Konsultan AI SmartVerse" class="w-full h-full object-contain" />
                             <div class="absolute bottom-3 left-3 right-3 p-3 rounded-xl bg-[#07153f]/90 backdrop-blur-md text-white text-xs text-center font-bold shadow-md">
-                                ★ Septa Ryan Hidayat — Lead Trainer IT & Konsultan AI SmartVerse
+                                ★ Septa Ryan Hidayat &bull; Lead Trainer IT & Konsultan AI SmartVerse
                             </div>
                         </div>
                     </div>

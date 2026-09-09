@@ -464,138 +464,193 @@
     </main>
 
     <!-- Ultra-Sleek Symmetrical Enterprise Footer -->
-    <footer class="border-t pt-16 pb-8 transition-colors duration-300 relative overflow-hidden" style="background-color: var(--bg-deep); border-color: var(--border);">
+    <footer class="border-t pt-16 pb-8 transition-colors duration-300 relative overflow-hidden text-white" 
+            style="background: linear-gradient(165deg, #07153f 0%, #0A1C3C 35%, #0f2b5c 75%, #00B5B8 100%); border-color: rgba(255, 255, 255, 0.15);">
         <!-- Subtle ambient background glow -->
-        <div class="absolute -top-24 left-1/2 -translate-x-1/2 w-3/4 h-32 bg-gradient-to-b from-[#3E5CE7]/5 via-transparent to-transparent pointer-events-none rounded-full blur-2xl"></div>
+        <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-3/4 h-48 bg-white/10 pointer-events-none rounded-full blur-3xl"></div>
+        <div class="absolute -bottom-24 -right-24 w-96 h-96 bg-[#00B5B8]/25 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-[#3E5CE7]/20 rounded-full blur-3xl pointer-events-none"></div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             
-            <!-- Main Content Grid: 4 Balanced Columns with Clean Horizontal & Vertical Alignment (4+3+2+3 = 12 cols) -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-8 pb-12 items-start text-center md:text-left">
+            <!-- Top Banner: Dapatkan Info Terupdate (Warna Selaras dengan Logo SmartVerse) -->
+            <div class="rounded-2xl sm:rounded-3xl p-6 sm:p-8 mb-10 flex flex-col md:flex-row items-center justify-between gap-6 shadow-2xl relative overflow-hidden"
+                 style="background: linear-gradient(135deg, #061126 0%, #0A1C3C 50%, #102d5e 100%); border: 1px solid rgba(255, 255, 255, 0.18);">
+                <!-- Ambient Glow on Banner -->
+                <div class="absolute -right-10 -bottom-10 w-48 h-48 bg-[#00B5B8]/25 rounded-full blur-2xl pointer-events-none"></div>
+                <div class="absolute -left-10 -top-10 w-48 h-48 bg-white/5 rounded-full blur-2xl pointer-events-none"></div>
                 
-                <!-- Column 1: Brand & About (lg:col-span-4) -->
-                <div class="lg:col-span-4 space-y-4 flex flex-col items-center md:items-start">
+                <div class="text-center md:text-left relative z-10">
+                    <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-white/10 border border-white/20 text-cyan-200 text-[10px] font-bold uppercase tracking-wider mb-2">
+                        <span>✨ Newsletter & Konsultasi</span>
+                    </div>
+                    <h3 class="text-xl sm:text-2xl lg:text-3xl font-black text-white tracking-tight">
+                        Dapatkan Info Terupdate
+                    </h3>
+                    <p class="text-xs sm:text-sm text-white/85 font-medium mt-1 max-w-md">
+                        Konsultasikan kebutuhan sistem IT Anda atau dapatkan rilis terbaru 5 produk digital SmartVerse.
+                    </p>
+                </div>
+
+                <!-- Form Subscribe / Kontak -->
+                <form action="{{ route('contact.store') }}" method="POST" class="w-full md:w-auto flex flex-col sm:flex-row items-center gap-2.5 max-w-md shrink-0 relative z-10">
+                    @csrf
+                    <input type="hidden" name="name" value="Newsletter Subscriber">
+                    <input type="hidden" name="subject" value="Langganan Info Terupdate">
+                    <input type="hidden" name="message" value="Permintaan info dan update produk SmartVerse via footer website.">
+                    
+                    <div class="relative w-full sm:w-72">
+                        <input type="email" name="email" required placeholder="Masukkan Email Anda"
+                               class="w-full px-5 py-3 rounded-full bg-white text-slate-800 placeholder-slate-400 text-xs sm:text-sm font-medium focus:outline-none focus:ring-2 focus:ring-cyan-400 shadow-inner">
+                    </div>
+                    <button type="submit"
+                            class="w-full sm:w-auto px-6 py-3 rounded-full bg-white hover:bg-cyan-50 text-[#0A1C3C] font-extrabold text-xs sm:text-sm tracking-wider uppercase flex items-center justify-center gap-2 shadow-lg transition-all hover:scale-105 active:scale-95 shrink-0 border border-white">
+                        <svg class="w-4 h-4 rotate-45 text-[#0A1C3C]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
+                        <span>SUBSCRIBE</span>
+                    </button>
+                </form>
+            </div>
+
+            <!-- Main Content Grid: 4 Kolom Simetris (1.3fr 1.15fr 0.95fr 1.1fr) -->
+            <style>
+                .smartverse-footer-grid {
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    gap: 2.5rem 1.5rem;
+                    width: 100%;
+                    padding-bottom: 2rem;
+                    align-items: start;
+                    text-align: left;
+                }
+                @media (min-width: 640px) {
+                    .smartverse-footer-grid {
+                        grid-template-columns: repeat(2, minmax(0, 1fr));
+                        gap: 2.5rem 2rem;
+                    }
+                }
+                @media (min-width: 1024px) {
+                    .smartverse-footer-grid {
+                        grid-template-columns: 1.3fr 1.15fr 0.95fr 1.1fr;
+                        gap: 2.5rem;
+                    }
+                }
+            </style>
+            <div class="smartverse-footer-grid">
+                
+                <!-- Kolom 1: Logo & Profil + 5 Produk Unggulan -->
+                <div class="space-y-4 flex flex-col items-start text-left">
                     <a href="{{ route('home') }}" class="inline-flex items-center gap-3 py-1 group" aria-label="SmartVerse.id">
                         <img src="{{ asset($settings['site_logo'] ?? 'images/smartverse/logo-smartverse.webp') }}" alt="SmartVerse" width="120" height="120" loading="lazy" decoding="async" class="h-11 w-11 rounded-xl shadow-xs object-cover hover:scale-105 transition-transform" />
                         <div class="text-left">
-                            <span class="text-lg font-black tracking-tight text-[#0A1C3C] dark:text-white">Smart<span class="text-cyan-600 dark:text-cyan-400">Verse</span></span>
-                            <span class="block text-[10px] uppercase tracking-widest text-slate-500 dark:text-slate-400 mono font-extrabold">smartverse.id</span>
+                            <span class="text-lg font-black tracking-tight text-white">Smart<span class="text-cyan-400">Verse</span></span>
+                            <span class="block text-[10px] uppercase tracking-widest text-cyan-200 mono font-extrabold">smartverse.id</span>
                         </div>
                     </a>
-                    <p class="text-xs sm:text-sm leading-relaxed max-w-sm font-medium" style="color: var(--text-muted);">
-                        <strong style="color: var(--text);">SmartVerse (smartverse.id)</strong> — Ekosistem solusi teknologi dan rekayasa perangkat lunak enterprise yang menaungi 5 inovasi produk digital unggulan: SmartNews, SmartEdu, SmartFeed, SmartSDM, dan SmartSynth.
+                    <p class="text-xs sm:text-sm leading-relaxed font-medium text-white/90">
+                        <strong class="text-white font-extrabold">SmartVerse (smartverse.id)</strong> adalah ekosistem solusi teknologi dan rekayasa perangkat lunak enterprise yang menaungi 5 inovasi produk digital unggulan di Indonesia.
                     </p>
                     
-                    <!-- SmartVerse 5 Flagship Products Pill Card -->
-                    <div class="p-3.5 rounded-2xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200/80 dark:border-slate-700/80 text-[11px] space-y-2 w-full max-w-sm text-left shadow-2xs">
-                        <div class="font-bold text-[#07153f] dark:text-white flex items-center justify-between text-xs">
+                    <!-- 5 Flagship Products Pill Card -->
+                    <div class="p-3.5 rounded-2xl bg-white/10 border border-white/20 text-[11px] space-y-2 w-full max-w-sm text-left shadow-2xs backdrop-blur-xs">
+                        <div class="font-bold text-white flex items-center justify-between text-xs">
                             <span class="flex items-center gap-1.5">
-                                <span class="w-5 h-5 rounded-md bg-cyan-100 dark:bg-cyan-950 text-cyan-600 dark:text-cyan-400 flex items-center justify-center text-xs shrink-0">✨</span>
+                                <span class="w-5 h-5 rounded-md bg-cyan-400/20 text-cyan-300 flex items-center justify-center text-xs shrink-0">✨</span>
                                 <span>Solusi Digital Terpadu</span>
                             </span>
-                            <span class="inline-flex items-center gap-1 text-cyan-600 dark:text-cyan-400 font-extrabold text-[10px] bg-cyan-50 dark:bg-cyan-950/60 px-2 py-0.5 rounded-full border border-cyan-200 dark:border-cyan-800">
+                            <span class="inline-flex items-center gap-1 text-cyan-200 font-extrabold text-[10px] bg-cyan-500/20 px-2 py-0.5 rounded-full border border-cyan-400/30">
                                 5 Produk Unggulan
                             </span>
                         </div>
                         <div class="flex flex-wrap gap-1.5 pt-0.5">
-                            <a href="{{ route('products.show', 'smartnews-cms-portal-berita') }}" class="px-2 py-0.5 rounded-md bg-sky-100 dark:bg-sky-950/80 text-sky-700 dark:text-sky-300 text-[10px] font-bold hover:bg-sky-200">SmartNews</a>
-                            <a href="{{ route('products.show', 'smartedu-ekosistem-sekolah-terpadu') }}" class="px-2 py-0.5 rounded-md bg-emerald-100 dark:bg-emerald-950/80 text-emerald-700 dark:text-emerald-300 text-[10px] font-bold hover:bg-emerald-200">SmartEdu</a>
-                            <a href="{{ route('products.show', 'smartfeed-ai-visual-studio') }}" class="px-2 py-0.5 rounded-md bg-purple-100 dark:bg-purple-950/80 text-purple-700 dark:text-purple-300 text-[10px] font-bold hover:bg-purple-200">SmartFeed</a>
-                            <a href="{{ route('products.show', 'smartsdm-mobile-hris-presensi') }}" class="px-2 py-0.5 rounded-md bg-blue-100 dark:bg-blue-950/80 text-blue-700 dark:text-blue-300 text-[10px] font-bold hover:bg-blue-200">SmartSDM</a>
-                            <a href="{{ route('products.show', 'smartsynth-lab-forensik-ai') }}" class="px-2 py-0.5 rounded-md bg-indigo-100 dark:bg-indigo-950/80 text-indigo-700 dark:text-indigo-300 text-[10px] font-bold hover:bg-indigo-200">SmartSynth</a>
-                        </div>
-                    </div>
-
-                    <!-- Social Media Links Directly Under Brand Card -->
-                    <div class="pt-1 space-y-2 w-full max-w-sm">
-                        <div class="flex items-center justify-center md:justify-start gap-2.5">
-                            <!-- Facebook Page -->
-                            <a href="https://www.facebook.com/profile.php?id=61593862816388" target="_blank" rel="noopener noreferrer" aria-label="Facebook Page SmartVerse" title="Facebook Page SmartVerse"
-                               class="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800/90 text-slate-600 dark:text-slate-300 hover:text-white hover:bg-[#1877F2] border border-slate-200/80 dark:border-slate-700/80 flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-md hover:shadow-blue-600/25">
-                                <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                            </a>
-                            <!-- Instagram -->
-                            <a href="https://instagram.com/smartverse.id" target="_blank" rel="noopener noreferrer" aria-label="Instagram SmartVerse" title="Instagram @smartverse.id"
-                               class="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800/90 text-slate-600 dark:text-slate-300 hover:text-white hover:bg-gradient-to-tr hover:from-amber-500 hover:via-pink-500 hover:to-purple-600 border border-slate-200/80 dark:border-slate-700/80 flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-md hover:shadow-pink-500/25">
-                                <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-                            </a>
-                            <!-- WhatsApp -->
-                            <a href="https://wa.me/6289695249089" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp SmartVerse" title="WhatsApp 0896 9524 9089"
-                               class="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800/90 text-slate-600 dark:text-slate-300 hover:text-white hover:bg-[#25D366] border border-slate-200/80 dark:border-slate-700/80 flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-md hover:shadow-emerald-500/25">
-                                <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2zm5.79 14.07c-.24.68-1.2 1.25-1.65 1.33-.45.08-1.03.11-3.32-.84-2.75-1.14-4.52-3.95-4.66-4.14-.14-.19-1.12-1.49-1.12-2.84 0-1.35.7-2.02.95-2.29.25-.27.55-.34.73-.34.18 0 .37 0 .53.01.17.01.4.06.61.57.24.58.82 2 .89 2.15.07.15.12.33.02.53-.1.2-.15.32-.3.49-.15.17-.32.38-.45.51-.15.15-.31.31-.13.62.18.31.8 1.32 1.72 2.14 1.18 1.05 2.17 1.37 2.48 1.52.31.15.49.13.67-.08.18-.21.78-.91.99-1.22.21-.31.42-.26.7-.16.28.1 1.77.83 2.07.98.3.15.5.22.58.35.07.13.07.76-.17 1.44z"/></svg>
-                            </a>
+                            <a href="{{ route('products.show', 'smartnews-cms-portal-berita') }}" class="px-2 py-0.5 rounded-md bg-sky-500/20 hover:bg-sky-500/30 text-sky-200 text-[10px] font-bold border border-sky-400/30 transition-colors">SmartNews</a>
+                            <a href="{{ route('products.show', 'smartedu-ekosistem-sekolah-terpadu') }}" class="px-2 py-0.5 rounded-md bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-200 text-[10px] font-bold border border-emerald-400/30 transition-colors">SmartEdu</a>
+                            <a href="{{ route('products.show', 'smartfeed-ai-visual-studio') }}" class="px-2 py-0.5 rounded-md bg-purple-500/20 hover:bg-purple-500/30 text-purple-200 text-[10px] font-bold border border-purple-400/30 transition-colors">SmartFeed</a>
+                            <a href="{{ route('products.show', 'smartsdm-mobile-hris-presensi') }}" class="px-2 py-0.5 rounded-md bg-blue-500/20 hover:bg-blue-500/30 text-blue-200 text-[10px] font-bold border border-blue-400/30 transition-colors">SmartSDM</a>
+                            <a href="{{ route('products.show', 'smartsynth-lab-forensik-ai') }}" class="px-2 py-0.5 rounded-md bg-indigo-500/20 hover:bg-indigo-500/30 text-indigo-200 text-[10px] font-bold border border-indigo-400/30 transition-colors">SmartSynth</a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Column 2: 5 Produk Digital Unggulan (lg:col-span-3) -->
-                <div class="lg:col-span-3 space-y-4 flex flex-col items-center md:items-start">
-                    <p class="font-extrabold text-xs tracking-wider uppercase mono text-cyan-600 dark:text-cyan-400 flex items-center gap-2">
-                        <span class="w-4 h-0.5 bg-cyan-600 dark:bg-cyan-400 rounded-full hidden md:block"></span>
-                        5 Produk Digital
-                    </p>
-                    <ul class="space-y-2.5 text-xs font-semibold" style="color: var(--text-muted);">
-                        <li><a href="{{ route('products.show', 'smartnews-cms-portal-berita') }}" class="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors inline-flex items-center gap-1.5 group"><span class="text-slate-400 group-hover:translate-x-0.5 transition-transform">›</span> 📰 SmartNews CMS</a></li>
-                        <li><a href="{{ route('products.show', 'smartedu-ekosistem-sekolah-terpadu') }}" class="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors inline-flex items-center gap-1.5 group"><span class="text-slate-400 group-hover:translate-x-0.5 transition-transform">›</span> 🎓 SmartEdu SIT ERP</a></li>
-                        <li><a href="{{ route('products.show', 'smartfeed-ai-visual-studio') }}" class="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors inline-flex items-center gap-1.5 group"><span class="text-slate-400 group-hover:translate-x-0.5 transition-transform">›</span> ⚡ SmartFeed Visual AI</a></li>
-                        <li><a href="{{ route('products.show', 'smartsdm-mobile-hris-presensi') }}" class="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors inline-flex items-center gap-1.5 group"><span class="text-slate-400 group-hover:translate-x-0.5 transition-transform">›</span> 📱 SmartSDM Mobile HRIS</a></li>
-                        <li><a href="{{ route('products.show', 'smartsynth-lab-forensik-ai') }}" class="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors inline-flex items-center gap-1.5 group"><span class="text-slate-400 group-hover:translate-x-0.5 transition-transform">›</span> 🔬 SmartSynth Lab Forensik</a></li>
-                    </ul>
-                </div>
-
-                <!-- Column 3: Layanan & Portofolio (lg:col-span-2) -->
-                <div class="lg:col-span-2 space-y-4 flex flex-col items-center md:items-start">
-                    <p class="font-extrabold text-xs tracking-wider uppercase mono text-[#3E5CE7] dark:text-blue-400 flex items-center gap-2">
-                        <span class="w-4 h-0.5 bg-[#3E5CE7] dark:bg-blue-400 rounded-full hidden md:block"></span>
-                        Navigasi
-                    </p>
-                    <ul class="space-y-2.5 text-xs font-semibold" style="color: var(--text-muted);">
-                        <li><a href="{{ route('home') }}" class="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors inline-flex items-center gap-1.5 group"><span class="text-slate-400 group-hover:translate-x-0.5 transition-transform">›</span> Beranda</a></li>
-                        <li><a href="{{ route('products.index') }}" class="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors inline-flex items-center gap-1.5 group"><span class="text-slate-400 group-hover:translate-x-0.5 transition-transform">›</span> Katalog Produk</a></li>
-                        <li><a href="{{ route('services') }}" class="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors inline-flex items-center gap-1.5 group"><span class="text-slate-400 group-hover:translate-x-0.5 transition-transform">›</span> Layanan IT</a></li>
-                        <li><a href="{{ route('projects.index') }}" class="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors inline-flex items-center gap-1.5 group"><span class="text-slate-400 group-hover:translate-x-0.5 transition-transform">›</span> Portofolio</a></li>
-                        <li><a href="{{ route('trainer.index') }}" class="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors inline-flex items-center gap-1.5 group"><span class="text-slate-400 group-hover:translate-x-0.5 transition-transform">›</span> Trainer & Galeri</a></li>
-                    </ul>
-                </div>
-
-                <!-- Column 4: Kontak & Mulai Proyek (lg:col-span-3) -->
-                <div class="lg:col-span-3 space-y-4 flex flex-col items-center md:items-start">
-                    <p class="font-extrabold text-xs tracking-wider uppercase mono text-orange-700 dark:text-orange-400 flex items-center gap-2">
-                        <span class="w-4 h-0.5 bg-[#fe6000] rounded-full hidden md:block"></span>
-                        Kontak & Kantor
+                <!-- Kolom 2: Alamat & Layanan -->
+                <div class="space-y-3.5 flex flex-col items-start text-left">
+                    <h4 class="font-extrabold text-sm sm:text-base tracking-wide text-white flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-cyan-300"></span>
+                        Alamat & Jam Operasional
+                    </h4>
+                    <p class="text-xs sm:text-sm leading-relaxed font-medium text-white/85">
+                        {{ $siteSettings['contact_address'] ?? 'Jl. Sarjana Blok A No. 25 Timbangan, Ogan Ilir, Sumatera Selatan 30862' }}
                     </p>
                     
-                    <!-- Compact Contact List with Clean SVGs -->
-                    <div class="space-y-2 text-xs font-medium w-full max-w-sm" style="color: var(--text-muted);">
+                    <div class="space-y-2 pt-1 text-xs sm:text-sm font-semibold">
+                        <div class="flex items-center gap-2.5">
+                            <span class="w-6 h-6 rounded-full bg-white/20 text-white flex items-center justify-center text-xs shrink-0 shadow-xs">✉️</span>
+                            <a href="mailto:{{ $siteSettings['contact_email'] ?? 'info@smartverse.id' }}" 
+                               class="text-white hover:text-cyan-200 transition-colors">
+                                {{ $siteSettings['contact_email'] ?? 'info@smartverse.id' }}
+                            </a>
+                        </div>
+                        <div class="flex items-center gap-2.5 text-white/80">
+                            <span class="w-6 h-6 rounded-full bg-white/20 text-white flex items-center justify-center text-xs shrink-0 shadow-xs">🕒</span>
+                            <span>Senin - Jumat: 08:00 - 17:00 WIB</span>
+                        </div>
+                    </div>
+
+                    <!-- Quick Navigation Links -->
+                    <div class="pt-2 border-t border-white/15 w-full">
+                        <ul class="grid grid-cols-2 gap-2 text-xs font-semibold text-white/85">
+                            <li><a href="{{ route('services') }}" class="hover:text-cyan-200 transition-colors inline-flex items-center gap-1"><span class="text-cyan-400">›</span> Layanan IT</a></li>
+                            <li><a href="{{ route('projects.index') }}" class="hover:text-cyan-200 transition-colors inline-flex items-center gap-1"><span class="text-cyan-400">›</span> Portofolio</a></li>
+                            <li><a href="{{ route('trainer.index') }}" class="hover:text-cyan-200 transition-colors inline-flex items-center gap-1"><span class="text-cyan-400">›</span> Trainer & Galeri</a></li>
+                            <li><a href="{{ route('blog.index') }}" class="hover:text-cyan-200 transition-colors inline-flex items-center gap-1"><span class="text-cyan-400">›</span> Wawasan IT</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Kolom 3: Sosial Media & Kontak -->
+                <div class="space-y-3.5 flex flex-col items-start text-left">
+                    <h4 class="font-extrabold text-sm sm:text-base tracking-wide text-white flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-cyan-300"></span>
+                        Sosial Media & Kontak
+                    </h4>
+                    <p class="text-xs sm:text-sm font-bold text-white/95">
+                        SmartVerse Indonesia
+                    </p>
+
+                    <!-- Baris Tombol Ikon Bulat Medsos: FB, IG, WA -->
+                    <div class="flex items-center flex-wrap gap-2.5 pt-1">
+                        <!-- Facebook -->
+                        <a href="https://www.facebook.com/profile.php?id=61593862816388" target="_blank" rel="noopener noreferrer" 
+                           aria-label="Facebook Page SmartVerse" title="Facebook SmartVerse"
+                           class="w-10 h-10 rounded-full bg-white text-[#1877F2] hover:bg-[#1877F2] hover:text-white border border-white/20 flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-md shrink-0">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        </a>
+                        <!-- Instagram -->
+                        <a href="https://instagram.com/smartverse.id" target="_blank" rel="noopener noreferrer" 
+                           aria-label="Instagram SmartVerse" title="Instagram: @smartverse.id"
+                           class="w-10 h-10 rounded-full bg-white text-[#E4405F] hover:bg-[#E4405F] hover:text-white border border-white/20 flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-md shrink-0">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                        </a>
+                        <!-- WhatsApp -->
                         <a href="https://wa.me/6289695249089" target="_blank" rel="noopener noreferrer" 
-                           class="flex items-center justify-center md:justify-start gap-2.5 p-2 rounded-xl bg-slate-50 dark:bg-slate-800/60 hover:bg-emerald-50 dark:hover:bg-emerald-950/40 border border-slate-200/60 dark:border-slate-700/60 hover:border-emerald-300 dark:hover:border-emerald-800 transition-all group">
-                            <span class="w-7 h-7 rounded-lg bg-emerald-100 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-400 flex items-center justify-center shrink-0">
-                                <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2zm5.79 14.07c-.24.68-1.2 1.25-1.65 1.33-.45.08-1.03.11-3.32-.84-2.75-1.14-4.52-3.95-4.66-4.14-.14-.19-1.12-1.49-1.12-2.84 0-1.35.7-2.02.95-2.29.25-.27.55-.34.73-.34.18 0 .37 0 .53.01.17.01.4.06.61.57.24.58.82 2 .89 2.15.07.15.12.33.02.53-.1.2-.15.32-.3.49-.15.17-.32.38-.45.51-.15.15-.31.31-.13.62.18.31.8 1.32 1.72 2.14 1.18 1.05 2.17 1.37 2.48 1.52.31.15.49.13.67-.08.18-.21.78-.91.99-1.22.21-.31.42-.26.7-.16.28.1 1.77.83 2.07.98.3.15.5.22.58.35.07.13.07.76-.17 1.44z"/></svg>
-                            </span>
-                            <div class="text-left leading-tight">
-                                <span class="text-[9px] uppercase tracking-wider text-slate-600 dark:text-slate-400 block font-bold">WhatsApp Resmi</span>
-                                <span class="font-bold text-slate-800 dark:text-slate-200 mono text-xs">0896 9524 9089</span>
-                            </div>
+                           aria-label="WhatsApp Kami" title="WhatsApp: 0896 9524 9089"
+                           class="w-10 h-10 rounded-full bg-white text-[#25D366] hover:bg-[#25D366] hover:text-white border border-white/20 flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-md shrink-0">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2zm5.79 14.07c-.24.68-1.2 1.25-1.65 1.33-.45.08-1.03.11-3.32-.84-2.75-1.14-4.52-3.95-4.66-4.14-.14-.19-1.12-1.49-1.12-2.84 0-1.35.7-2.02.95-2.29.25-.27.55-.34.73-.34.18 0 .37 0 .53.01.17.01.4.06.61.57.24.58.82 2 .89 2.15.07.15.12.33.02.53-.1.2-.15.32-.3.49-.15.17-.32.38-.45.51-.15.15-.31.31-.13.62.18.31.8 1.32 1.72 2.14 1.18 1.05 2.17 1.37 2.48 1.52.31.15.49.13.67-.08.18-.21.78-.91.99-1.22.21-.31.42-.26.7-.16.28.1 1.77.83 2.07.98.3.15.5.22.58.35.07.13.07.76-.17 1.44z"/></svg>
                         </a>
+                    </div>
 
-                        <a href="mailto:{{ $siteSettings['contact_email'] ?? 'info@smartverse.id' }}" 
-                           class="flex items-center justify-center md:justify-start gap-2.5 p-2 rounded-xl bg-slate-50 dark:bg-slate-800/60 hover:bg-blue-50 dark:hover:bg-blue-950/40 border border-slate-200/60 dark:border-slate-700/60 hover:border-blue-300 dark:hover:border-blue-800 transition-all group">
-                            <span class="w-7 h-7 rounded-lg bg-blue-100 dark:bg-blue-950 text-blue-600 dark:text-blue-400 flex items-center justify-center shrink-0">
-                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-                            </span>
-                            <div class="text-left leading-tight">
-                                <span class="text-[9px] uppercase tracking-wider text-slate-600 dark:text-slate-400 block font-bold">Email Bisnis</span>
-                                <span class="font-bold text-slate-800 dark:text-slate-200 text-xs">{{ $siteSettings['contact_email'] ?? 'info@smartverse.id' }}</span>
-                            </div>
-                        </a>
-
-                        <div class="flex items-start justify-center md:justify-start gap-2.5 p-2 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/60 dark:border-slate-700/60 text-left">
-                            <span class="w-7 h-7 rounded-lg bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 flex items-center justify-center shrink-0 mt-0.5">
-                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-                            </span>
-                            <div class="text-[10px] leading-relaxed text-slate-600 dark:text-slate-300 font-medium">
-                                {{ $siteSettings['contact_address'] ?? 'Jl. Sarjana Blok A No. 25 Timbangan, Ogan Ilir, Sumatera Selatan' }}
-                            </div>
+                    <!-- Domain & WhatsApp Info -->
+                    <div class="space-y-1.5 pt-2 text-xs font-semibold">
+                        <div class="flex items-center gap-2">
+                            <span class="text-white/80 shrink-0">🌐</span>
+                            <a href="{{ route('home') }}" class="text-white/90 hover:text-white underline-offset-2 hover:underline transition-colors">
+                                smartverse.id
+                            </a>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="text-white/80 shrink-0">💬</span>
+                            <a href="https://wa.me/6289695249089" target="_blank" class="text-white/90 hover:text-white underline-offset-2 hover:underline transition-colors mono">
+                                0896 9524 9089
+                            </a>
                         </div>
                     </div>
 
@@ -603,28 +658,95 @@
                     <div class="grid grid-cols-2 gap-2 w-full max-w-sm pt-1">
                         <a href="https://wa.me/6289695249089" target="_blank" rel="noopener noreferrer"
                            style="background-color: #fe6000 !important; color: #ffffff !important;"
-                           class="text-center px-3 py-2.5 rounded-xl font-bold text-xs shadow-md shadow-orange-500/20 hover:shadow-orange-500/35 hover:scale-[1.02] active:scale-95 transition-all flex items-center justify-center gap-1.5">
+                           class="text-center px-3 py-2 rounded-xl font-bold text-xs shadow-md hover:scale-[1.02] active:scale-95 transition-all flex items-center justify-center gap-1.5">
                             <span>💬 Chat WA</span>
                         </a>
                         <a href="{{ route('contact') }}" 
-                           class="text-center px-3 py-2.5 rounded-xl surface border border-slate-200 dark:border-slate-700 hover:border-[#3E5CE7] dark:hover:border-blue-400 text-xs font-bold transition-all flex items-center justify-center gap-1.5 hover:scale-[1.02] active:scale-95 shadow-2xs" 
-                           style="color: var(--text);">
-                            <span>🧮 Hitung Biaya</span>
+                           class="text-center px-3 py-2 rounded-xl bg-white/15 hover:bg-white/25 border border-white/20 text-white text-xs font-bold transition-all flex items-center justify-center gap-1.5 hover:scale-[1.02] active:scale-95 shadow-2xs">
+                            <span>🧮 Konsultasi</span>
                         </a>
+                    </div>
+                </div>
+
+                <!-- Kolom 4: Pengunjung Live -->
+                <div class="space-y-2 flex flex-col items-start text-left"
+                     x-data="{
+                         target: {{ $visitorTotalCount ?? 153563 }},
+                         current: Math.max(0, {{ ($visitorTotalCount ?? 153563) - 200 }}),
+                         animated: false,
+                         startCount() {
+                             if (this.animated) return;
+                             this.animated = true;
+                             const duration = 1800;
+                             const start = this.current;
+                             const end = this.target;
+                             const startTime = performance.now();
+                             const animate = (now) => {
+                                 const elapsed = now - startTime;
+                                 const progress = Math.min(elapsed / duration, 1);
+                                 const ease = 1 - (1 - progress) * (1 - progress);
+                                 this.current = Math.floor(start + (end - start) * ease);
+                                 if (progress < 1) {
+                                     requestAnimationFrame(animate);
+                                 } else {
+                                     this.current = end;
+                                 }
+                             };
+                             requestAnimationFrame(animate);
+                         },
+                         get formatted() {
+                             return new Intl.NumberFormat('id-ID').format(this.current);
+                         }
+                     }"
+                     x-init="
+                         const obs = new IntersectionObserver((entries) => {
+                             if (entries[0].isIntersecting) {
+                                 startCount();
+                                 obs.disconnect();
+                             }
+                         }, { threshold: 0.1 });
+                         obs.observe($el);
+                     ">
+                    
+                    <!-- Judul Pengunjung + Pill Badge Live -->
+                    <div class="flex items-center gap-2.5">
+                        <h4 class="font-extrabold text-sm sm:text-base tracking-wide text-white flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-[#fe6000]"></span>
+                            Pengunjung
+                        </h4>
+                        <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full border border-white/30 bg-white/15 text-white text-[10px] font-extrabold uppercase tracking-wider backdrop-blur-xs">
+                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
+                            Live
+                        </span>
+                    </div>
+
+                    <!-- Angka Pengunjung Besar Tebal -->
+                    <div class="text-4xl sm:text-5xl font-black tracking-tight mono select-all leading-tight my-1 text-white drop-shadow-sm"
+                         x-text="formatted">
+                        {{ $visitorFormattedCount ?? '153.563' }}
+                    </div>
+
+                    <!-- Status Pengunjung Online Real-Time -->
+                    <div class="inline-flex items-center gap-2 text-xs font-semibold px-3 py-1 rounded-full bg-black/25 border border-white/15 text-white shadow-inner">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shrink-0"></span>
+                        <span>
+                            <strong class="text-emerald-300 font-extrabold">{{ $visitorOnlineCount ?? 1 }}</strong> Pengunjung Online
+                        </span>
+                        <span class="text-[10px] mono uppercase text-white/70 font-bold ml-1">Real-Time</span>
                     </div>
                 </div>
 
             </div>
 
             <!-- Gradient Divider -->
-            <div class="h-px bg-gradient-to-r from-transparent via-slate-300 dark:via-slate-700 to-transparent my-6"></div>
+            <div class="h-px bg-white/20 my-6"></div>
 
             <!-- Bottom Copyright -->
-            <div class="flex flex-col sm:flex-row items-center justify-between gap-3 text-xs font-medium" style="color: var(--text-dim);">
-                <p>&copy; {{ date('Y') }} <a href="{{ route('home') }}" class="font-bold hover:underline hover:text-[#3E5CE7] transition-colors" style="color: var(--text);">SmartVerse (smartverse.id)</a>. All Rights Reserved.</p>
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-3 text-xs font-medium text-white/80">
+                <p>&copy; {{ date('Y') }} <a href="{{ route('home') }}" class="font-bold text-white hover:underline transition-colors">SmartVerse (smartverse.id)</a>. All Rights Reserved.</p>
                 <div class="flex items-center gap-2">
-                    <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 border border-slate-200/60 dark:border-slate-700/60 text-[10px] font-bold tracking-wider" style="color: var(--text-dim);">🇮🇩 MADE IN INDONESIA</span>
-                    <span class="px-2.5 py-1 rounded-md bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200/60 dark:border-emerald-800/60 text-emerald-600 dark:text-emerald-400 text-[10px] font-bold tracking-wider">🔒 SSL SECURED</span>
+                    <span class="px-2.5 py-1 rounded-md bg-white/10 border border-white/20 text-white/90 text-[10px] font-bold tracking-wider">🇮🇩 MADE IN INDONESIA</span>
+                    <span class="px-2.5 py-1 rounded-md bg-emerald-500/20 border border-emerald-400/30 text-emerald-200 text-[10px] font-bold tracking-wider">🔒 SSL SECURED</span>
                 </div>
             </div>
         </div>

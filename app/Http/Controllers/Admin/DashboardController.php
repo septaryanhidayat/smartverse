@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\DigitalProduct;
+use App\Models\DomainRenewal;
+use App\Models\FinancialRecord;
 use App\Models\Gallery;
 use App\Models\Inquiry;
 use App\Models\Invoice;
@@ -13,6 +15,8 @@ use App\Models\Project;
 use App\Models\Setting;
 use App\Models\Training;
 use App\Models\User;
+use App\Models\VisitorLog;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
@@ -41,10 +45,60 @@ class DashboardController extends Controller
 
         if (Schema::hasTable('invoices')) {
             $invoiceCount = Invoice::count();
-            $paidInvoiceCount = Invoice::where('status', 'PAID')->count();
-            $unpaidInvoiceCount = Invoice::whereIn('status', ['UNPAID', 'PARTIAL'])->count();
+            $paidInvoiceCount = Invoice::where('status', 'paid')->orWhere('status', 'PAID')->count();
+            $unpaidInvoiceCount = Invoice::whereIn('status', ['unpaid', 'pending', 'overdue', 'UNPAID', 'PARTIAL', 'partial'])->count();
             $totalInvoiceAmount = (float) Invoice::sum('total_amount');
+            $totalInvoicePaid = (float) (Schema::hasColumn('invoices', 'paid_amount') ? Invoice::sum('paid_amount') : Invoice::where('status', 'PAID')->sum('total_amount'));
+            $totalInvoiceRemaining = (float) (Schema::hasColumn('invoices', 'remaining_amount') ? Invoice::sum('remaining_amount') : Invoice::whereIn('status', ['UNPAID', 'PARTIAL'])->sum('total_amount'));
             $recentInvoices = Invoice::latest()->take(5)->get();
+        } else {
+            $totalInvoicePaid = 0;
+            $totalInvoiceRemaining = 0;
+        }
+
+        // Institutional Finance & Kas Summary
+        $financeTotalInflow = $totalInvoicePaid;
+        $financeTotalExpenses = 0;
+        $financeNetProfit = 0;
+
+        if (Schema::hasTable('financial_records')) {
+            $manualIncome = (float) FinancialRecord::where('type', 'income')->sum('amount');
+            $financeTotalExpenses = (float) FinancialRecord::where('type', 'expense')->sum('amount');
+            $financeTotalInflow += $manualIncome;
+            $financeNetProfit = $financeTotalInflow - $financeTotalExpenses;
+        }
+
+        // Live Visitors Count
+        $totalVisitors = 153563;
+        $onlineVisitors = 1;
+        if (Schema::hasTable('visitor_logs')) {
+            $baseOffset = (int) (Setting::getValue('visitor_offset', '153563') ?: 153563);
+            $totalVisitors = $baseOffset + VisitorLog::count();
+            $onlineVisitors = VisitorLog::getRealOnlineCount();
+        }
+
+        // Domain & Hosting Asset Tracking Metrics
+        $domainCount = 0;
+        $domainCriticalCount = 0;
+        $domainWarningCount = 0;
+        $domainExpiringSoonList = collect();
+
+        if (Schema::hasTable('domain_renewals')) {
+            $today = Carbon::today()->format('Y-m-d');
+            $in7Days = Carbon::today()->addDays(7)->format('Y-m-d');
+            $in30Days = Carbon::today()->addDays(30)->format('Y-m-d');
+
+            $domainCount = DomainRenewal::count();
+            $domainCriticalCount = DomainRenewal::where('expiry_date', '>=', $today)
+                ->where('expiry_date', '<=', $in7Days)
+                ->count();
+            $domainWarningCount = DomainRenewal::where('expiry_date', '>', $in7Days)
+                ->where('expiry_date', '<=', $in30Days)
+                ->count();
+            
+            $domainExpiringSoonList = DomainRenewal::orderBy('expiry_date', 'asc')
+                ->take(6)
+                ->get();
         }
 
         $recentInquiries = Inquiry::latest()->take(5)->get();
@@ -72,7 +126,6 @@ class DashboardController extends Controller
                 @fclose($fp);
 
                 if ($logContent) {
-                    // Regex captures timestamp, environment, log level, and the complete error message line
                     preg_match_all('/\[(\d{4}-\d{2}-\d{2}[^\]]+)\]\s+([a-zA-Z0-9_\.]+)\.([A-Z]+):\s+([^\r\n]+)/', $logContent, $matches, PREG_SET_ORDER);
                     
                     $matches = array_reverse($matches);
@@ -85,7 +138,6 @@ class DashboardController extends Controller
                         }
                         
                         $rawMessage = trim($m[4] ?? '');
-                        // Clean up verbose SQL/Exception traces to keep it human readable
                         $cleanMessage = preg_replace('/\{\"exception\".*$/', '', $rawMessage);
                         $cleanMessage = preg_replace('/#\d+\s.*$/', '', $cleanMessage);
                         $cleanMessage = trim($cleanMessage);
@@ -109,7 +161,7 @@ class DashboardController extends Controller
             'brute_force' => 'Anti-Brute Force (5 attempts/min)',
             'hsts' => 'HSTS & Anti-Sniffing Protected',
             'threats_blocked' => 0,
-            'db_health' => 'OPTIMAL (MySQL Connected)',
+            'db_health' => 'OPTIMAL (Connected)',
             'php_version' => PHP_VERSION,
             'laravel_version' => app()->version(),
         ];
@@ -128,6 +180,17 @@ class DashboardController extends Controller
             'paidInvoiceCount',
             'unpaidInvoiceCount',
             'totalInvoiceAmount',
+            'totalInvoicePaid',
+            'totalInvoiceRemaining',
+            'financeTotalInflow',
+            'financeTotalExpenses',
+            'financeNetProfit',
+            'domainCount',
+            'domainCriticalCount',
+            'domainWarningCount',
+            'domainExpiringSoonList',
+            'totalVisitors',
+            'onlineVisitors',
             'recentInvoices',
             'recentInquiries',
             'recentProjects',
