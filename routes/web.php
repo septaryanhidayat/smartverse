@@ -17,8 +17,10 @@ use App\Http\Controllers\Admin\AdminUserController;
 use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\SettingController;
+use App\Http\Controllers\Admin\AdminCvController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\CvPublicController;
 use App\Http\Controllers\DigitalProductController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\InvoiceVerificationController;
@@ -37,6 +39,12 @@ Route::get('/invoices/{invoice_number}', [InvoiceVerificationController::class, 
 Route::get('/panduan-pemesanan', [OrderGuidePublicController::class, 'show'])->name('order-guide.show');
 Route::get('/order-guide', [OrderGuidePublicController::class, 'show']);
 Route::get('/sop-pemesanan', [OrderGuidePublicController::class, 'show']);
+
+// Public Curriculum Vitae (CV) & Resume Eksekutif Septa Ryan Hidayat (Client-Shareable & Printable A4)
+Route::get('/cv', [CvPublicController::class, 'show'])->name('cv.show');
+Route::get('/resume', [CvPublicController::class, 'show'])->name('cv.resume');
+Route::get('/cv/print', [CvPublicController::class, 'print'])->name('cv.print');
+Route::get('/resume/print', [CvPublicController::class, 'print']);
 
 // Standard Authentication Fallback
 Route::get('/login', fn() => redirect()->route('admin.login'))->name('login');
@@ -138,6 +146,14 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'throttle:60,1'])->g
     Route::get('/panduan-pemesanan', [AdminOrderGuideController::class, 'index'])->name('order-guide.index');
     Route::post('/panduan-pemesanan', [AdminOrderGuideController::class, 'update'])->name('order-guide.update');
     Route::post('/panduan-pemesanan/reset', [AdminOrderGuideController::class, 'reset'])->name('order-guide.reset');
+
+    // Curriculum Vitae (CV) & Portfolio Management (Editable, Flyer/PDF Uploads, One-Click Print)
+    Route::get('/cv', [AdminCvController::class, 'index'])->name('cv.index');
+    Route::put('/cv/profile', [AdminCvController::class, 'updateProfile'])->name('cv.profile.update');
+    Route::post('/cv/activities', [AdminCvController::class, 'storeActivity'])->name('cv.activity.store');
+    Route::put('/cv/activities/{activity}', [AdminCvController::class, 'updateActivity'])->name('cv.activity.update');
+    Route::delete('/cv/activities/{activity}', [AdminCvController::class, 'destroyActivity'])->name('cv.activity.destroy');
+    Route::post('/cv/reset', [AdminCvController::class, 'resetDefault'])->name('cv.reset');
 
     // Profile & Account Settings
     Route::get('/profile', [AdminProfileController::class, 'index'])->name('profile.index');

@@ -46,11 +46,15 @@
                     </div>
                 </div>
 
-                <div class="pt-2">
+                <div class="pt-2 flex flex-wrap items-center justify-center lg:justify-start gap-3">
                     <a href="{{ route('projects.index') }}" 
                        style="background-color: #3E5CE7 !important; color: #ffffff !important;"
                        class="px-7 py-3.5 rounded-xl font-bold text-xs uppercase shadow-md inline-flex items-center gap-2 transition-all">
                         <span style="color: #ffffff !important;">Lihat Portofolio</span> &rarr;
+                    </a>
+                    <a href="{{ route('cv.show') }}" 
+                       class="px-6 py-3.5 rounded-xl font-bold text-xs uppercase border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-white hover:bg-slate-50 dark:hover:bg-slate-700/80 shadow-md inline-flex items-center gap-2 transition-all">
+                        <span>📄</span> <span>CV &amp; Profil Lengkap (PDF)</span>
                     </a>
                 </div>
             </div>
