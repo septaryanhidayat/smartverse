@@ -25,21 +25,21 @@
                 <div class="flex items-center justify-center lg:justify-start">
                     <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50/90 dark:bg-blue-950/60 border border-blue-200/80 dark:border-blue-800/60 text-blue-700 dark:text-blue-400 text-[11px] sm:text-xs font-extrabold tracking-wide uppercase shadow-xs">
                         <span class="w-2 h-2 rounded-full bg-cyan-500 animate-pulse"></span>
-                        <span>Enterprise Software Solution &amp; Layanan Narasumber IT / AI</span>
+                        <span>{{ $settings['hero_badge'] ?? $siteSettings['hero_badge'] ?? 'Enterprise Software Solution & Layanan Narasumber IT / AI' }}</span>
                     </div>
                 </div>
 
                 <!-- Main Dynamic Headline -->
                 <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-[50px] xl:text-[56px] font-black tracking-tight text-[#07153f] dark:text-white leading-[1.12] max-w-2xl">
-                    SMARTVERSE<span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-600">.ID</span>
+                    {{ $settings['hero_title_1'] ?? $siteSettings['hero_title_1'] ?? 'SMARTVERSE.ID' }}
                     <span class="block text-xl sm:text-2xl md:text-3xl lg:text-[28px] font-extrabold text-blue-700 dark:text-blue-400 pt-2 sm:pt-2.5 leading-snug tracking-normal">
-                        Solusi Digital Enterprise &amp; Layanan Narasumber Ahli IT / AI
+                        {{ $settings['hero_title_2'] ?? $siteSettings['hero_title_2'] ?? 'Solusi Digital Enterprise & Layanan Narasumber Ahli IT / AI' }}
                     </span>
                 </h1>
 
                 <!-- Subtitle Description -->
                 <p class="text-xs sm:text-sm md:text-base text-slate-600 dark:text-slate-300 max-w-xl mx-auto lg:mx-0 leading-relaxed font-medium">
-                    Mitra strategis transformasi digital terpadu. Kami merancang dan membangun <strong>rekayasa perangkat lunak skala enterprise &amp; 5 produk digital siap pakai</strong>, sekaligus menghadirkan <strong>layanan narasumber, instruktur, dan pembicara ahli</strong> di bidang koding, rekayasa pemrograman web/mobile, arsitektur cloud, serta adopsi kecerdasan buatan (<em>Artificial Intelligence</em>) untuk seminar, workshop, dan in-house training korporasi.
+                    {!! nl2br(e($settings['hero_description'] ?? $siteSettings['hero_description'] ?? 'Mitra strategis transformasi digital terpadu. Kami merancang dan membangun rekayasa perangkat lunak skala enterprise & 5 produk digital siap pakai, sekaligus menghadirkan layanan narasumber, instruktur, dan pembicara ahli di bidang koding, rekayasa pemrograman web/mobile, arsitektur cloud, serta adopsi kecerdasan buatan (Artificial Intelligence) untuk seminar, workshop, dan in-house training korporasi.')) !!}
                 </p>
 
                 <!-- 3 Dedicated Competency Pillars (Visual Cards) -->
@@ -2042,151 +2042,86 @@
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 text-center relative z-10 reveal-on-scroll">
         
-        <h2 class="text-3xl font-extrabold text-[#07153f] dark:text-white">Client & Partner Kami</h2>
+        <h2 class="text-3xl font-extrabold text-[#07153f] dark:text-white">
+            {{ $settings['client_partner_title'] ?? $siteSettings['client_partner_title'] ?? 'Client & Partner Kami' }}
+        </h2>
         
         <p class="text-xs font-bold uppercase tracking-wider text-[#64748B] dark:text-slate-400 mono">
-            Dipercaya Oleh Instansi Pemerintah, Perguruan Tinggi & Perusahaan Mitra
+            {{ $settings['client_partner_subtitle'] ?? $siteSettings['client_partner_subtitle'] ?? 'Dipercaya Oleh Instansi Pemerintah, Perguruan Tinggi & Perusahaan Mitra' }}
         </p>
+
+        @php
+            $rawList1 = $settings['client_partner_list_1'] ?? $siteSettings['client_partner_list_1'] ?? '';
+            $partnersList1 = array_filter(array_map('trim', explode("\n", str_replace("\r", "", $rawList1))));
+            if (empty($partnersList1)) {
+                $partnersList1 = [
+                    'Kementerian Komunikasi dan Digital RI (Komdigi)',
+                    'New Zealand BodyTalk Alliance (Selandia Baru)',
+                    'Universitas Sriwijaya (Unsri)',
+                    'Politeknik Akamigas Palembang',
+                    'Dinas Koperasi Kab. Ogan Ilir',
+                    'Master Your Muscles (Kuala Lumpur, Malaysia)',
+                    'Pemerintah Desa Senuro Timur Ogan Ilir',
+                    'Ikatan Guru Indonesia (IGI) Ogan Ilir',
+                    'PT. Duta Solusi Rumput Palembang',
+                ];
+            }
+
+            $rawList2 = $settings['client_partner_list_2'] ?? $siteSettings['client_partner_list_2'] ?? '';
+            $partnersList2 = array_filter(array_map('trim', explode("\n", str_replace("\r", "", $rawList2))));
+            if (empty($partnersList2)) {
+                $partnersList2 = [
+                    'Yayasan As-Salam Jayapura, Papua',
+                    'SIT Robbani Ogan Ilir',
+                    'Dompet Sosial Robbani (DSRP)',
+                    'SMAIT Ishlahul Ummah Prabumulih',
+                    'SMAIT Raudhatul Ummah',
+                    'Yayasan Pendidikan Islam Ash-Shaff',
+                    'Ralenta Learning Center',
+                    'Koperasi Pegawai Robbani',
+                    'Penerbit Laya Aksara Jaya',
+                    'Portal Berita Kabar32.com',
+                    "Iin's Cake (Katalog Kuliner & UMKM)",
+                ];
+            }
+        @endphp
 
         <!-- Marquee Text List (Rich Multi-Client Marquee Track) -->
         <div class="space-y-4 pt-4">
             <!-- Row 1 (Track 1: Bergerak dari Kiri ke Kanan) -->
             <div class="relative w-full overflow-hidden marquee-mask">
                 <div class="marquee-track marquee-ltr items-center gap-3 sm:gap-4">
-                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
-                        Kementerian Komunikasi dan Digital RI (Komdigi)
-                    </div>
-                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
-                        New Zealand BodyTalk Alliance (Selandia Baru)
-                    </div>
-                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
-                        Universitas Sriwijaya (Unsri)
-                    </div>
-                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
-                        Politeknik Akamigas Palembang
-                    </div>
-                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
-                        Dinas Koperasi Kab. Ogan Ilir
-                    </div>
-                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
-                        Master Your Muscles (Kuala Lumpur, Malaysia)
-                    </div>
-                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
-                        Pemerintah Desa Senuro Timur Ogan Ilir
-                    </div>
-                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
-                        Ikatan Guru Indonesia (IGI) Ogan Ilir
-                    </div>
-                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
-                        PT. Duta Solusi Rumput Palembang
-                    </div>
-
+                    @foreach($partnersList1 as $partner)
+                        <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
+                            {{ $partner }}
+                        </div>
+                    @endforeach
                     <!-- Repeat for seamless loop -->
-                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
-                        Kementerian Komunikasi dan Digital RI (Komdigi)
-                    </div>
-                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
-                        New Zealand BodyTalk Alliance (Selandia Baru)
-                    </div>
-                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
-                        Universitas Sriwijaya (Unsri)
-                    </div>
-                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
-                        Politeknik Akamigas Palembang
-                    </div>
-                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
-                        Dinas Koperasi Kab. Ogan Ilir
-                    </div>
-                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
-                        Master Your Muscles (Kuala Lumpur, Malaysia)
-                    </div>
-                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
-                        Pemerintah Desa Senuro Timur Ogan Ilir
-                    </div>
-                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
-                        Ikatan Guru Indonesia (IGI) Ogan Ilir
-                    </div>
-                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
-                        PT. Duta Solusi Rumput Palembang
-                    </div>
+                    @foreach($partnersList1 as $partner)
+                        <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
+                            {{ $partner }}
+                        </div>
+                    @endforeach
                 </div>
             </div>
 
             <!-- Row 2 (Track 2: Bergerak dari Kanan ke Kiri) -->
             <div class="relative w-full overflow-hidden marquee-mask">
                 <div class="marquee-track marquee-rtl items-center gap-3 sm:gap-4">
-                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
-                        Yayasan As-Salam Jayapura, Papua
-                    </div>
-                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
-                        SIT Robbani Ogan Ilir
-                    </div>
-                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
-                        Dompet Sosial Robbani (DSRP)
-                    </div>
-                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
-                        SMAIT Ishlahul Ummah Prabumulih
-                    </div>
-                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
-                        SMAIT Raudhatul Ulum
-                    </div>
-                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
-                        Yayasan Pendidikan Islam Ash-Shaff
-                    </div>
-                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
-                        Ralenta Learning Center
-                    </div>
-                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
-                        Koperasi Pegawai Robbani
-                    </div>
-                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
-                        Penerbit Laya Aksara Jaya
-                    </div>
-                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
-                        Portal Berita Kabar32.com
-                    </div>
-                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
-                        Iin's Cake (Katalog Kuliner & UMKM)
-                    </div>
-
+                    @foreach($partnersList2 as $partner)
+                        <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
+                            {{ $partner }}
+                        </div>
+                    @endforeach
                     <!-- Repeat for seamless loop -->
-                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
-                        Yayasan As-Salam Jayapura, Papua
-                    </div>
-                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
-                        SIT Robbani Ogan Ilir
-                    </div>
-                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
-                        Dompet Sosial Robbani (DSRP)
-                    </div>
-                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
-                        SMAIT Ishlahul Ummah Prabumulih
-                    </div>
-                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
-                        SMAIT Raudhatul Ulum
-                    </div>
-                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
-                        Yayasan Pendidikan Islam Ash-Shaff
-                    </div>
-                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
-                        Ralenta Learning Center
-                    </div>
-                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
-                        Koperasi Pegawai Robbani
-                    </div>
-                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
-                        Penerbit Laya Aksara Jaya
-                    </div>
-                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
-                        Portal Berita Kabar32.com
-                    </div>
-                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
-                        Iin's Cake (Katalog Kuliner & UMKM)
-                    </div>
+                    @foreach($partnersList2 as $partner)
+                        <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
+                            {{ $partner }}
+                        </div>
+                    @endforeach
                 </div>
             </div>
         </div>
-
     </div>
 </section>
 
