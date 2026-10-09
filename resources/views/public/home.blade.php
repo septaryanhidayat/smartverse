@@ -222,7 +222,7 @@
         <!-- 5 Flagship Products Grid (Rata Tengah Sempurna & Simetris untuk 5 Produk) -->
         <div class="flex flex-wrap justify-center gap-6 sm:gap-8">
             @forelse($flagshipProducts as $index => $prod)
-                <div class="w-full md:w-[calc(50%-1.25rem)] lg:w-[calc(33.333%-1.5rem)] max-w-sm bg-white dark:bg-slate-800/95 rounded-3xl p-6 sm:p-7 border border-slate-200/80 dark:border-slate-700/70 shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between group relative overflow-hidden reveal-on-scroll">
+                <div class="w-full md:w-[calc(50%-1.25rem)] lg:w-[calc(33.333%-1.5rem)] max-w-sm bg-white dark:bg-slate-800/95 rounded-3xl p-6 sm:p-7 border border-slate-200/80 dark:border-slate-700/70 shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between items-center text-center group relative overflow-hidden reveal-on-scroll">
                     
                     <!-- Top Ribbon / Order -->
                     <div class="absolute -top-3 -right-3 w-16 h-16 pointer-events-none overflow-hidden">
@@ -231,44 +231,44 @@
                         </span>
                     </div>
 
-                    <div class="space-y-4">
+                    <div class="space-y-4 w-full flex flex-col items-center">
                         <!-- Product Logo / Thumbnail -->
-                        <div class="relative rounded-2xl overflow-hidden bg-slate-100 dark:bg-slate-900 border border-slate-100 dark:border-slate-700/60 p-3 flex items-center justify-center h-48 group-hover:scale-[1.02] transition-transform duration-300">
+                        <div class="relative rounded-2xl overflow-hidden bg-slate-100 dark:bg-slate-900 border border-slate-100 dark:border-slate-700/60 p-3 flex items-center justify-center h-48 w-full group-hover:scale-[1.02] transition-transform duration-300">
                             @if($prod->thumbnail)
-                                <img src="{{ asset($prod->thumbnail) }}" alt="{{ $prod->title }}" class="max-h-full max-w-full object-contain drop-shadow-md transition-all duration-500">
+                                <img src="{{ asset($prod->thumbnail) }}" alt="{{ $prod->title }}" class="max-h-full max-w-full object-contain drop-shadow-md transition-all duration-500 mx-auto">
                             @else
                                 <div class="text-5xl">🚀</div>
                             @endif
-                            <div class="absolute bottom-2 left-2">
+                            <div class="absolute bottom-2 inset-x-0 flex justify-center">
                                 <span class="px-2.5 py-1 rounded-lg text-[10px] font-black uppercase tracking-wider bg-[#07153f]/90 text-cyan-300 backdrop-blur-xs border border-cyan-400/20 shadow-xs">
                                     {{ $prod->badge }}
                                 </span>
                             </div>
                         </div>
 
-                        <!-- Product Title & Tagline -->
-                        <div>
-                            <h3 class="text-lg sm:text-xl font-black text-[#07153f] dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors line-clamp-2">
+                        <!-- Product Title & Tagline (Rata Tengah) -->
+                        <div class="text-center w-full">
+                            <h3 class="text-lg sm:text-xl font-black text-[#07153f] dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors line-clamp-2 text-center">
                                 {{ $prod->title }}
                             </h3>
-                            <p class="text-xs sm:text-sm text-blue-600 dark:text-blue-400 font-semibold mt-1">
+                            <p class="text-xs sm:text-sm text-blue-600 dark:text-blue-400 font-semibold mt-1 text-center">
                                 {{ $prod->tagline }}
                             </p>
                         </div>
 
-                        <!-- Product Description -->
-                        <p class="text-xs text-slate-600 dark:text-slate-300 line-clamp-3 leading-relaxed">
+                        <!-- Product Description (Rata Tengah) -->
+                        <p class="text-xs text-slate-600 dark:text-slate-300 line-clamp-3 leading-relaxed text-center">
                             {{ $prod->description }}
                         </p>
 
-                        <!-- Key Features Checklist -->
+                        <!-- Key Features Checklist (Rata Tengah) -->
                         @if($prod->features)
                             @php
                                 $featuresList = is_array($prod->features) ? $prod->features : (json_decode($prod->features, true) ?? []);
                             @endphp
-                            <div class="pt-2 border-t border-slate-100 dark:border-slate-700/60 space-y-1.5">
+                            <div class="pt-2 border-t border-slate-100 dark:border-slate-700/60 space-y-1.5 w-full flex flex-col items-center">
                                 @foreach(array_slice($featuresList, 0, 4) as $feat)
-                                    <div class="flex items-start gap-2 text-xs text-slate-700 dark:text-slate-300">
+                                    <div class="flex items-center justify-center gap-2 text-xs text-slate-700 dark:text-slate-300 text-center">
                                         <span class="text-emerald-500 font-bold shrink-0">✓</span>
                                         <span class="line-clamp-1 font-medium">{{ $feat }}</span>
                                     </div>
@@ -277,15 +277,13 @@
                         @endif
                     </div>
 
-                    <!-- Bottom Action / CTA -->
-                    <div class="pt-5 mt-5 border-t border-slate-100 dark:border-slate-700/60 space-y-3">
-                        <div class="flex items-center justify-between">
-                            <div>
-                                <span class="text-[10px] text-slate-400 uppercase tracking-wider font-semibold block">Model Lisensi</span>
-                                <span class="text-xs sm:text-sm font-black text-[#07153f] dark:text-white">
-                                    Solusi Enterprise
-                                </span>
-                            </div>
+                    <!-- Bottom Action / CTA (Rata Tengah) -->
+                    <div class="pt-5 mt-5 border-t border-slate-100 dark:border-slate-700/60 space-y-3 w-full">
+                        <div class="flex items-center justify-center gap-2.5 text-center flex-wrap">
+                            <span class="text-xs sm:text-sm font-black text-[#07153f] dark:text-white">
+                                Solusi Enterprise
+                            </span>
+                            <span class="text-slate-300 dark:text-slate-600 hidden xs:inline">•</span>
                             <span class="text-[10px] font-bold px-2 py-0.5 rounded-md bg-emerald-50 text-emerald-700 dark:bg-emerald-950/60 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800">
                                 Full Source Code
                             </span>
@@ -738,147 +736,147 @@
             </p>
         </div>
 
-        <!-- 5 Flagship Product Cards Grid (Rata Tengah Sempurna & Rapi) -->
-        <div class="flex flex-wrap justify-center gap-6">
+        <!-- 5 Flagship Product Cards Grid (Rata Tengah Sempurna & Simetris) -->
+        <div class="flex flex-wrap justify-center items-stretch gap-6">
             
             <!-- Card 1: SmartNews -->
-            <div class="w-full sm:w-[calc(50%-0.85rem)] lg:w-[calc(33.333%-1rem)] max-w-sm bg-white dark:bg-slate-800 p-6 rounded-3xl border-2 border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all space-y-3 reveal-on-scroll delay-75 flex flex-col justify-between items-center sm:items-stretch text-center sm:text-left">
-                <div class="space-y-3 w-full">
-                    <div class="w-14 h-14 rounded-2xl bg-sky-50 dark:bg-sky-950 text-sky-600 dark:text-sky-400 flex items-center justify-center text-3xl font-bold shadow-xs mx-auto sm:mx-0">
+            <div class="w-full sm:w-[calc(50%-0.85rem)] lg:w-[calc(33.333%-1rem)] max-w-sm bg-white dark:bg-slate-800 p-6 rounded-3xl border-2 border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all space-y-4 reveal-on-scroll delay-75 flex flex-col justify-between items-center text-center">
+                <div class="space-y-3 w-full flex flex-col items-center">
+                    <div class="w-14 h-14 rounded-2xl bg-sky-50 dark:bg-sky-950 text-sky-600 dark:text-sky-400 flex items-center justify-center text-3xl font-bold shadow-xs mx-auto">
                         📰
                     </div>
-                    <div class="space-y-1">
-                        <span class="text-[10px] font-extrabold uppercase tracking-wider text-sky-600 dark:text-sky-400 block">Jurnalisme & Media</span>
-                        <h3 class="text-base font-black text-[#07153f] dark:text-white">SmartNews CMS Portal Berita</h3>
-                        <p class="text-xs font-mono font-bold text-slate-800 dark:text-slate-200 pt-0.5">
-                            Standar Regulasi Dewan Pers & AI Writer
+                    <div class="space-y-1 text-center w-full">
+                        <span class="text-[10px] font-extrabold uppercase tracking-wider text-sky-600 dark:text-sky-400 block text-center">Jurnalisme &amp; Media</span>
+                        <h3 class="text-base font-black text-[#07153f] dark:text-white text-center">SmartNews CMS Portal Berita</h3>
+                        <p class="text-xs font-mono font-bold text-slate-800 dark:text-slate-200 pt-0.5 text-center">
+                            Standar Regulasi Dewan Pers &amp; AI Writer
                         </p>
                     </div>
-                    <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed pt-2 border-t border-slate-100 dark:border-slate-700">
+                    <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed pt-2 border-t border-slate-100 dark:border-slate-700 text-center">
                         CMS portal media online berkecepatan tinggi dengan integrasi AI SEO Writer, 6 slot monetisasi iklan mandiri, dan multi-role redaksi editorial.
                     </p>
                 </div>
-                <div class="pt-3 flex items-center justify-between border-t border-slate-100 dark:border-slate-700 w-full">
+                <div class="pt-3 flex flex-wrap items-center justify-center gap-2.5 border-t border-slate-100 dark:border-slate-700 w-full text-center">
                     <span class="text-[10px] font-bold text-emerald-600 dark:text-emerald-400 flex items-center gap-1">✓ Sekali Bayar</span>
+                    <span class="text-slate-300 dark:text-slate-600 hidden xs:inline">•</span>
                     <a href="{{ route('products.show', 'smartnews-cms-portal-berita') }}" class="text-xs font-bold text-sky-600 dark:text-sky-400 hover:underline inline-flex items-center gap-1">Detail Produk &rarr;</a>
                 </div>
             </div>
 
             <!-- Card 2: SmartEdu SIT -->
-            <div class="w-full sm:w-[calc(50%-0.85rem)] lg:w-[calc(33.333%-1rem)] max-w-sm bg-white dark:bg-slate-800 p-6 rounded-3xl border-2 border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all space-y-3 reveal-on-scroll delay-150 flex flex-col justify-between items-center sm:items-stretch text-center sm:text-left">
-                <div class="space-y-3 w-full">
-                    <div class="w-14 h-14 rounded-2xl bg-emerald-50 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-3xl font-bold shadow-xs mx-auto sm:mx-0">
+            <div class="w-full sm:w-[calc(50%-0.85rem)] lg:w-[calc(33.333%-1rem)] max-w-sm bg-white dark:bg-slate-800 p-6 rounded-3xl border-2 border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all space-y-4 reveal-on-scroll delay-150 flex flex-col justify-between items-center text-center">
+                <div class="space-y-3 w-full flex flex-col items-center">
+                    <div class="w-14 h-14 rounded-2xl bg-emerald-50 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-3xl font-bold shadow-xs mx-auto">
                         🎓
                     </div>
-                    <div class="space-y-1">
-                        <span class="text-[10px] font-extrabold uppercase tracking-wider text-emerald-600 dark:text-emerald-400 block">Edukasi & Pesantren</span>
-                        <h3 class="text-base font-black text-[#07153f] dark:text-white">SmartEdu SIT Educational ERP</h3>
-                        <p class="text-xs font-mono font-bold text-slate-800 dark:text-slate-200 pt-0.5">
-                            25 Modul Terintegrasi & SafeSchool
+                    <div class="space-y-1 text-center w-full">
+                        <span class="text-[10px] font-extrabold uppercase tracking-wider text-emerald-600 dark:text-emerald-400 block text-center">Edukasi &amp; Pesantren</span>
+                        <h3 class="text-base font-black text-[#07153f] dark:text-white text-center">SmartEdu SIT Educational ERP</h3>
+                        <p class="text-xs font-mono font-bold text-slate-800 dark:text-slate-200 pt-0.5 text-center">
+                            25 Modul Terintegrasi &amp; SafeSchool
                         </p>
                     </div>
-                    <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed pt-2 border-t border-slate-100 dark:border-slate-700">
-                        ERP lengkap sekolah Islam terpadu & pesantren dengan mutabaah yaumiyah, buku induk digital, SPP Virtual Account otomatis, dan kanal anti-bullying.
+                    <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed pt-2 border-t border-slate-100 dark:border-slate-700 text-center">
+                        ERP lengkap sekolah Islam terpadu &amp; pesantren dengan mutabaah yaumiyah, buku induk digital, SPP Virtual Account otomatis, dan kanal anti-bullying.
                     </p>
                 </div>
-                <div class="pt-3 flex items-center justify-between border-t border-slate-100 dark:border-slate-700 w-full">
+                <div class="pt-3 flex flex-wrap items-center justify-center gap-2.5 border-t border-slate-100 dark:border-slate-700 w-full text-center">
                     <span class="text-[10px] font-bold text-emerald-600 dark:text-emerald-400 flex items-center gap-1">✓ Sekali Bayar</span>
+                    <span class="text-slate-300 dark:text-slate-600 hidden xs:inline">•</span>
                     <a href="{{ route('products.show', 'smartedu-ekosistem-sekolah-terpadu') }}" class="text-xs font-bold text-emerald-600 dark:text-emerald-400 hover:underline inline-flex items-center gap-1">Detail Produk &rarr;</a>
                 </div>
             </div>
 
             <!-- Card 3: SmartFeed -->
-            <div class="w-full sm:w-[calc(50%-0.85rem)] lg:w-[calc(33.333%-1rem)] max-w-sm bg-white dark:bg-slate-800 p-6 rounded-3xl border-2 border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all space-y-3 reveal-on-scroll delay-200 flex flex-col justify-between items-center sm:items-stretch text-center sm:text-left">
-                <div class="space-y-3 w-full">
-                    <div class="w-14 h-14 rounded-2xl bg-purple-50 dark:bg-purple-950 text-purple-600 dark:text-purple-400 flex items-center justify-center text-3xl font-bold shadow-xs mx-auto sm:mx-0">
+            <div class="w-full sm:w-[calc(50%-0.85rem)] lg:w-[calc(33.333%-1rem)] max-w-sm bg-white dark:bg-slate-800 p-6 rounded-3xl border-2 border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all space-y-4 reveal-on-scroll delay-200 flex flex-col justify-between items-center text-center">
+                <div class="space-y-3 w-full flex flex-col items-center">
+                    <div class="w-14 h-14 rounded-2xl bg-purple-50 dark:bg-purple-950 text-purple-600 dark:text-purple-400 flex items-center justify-center text-3xl font-bold shadow-xs mx-auto">
                         ⚡
                     </div>
-                    <div class="space-y-1">
-                        <span class="text-[10px] font-extrabold uppercase tracking-wider text-purple-600 dark:text-purple-400 block">Kreatif & Pemasaran AI</span>
-                        <h3 class="text-base font-black text-[#07153f] dark:text-white">SmartFeed AI Visual Studio</h3>
-                        <p class="text-xs font-mono font-bold text-slate-800 dark:text-slate-200 pt-0.5">
-                            15+ Mode Kreatif & Multi-Slide Instan
+                    <div class="space-y-1 text-center w-full">
+                        <span class="text-[10px] font-extrabold uppercase tracking-wider text-purple-600 dark:text-purple-400 block text-center">Kreatif &amp; Pemasaran AI</span>
+                        <h3 class="text-base font-black text-[#07153f] dark:text-white text-center">SmartFeed AI Visual Studio</h3>
+                        <p class="text-xs font-mono font-bold text-slate-800 dark:text-slate-200 pt-0.5 text-center">
+                            15+ Mode Kreatif &amp; Multi-Slide Instan
                         </p>
                     </div>
-                    <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed pt-2 border-t border-slate-100 dark:border-slate-700">
+                    <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed pt-2 border-t border-slate-100 dark:border-slate-700 text-center">
                         Otomatisasi konten sosial media dalam hitungan detik. Hasilkan carousel swipeable, gridfeed branding, copywriting AIDA/PAS, dan video script affiliate.
                     </p>
                 </div>
-                <div class="pt-3 flex items-center justify-between border-t border-slate-100 dark:border-slate-700 w-full">
+                <div class="pt-3 flex flex-wrap items-center justify-center gap-2.5 border-t border-slate-100 dark:border-slate-700 w-full text-center">
                     <span class="text-[10px] font-bold text-emerald-600 dark:text-emerald-400 flex items-center gap-1">✓ Sekali Bayar</span>
+                    <span class="text-slate-300 dark:text-slate-600 hidden xs:inline">•</span>
                     <a href="{{ route('products.show', 'smartfeed-ai-visual-studio') }}" class="text-xs font-bold text-purple-600 dark:text-purple-400 hover:underline inline-flex items-center gap-1">Detail Produk &rarr;</a>
                 </div>
             </div>
 
-            <!-- Card 4: SmartSDM -->
-            <div class="w-full sm:w-[calc(50%-0.85rem)] lg:w-[calc(33.333%-1rem)] max-w-sm bg-white dark:bg-slate-800 p-6 rounded-3xl border-2 border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all space-y-3 reveal-on-scroll delay-250 flex flex-col justify-between items-center sm:items-stretch text-center sm:text-left">
-                <div class="space-y-3 w-full">
-                    <div class="w-14 h-14 rounded-2xl bg-blue-50 dark:bg-blue-950 text-blue-600 dark:text-blue-400 flex items-center justify-center text-3xl font-bold shadow-xs mx-auto sm:mx-0">
+            <!-- Card 4: SmartSDM (Baris ke-2 Rata Tengah) -->
+            <div class="w-full sm:w-[calc(50%-0.85rem)] lg:w-[calc(33.333%-1rem)] max-w-sm bg-white dark:bg-slate-800 p-6 rounded-3xl border-2 border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all space-y-4 reveal-on-scroll delay-250 flex flex-col justify-between items-center text-center">
+                <div class="space-y-3 w-full flex flex-col items-center">
+                    <div class="w-14 h-14 rounded-2xl bg-blue-50 dark:bg-blue-950 text-blue-600 dark:text-blue-400 flex items-center justify-center text-3xl font-bold shadow-xs mx-auto">
                         📱
                     </div>
-                    <div class="space-y-1">
-                        <span class="text-[10px] font-extrabold uppercase tracking-wider text-blue-600 dark:text-blue-400 block">HRIS & Operasional</span>
-                        <h3 class="text-base font-black text-[#07153f] dark:text-white">SmartSDM Mobile HRIS</h3>
-                        <p class="text-xs font-mono font-bold text-slate-800 dark:text-slate-200 pt-0.5">
-                            Biometrik Face Liveness & Radar GPS
+                    <div class="space-y-1 text-center w-full">
+                        <span class="text-[10px] font-extrabold uppercase tracking-wider text-blue-600 dark:text-blue-400 block text-center">HRIS &amp; Operasional</span>
+                        <h3 class="text-base font-black text-[#07153f] dark:text-white text-center">SmartSDM Mobile HRIS</h3>
+                        <p class="text-xs font-mono font-bold text-slate-800 dark:text-slate-200 pt-0.5 text-center">
+                            Biometrik Face Liveness &amp; Radar GPS
                         </p>
                     </div>
-                    <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed pt-2 border-t border-slate-100 dark:border-slate-700">
+                    <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed pt-2 border-t border-slate-100 dark:border-slate-700 text-center">
                         Aplikasi mobile absensi biometrik anti-titip absen dengan deteksi wajah liveness (kedipan mata), radius geofencing Haversine, dan penggajian otomatis.
                     </p>
                 </div>
-                <div class="pt-3 flex items-center justify-between border-t border-slate-100 dark:border-slate-700 w-full">
+                <div class="pt-3 flex flex-wrap items-center justify-center gap-2.5 border-t border-slate-100 dark:border-slate-700 w-full text-center">
                     <span class="text-[10px] font-bold text-emerald-600 dark:text-emerald-400 flex items-center gap-1">✓ Sekali Bayar</span>
+                    <span class="text-slate-300 dark:text-slate-600 hidden xs:inline">•</span>
                     <a href="{{ route('products.show', 'smartsdm-mobile-hris-presensi') }}" class="text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline inline-flex items-center gap-1">Detail Produk &rarr;</a>
                 </div>
             </div>
 
-            <!-- Card 5: SmartSynth -->
-            <div class="w-full sm:w-[calc(50%-0.85rem)] lg:w-[calc(33.333%-1rem)] max-w-sm bg-white dark:bg-slate-800 p-6 rounded-3xl border-2 border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all space-y-3 reveal-on-scroll delay-300 flex flex-col justify-between items-center sm:items-stretch text-center sm:text-left">
-                <div class="space-y-3 w-full">
-                    <div class="w-14 h-14 rounded-2xl bg-indigo-50 dark:bg-indigo-950 text-indigo-600 dark:text-indigo-400 flex items-center justify-center text-3xl font-bold shadow-xs mx-auto sm:mx-0">
+            <!-- Card 5: SmartSynth (Baris ke-2 Rata Tengah) -->
+            <div class="w-full sm:w-[calc(50%-0.85rem)] lg:w-[calc(33.333%-1rem)] max-w-sm bg-white dark:bg-slate-800 p-6 rounded-3xl border-2 border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all space-y-4 reveal-on-scroll delay-300 flex flex-col justify-between items-center text-center">
+                <div class="space-y-3 w-full flex flex-col items-center">
+                    <div class="w-14 h-14 rounded-2xl bg-indigo-50 dark:bg-indigo-950 text-indigo-600 dark:text-indigo-400 flex items-center justify-center text-3xl font-bold shadow-xs mx-auto">
                         🔬
                     </div>
-                    <div class="space-y-1">
-                        <span class="text-[10px] font-extrabold uppercase tracking-wider text-indigo-600 dark:text-indigo-400 block">AI & Forensik Digital</span>
-                        <h3 class="text-base font-black text-[#07153f] dark:text-white">SmartSynth Lab Forensik AI</h3>
-                        <p class="text-xs font-mono font-bold text-slate-800 dark:text-slate-200 pt-0.5">
-                            C2PA 2.4, Real ELA & 2D FFT Saintifik
+                    <div class="space-y-1 text-center w-full">
+                        <span class="text-[10px] font-extrabold uppercase tracking-wider text-indigo-600 dark:text-indigo-400 block text-center">AI &amp; Forensik Digital</span>
+                        <h3 class="text-base font-black text-[#07153f] dark:text-white text-center">SmartSynth Lab Forensik AI</h3>
+                        <p class="text-xs font-mono font-bold text-slate-800 dark:text-slate-200 pt-0.5 text-center">
+                            C2PA 2.4, Real ELA &amp; 2D FFT Saintifik
                         </p>
                     </div>
-                    <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed pt-2 border-t border-slate-100 dark:border-slate-700">
+                    <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed pt-2 border-t border-slate-100 dark:border-slate-700 text-center">
                         Suite pengujian keaslian foto digital secara saintifik melalui EXIF biner, kriptografi C2PA 2.4, Error Level Analysis (ELA), dan spektrogram 2D FFT.
                     </p>
                 </div>
-                <div class="pt-3 flex items-center justify-between border-t border-slate-100 dark:border-slate-700 w-full">
+                <div class="pt-3 flex flex-wrap items-center justify-center gap-2.5 border-t border-slate-100 dark:border-slate-700 w-full text-center">
                     <span class="text-[10px] font-bold text-emerald-600 dark:text-emerald-400 flex items-center gap-1">✓ Sekali Bayar</span>
+                    <span class="text-slate-300 dark:text-slate-600 hidden xs:inline">•</span>
                     <a href="{{ route('products.show', 'smartsynth-lab-forensik-ai') }}" class="text-xs font-bold text-indigo-600 dark:text-indigo-400 hover:underline inline-flex items-center gap-1">Detail Produk &rarr;</a>
                 </div>
             </div>
 
-            <!-- Card 6: Custom Enterprise Software -->
-            <div class="w-full sm:w-[calc(50%-0.85rem)] lg:w-[calc(33.333%-1rem)] max-w-sm bg-gradient-to-br from-[#07153f] to-[#0d2360] dark:from-slate-950 dark:to-[#07153f] p-6 rounded-3xl text-white shadow-xl hover:-translate-y-1 transition-all space-y-3 reveal-on-scroll delay-350 flex flex-col justify-between items-center sm:items-stretch text-center sm:text-left border border-cyan-500/30">
-                <div class="space-y-3 w-full">
-                    <div class="w-14 h-14 rounded-2xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center text-3xl font-bold shadow-xs mx-auto sm:mx-0">
-                        🏢
-                    </div>
-                    <div class="space-y-1">
-                        <span class="text-[10px] font-extrabold uppercase tracking-wider text-cyan-300 block">Custom Architecture</span>
-                        <h3 class="text-base font-black text-white">Custom Software & AI Solution</h3>
-                        <p class="text-xs font-mono font-bold text-slate-300 pt-0.5">
-                            Tailor-Made Sesuai Kebutuhan Anda
-                        </p>
-                    </div>
-                    <p class="text-xs text-slate-300 leading-relaxed pt-2 border-t border-white/10">
-                        Butuh kustomisasi sistem khusus atau integrasi enterprise? Tim software engineer SmartVerse siap mendampingi dari tahap arsitektur hingga deployment.
-                    </p>
-                </div>
-                <div class="pt-3 flex items-center justify-between border-t border-white/10 w-full">
-                    <span class="text-[10px] font-bold text-cyan-300 flex items-center gap-1">✓ Dedicated Team</span>
-                    <a href="https://wa.me/6289695249089" target="_blank" class="text-xs font-bold text-orange-400 hover:underline inline-flex items-center gap-1">Konsultasi &rarr;</a>
-                </div>
-            </div>
+        </div>
 
+        <!-- Banner Konsultasi Custom Enterprise (Rata Tengah Sempurna) -->
+        <div class="max-w-3xl mx-auto p-5 sm:p-6 rounded-3xl bg-gradient-to-r from-blue-50 via-cyan-50 to-blue-50 dark:from-slate-800 dark:via-slate-850 dark:to-slate-800 border border-blue-200/80 dark:border-blue-900/60 text-center space-y-3 reveal-on-scroll shadow-xs">
+            <div class="space-y-1 text-center">
+                <span class="text-[10px] font-extrabold uppercase tracking-wider text-blue-700 dark:text-blue-400 block text-center">Kustomisasi Arsitektur Enterprise</span>
+                <h4 class="text-sm sm:text-base font-black text-[#07153f] dark:text-white text-center">
+                    Butuh Kustomisasi Sistem Khusus atau Integrasi untuk Instansi Anda?
+                </h4>
+                <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed max-w-xl mx-auto text-center">
+                    Tim software architect SmartVerse siap mendampingi pengembangan sistem kustom berstandar industri dengan tim engineering berpengalaman.
+                </p>
+            </div>
+            <div class="pt-1 flex items-center justify-center">
+                <a href="https://wa.me/6289695249089?text=Halo%20SmartVerse,%20saya%20ingin%20konsultasi%20pengembangan%20sistem%20kustom" target="_blank" class="px-5 py-2.5 rounded-xl bg-[#3E5CE7] hover:bg-blue-700 text-white font-extrabold text-xs inline-flex items-center gap-2 shadow-md hover:shadow-blue-500/25 active:scale-95 transition-all">
+                    <span>💬 Konsultasikan Solusi Kustom</span> &rarr;
+                </a>
+            </div>
         </div>
 
         <!-- 5 Keunggulan SmartVerse -->
