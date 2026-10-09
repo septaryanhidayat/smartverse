@@ -661,62 +661,53 @@
                     </div>
                 </div>
 
-                <!-- Container Mockup 3D Perspective Showcase (Sudut Pandang Menyamping Elegan) -->
-                <div class="relative w-full max-w-xl flex items-end justify-center pt-8 pb-6 select-none" 
-                     style="perspective: 1200px; transform-style: preserve-3d;">
+                <!-- Container Mockup: Laptop di Belakang, Smartphone di Sisi Kanan (Bersih, Rapi & Natural) -->
+                <div class="relative w-full max-w-xl mx-auto pt-6 pb-4 select-none">
                     
-                    <!-- 1. Laptop Mockup (MacBook Pro Perspective Angle) -->
-                    <div class="relative w-[78%] sm:w-[82%] z-10 transition-all duration-700 hover:scale-[1.02] origin-bottom-left"
-                         style="transform: rotateY(-8deg) rotateX(3deg) rotateZ(-0.5deg); transform-style: preserve-3d;">
+                    <!-- 1. Laptop Mockup (Pusat & di Belakang) -->
+                    <div class="relative w-[88%] sm:w-[90%] z-10 transition-transform duration-500 hover:scale-[1.01]">
                         <!-- Screen Lid -->
-                        <div class="rounded-t-xl sm:rounded-t-2xl bg-gradient-to-b from-slate-800 to-slate-900 p-2 sm:p-2.5 pt-3 sm:pt-3.5 border-t border-x border-slate-700/80 shadow-[0_25px_50px_-12px_rgba(7,21,63,0.35),0_12px_24px_-8px_rgba(0,0,0,0.3)] relative">
-                            <!-- Camera dot -->
-                            <div class="absolute top-1.5 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-slate-700/90 shadow-inner"></div>
+                        <div class="rounded-t-2xl bg-slate-900 p-2 sm:p-2.5 pt-3 sm:pt-3.5 border-t border-x border-slate-700 shadow-2xl relative">
+                            <!-- Camera Dot -->
+                            <div class="absolute top-1.5 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-slate-700"></div>
+                            
                             <!-- Screen Bezel & Display Content -->
-                            <div class="aspect-[16/10] bg-slate-950 rounded-md sm:rounded-lg overflow-hidden border border-slate-800/90 relative group flex items-center justify-center">
+                            <div class="aspect-[16/10] bg-slate-950 rounded-lg overflow-hidden border border-slate-800 relative group flex items-center justify-center">
                                 <img src="{{ asset($settings['about_mockup_laptop'] ?? ($settings['about_image'] ?? 'images/Ilustrasi-Homepage-1-1.webp')) }}" 
                                      alt="{{ $settings['about_title'] ?? 'SmartVerse Platform Preview' }}" 
                                      loading="lazy" 
                                      decoding="async" 
                                      class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" />
-                                <!-- Subtle screen gloss highlight -->
-                                <div class="absolute inset-0 bg-gradient-to-tr from-transparent via-transparent to-white/5 pointer-events-none"></div>
-                                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/30 to-transparent pointer-events-none"></div>
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/20 to-transparent pointer-events-none"></div>
                             </div>
                         </div>
-                        <!-- Laptop Base / Metallic Keyboard Lip -->
-                        <div class="h-2.5 sm:h-3 bg-gradient-to-b from-slate-300 via-slate-400 to-slate-500 dark:from-slate-600 dark:via-slate-700 dark:to-slate-800 rounded-b-lg sm:rounded-b-xl relative shadow-xl border-t border-slate-400/60 dark:border-slate-500/60">
+                        
+                        <!-- Laptop Base / Keyboard Lip -->
+                        <div class="h-3 sm:h-3.5 bg-gradient-to-b from-slate-300 via-slate-400 to-slate-500 dark:from-slate-700 dark:via-slate-800 dark:to-slate-900 rounded-b-xl relative shadow-xl border-t border-slate-400/50">
                             <!-- Thumb Notch -->
-                            <div class="w-14 sm:w-16 h-1 bg-slate-400 dark:bg-slate-500 rounded-full mx-auto"></div>
+                            <div class="w-16 h-1 bg-slate-400 dark:bg-slate-600 rounded-full mx-auto"></div>
                         </div>
-                        <!-- Under-laptop ambient shadow -->
-                        <div class="absolute -bottom-3 inset-x-4 h-4 bg-black/25 dark:bg-cyan-500/10 blur-xl rounded-full pointer-events-none"></div>
                     </div>
 
-                    <!-- 2. Smartphone Mockup (Compact, Realistic Size, Sisi Lengkung Halus Tidak Memotong Konten & Sudut Menyamping) -->
-                    <div class="relative w-[23%] sm:w-[24%] max-w-[145px] min-w-[105px] -ml-8 sm:-ml-12 -mb-2 z-20 transition-all duration-500 hover:scale-105 hover:-translate-y-2 origin-bottom-right"
-                         style="transform: translateZ(40px) rotateY(-12deg) rotateX(3deg) rotateZ(1deg); transform-style: preserve-3d;">
-                        <!-- Phone Outer Shell (Lengkungan Proporsional & Presisi) -->
-                        <div class="rounded-[16px] sm:rounded-[20px] bg-gradient-to-b from-slate-800 to-slate-900 p-1 sm:p-1.5 border border-slate-600/90 dark:border-slate-700 shadow-[0_20px_35px_-5px_rgba(0,0,0,0.5),0_10px_15px_-5px_rgba(7,21,63,0.35)] relative">
-                            <!-- Screen Container (Lengkungan Lembut ~11px-13px agar tampilan UI tidak terpotong) -->
-                            <div class="aspect-[9/18.5] bg-slate-950 rounded-[11px] sm:rounded-[14px] overflow-hidden relative flex flex-col justify-between border border-slate-800/80">
-                                <!-- Minimal Top Speaker / Camera (Tipis, Tidak Menghalangi Header Konten) -->
-                                <div class="absolute top-1 left-1/2 -translate-x-1/2 w-6 sm:w-8 h-1 bg-black/90 rounded-full z-30 shadow-xs"></div>
+                    <!-- 2. Smartphone Mockup (Di Sisi Kanan Depan, Ukuran Lebih Kecil & Rapi Tanpa Terpotong) -->
+                    <div class="absolute right-0 sm:right-2 bottom-1 sm:bottom-2 w-[27%] sm:w-[26%] max-w-[155px] min-w-[105px] z-20 transition-transform duration-500 hover:scale-105 hover:-translate-y-1">
+                        <!-- Phone Outer Shell -->
+                        <div class="rounded-[20px] sm:rounded-[24px] bg-slate-900 p-1 sm:p-1.5 border-2 border-slate-700 shadow-2xl shadow-slate-950/60 relative">
+                            <!-- Screen Bezel (Lengkungan Presisi ~14px agar konten UI tidak terpotong) -->
+                            <div class="aspect-[9/18.5] bg-slate-950 rounded-[14px] sm:rounded-[18px] overflow-hidden relative flex flex-col justify-between border border-slate-800">
+                                <!-- Minimal Top Speaker (Ramping agar tidak menutupi judul web) -->
+                                <div class="absolute top-1 left-1/2 -translate-x-1/2 w-7 sm:w-8 h-1 bg-black/90 rounded-full z-30 shadow-xs"></div>
                                 
-                                <!-- Mobile Screen Preview (object-top agar logo & menu atas web tetap utuh) -->
+                                <!-- Mobile Screen Preview (object-top agar logo dan navigasi atas tetap utuh) -->
                                 <img src="{{ asset($settings['about_mockup_phone'] ?? 'images/smartverse/logo-smartverse.webp') }}" 
                                      alt="SmartVerse Mobile Preview" 
                                      loading="lazy" 
                                      decoding="async" 
                                      class="w-full h-full object-cover object-top" />
                                 
-                                <!-- Screen Gloss & Glass Reflection -->
-                                <div class="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-white/10 pointer-events-none"></div>
-                                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/25 to-transparent pointer-events-none"></div>
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/20 to-transparent pointer-events-none"></div>
                             </div>
                         </div>
-                        <!-- Phone Drop Shadow -->
-                        <div class="absolute -bottom-2 inset-x-2 h-3 bg-black/40 blur-md rounded-full pointer-events-none"></div>
                     </div>
 
                 </div>
