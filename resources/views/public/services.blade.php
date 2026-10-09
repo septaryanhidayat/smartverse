@@ -68,33 +68,22 @@
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 relative z-10">
         
-        <!-- Header -->
-        <div class="text-center space-y-3">
-            <span class="px-4 py-1.5 rounded-full bg-orange-50 dark:bg-orange-950/60 text-[#fe6000] font-bold text-xs uppercase tracking-wider">
-                Our Service
-            </span>
-            <h2 class="text-3xl sm:text-4xl font-extrabold text-[#07153f] dark:text-white">What We Do</h2>
+        <!-- Header (Full-Width, Centered, No Awkward Left Empty Space) -->
+        <div class="text-center max-w-3xl mx-auto space-y-4">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange-50 dark:bg-orange-950/60 text-[#fe6000] font-bold text-xs uppercase tracking-wider border border-orange-200/70 dark:border-orange-900/60">
+                <span class="w-2 h-2 rounded-full bg-[#fe6000] animate-pulse"></span>
+                <span>Our Service &bull; What We Do</span>
+            </div>
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#07153f] dark:text-white tracking-tight">
+                Apa yang Kami Kerjakan?
+            </h2>
+            <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-medium">
+                Setiap tim designer &amp; developer kami memiliki pengalaman bertahun-tahun dan sertifikasi resmi untuk memberikan hasil yang maksimal. Kami menghadirkan solusi teknologi terintegrasi dari perancangan UI/UX, rekayasa web &amp; mobile native, hingga implementasi kecerdasan buatan.
+            </p>
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            
-            <!-- Left Info -->
-            <div class="lg:col-span-5 space-y-5">
-                <div class="flex items-center gap-3">
-                    <span class="w-8 h-1 bg-[#fe6000] rounded-full"></span>
-                    <span class="text-xs font-bold uppercase tracking-wider text-[#fe6000]">WHAT WE DO</span>
-                </div>
-                <h3 class="text-3xl font-extrabold text-[#07153f] dark:text-white">
-                    Apa yang Kami Kerjakan ?
-                </h3>
-                <p class="text-base text-slate-600 dark:text-slate-300 leading-relaxed font-medium">
-                    Setiap tim designer & developer kami memiliki pengalaman dan sertifikasi resmi yang berkaitan dengan keahlian mereka untuk memberikan hasil yang maksimal. Tim Designer memiliki keahlian dalam pembuatan User-Interface & User-Experience (UI/UX) modern.
-                </p>
-                <div class="pt-2 text-2xl font-black text-[#fe6000] anim-logo-bottom">~ ~ ~</div>
-            </div>
-
-            <!-- Right 10 Pastel Cards Grid -->
-            <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-5">
+        <!-- 10 Specialty Cards Grid (Full-Width Responsive Grid Across All Columns) -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 sm:gap-6">
                 
                 <!-- 1. Pembuatan Website -->
                 <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 space-y-2.5 text-center sm:text-left">

@@ -44,10 +44,28 @@
             </form>
         </div>
 
-        <!-- Blog Posts Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Per-Page Controls & Total Summary -->
+        <div class="flex flex-wrap items-center justify-between gap-4 pt-2 pb-1 border-b border-slate-100 dark:border-slate-800">
+            <div class="flex items-center gap-2 text-xs font-bold text-slate-500 dark:text-slate-400">
+                <span>Tampilkan:</span>
+                <div class="inline-flex rounded-xl p-1 bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+                    @foreach([5, 10, 50, 100, 'all'] as $val)
+                        <a href="{{ request()->fullUrlWithQuery(['per_page' => $val, 'page' => 1]) }}" 
+                           class="px-2.5 py-1 rounded-lg text-xs font-black transition-all {{ ($perPageParam == $val || ($val === 'all' && ($perPageParam === 'semua' || $perPageParam === 'all'))) ? 'bg-[#3E5CE7] text-white shadow-xs' : 'text-slate-600 dark:text-slate-300 hover:text-blue-600' }}">
+                            {{ $val === 'all' ? 'Semua' : $val }}
+                        </a>
+                    @endforeach
+                </div>
+            </div>
+            <span class="text-xs font-bold text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-800/80 px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-700">
+                Total: {{ $posts->total() }} Artikel
+            </span>
+        </div>
+
+        <!-- Blog Posts Grid (Rata Tengah Sempurna & Simetris) -->
+        <div id="blog-posts-grid" class="flex flex-wrap justify-center gap-8">
             @forelse($posts as $post)
-                <article class="bg-white dark:bg-slate-800/90 rounded-3xl overflow-hidden border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group">
+                <article class="blog-card-item w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] max-w-sm bg-white dark:bg-slate-800/90 rounded-3xl overflow-hidden border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group">
                     <div>
                         <div class="relative aspect-video overflow-hidden bg-slate-100 dark:bg-slate-900 border-b border-slate-200 dark:border-slate-700">
                             <img src="{{ $post->thumbnail }}" alt="{{ $post->title }}" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" />
@@ -72,7 +90,7 @@
                     </div>
 
                     <div class="p-6 pt-0 border-t border-slate-100 dark:border-slate-700 flex items-center justify-between text-xs mt-4">
-                        <span class="font-semibold text-slate-500 dark:text-slate-400">Oleh {{ $post->author?->name ?? 'Tim Beranda Digital' }}</span>
+                        <span class="font-semibold text-slate-500 dark:text-slate-400">Oleh {{ $post->author?->name ?? 'Tim SmartVerse' }}</span>
                         <a href="{{ route('blog.show', $post->slug) }}" class="font-bold text-[#3E5CE7] dark:text-blue-400 hover:underline">
                             Baca Artikel &rarr;
                         </a>
@@ -85,10 +103,87 @@
             @endforelse
         </div>
 
-        <div class="pt-6">
+        <!-- Tombol Lihat Lebih Banyak (Load More Otomatis) -->
+        @if($posts->hasMorePages())
+            <div class="text-center pt-8" id="load-more-container-blog">
+                <button type="button" 
+                        id="btn-load-more-blog" 
+                        data-next-url="{{ $posts->nextPageUrl() }}" 
+                        class="px-8 py-3.5 rounded-2xl bg-[#3E5CE7] hover:bg-blue-700 active:scale-95 text-white font-black text-xs uppercase tracking-wider shadow-lg shadow-blue-500/25 transition-all inline-flex items-center gap-2">
+                    <svg class="w-4 h-4 animate-spin hidden" id="spinner-blog" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path></svg>
+                    <svg class="w-4 h-4" id="icon-blog" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" /></svg>
+                    <span id="label-load-blog">LIHAT LEBIH BANYAK ({{ $posts->total() - $posts->count() }} ARTIKEL TERSISA)</span>
+                </button>
+            </div>
+        @endif
+
+        <div class="pt-6" id="pagination-nav-blog">
             {{ $posts->links() }}
         </div>
     </div>
+
+    <!-- Script AJAX Load More untuk Blog -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const btn = document.getElementById('btn-load-more-blog');
+            if (!btn) return;
+
+            btn.addEventListener('click', function() {
+                const nextUrl = btn.getAttribute('data-next-url');
+                if (!nextUrl) return;
+
+                const spinner = document.getElementById('spinner-blog');
+                const icon = document.getElementById('icon-blog');
+                const label = document.getElementById('label-load-blog');
+                
+                if (spinner) spinner.classList.remove('hidden');
+                if (icon) icon.classList.add('hidden');
+                if (label) label.textContent = 'Memuat artikel...';
+                btn.disabled = true;
+
+                fetch(nextUrl)
+                    .then(res => res.text())
+                    .then(html => {
+                        const parser = new DOMParser();
+                        const doc = parser.parseFromString(html, 'text/html');
+                        const newCards = doc.querySelectorAll('#blog-posts-grid .blog-card-item');
+                        const grid = document.getElementById('blog-posts-grid');
+
+                        newCards.forEach(card => {
+                            grid.appendChild(card);
+                        });
+
+                        const nextBtn = doc.getElementById('btn-load-more-blog');
+                        if (nextBtn) {
+                            btn.setAttribute('data-next-url', nextBtn.getAttribute('data-next-url'));
+                            if (spinner) spinner.classList.add('hidden');
+                            if (icon) icon.classList.remove('hidden');
+                            if (label) label.textContent = nextBtn.querySelector('#label-load-blog')?.textContent || 'LIHAT LEBIH BANYAK';
+                            btn.disabled = false;
+                        } else {
+                            const container = document.getElementById('load-more-container-blog');
+                            if (container) {
+                                container.innerHTML = '<span class="inline-block px-5 py-2 rounded-xl bg-slate-100 dark:bg-slate-800 text-xs font-bold text-slate-500">✓ Semua artikel telah ditampilkan</span>';
+                            }
+                        }
+
+                        // Update pagination nav links
+                        const newNav = doc.getElementById('pagination-nav-blog');
+                        const curNav = document.getElementById('pagination-nav-blog');
+                        if (newNav && curNav) {
+                            curNav.innerHTML = newNav.innerHTML;
+                        }
+                    })
+                    .catch(err => {
+                        console.error('Load more error:', err);
+                        if (spinner) spinner.classList.add('hidden');
+                        if (icon) icon.classList.remove('hidden');
+                        if (label) label.textContent = 'Gagal memuat. Coba lagi.';
+                        btn.disabled = false;
+                    });
+            });
+        });
+    </script>
 </section>
 
 <!-- SECTION: LET'S WORK TOGETHER BANNER -->

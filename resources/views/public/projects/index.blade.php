@@ -83,8 +83,26 @@
             @endforeach
         </div>
 
-        <!-- 12 Projects Grid (4 Columns x 3 Rows - Matches Home Concept) -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
+        <!-- Per-Page Controls & Total Summary -->
+        <div class="flex flex-wrap items-center justify-between gap-4 pt-2 pb-1 border-b border-slate-100 dark:border-slate-800">
+            <div class="flex items-center gap-2 text-xs font-bold text-slate-500 dark:text-slate-400">
+                <span>Tampilkan:</span>
+                <div class="inline-flex rounded-xl p-1 bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+                    @foreach([5, 10, 50, 100, 'all'] as $val)
+                        <a href="{{ request()->fullUrlWithQuery(['per_page' => $val, 'page' => 1]) }}" 
+                           class="px-2.5 py-1 rounded-lg text-xs font-black transition-all {{ ($perPageParam == $val || ($val === 'all' && ($perPageParam === 'semua' || $perPageParam === 'all'))) ? 'bg-[#3E5CE7] text-white shadow-xs' : 'text-slate-600 dark:text-slate-300 hover:text-blue-600' }}">
+                            {{ $val === 'all' ? 'Semua' : $val }}
+                        </a>
+                    @endforeach
+                </div>
+            </div>
+            <span class="text-xs font-bold text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-800/80 px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-700">
+                Total: {{ $projects->total() }} Portofolio
+            </span>
+        </div>
+
+        <!-- Projects Grid (Rata Tengah Sempurna & Simetris) -->
+        <div id="projects-grid" class="flex flex-wrap justify-center gap-5 sm:gap-6">
             @forelse($projects as $index => $project)
                 @php
                     $displayTitle = $project->title;
@@ -108,7 +126,7 @@
                     $waProductUrl = "https://wa.me/6289695249089?text=" . urlencode("Halo SmartVerse, saya tertarik konsultasi portofolio sistem: {$displayTitle}");
                 @endphp
 
-                <div class="bg-white dark:bg-slate-900 rounded-2xl sm:rounded-3xl overflow-hidden border border-slate-200/90 dark:border-slate-800 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group">
+                <div class="project-card-item w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)] xl:w-[calc(25%-1.25rem)] max-w-sm bg-white dark:bg-slate-900 rounded-2xl sm:rounded-3xl overflow-hidden border border-slate-200/90 dark:border-slate-800 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group">
                     
                     <!-- Top Visual Image Container with Interactive Click to Open Gallery Slider (Auto Fit Lebar, Tidak Terpotong) -->
                     <div>
@@ -222,11 +240,88 @@
             @endforelse
         </div>
 
+        <!-- Tombol Lihat Lebih Banyak (Load More Otomatis) -->
+        @if($projects->hasMorePages())
+            <div class="text-center pt-8" id="load-more-container-projects">
+                <button type="button" 
+                        id="btn-load-more-projects" 
+                        data-next-url="{{ $projects->nextPageUrl() }}" 
+                        class="px-8 py-3.5 rounded-2xl bg-[#3E5CE7] hover:bg-blue-700 active:scale-95 text-white font-black text-xs uppercase tracking-wider shadow-lg shadow-blue-500/25 transition-all inline-flex items-center gap-2">
+                    <svg class="w-4 h-4 animate-spin hidden" id="spinner-projects" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path></svg>
+                    <svg class="w-4 h-4" id="icon-projects" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" /></svg>
+                    <span id="label-load-projects">LIHAT LEBIH BANYAK ({{ $projects->total() - $projects->count() }} PORTOFOLIO TERSISA)</span>
+                </button>
+            </div>
+        @endif
+
         <!-- Pagination -->
-        <div class="pt-6">
+        <div class="pt-6" id="pagination-nav-projects">
             {{ $projects->links() }}
         </div>
     </div>
+
+    <!-- Script AJAX Load More untuk Portofolio -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const btn = document.getElementById('btn-load-more-projects');
+            if (!btn) return;
+
+            btn.addEventListener('click', function() {
+                const nextUrl = btn.getAttribute('data-next-url');
+                if (!nextUrl) return;
+
+                const spinner = document.getElementById('spinner-projects');
+                const icon = document.getElementById('icon-projects');
+                const label = document.getElementById('label-load-projects');
+                
+                if (spinner) spinner.classList.remove('hidden');
+                if (icon) icon.classList.add('hidden');
+                if (label) label.textContent = 'Memuat portofolio...';
+                btn.disabled = true;
+
+                fetch(nextUrl)
+                    .then(res => res.text())
+                    .then(html => {
+                        const parser = new DOMParser();
+                        const doc = parser.parseFromString(html, 'text/html');
+                        const newCards = doc.querySelectorAll('#projects-grid .project-card-item');
+                        const grid = document.getElementById('projects-grid');
+
+                        newCards.forEach(card => {
+                            grid.appendChild(card);
+                        });
+
+                        const nextBtn = doc.getElementById('btn-load-more-projects');
+                        if (nextBtn) {
+                            btn.setAttribute('data-next-url', nextBtn.getAttribute('data-next-url'));
+                            if (spinner) spinner.classList.add('hidden');
+                            if (icon) icon.classList.remove('hidden');
+                            if (label) label.textContent = nextBtn.querySelector('#label-load-projects')?.textContent || 'LIHAT LEBIH BANYAK';
+                            btn.disabled = false;
+                        } else {
+                            const container = document.getElementById('load-more-container-projects');
+                            if (container) {
+                                container.innerHTML = '<span class="inline-block px-5 py-2 rounded-xl bg-slate-100 dark:bg-slate-800 text-xs font-bold text-slate-500">✓ Semua portofolio telah ditampilkan</span>';
+                            }
+                        }
+
+                        // Update pagination nav links
+                        const newNav = doc.getElementById('pagination-nav-projects');
+                        const curNav = document.getElementById('pagination-nav-projects');
+                        if (newNav && curNav) {
+                            curNav.innerHTML = newNav.innerHTML;
+                        }
+                    })
+                    .catch(err => {
+                        console.error('Load more error:', err);
+                        if (spinner) spinner.classList.add('hidden');
+                        if (icon) icon.classList.remove('hidden');
+                        if (label) label.textContent = 'Gagal memuat. Coba lagi.';
+                        btn.disabled = false;
+                    });
+            });
+        });
+    </script>
 
     <!-- ========================================================================= -->
     <!-- INTERACTIVE PRODUCT GALLERY SLIDER MODAL (Responsive Web & Mobile Frame)   -->

@@ -55,7 +55,9 @@ Route::get('/services', [HomeController::class, 'services'])->name('services');
 
 // Digital Portfolio & Case Studies
 Route::get('/portfolio', [ProjectController::class, 'index'])->name('projects.index');
+Route::get('/projects', [ProjectController::class, 'index']);
 Route::get('/portfolio/{slug}', [ProjectController::class, 'show'])->name('projects.show');
+Route::get('/projects/{slug}', [ProjectController::class, 'show']);
 
 // Digital Products & SaaS Showcase
 Route::get('/products', [DigitalProductController::class, 'index'])->name('products.index');

@@ -79,19 +79,36 @@
 <section id="katalog" class="py-16 bg-[#f8faff] dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800 transition-colors duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         
-        <!-- Header -->
-        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+        <!-- Header & Per-Page Controls -->
+        <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 border-b border-slate-200 dark:border-slate-800 pb-5">
             <div class="space-y-1">
                 <h2 class="text-3xl font-extrabold text-[#07153f] dark:text-white">Katalog Produk Digital</h2>
                 <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 font-medium">Daftar software enterprise dan produk digital berlisensi permanen.</p>
             </div>
-            <a href="#katalog" class="text-xs font-bold text-[#3E5CE7] dark:text-blue-400 hover:underline">Semua Produk &rarr;</a>
+            
+            <!-- Per-Page Controls & Total Summary -->
+            <div class="flex flex-wrap items-center gap-3 self-stretch md:self-auto justify-between md:justify-end">
+                <div class="flex items-center gap-2 text-xs font-bold text-slate-500 dark:text-slate-400">
+                    <span>Tampilkan:</span>
+                    <div class="inline-flex rounded-xl p-1 bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+                        @foreach([5, 10, 50, 100, 'all'] as $val)
+                            <a href="{{ request()->fullUrlWithQuery(['per_page' => $val, 'page' => 1]) }}" 
+                               class="px-2.5 py-1 rounded-lg text-xs font-black transition-all {{ ($perPageParam == $val || ($val === 'all' && ($perPageParam === 'semua' || $perPageParam === 'all'))) ? 'bg-[#3E5CE7] text-white shadow-xs' : 'text-slate-600 dark:text-slate-300 hover:text-blue-600' }}">
+                                {{ $val === 'all' ? 'Semua' : $val }}
+                            </a>
+                        @endforeach
+                    </div>
+                </div>
+                <span class="text-xs font-bold text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-800/80 px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-700">
+                    Total: {{ $products->total() }} Produk
+                </span>
+            </div>
         </div>
 
-        <!-- Products Grid (16:9 Landscape Thumbnails with Ratings & Tags) -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            @foreach($products as $product)
-                <div class="bg-white dark:bg-slate-800/90 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group">
+        <!-- Products Grid (Rata Tengah Sempurna & Simetris) -->
+        <div id="products-grid" class="flex flex-wrap justify-center gap-6">
+            @forelse($products as $product)
+                <div class="product-card-item w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)] xl:w-[calc(25%-1.25rem)] max-w-sm bg-white dark:bg-slate-800/90 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group">
                     <div class="space-y-3">
                         <div class="aspect-video overflow-hidden bg-slate-100 dark:bg-slate-900 relative border-b border-slate-200 dark:border-slate-700 p-2 flex items-center justify-center">
                             @if($product->thumbnail)
@@ -142,13 +159,94 @@
                         </a>
                     </div>
                 </div>
-            @endforeach
+            @empty
+                <div class="col-span-full text-center py-12 text-slate-500">
+                    Belum ada produk digital yang tersedia.
+                </div>
+            @endforelse
         </div>
 
-        <div class="pt-6">
+        <!-- Tombol Lihat Lebih Banyak (Load More Otomatis) -->
+        @if($products->hasMorePages())
+            <div class="text-center pt-8" id="load-more-container-products">
+                <button type="button" 
+                        id="btn-load-more-products" 
+                        data-next-url="{{ $products->nextPageUrl() }}" 
+                        class="px-8 py-3.5 rounded-2xl bg-[#3E5CE7] hover:bg-blue-700 active:scale-95 text-white font-black text-xs uppercase tracking-wider shadow-lg shadow-blue-500/25 transition-all inline-flex items-center gap-2">
+                    <svg class="w-4 h-4 animate-spin hidden" id="spinner-products" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path></svg>
+                    <svg class="w-4 h-4" id="icon-products" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" /></svg>
+                    <span id="label-load-products">LIHAT LEBIH BANYAK ({{ $products->total() - $products->count() }} PRODUK TERSISA)</span>
+                </button>
+            </div>
+        @endif
+
+        <div class="pt-6" id="pagination-nav-products">
             {{ $products->links() }}
         </div>
     </div>
+
+    <!-- Script AJAX Load More untuk Produk -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const btn = document.getElementById('btn-load-more-products');
+            if (!btn) return;
+
+            btn.addEventListener('click', function() {
+                const nextUrl = btn.getAttribute('data-next-url');
+                if (!nextUrl) return;
+
+                const spinner = document.getElementById('spinner-products');
+                const icon = document.getElementById('icon-products');
+                const label = document.getElementById('label-load-products');
+                
+                if (spinner) spinner.classList.remove('hidden');
+                if (icon) icon.classList.add('hidden');
+                if (label) label.textContent = 'Memuat data produk...';
+                btn.disabled = true;
+
+                fetch(nextUrl)
+                    .then(res => res.text())
+                    .then(html => {
+                        const parser = new DOMParser();
+                        const doc = parser.parseFromString(html, 'text/html');
+                        const newCards = doc.querySelectorAll('#products-grid .product-card-item');
+                        const grid = document.getElementById('products-grid');
+
+                        newCards.forEach(card => {
+                            grid.appendChild(card);
+                        });
+
+                        const nextBtn = doc.getElementById('btn-load-more-products');
+                        if (nextBtn) {
+                            btn.setAttribute('data-next-url', nextBtn.getAttribute('data-next-url'));
+                            if (spinner) spinner.classList.add('hidden');
+                            if (icon) icon.classList.remove('hidden');
+                            if (label) label.textContent = nextBtn.querySelector('#label-load-products')?.textContent || 'LIHAT LEBIH BANYAK';
+                            btn.disabled = false;
+                        } else {
+                            const container = document.getElementById('load-more-container-products');
+                            if (container) {
+                                container.innerHTML = '<span class="inline-block px-5 py-2 rounded-xl bg-slate-100 dark:bg-slate-800 text-xs font-bold text-slate-500">✓ Semua produk telah ditampilkan</span>';
+                            }
+                        }
+
+                        // Update pagination nav links
+                        const newNav = doc.getElementById('pagination-nav-products');
+                        const curNav = document.getElementById('pagination-nav-products');
+                        if (newNav && curNav) {
+                            curNav.innerHTML = newNav.innerHTML;
+                        }
+                    })
+                    .catch(err => {
+                        console.error('Load more error:', err);
+                        if (spinner) spinner.classList.add('hidden');
+                        if (icon) icon.classList.remove('hidden');
+                        if (label) label.textContent = 'Gagal memuat. Coba lagi.';
+                        btn.disabled = false;
+                    });
+            });
+        });
+    </script>
 </section>
 
 <!-- SECTION 4: UNLIMITED ACCESS BANNER -->

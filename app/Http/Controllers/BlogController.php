@@ -29,9 +29,18 @@ class BlogController extends Controller
             });
         }
 
-        $posts = $query->latest('published_at')->paginate(6)->withQueryString();
+        $perPageParam = $request->get('per_page', 10);
+        if ($perPageParam === 'all' || $perPageParam === 'semua') {
+            $perPage = 500;
+        } elseif (in_array((int)$perPageParam, [5, 10, 50, 100])) {
+            $perPage = (int)$perPageParam;
+        } else {
+            $perPage = 10;
+        }
 
-        return view('public.blog.index', compact('posts', 'categories'));
+        $posts = $query->latest('published_at')->paginate($perPage)->withQueryString();
+
+        return view('public.blog.index', compact('posts', 'categories', 'perPageParam'));
     }
 
     public function show($slug)

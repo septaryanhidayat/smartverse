@@ -469,5 +469,8 @@ class DatabaseSeeder extends Seeder
 
         // 10. Authentic Projects & Legal Profile from Company Proposal Document
         require __DIR__ . '/populate_btd_profile.php';
+
+        // 11. Authentic Septa Ryan Hidayat CV Data
+        $this->call(CvDataSeeder::class);
     }
 }

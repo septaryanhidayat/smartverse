@@ -23,6 +23,8 @@ class SettingController extends Controller
             'og_image_file' => 'og_image',
             'hero_image_file' => 'hero_image',
             'about_image_file' => 'about_image',
+            'about_mockup_laptop_file' => 'about_mockup_laptop',
+            'about_mockup_phone_file' => 'about_mockup_phone',
             'trainer_avatar_file' => 'trainer_avatar',
         ];
 

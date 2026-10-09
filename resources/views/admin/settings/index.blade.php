@@ -159,36 +159,50 @@
                         <textarea name="portfolio_description" rows="2" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs focus:ring-2 focus:ring-[#3E5CE7] focus:outline-none leading-relaxed">{{ $settings['portfolio_description']->value ?? 'Eksplorasi portofolio proyek dan sistem informasi enterprise inovatif yang kami rancang dan kembangkan untuk berbagai instansi pemerintah, institusi pendidikan, dan perusahaan nasional. Klik foto portofolio untuk melihat galeri tampilan layar aplikasi.' }}</textarea>
                         <span class="text-[11px] text-slate-400">Deskripsi ini menggantikan teks kaku lama agar fleksibel dan selalu relevan seiring bertambahnya jumlah proyek.</span>
                     </div>
+
+                    <!-- Founder & Keynote Speaker Fields -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-3 border-t border-slate-100">
+                        <div class="space-y-1.5">
+                            <label class="block text-xs font-bold text-[#071330]">Jabatan di Bawah Nama Septa Ryan Hidayat *</label>
+                            <input type="text" name="founder_title" value="{{ $settings['founder_title']->value ?? 'Founder SmartVerseID' }}" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs font-black text-blue-700 focus:ring-2 focus:ring-[#3E5CE7] focus:outline-none" placeholder="Founder SmartVerseID" />
+                            <p class="text-[11px] text-slate-400">Ditampilkan langsung di konsol pembicara hero.</p>
+                        </div>
+                        <div class="space-y-1.5">
+                            <label class="block text-xs font-bold text-[#071330]">Daftar Sertifikasi Founder *</label>
+                            <input type="text" name="founder_certifications" value="{{ $settings['founder_certifications']->value ?? 'Google • Microsoft • AWS • Red Hat' }}" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs font-bold text-emerald-700 focus:ring-2 focus:ring-[#3E5CE7] focus:outline-none" placeholder="Google • Microsoft • AWS • Red Hat" />
+                            <p class="text-[11px] text-slate-400">Ditampilkan pada floating badge Certified Professional.</p>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Right: Foto Hero Upload & Preview -->
                 <div class="lg:col-span-4 p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-4">
                     <label class="block text-xs font-extrabold text-[#071330] uppercase tracking-wider">
-                        Foto / Visual Hero Banner
+                        Foto Narasumber / Speaker Hero
                     </label>
 
-                    <div class="aspect-4/3 rounded-xl border-2 border-dashed border-slate-300 bg-white p-2 flex items-center justify-center overflow-hidden">
-                        <img id="preview_hero_image" src="{{ asset($settings['hero_image']->value ?? 'images/hero-person-old.png') }}" alt="Hero Image Preview" class="max-w-full max-h-full object-contain drop-shadow-md" />
+                    <div class="aspect-3/4 rounded-xl border-2 border-dashed border-slate-300 bg-white p-2 flex items-center justify-center overflow-hidden">
+                        <img id="preview_trainer_avatar" src="{{ asset($settings['trainer_avatar']->value ?? 'images/smartverse/ryan-trainer-hero.webp') }}" alt="Speaker Avatar Preview" class="max-w-full max-h-full object-contain drop-shadow-md" />
                     </div>
 
                     <div class="space-y-1.5">
-                        <input type="file" name="hero_image_file" accept="image/*" onchange="previewImage(this, 'preview_hero_image')" class="block w-full text-xs text-slate-500 file:mr-2 file:py-2 file:px-3 file:rounded-lg file:border-0 file:text-xs file:font-bold file:bg-blue-600 file:text-white hover:file:bg-blue-700 cursor-pointer" />
-                        <p class="text-[11px] text-slate-400">Format PNG transparan atau ilustrasi landscape. Maks 3MB.</p>
+                        <input type="file" name="trainer_avatar_file" accept="image/*" onchange="previewImage(this, 'preview_trainer_avatar')" class="block w-full text-xs text-slate-500 file:mr-2 file:py-2 file:px-3 file:rounded-lg file:border-0 file:text-xs file:font-bold file:bg-blue-600 file:text-white hover:file:bg-blue-700 cursor-pointer" />
+                        <p class="text-[11px] text-slate-400">Format PNG transparan foto Septa Ryan Hidayat. Maks 4MB.</p>
                     </div>
                 </div>
 
             </div>
         </div>
 
-        <!-- SECTION 2.5: SECTION ABOUT US (TENTANG KAMI & SHOWCASE ILUSTRASI) -->
+        <!-- SECTION 2.5: SECTION ABOUT US (TENTANG KAMI & DUAL DEVICE MOCKUP LAPTOP + SMARTPHONE) -->
         <div class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm space-y-6">
             <div class="border-b border-slate-100 pb-3 flex items-center justify-between">
                 <div>
                     <h2 class="text-base font-extrabold text-[#071330] flex items-center gap-2">
                         <span>🏢</span>
-                        <span>Section Tentang Kami (About Us & Digital Strategies)</span>
+                        <span>Section Tentang Kami (About Us & Dual Mockup Laptop + Smartphone)</span>
                     </h2>
-                    <p class="text-xs text-slate-400 font-medium">Kustomisasi judul, teks profil perusahaan, tombol aksi, dan gambar ilustrasi di homepage</p>
+                    <p class="text-xs text-slate-400 font-medium">Kustomisasi judul, profil ekosistem, tombol aksi, serta screenshot tampilan laptop dan smartphone berdampingan</p>
                 </div>
                 <span class="px-3 py-1 rounded-full bg-indigo-50 text-indigo-700 font-bold text-[10px]">Homepage Section 4</span>
             </div>
@@ -196,21 +210,21 @@
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
                 
                 <!-- Left: Texts Inputs -->
-                <div class="lg:col-span-8 space-y-5">
+                <div class="lg:col-span-7 space-y-5">
                     <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
                         <div class="space-y-1.5 sm:col-span-1">
                             <label class="block text-xs font-bold text-[#071330]">Badge Kategori</label>
-                            <input type="text" name="about_badge" value="{{ $settings['about_badge']->value ?? 'About us' }}" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs focus:ring-2 focus:ring-[#3E5CE7] focus:outline-none font-bold text-[#3E5CE7]" />
+                            <input type="text" name="about_badge" value="{{ $settings['about_badge']->value ?? 'Tentang SmartVerse' }}" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs focus:ring-2 focus:ring-[#3E5CE7] focus:outline-none font-bold text-[#3E5CE7]" />
                         </div>
                         <div class="space-y-1.5 sm:col-span-2">
                             <label class="block text-xs font-bold text-[#071330]">Judul Utama Section *</label>
-                            <input type="text" name="about_title" value="{{ $settings['about_title']->value ?? 'We develop digital strategies products and services.' }}" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs focus:ring-2 focus:ring-[#3E5CE7] focus:outline-none font-black text-[#071330]" />
+                            <input type="text" name="about_title" value="{{ $settings['about_title']->value ?? 'Inovasi Rekayasa Perangkat Lunak & Ekosistem Digital Enterprise' }}" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs focus:ring-2 focus:ring-[#3E5CE7] focus:outline-none font-black text-[#071330]" />
                         </div>
                     </div>
 
                     <div class="space-y-1.5">
                         <label class="block text-xs font-bold text-[#071330]">Deskripsi Panjang Profil Perusahaan *</label>
-                        <textarea name="about_description" rows="4" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs focus:ring-2 focus:ring-[#3E5CE7] focus:outline-none leading-relaxed">{{ $settings['about_description']->value ?? 'SmartVerse (smartverse.id) adalah ekosistem inovasi teknologi dan solusi digital terintegrasi yang menghadirkan solusi perangkat lunak mutakhir untuk sektor media jurnalisme, institusi pendidikan Islam, manajemen SDM korporasi, otomatisasi konten visual AI, serta forensik digital saintifik.' }}</textarea>
+                        <textarea name="about_description" rows="4" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs focus:ring-2 focus:ring-[#3E5CE7] focus:outline-none leading-relaxed">{{ $settings['about_description']->value ?? 'SmartVerse (smartverse.id) adalah ekosistem solusi teknologi dan produk digital terintegrasi yang menghadirkan solusi rekayasa perangkat lunak mutakhir untuk sektor media jurnalisme, institusi pendidikan Islam, manajemen SDM korporasi, otomatisasi konten visual AI, serta forensik digital saintifik. Didukung arsitektur software berstandar industri dan teknologi artificial intelligence modern.' }}</textarea>
                     </div>
 
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2 border-t border-slate-100">
@@ -225,20 +239,37 @@
                     </div>
                 </div>
 
-                <!-- Right: Foto / Ilustrasi Showcase -->
-                <div class="lg:col-span-4 p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-4">
-                    <label class="block text-xs font-extrabold text-[#071330] uppercase tracking-wider">
-                        Gambar Ilustrasi Showcase
-                    </label>
-
-                    <div class="aspect-video rounded-xl border-2 border-dashed border-slate-300 bg-white p-2 flex items-center justify-center overflow-hidden">
-                        <img id="preview_about_image" src="{{ asset($settings['about_image']->value ?? 'images/Ilustrasi-Homepage-1-1.png') }}" alt="About Image Preview" class="max-w-full max-h-full object-contain drop-shadow-md" />
+                <!-- Right: Dual Mockup Uploads (Laptop & Smartphone) -->
+                <div class="lg:col-span-5 space-y-4">
+                    
+                    <!-- 1. Mockup Laptop -->
+                    <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
+                        <div class="flex items-center justify-between">
+                            <label class="block text-xs font-extrabold text-[#071330] uppercase tracking-wider">
+                                💻 Layar Mockup Laptop
+                            </label>
+                            <span class="text-[10px] font-bold text-blue-600">Web / Portal</span>
+                        </div>
+                        <div class="aspect-16/10 rounded-xl border border-slate-200 bg-slate-900 p-1 flex items-center justify-center overflow-hidden">
+                            <img id="preview_about_mockup_laptop" src="{{ asset($settings['about_mockup_laptop']->value ?? ($settings['about_image']->value ?? 'images/Ilustrasi-Homepage-1-1.webp')) }}" alt="Laptop Mockup Preview" class="max-w-full max-h-full object-cover" />
+                        </div>
+                        <input type="file" name="about_mockup_laptop_file" accept="image/*" onchange="previewImage(this, 'preview_about_mockup_laptop')" class="block w-full text-xs text-slate-500 file:mr-2 file:py-1.5 file:px-3 file:rounded-lg file:border-0 file:text-[11px] file:font-bold file:bg-blue-600 file:text-white hover:file:bg-blue-700 cursor-pointer" />
                     </div>
 
-                    <div class="space-y-1.5">
-                        <input type="file" name="about_image_file" accept="image/*" onchange="previewImage(this, 'preview_about_image')" class="block w-full text-xs text-slate-500 file:mr-2 file:py-2 file:px-3 file:rounded-lg file:border-0 file:text-xs file:font-bold file:bg-blue-600 file:text-white hover:file:bg-blue-700 cursor-pointer" />
-                        <p class="text-[11px] text-slate-400">Otomatis dikonversi ke WebP &le; 100KB untuk menjaga kecepatan loading.</p>
+                    <!-- 2. Mockup Smartphone -->
+                    <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
+                        <div class="flex items-center justify-between">
+                            <label class="block text-xs font-extrabold text-[#071330] uppercase tracking-wider">
+                                📱 Layar Mockup Smartphone
+                            </label>
+                            <span class="text-[10px] font-bold text-emerald-600">Mobile App</span>
+                        </div>
+                        <div class="h-28 rounded-xl border border-slate-200 bg-slate-900 p-1 flex items-center justify-center overflow-hidden mx-auto w-24">
+                            <img id="preview_about_mockup_phone" src="{{ asset($settings['about_mockup_phone']->value ?? 'images/smartverse/logo-smartverse.webp') }}" alt="Phone Mockup Preview" class="max-w-full max-h-full object-contain" />
+                        </div>
+                        <input type="file" name="about_mockup_phone_file" accept="image/*" onchange="previewImage(this, 'preview_about_mockup_phone')" class="block w-full text-xs text-slate-500 file:mr-2 file:py-1.5 file:px-3 file:rounded-lg file:border-0 file:text-[11px] file:font-bold file:bg-emerald-600 file:text-white hover:file:bg-emerald-700 cursor-pointer" />
                     </div>
+
                 </div>
 
             </div>

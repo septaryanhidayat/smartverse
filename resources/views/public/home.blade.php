@@ -106,7 +106,7 @@
                 <!-- Trust Micro Badges -->
                 <div class="pt-2 sm:pt-3 flex flex-wrap items-center justify-center lg:justify-start gap-x-4 gap-y-2 text-[11px] sm:text-xs text-slate-500 dark:text-slate-400 font-semibold">
                     <span class="inline-flex items-center gap-1.5"><span class="text-emerald-500 font-bold">✓</span> Narasumber Resmi Bank Indonesia, Komdigi &amp; Media Nasional</span>
-                    <span class="inline-flex items-center gap-1.5"><span class="text-cyan-500 font-bold">✓</span> Trainer Tersertifikasi Microsoft, AWS &amp; Red Hat</span>
+                    <span class="inline-flex items-center gap-1.5"><span class="text-cyan-500 font-bold">✓</span> Trainer Tersertifikasi Google, Microsoft, AWS &amp; Red Hat</span>
                     <span class="inline-flex items-center gap-1.5"><span class="text-amber-500 font-bold">✓</span> Full Source Code &amp; Standar Enterprise</span>
                 </div>
 
@@ -128,12 +128,12 @@
                         </div>
                     </div>
 
-                    <!-- Floating Badge 2: Certifications (Top Right) -->
+                    <!-- Floating Badge 2: Certifications (Top Right, Includes Google) -->
                     <div class="absolute top-6 -right-2 sm:-right-4 z-30 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md px-3.5 py-2 rounded-2xl shadow-xl border border-slate-200/80 dark:border-slate-800 flex items-center gap-2.5 hover:scale-105 transition-transform">
                         <span class="w-8 h-8 rounded-xl bg-emerald-100 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-sm font-black shadow-xs">🏆</span>
                         <div class="text-left">
                             <div class="text-[11px] font-black text-emerald-600 dark:text-emerald-400 leading-tight">Certified Professional</div>
-                            <div class="text-[9px] text-slate-500 dark:text-slate-400 font-bold">Microsoft • AWS • Red Hat</div>
+                            <div class="text-[9px] text-slate-500 dark:text-slate-400 font-bold">{{ $settings['founder_certifications'] ?? 'Google • Microsoft • AWS • Red Hat' }}</div>
                         </div>
                     </div>
 
@@ -148,8 +148,8 @@
 
                         <!-- Speaker Photo with Gentle Bottom Feather/Fade (Blends seamlessly into pedestal) -->
                         <div class="relative w-full flex justify-center items-end z-10 -mb-6">
-                            <img src="{{ asset('images/smartverse/ryan-trainer-hero.webp') }}" 
-                                 alt="Septa Ryan Hidayat - Direktur &amp; Narasumber Ahli IT/AI SmartVerse" 
+                            <img src="{{ asset($settings['trainer_avatar'] ?? 'images/smartverse/ryan-trainer-hero.webp') }}" 
+                                 alt="Septa Ryan Hidayat - Founder SmartVerseID" 
                                  fetchpriority="high" 
                                  loading="eager" 
                                  decoding="async" 
@@ -166,8 +166,8 @@
                                     <h3 class="text-sm sm:text-base font-black text-[#07153f] dark:text-white leading-tight">
                                         Septa Ryan Hidayat
                                     </h3>
-                                    <p class="text-[11px] font-bold text-blue-700 dark:text-cyan-400">
-                                        Direktur &amp; Narasumber Nasional IT / AI
+                                    <p class="text-[11px] font-extrabold text-blue-700 dark:text-cyan-400">
+                                        {{ $settings['founder_title'] ?? 'Founder SmartVerseID' }}
                                     </p>
                                 </div>
                                 <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-600 dark:text-emerald-400 text-[10px] font-bold shrink-0">
@@ -176,11 +176,11 @@
                                 </span>
                             </div>
 
-                            <!-- Competencies Chips -->
-                            <div class="flex flex-wrap gap-1.5 pt-1.5 border-t border-slate-100 dark:border-slate-800 text-[10px] font-semibold">
-                                <span class="px-2 py-0.5 rounded-md bg-blue-50 dark:bg-blue-950/70 text-blue-700 dark:text-blue-300 border border-blue-200/60 dark:border-blue-800/60">💻 Koding &amp; Pemrograman</span>
-                                <span class="px-2 py-0.5 rounded-md bg-purple-50 dark:bg-purple-950/70 text-purple-700 dark:text-purple-300 border border-purple-200/60 dark:border-purple-800/60">🤖 AI RAG &amp; Otomasi</span>
-                                <span class="px-2 py-0.5 rounded-md bg-cyan-50 dark:bg-cyan-950/70 text-cyan-700 dark:text-cyan-300 border border-cyan-200/60 dark:border-cyan-800/60">🛡️ Digital Forensics</span>
+                            <!-- Competencies Chips (Clean, Symmetrical & Non-Wrapping) -->
+                            <div class="flex items-center justify-between gap-1.5 pt-1.5 border-t border-slate-100 dark:border-slate-800 text-[10px] font-bold overflow-hidden">
+                                <span class="px-2 py-0.5 rounded-md bg-blue-50 dark:bg-blue-950/70 text-blue-700 dark:text-blue-300 border border-blue-200/60 dark:border-blue-800/60 whitespace-nowrap shrink-0">💻 Pemrograman</span>
+                                <span class="px-2 py-0.5 rounded-md bg-purple-50 dark:bg-purple-950/70 text-purple-700 dark:text-purple-300 border border-purple-200/60 dark:border-purple-800/60 whitespace-nowrap shrink-0">🤖 AI &amp; Otomasi</span>
+                                <span class="px-2 py-0.5 rounded-md bg-cyan-50 dark:bg-cyan-950/70 text-cyan-700 dark:text-cyan-300 border border-cyan-200/60 dark:border-cyan-800/60 whitespace-nowrap shrink-0">🛡️ Cyber Forensik</span>
                             </div>
                         </div>
 
@@ -214,10 +214,10 @@
             </p>
         </div>
 
-        <!-- 5 Flagship Products Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        <!-- 5 Flagship Products Grid (Rata Tengah Sempurna & Simetris untuk 5 Produk) -->
+        <div class="flex flex-wrap justify-center gap-6 sm:gap-8">
             @forelse($flagshipProducts as $index => $prod)
-                <div class="bg-white dark:bg-slate-800/95 rounded-3xl p-6 sm:p-7 border border-slate-200/80 dark:border-slate-700/70 shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between group relative overflow-hidden reveal-on-scroll {{ $loop->iteration === 5 ? 'md:col-span-2 lg:col-span-1 border-indigo-200 dark:border-indigo-900/60' : '' }}">
+                <div class="w-full md:w-[calc(50%-1.25rem)] lg:w-[calc(33.333%-1.5rem)] max-w-sm bg-white dark:bg-slate-800/95 rounded-3xl p-6 sm:p-7 border border-slate-200/80 dark:border-slate-700/70 shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between group relative overflow-hidden reveal-on-scroll">
                     
                     <!-- Top Ribbon / Order -->
                     <div class="absolute -top-3 -right-3 w-16 h-16 pointer-events-none overflow-hidden">
@@ -613,44 +613,96 @@
     </div>
 </section>
 
-<!-- SECTION 4: ABOUT US (FlyMotion Layout with Animated Floating Illustrations) -->
+<!-- SECTION 4: ABOUT US (Modern Dual Device Mockup: Laptop & Smartphone Bersebelahan) -->
 <section class="py-20 bg-[#f8faff] dark:bg-slate-950 border-t border-slate-100 dark:border-slate-800 transition-colors duration-300 relative overflow-hidden">
     
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
-            <div class="lg:col-span-7 space-y-6 text-center lg:text-left reveal-on-scroll">
+            <div class="lg:col-span-6 space-y-6 text-center lg:text-left reveal-on-scroll">
                 <div class="flex items-center justify-center lg:justify-start gap-3">
                     <span class="w-8 h-1 bg-[#3E5CE7] rounded-full"></span>
-                    <span class="text-sm font-bold tracking-wider uppercase text-blue-700 dark:text-blue-400">{{ $settings['about_badge'] ?? 'About us' }}</span>
+                    <span class="text-sm font-bold tracking-wider uppercase text-blue-700 dark:text-blue-400">{{ $settings['about_badge'] ?? 'Tentang SmartVerse' }}</span>
                 </div>
                 
                 <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#07153f] dark:text-white leading-tight">
-                    {{ $settings['about_title'] ?? 'We develop digital strategies products and services.' }}
+                    {{ $settings['about_title'] ?? 'Inovasi Rekayasa Perangkat Lunak & Ekosistem Digital Enterprise' }}
                 </h2>
                 
                 <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-medium">
                     {!! nl2br(e($settings['about_description'] ?? 'SmartVerse (smartverse.id) adalah ekosistem solusi teknologi dan produk digital terintegrasi yang menghadirkan solusi rekayasa perangkat lunak mutakhir untuk sektor media jurnalisme, institusi pendidikan Islam, manajemen SDM korporasi, otomatisasi konten visual AI, serta forensik digital saintifik. Didukung arsitektur software berstandar industri dan teknologi artificial intelligence modern.')) !!}
                 </p>
 
-                <div class="pt-2 flex justify-center lg:justify-start">
-                    <a href="{{ $settings['about_button_url'] ?? route('services') }}" class="px-7 py-3.5 rounded-xl bg-[#3E5CE7] hover:bg-blue-700 text-white font-bold text-xs uppercase shadow-md inline-flex items-center gap-2 transition-all">
+                <div class="pt-2 flex flex-wrap items-center justify-center lg:justify-start gap-4">
+                    <a href="{{ $settings['about_button_url'] ?? route('services') }}" class="px-7 py-3.5 rounded-xl bg-[#3E5CE7] hover:bg-blue-700 text-white font-bold text-xs uppercase tracking-wider shadow-lg hover:shadow-blue-500/25 active:scale-95 inline-flex items-center gap-2 transition-all">
                         <span>{{ $settings['about_button_text'] ?? 'Pelajari Selengkapnya' }}</span> &rarr;
+                    </a>
+                    <a href="#flagship-products" class="px-6 py-3.5 rounded-xl border border-slate-300 dark:border-slate-700 text-[#07153f] dark:text-white font-bold text-xs uppercase tracking-wider hover:bg-slate-100 dark:hover:bg-slate-800 active:scale-95 transition-all">
+                        <span>Jelajahi 5 Produk</span>
                     </a>
                 </div>
             </div>
 
-            <!-- Right Column: Interactive Illustration Showcase with Floating Shapes -->
-            <div class="lg:col-span-5 flex justify-center relative reveal-on-scroll delay-200">
+            <!-- Right Column: Dual Device Mockup (Laptop & Smartphone Bersebelahan Modern) -->
+            <div class="lg:col-span-6 flex justify-center relative reveal-on-scroll delay-200">
                 
-                <!-- Floating Decorative Shapes -->
-                <div class="absolute -top-6 -left-6 text-orange-700 dark:text-orange-400 text-3xl font-black anim-logo-top" aria-hidden="true">✦</div>
-                <div class="absolute -bottom-6 -right-6 text-blue-700 dark:text-blue-400 text-4xl font-black anim-logo-bottom" aria-hidden="true">~</div>
+                <!-- Ambient Backdrop Glow -->
+                <div class="absolute -inset-4 bg-gradient-to-tr from-blue-500/15 via-cyan-500/15 to-purple-500/15 rounded-3xl blur-2xl pointer-events-none"></div>
 
-                <div class="bg-white dark:bg-slate-800 p-5 rounded-3xl border border-slate-100 dark:border-slate-700 shadow-xl max-w-md w-full relative">
-                    <div class="aspect-video rounded-2xl overflow-hidden border border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 shadow-xs p-2 flex items-center justify-center">
-                        <img src="{{ asset($settings['about_image'] ?? 'images/Ilustrasi-Homepage-1-1.webp') }}" alt="{{ $settings['about_title'] ?? 'SmartVerse Solusi Digital & AI' }}" loading="lazy" decoding="async" width="881" height="661" class="w-full h-full object-contain" style="aspect-ratio: 881 / 661;" />
+                <!-- Floating Badge: Cross-Platform -->
+                <div class="absolute -top-4 -left-2 sm:-left-4 z-30 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md px-3.5 py-2 rounded-2xl shadow-xl border border-slate-200/80 dark:border-slate-800 flex items-center gap-2.5">
+                    <span class="w-8 h-8 rounded-xl bg-blue-100 dark:bg-blue-950 text-blue-600 dark:text-blue-400 flex items-center justify-center text-sm font-black shadow-xs">💻</span>
+                    <div class="text-left">
+                        <div class="text-[11px] font-black text-[#07153f] dark:text-white leading-tight">Web &amp; Mobile Ready</div>
+                        <div class="text-[9px] text-slate-500 dark:text-slate-400 font-bold">Responsif &amp; Terintegrasi</div>
                     </div>
+                </div>
+
+                <!-- Container Mockup Bersebelahan Saling Berdampingan -->
+                <div class="relative w-full max-w-lg flex items-end justify-center pt-8 pb-4">
+                    
+                    <!-- 1. Laptop Mockup (MacBook Style Frame) -->
+                    <div class="relative w-[76%] sm:w-[80%] z-10 transition-transform duration-500 hover:scale-[1.02]">
+                        <!-- Screen Lid -->
+                        <div class="rounded-t-2xl bg-slate-900 p-2 sm:p-2.5 pt-3 sm:pt-3.5 border-t border-x border-slate-700 shadow-2xl relative">
+                            <!-- Camera dot -->
+                            <div class="absolute top-1.5 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-slate-700"></div>
+                            <!-- Screen Bezel & Display Content -->
+                            <div class="aspect-[16/10] bg-slate-950 rounded-lg overflow-hidden border border-slate-800 relative group flex items-center justify-center">
+                                <img src="{{ asset($settings['about_mockup_laptop'] ?? ($settings['about_image'] ?? 'images/Ilustrasi-Homepage-1-1.webp')) }}" 
+                                     alt="{{ $settings['about_title'] ?? 'SmartVerse Platform Preview' }}" 
+                                     loading="lazy" 
+                                     decoding="async" 
+                                     class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" />
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/40 to-transparent pointer-events-none"></div>
+                            </div>
+                        </div>
+                        <!-- Laptop Base / Keyboard Lip -->
+                        <div class="h-3 sm:h-3.5 bg-gradient-to-b from-slate-300 via-slate-400 to-slate-500 dark:from-slate-700 dark:via-slate-800 dark:to-slate-900 rounded-b-xl relative shadow-xl border-t border-slate-400/50">
+                            <!-- Thumb Notch -->
+                            <div class="w-16 h-1 bg-slate-400 dark:bg-slate-600 rounded-full mx-auto"></div>
+                        </div>
+                    </div>
+
+                    <!-- 2. Smartphone Mockup (iPhone Style Frame Berdampingan Sebelah Kanan) -->
+                    <div class="relative w-[34%] sm:w-[32%] -ml-12 sm:-ml-16 -mb-3 z-20 transition-transform duration-500 hover:scale-105 hover:-translate-y-2">
+                        <!-- Phone Outer Shell -->
+                        <div class="rounded-[28px] sm:rounded-[32px] bg-slate-900 p-1.5 sm:p-2 border-2 border-slate-600 dark:border-slate-700 shadow-2xl">
+                            <!-- Screen Bezel -->
+                            <div class="aspect-[9/19] bg-slate-950 rounded-[22px] sm:rounded-[26px] overflow-hidden relative flex flex-col justify-between">
+                                <!-- Dynamic Island -->
+                                <div class="absolute top-1.5 left-1/2 -translate-x-1/2 w-10 sm:w-12 h-2.5 bg-black rounded-full z-30"></div>
+                                <!-- Mobile Screen Preview -->
+                                <img src="{{ asset($settings['about_mockup_phone'] ?? 'images/smartverse/logo-smartverse.webp') }}" 
+                                     alt="SmartVerse Mobile Preview" 
+                                     loading="lazy" 
+                                     decoding="async" 
+                                     class="w-full h-full object-cover object-center" />
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/30 to-transparent pointer-events-none"></div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
 
@@ -681,11 +733,11 @@
             </p>
         </div>
 
-        <!-- 5 Flagship Product Cards Grid -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- 5 Flagship Product Cards Grid (Rata Tengah Sempurna & Rapi) -->
+        <div class="flex flex-wrap justify-center gap-6">
             
             <!-- Card 1: SmartNews -->
-            <div class="bg-white dark:bg-slate-800 p-6 rounded-3xl border-2 border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all space-y-3 reveal-on-scroll delay-75 flex flex-col justify-between items-center sm:items-stretch text-center sm:text-left">
+            <div class="w-full sm:w-[calc(50%-0.85rem)] lg:w-[calc(33.333%-1rem)] max-w-sm bg-white dark:bg-slate-800 p-6 rounded-3xl border-2 border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all space-y-3 reveal-on-scroll delay-75 flex flex-col justify-between items-center sm:items-stretch text-center sm:text-left">
                 <div class="space-y-3 w-full">
                     <div class="w-14 h-14 rounded-2xl bg-sky-50 dark:bg-sky-950 text-sky-600 dark:text-sky-400 flex items-center justify-center text-3xl font-bold shadow-xs mx-auto sm:mx-0">
                         📰
@@ -708,7 +760,7 @@
             </div>
 
             <!-- Card 2: SmartEdu SIT -->
-            <div class="bg-white dark:bg-slate-800 p-6 rounded-3xl border-2 border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all space-y-3 reveal-on-scroll delay-150 flex flex-col justify-between items-center sm:items-stretch text-center sm:text-left">
+            <div class="w-full sm:w-[calc(50%-0.85rem)] lg:w-[calc(33.333%-1rem)] max-w-sm bg-white dark:bg-slate-800 p-6 rounded-3xl border-2 border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all space-y-3 reveal-on-scroll delay-150 flex flex-col justify-between items-center sm:items-stretch text-center sm:text-left">
                 <div class="space-y-3 w-full">
                     <div class="w-14 h-14 rounded-2xl bg-emerald-50 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-3xl font-bold shadow-xs mx-auto sm:mx-0">
                         🎓
@@ -731,7 +783,7 @@
             </div>
 
             <!-- Card 3: SmartFeed -->
-            <div class="bg-white dark:bg-slate-800 p-6 rounded-3xl border-2 border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all space-y-3 reveal-on-scroll delay-200 flex flex-col justify-between items-center sm:items-stretch text-center sm:text-left">
+            <div class="w-full sm:w-[calc(50%-0.85rem)] lg:w-[calc(33.333%-1rem)] max-w-sm bg-white dark:bg-slate-800 p-6 rounded-3xl border-2 border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all space-y-3 reveal-on-scroll delay-200 flex flex-col justify-between items-center sm:items-stretch text-center sm:text-left">
                 <div class="space-y-3 w-full">
                     <div class="w-14 h-14 rounded-2xl bg-purple-50 dark:bg-purple-950 text-purple-600 dark:text-purple-400 flex items-center justify-center text-3xl font-bold shadow-xs mx-auto sm:mx-0">
                         ⚡
@@ -754,7 +806,7 @@
             </div>
 
             <!-- Card 4: SmartSDM -->
-            <div class="bg-white dark:bg-slate-800 p-6 rounded-3xl border-2 border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all space-y-3 reveal-on-scroll delay-250 flex flex-col justify-between items-center sm:items-stretch text-center sm:text-left">
+            <div class="w-full sm:w-[calc(50%-0.85rem)] lg:w-[calc(33.333%-1rem)] max-w-sm bg-white dark:bg-slate-800 p-6 rounded-3xl border-2 border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all space-y-3 reveal-on-scroll delay-250 flex flex-col justify-between items-center sm:items-stretch text-center sm:text-left">
                 <div class="space-y-3 w-full">
                     <div class="w-14 h-14 rounded-2xl bg-blue-50 dark:bg-blue-950 text-blue-600 dark:text-blue-400 flex items-center justify-center text-3xl font-bold shadow-xs mx-auto sm:mx-0">
                         📱
@@ -777,7 +829,7 @@
             </div>
 
             <!-- Card 5: SmartSynth -->
-            <div class="bg-white dark:bg-slate-800 p-6 rounded-3xl border-2 border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all space-y-3 reveal-on-scroll delay-300 flex flex-col justify-between items-center sm:items-stretch text-center sm:text-left sm:col-span-2 lg:col-span-1">
+            <div class="w-full sm:w-[calc(50%-0.85rem)] lg:w-[calc(33.333%-1rem)] max-w-sm bg-white dark:bg-slate-800 p-6 rounded-3xl border-2 border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all space-y-3 reveal-on-scroll delay-300 flex flex-col justify-between items-center sm:items-stretch text-center sm:text-left">
                 <div class="space-y-3 w-full">
                     <div class="w-14 h-14 rounded-2xl bg-indigo-50 dark:bg-indigo-950 text-indigo-600 dark:text-indigo-400 flex items-center justify-center text-3xl font-bold shadow-xs mx-auto sm:mx-0">
                         🔬
@@ -800,7 +852,7 @@
             </div>
 
             <!-- Card 6: Custom Enterprise Software -->
-            <div class="bg-gradient-to-br from-[#07153f] to-[#0d2360] dark:from-slate-950 dark:to-[#07153f] p-6 rounded-3xl text-white shadow-xl hover:-translate-y-1 transition-all space-y-3 reveal-on-scroll delay-350 flex flex-col justify-between items-center sm:items-stretch text-center sm:text-left sm:col-span-2 lg:col-span-1 border border-cyan-500/30">
+            <div class="w-full sm:w-[calc(50%-0.85rem)] lg:w-[calc(33.333%-1rem)] max-w-sm bg-gradient-to-br from-[#07153f] to-[#0d2360] dark:from-slate-950 dark:to-[#07153f] p-6 rounded-3xl text-white shadow-xl hover:-translate-y-1 transition-all space-y-3 reveal-on-scroll delay-350 flex flex-col justify-between items-center sm:items-stretch text-center sm:text-left border border-cyan-500/30">
                 <div class="space-y-3 w-full">
                     <div class="w-14 h-14 rounded-2xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center text-3xl font-bold shadow-xs mx-auto sm:mx-0">
                         🏢

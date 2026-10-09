@@ -20,9 +20,18 @@ class DigitalProductController extends Controller
             });
         }
 
-        $products = $query->orderBy('order', 'asc')->latest()->paginate(9)->withQueryString();
+        $perPageParam = $request->get('per_page', 10);
+        if ($perPageParam === 'all' || $perPageParam === 'semua') {
+            $perPage = 500;
+        } elseif (in_array((int)$perPageParam, [5, 10, 50, 100])) {
+            $perPage = (int)$perPageParam;
+        } else {
+            $perPage = 10;
+        }
 
-        return view('public.products.index', compact('products', 'categories'));
+        $products = $query->orderBy('order', 'asc')->latest()->paginate($perPage)->withQueryString();
+
+        return view('public.products.index', compact('products', 'categories', 'perPageParam'));
     }
 
     public function show($slug)
