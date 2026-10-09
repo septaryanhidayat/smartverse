@@ -50,7 +50,7 @@
     openEditModal(item) {
         this.activityModalMode = 'edit';
         this.activityFormAction = '/admin/cv/activities/' + item.id;
-        this.activityMethod = 'POST'; // we'll use hidden @method('PUT')
+        this.activityMethod = 'POST';
         this.activityData = {
             id: item.id,
             type: item.type,
@@ -77,11 +77,11 @@
     }
 }">
 
-    <!-- HERO HEADER: CV STATUS & QUICK ACTIONS -->
-    <div class="bg-gradient-to-r from-[#071330] via-[#0b1f54] to-[#1e3a8a] rounded-3xl p-6 sm:p-8 text-white shadow-xl relative overflow-hidden border border-white/10">
-        <!-- Background Accent Grid -->
-        <div class="absolute -right-10 -bottom-10 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl pointer-events-none"></div>
-        <div class="absolute top-0 right-0 w-80 h-80 bg-cyan-400/10 rounded-full blur-2xl pointer-events-none"></div>
+    <!-- HERO HEADER: CV STATUS & QUICK ACTIONS (Kontras Tinggi & Tajam) -->
+    <div class="bg-[#071330] rounded-3xl p-6 sm:p-8 text-white shadow-2xl relative overflow-hidden border-2 border-blue-500/30">
+        <!-- Ambient Subtle Accent -->
+        <div class="absolute -right-20 -top-20 w-80 h-80 bg-blue-500/20 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -left-20 -bottom-20 w-80 h-80 bg-cyan-500/15 rounded-full blur-3xl pointer-events-none"></div>
 
         <div class="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
             <div class="flex flex-col sm:flex-row items-start sm:items-center gap-5">
@@ -95,18 +95,18 @@
                 </div>
                 <div class="space-y-1">
                     <div class="flex items-center gap-2">
-                        <span class="px-2.5 py-0.5 rounded-full bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 font-bold text-[10px] tracking-wide uppercase">
+                        <span class="px-2.5 py-0.5 rounded-full bg-cyan-500/20 text-cyan-300 border border-cyan-400/40 font-black text-[10px] tracking-wide uppercase">
                             Executive Resume Engine
                         </span>
-                        <span class="text-xs text-white/50">&bull; Auto-Synchronized</span>
+                        <span class="text-xs text-slate-200 font-semibold">&bull; Auto-Synchronized</span>
                     </div>
                     <h1 class="text-xl sm:text-2xl font-black text-white tracking-tight flex items-center gap-2">
                         {{ $profile->full_name }}
                     </h1>
-                    <p class="text-xs sm:text-sm text-cyan-200 font-semibold leading-relaxed">
+                    <p class="text-xs sm:text-sm text-cyan-200 font-bold leading-relaxed">
                         {{ $profile->title }}
                     </p>
-                    <p class="text-[11px] text-slate-300 font-mono">
+                    <p class="text-[11px] text-slate-200 font-mono font-medium">
                         {{ $profile->email }} &bull; {{ $profile->phone }} &bull; {{ $profile->city }}
                     </p>
                 </div>
@@ -116,21 +116,21 @@
             <div class="flex flex-wrap items-center gap-2.5 pt-2 lg:pt-0">
                 <!-- Lihat CV Web -->
                 <a href="{{ route('cv.show') }}" target="_blank" 
-                   class="px-4 py-2.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-[#071330] font-extrabold text-xs shadow-lg transition-all inline-flex items-center gap-2">
+                   class="px-4 py-2.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-[#071330] font-black text-xs shadow-lg transition-all inline-flex items-center gap-2 border border-cyan-300">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.164 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
                     <span>Lihat CV Web</span>
                 </a>
 
                 <!-- Cetak PDF -->
                 <a href="{{ route('cv.print') }}" target="_blank" 
-                   class="px-4 py-2.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-[#071330] font-extrabold text-xs shadow-lg transition-all inline-flex items-center gap-2">
+                   class="px-4 py-2.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-[#071330] font-black text-xs shadow-lg transition-all inline-flex items-center gap-2 border border-amber-300">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
                     <span>Cetak PDF (A4)</span>
                 </a>
 
                 <!-- Salin Link -->
                 <button @click="copyCvLink()" 
-                        class="px-3.5 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs border border-white/15 transition-all inline-flex items-center gap-1.5">
+                        class="px-3.5 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs border border-white/20 transition-all inline-flex items-center gap-1.5">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
                     <span x-text="copied ? 'Tersalin! ✓' : 'Salin Link'">Salin Link</span>
                 </button>
@@ -138,40 +138,40 @@
                 <!-- Kirim WA -->
                 <a href="https://wa.me/?text=Halo,%20berikut%20adalah%20Curriculum%20Vitae%20(CV)%20resmi%20dan%20profil%20profesional%20Septa%20Ryan%20Hidayat%20(Software%20Architect%20%26%20AI%20Specialist):%20{{ urlencode(route('cv.show')) }}" 
                    target="_blank"
-                   class="px-3.5 py-2.5 rounded-xl bg-emerald-500/80 hover:bg-emerald-500 text-white font-bold text-xs shadow-md transition-all inline-flex items-center gap-1.5">
+                   class="px-3.5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs shadow-md transition-all inline-flex items-center gap-1.5 border border-emerald-400/40">
                     <span>💬 Kirim ke Klien</span>
                 </a>
 
                 <!-- Reset ke Default -->
                 <form action="{{ route('admin.cv.reset') }}" method="POST" onsubmit="return confirm('Apakah Anda yakin ingin me-reset data CV kembali ke data bawaan lengkap Septa Ryan Hidayat? Seluruh perubahan manual akan direset.');" class="inline">
                     @csrf
-                    <button type="submit" title="Reset ke data awal" class="p-2.5 rounded-xl bg-white/5 hover:bg-rose-500/20 text-white/60 hover:text-rose-300 border border-white/10 transition-all">
+                    <button type="submit" title="Reset ke data awal" class="p-2.5 rounded-xl bg-white/10 hover:bg-rose-500/30 text-white/80 hover:text-rose-200 border border-white/20 transition-all">
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
                     </button>
                 </form>
             </div>
         </div>
 
-        <!-- Metric Badges Row -->
-        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-6 pt-5 border-t border-white/10">
-            <div class="bg-white/5 rounded-2xl p-3 border border-white/5 text-center">
-                <span class="block text-lg font-black text-amber-300 mono">{{ $profile->stats['years_exp'] ?? '8+' }}</span>
-                <span class="text-[10px] text-slate-300 uppercase font-semibold">Tahun Pengalaman</span>
+        <!-- Metric Badges Row (Kontras Tinggi & Solid) -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-6 pt-5 border-t border-white/20">
+            <div class="bg-[#0c1b3d] rounded-2xl p-3.5 border border-blue-400/30 text-center shadow-md">
+                <span class="block text-xl font-black text-amber-300 mono">{{ $profile->stats['years_exp'] ?? '8+' }}</span>
+                <span class="text-[11px] text-slate-100 uppercase font-black tracking-wider block mt-0.5">Tahun Pengalaman</span>
             </div>
-            <div class="bg-white/5 rounded-2xl p-3 border border-white/5 text-center">
-                <span class="block text-lg font-black text-cyan-300 mono">{{ $speakerActivities->count() }} Kegiatan</span>
-                <span class="text-[10px] text-slate-300 uppercase font-semibold">Keynote &amp; Workshop</span>
+            <div class="bg-[#0c1b3d] rounded-2xl p-3.5 border border-blue-400/30 text-center shadow-md">
+                <span class="block text-xl font-black text-cyan-300 mono">{{ $speakerActivities->count() }} Kegiatan</span>
+                <span class="text-[11px] text-slate-100 uppercase font-black tracking-wider block mt-0.5">Keynote &amp; Workshop</span>
             </div>
-            <div class="bg-white/5 rounded-2xl p-3 border border-white/5 text-center">
-                <span class="block text-lg font-black text-emerald-300 mono">{{ $projectActivities->count() }} Proyek</span>
-                <span class="text-[10px] text-slate-300 uppercase font-semibold">Karya &amp; Software</span>
+            <div class="bg-[#0c1b3d] rounded-2xl p-3.5 border border-blue-400/30 text-center shadow-md">
+                <span class="block text-xl font-black text-emerald-300 mono">{{ $projectActivities->count() }} Proyek</span>
+                <span class="text-[11px] text-slate-100 uppercase font-black tracking-wider block mt-0.5">Karya &amp; Software</span>
             </div>
-            <div class="bg-white/5 rounded-2xl p-3 border border-white/5 text-center">
+            <div class="bg-[#0c1b3d] rounded-2xl p-3.5 border border-blue-400/30 text-center shadow-md">
                 @php
                     $flyerCount = $speakerActivities->whereNotNull('flyer_path')->count() + $projectActivities->whereNotNull('flyer_path')->count();
                 @endphp
-                <span class="block text-lg font-black text-pink-300 mono">{{ $flyerCount }} Flyer / Bukti</span>
-                <span class="text-[10px] text-slate-300 uppercase font-semibold">Lampiran Otomatis</span>
+                <span class="block text-xl font-black text-pink-300 mono">{{ $flyerCount }} Flyer / Bukti</span>
+                <span class="text-[11px] text-slate-100 uppercase font-black tracking-wider block mt-0.5">Lampiran Otomatis</span>
             </div>
         </div>
     </div>
