@@ -13,8 +13,33 @@ class AdminProjectController extends Controller
 {
     public function index()
     {
-        $projects = Project::with('category')->latest()->paginate(10);
+        $projects = Project::with('category')
+            ->orderByDesc('is_featured')
+            ->orderBy('order', 'asc')
+            ->latest()
+            ->paginate(15);
         return view('admin.projects.index', compact('projects'));
+    }
+
+    public function toggleFeatured(Project $project)
+    {
+        $project->is_featured = !$project->is_featured;
+        $project->save();
+
+        $statusText = $project->is_featured ? 'Unggulan (Baris Awal Prioritas)' : 'Standar';
+        return back()->with('success', "Status Proyek '{$project->title}' berhasil diubah menjadi: {$statusText}.");
+    }
+
+    public function updateOrder(Request $request, Project $project)
+    {
+        $validated = $request->validate([
+            'order' => 'required|integer',
+        ]);
+
+        $project->order = $validated['order'];
+        $project->save();
+
+        return back()->with('success', "Urutan tampilan proyek '{$project->title}' berhasil disimpan ke posisi #{$project->order}.");
     }
 
     public function create()

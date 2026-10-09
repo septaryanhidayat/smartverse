@@ -20,7 +20,7 @@ class ProjectController extends Controller
             });
         }
 
-        $projects = $query->orderBy('order', 'asc')->latest()->paginate(12)->withQueryString();
+        $projects = $query->orderByDesc('is_featured')->orderBy('order', 'asc')->latest()->paginate(12)->withQueryString();
 
         return view('public.projects.index', compact('projects', 'categories'));
     }

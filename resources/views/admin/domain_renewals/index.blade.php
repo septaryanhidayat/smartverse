@@ -333,16 +333,16 @@
                             </td>
 
                             <!-- Actions -->
-                            <td class="py-4 px-5 text-right">
-                                <div class="flex items-center justify-end gap-1.5">
+                            <td class="py-4 px-5 text-right whitespace-nowrap">
+                                <div class="flex items-center justify-end gap-1.5 whitespace-nowrap">
                                     
                                     <!-- 1-Click Renew +1 Year -->
-                                    <form action="{{ route('admin.domain-renewals.renew-one-year', $item->id) }}" method="POST" onsubmit="return confirm('Perpanjang masa aktif {{ $item->domain_name }} selama 1 tahun ke depan?');">
+                                    <form action="{{ route('admin.domain-renewals.renew-one-year', $item->id) }}" method="POST" onsubmit="return confirm('Perpanjang masa aktif {{ $item->domain_name }} selama 1 tahun ke depan?');" class="inline">
                                         @csrf
                                         <button type="submit" 
                                                 title="Perpanjang Cepat +1 Tahun"
-                                                class="px-2.5 py-1.5 rounded-lg bg-slate-100 hover:bg-emerald-50 hover:text-emerald-700 hover:border-emerald-200 border border-slate-200 text-slate-700 font-bold text-xs transition-all">
-                                            +1 Thn
+                                                class="whitespace-nowrap inline-flex items-center gap-1 px-2.5 py-1.5 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-emerald-700 border border-emerald-200/70 font-bold text-xs shadow-2xs transition-all">
+                                            <span>⚡ +1 Thn</span>
                                         </button>
                                     </form>
 
@@ -350,18 +350,20 @@
                                     <button type="button"
                                             @click="openEditModal({{ json_encode($item) }})"
                                             title="Edit Data"
-                                            class="p-1.5 rounded-lg bg-slate-100 hover:bg-blue-50 hover:text-blue-700 border border-slate-200 text-slate-600 transition-all">
-                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
+                                            class="whitespace-nowrap inline-flex items-center gap-1 px-2.5 py-1.5 rounded-xl bg-blue-50 hover:bg-blue-100 text-[#3E5CE7] border border-blue-200/70 font-bold text-xs shadow-2xs transition-all">
+                                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
+                                        <span>Edit</span>
                                     </button>
 
                                     <!-- Delete Button -->
-                                    <form action="{{ route('admin.domain-renewals.destroy', $item->id) }}" method="POST" onsubmit="return confirm('Hapus aset {{ $item->domain_name }} dari sistem pelacak?');">
+                                    <form action="{{ route('admin.domain-renewals.destroy', $item->id) }}" method="POST" onsubmit="return confirm('Hapus aset {{ $item->domain_name }} dari sistem pelacak?');" class="inline">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" 
                                                 title="Hapus Aset"
-                                                class="p-1.5 rounded-lg bg-slate-100 hover:bg-rose-50 hover:text-rose-700 border border-slate-200 text-slate-600 transition-all">
-                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
+                                                class="whitespace-nowrap inline-flex items-center gap-1 px-2.5 py-1.5 rounded-xl bg-rose-50 hover:bg-rose-100 text-rose-600 border border-rose-200/70 font-bold text-xs shadow-2xs transition-all">
+                                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
+                                            <span>Hapus</span>
                                         </button>
                                     </form>
 

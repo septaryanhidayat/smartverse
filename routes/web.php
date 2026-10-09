@@ -115,6 +115,8 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'throttle:60,1'])->g
     Route::post('/settings', [SettingController::class, 'update'])->name('settings.update');
 
     // Portfolio & Projects CRUD
+    Route::post('/projects/{project}/toggle-featured', [AdminProjectController::class, 'toggleFeatured'])->name('projects.toggle-featured');
+    Route::post('/projects/{project}/update-order', [AdminProjectController::class, 'updateOrder'])->name('projects.update-order');
     Route::resource('projects', AdminProjectController::class)->except(['show']);
 
     // Digital Products & SaaS Showcase CRUD

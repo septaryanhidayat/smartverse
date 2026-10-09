@@ -153,41 +153,154 @@
                     </span>
                 </div>
 
-                <!-- 1. Platform Type -->
+                <!-- 1. Platform Type (Multi-Sektor Lengkap) -->
                 <div class="space-y-2">
-                    <label class="text-xs font-bold uppercase tracking-wider block text-[#07153f] dark:text-white">1. Pilih Kategori Solusi Digital:</label>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+                    <div class="flex items-center justify-between">
+                        <label class="text-xs font-bold uppercase tracking-wider block text-[#07153f] dark:text-white">1. Pilih Kategori Solusi Digital:</label>
+                        <span class="text-[10px] text-slate-500">14 Pilihan Lintas Sektor</span>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs max-h-[300px] overflow-y-auto pr-1">
+                        
+                        <!-- Web Sekolah -->
                         <button type="button" 
-                                @click="platform = 'company_profile'; platformName = 'Website Company Profile'; platformPrice = 2500000; hasCalculated = false"
-                                :class="platform === 'company_profile' ? 'border-[#3E5CE7] bg-blue-50/70 dark:bg-blue-950/50 text-[#3E5CE7] font-bold' : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200'"
+                                @click="platform = 'web_sekolah'; platformName = 'Website Sekolah & PPDB Online'; platformPrice = 3000000; hasCalculated = false"
+                                :class="platform === 'web_sekolah' ? 'border-[#3E5CE7] bg-blue-50/70 dark:bg-blue-950/50 text-[#3E5CE7] font-bold ring-2 ring-blue-500/30' : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200'"
                                 class="p-3 rounded-xl border text-left transition-all">
-                            <span class="font-extrabold block text-xs text-[#07153f] dark:text-white">Web Company Profile</span>
-                            <span class="text-[10px] text-slate-500">Profil Usaha & Portofolio</span>
-                        </button>
-
-                        <button type="button" 
-                                @click="platform = 'web_sekolah'; platformName = 'Website Sekolah / Kampus'; platformPrice = 3000000; hasCalculated = false"
-                                :class="platform === 'web_sekolah' ? 'border-[#3E5CE7] bg-blue-50/70 dark:bg-blue-950/50 text-[#3E5CE7] font-bold' : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200'"
-                                class="p-3 rounded-xl border text-left transition-all">
+                            <span class="px-1.5 py-0.2 rounded text-[8px] font-bold bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 mb-0.5 inline-block">Pendidikan</span>
                             <span class="font-extrabold block text-xs text-[#07153f] dark:text-white">Web Sekolah / PPDB</span>
-                            <span class="text-[10px] text-slate-500">Portal Informasi & Pendaftaran</span>
+                            <span class="text-[10px] text-slate-500">Portal Informasi &amp; Pendaftaran</span>
                         </button>
 
+                        <!-- SmartEdu ERP -->
                         <button type="button" 
-                                @click="platform = 'sim_instansi'; platformName = 'Sistem Informasi Digital (Surat, Akademik, Absensi)'; platformPrice = 5500000; hasCalculated = false"
-                                :class="platform === 'sim_instansi' ? 'border-[#3E5CE7] bg-blue-50/70 dark:bg-blue-950/50 text-[#3E5CE7] font-bold' : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200'"
+                                @click="platform = 'smartedu_erp'; platformName = 'SmartEdu ERP & Raport Digital K13/Merdeka'; platformPrice = 5500000; hasCalculated = false"
+                                :class="platform === 'smartedu_erp' ? 'border-[#3E5CE7] bg-blue-50/70 dark:bg-blue-950/50 text-[#3E5CE7] font-bold ring-2 ring-blue-500/30' : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200'"
                                 class="p-3 rounded-xl border text-left transition-all">
-                            <span class="font-extrabold block text-xs text-[#07153f] dark:text-white">Sistem Informasi Digital</span>
-                            <span class="text-[10px] text-slate-500">Surat, Akademik, Absensi</span>
+                            <span class="px-1.5 py-0.2 rounded text-[8px] font-bold bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 mb-0.5 inline-block">Pendidikan</span>
+                            <span class="font-extrabold block text-xs text-[#07153f] dark:text-white">SmartEdu ERP &amp; Raport</span>
+                            <span class="text-[10px] text-slate-500">Akademik, Nilai, CBT &amp; Raport</span>
                         </button>
 
+                        <!-- SIAKAD Kampus -->
                         <button type="button" 
-                                @click="platform = 'mobile_flutter'; platformName = 'Aplikasi Mobile (Flutter)'; platformPrice = 5000000; hasCalculated = false"
-                                :class="platform === 'mobile_flutter' ? 'border-[#3E5CE7] bg-blue-50/70 dark:bg-blue-950/50 text-[#3E5CE7] font-bold' : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200'"
+                                @click="platform = 'siakad_kampus'; platformName = 'SIAKAD & Portal Kampus'; platformPrice = 6500000; hasCalculated = false"
+                                :class="platform === 'siakad_kampus' ? 'border-[#3E5CE7] bg-blue-50/70 dark:bg-blue-950/50 text-[#3E5CE7] font-bold ring-2 ring-blue-500/30' : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200'"
                                 class="p-3 rounded-xl border text-left transition-all">
-                            <span class="font-extrabold block text-xs text-[#07153f] dark:text-white">Aplikasi Mobile Flutter</span>
-                            <span class="text-[10px] text-slate-500">Android & iOS Multiplatform</span>
+                            <span class="px-1.5 py-0.2 rounded text-[8px] font-bold bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-200 mb-0.5 inline-block">Kampus</span>
+                            <span class="font-extrabold block text-xs text-[#07153f] dark:text-white">SIAKAD &amp; Portal Kampus</span>
+                            <span class="text-[10px] text-slate-500">KRS, Dosen, Mahasiswa &amp; Nilai</span>
                         </button>
+
+                        <!-- Jurnal & Riset -->
+                        <button type="button" 
+                                @click="platform = 'portal_jurnal'; platformName = 'Portal Jurnal & Riset Ilmiah (OJS)'; platformPrice = 3800000; hasCalculated = false"
+                                :class="platform === 'portal_jurnal' ? 'border-[#3E5CE7] bg-blue-50/70 dark:bg-blue-950/50 text-[#3E5CE7] font-bold ring-2 ring-blue-500/30' : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200'"
+                                class="p-3 rounded-xl border text-left transition-all">
+                            <span class="px-1.5 py-0.2 rounded text-[8px] font-bold bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-200 mb-0.5 inline-block">Penelitian</span>
+                            <span class="font-extrabold block text-xs text-[#07153f] dark:text-white">Portal Jurnal &amp; Riset OJS</span>
+                            <span class="text-[10px] text-slate-500">Peer Review, DOI &amp; Paper</span>
+                        </button>
+
+                        <!-- Billing & Keuangan -->
+                        <button type="button" 
+                                @click="platform = 'sistem_keuangan'; platformName = 'Sistem Billing & Keuangan Lembaga'; platformPrice = 4500000; hasCalculated = false"
+                                :class="platform === 'sistem_keuangan' ? 'border-[#3E5CE7] bg-blue-50/70 dark:bg-blue-950/50 text-[#3E5CE7] font-bold ring-2 ring-blue-500/30' : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200'"
+                                class="p-3 rounded-xl border text-left transition-all">
+                            <span class="px-1.5 py-0.2 rounded text-[8px] font-bold bg-emerald-100 text-emerald-800 dark:bg-emerald-900 dark:text-emerald-200 mb-0.5 inline-block">Keuangan</span>
+                            <span class="font-extrabold block text-xs text-[#07153f] dark:text-white">Sistem Billing &amp; Keuangan</span>
+                            <span class="text-[10px] text-slate-500">Invoicing, Buku Kas &amp; Laporan</span>
+                        </button>
+
+                        <!-- POS & Koperasi -->
+                        <button type="button" 
+                                @click="platform = 'pos_koperasi'; platformName = 'POS Kasir & Koperasi Simpan Pinjam'; platformPrice = 4200000; hasCalculated = false"
+                                :class="platform === 'pos_koperasi' ? 'border-[#3E5CE7] bg-blue-50/70 dark:bg-blue-950/50 text-[#3E5CE7] font-bold ring-2 ring-blue-500/30' : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200'"
+                                class="p-3 rounded-xl border text-left transition-all">
+                            <span class="px-1.5 py-0.2 rounded text-[8px] font-bold bg-emerald-100 text-emerald-800 dark:bg-emerald-900 dark:text-emerald-200 mb-0.5 inline-block">Finansial</span>
+                            <span class="font-extrabold block text-xs text-[#07153f] dark:text-white">POS Kasir &amp; Koperasi</span>
+                            <span class="text-[10px] text-slate-500">Point of Sales, SHU &amp; Simpanan</span>
+                        </button>
+
+                        <!-- HRIS Presensi -->
+                        <button type="button" 
+                                @click="platform = 'hris_presensi'; platformName = 'SmartSDM HRIS & Presensi GPS Biometrik'; platformPrice = 5500000; hasCalculated = false"
+                                :class="platform === 'hris_presensi' ? 'border-[#3E5CE7] bg-blue-50/70 dark:bg-blue-950/50 text-[#3E5CE7] font-bold ring-2 ring-blue-500/30' : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200'"
+                                class="p-3 rounded-xl border text-left transition-all">
+                            <span class="px-1.5 py-0.2 rounded text-[8px] font-bold bg-teal-100 text-teal-800 dark:bg-teal-900 dark:text-teal-200 mb-0.5 inline-block">HR &amp; SDM</span>
+                            <span class="font-extrabold block text-xs text-[#07153f] dark:text-white">SmartSDM HRIS &amp; Payroll</span>
+                            <span class="text-[10px] text-slate-500">Presensi Wajah GPS &amp; Slip Gaji</span>
+                        </button>
+
+                        <!-- Media Berita -->
+                        <button type="button" 
+                                @click="platform = 'portal_berita'; platformName = 'SmartNews CMS Portal Berita Standar Dewan Pers'; platformPrice = 3500000; hasCalculated = false"
+                                :class="platform === 'portal_berita' ? 'border-[#3E5CE7] bg-blue-50/70 dark:bg-blue-950/50 text-[#3E5CE7] font-bold ring-2 ring-blue-500/30' : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200'"
+                                class="p-3 rounded-xl border text-left transition-all">
+                            <span class="px-1.5 py-0.2 rounded text-[8px] font-bold bg-amber-100 text-amber-800 dark:bg-amber-900 dark:text-amber-200 mb-0.5 inline-block">Jurnalis</span>
+                            <span class="font-extrabold block text-xs text-[#07153f] dark:text-white">SmartNews Portal Berita</span>
+                            <span class="text-[10px] text-slate-500">CMS Pers, AdSense &amp; Redaksi</span>
+                        </button>
+
+                        <!-- Donasi & ZISWAF -->
+                        <button type="button" 
+                                @click="platform = 'ziswaf_donasi'; platformName = 'Platform Donasi, ZISWAF & Relawan Sosial'; platformPrice = 3500000; hasCalculated = false"
+                                :class="platform === 'ziswaf_donasi' ? 'border-[#3E5CE7] bg-blue-50/70 dark:bg-blue-950/50 text-[#3E5CE7] font-bold ring-2 ring-blue-500/30' : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200'"
+                                class="p-3 rounded-xl border text-left transition-all">
+                            <span class="px-1.5 py-0.2 rounded text-[8px] font-bold bg-amber-100 text-amber-800 dark:bg-amber-900 dark:text-amber-200 mb-0.5 inline-block">Sosial</span>
+                            <span class="font-extrabold block text-xs text-[#07153f] dark:text-white">Portal Donasi &amp; ZISWAF</span>
+                            <span class="text-[10px] text-slate-500">Crowdfunding &amp; Relawan Sosial</span>
+                        </button>
+
+                        <!-- Komunitas & KTA -->
+                        <button type="button" 
+                                @click="platform = 'kta_komunitas'; platformName = 'Keanggotaan Ormas / Komunitas & KTA Digital'; platformPrice = 3200000; hasCalculated = false"
+                                :class="platform === 'kta_komunitas' ? 'border-[#3E5CE7] bg-blue-50/70 dark:bg-blue-950/50 text-[#3E5CE7] font-bold ring-2 ring-blue-500/30' : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200'"
+                                class="p-3 rounded-xl border text-left transition-all">
+                            <span class="px-1.5 py-0.2 rounded text-[8px] font-bold bg-amber-100 text-amber-800 dark:bg-amber-900 dark:text-amber-200 mb-0.5 inline-block">Komunitas</span>
+                            <span class="font-extrabold block text-xs text-[#07153f] dark:text-white">Ormas &amp; KTA Digital QR</span>
+                            <span class="text-[10px] text-slate-500">Database Anggota &amp; Iuran</span>
+                        </button>
+
+                        <!-- Company Profile -->
+                        <button type="button" 
+                                @click="platform = 'company_profile'; platformName = 'Website Company Profile / Usaha'; platformPrice = 2500000; hasCalculated = false"
+                                :class="platform === 'company_profile' ? 'border-[#3E5CE7] bg-blue-50/70 dark:bg-blue-950/50 text-[#3E5CE7] font-bold ring-2 ring-blue-500/30' : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200'"
+                                class="p-3 rounded-xl border text-left transition-all">
+                            <span class="px-1.5 py-0.2 rounded text-[8px] font-bold bg-slate-100 text-slate-800 dark:bg-slate-700 dark:text-slate-200 mb-0.5 inline-block">Bisnis</span>
+                            <span class="font-extrabold block text-xs text-[#07153f] dark:text-white">Web Company Profile</span>
+                            <span class="text-[10px] text-slate-500">Profil Usaha &amp; Portofolio</span>
+                        </button>
+
+                        <!-- Toko Online -->
+                        <button type="button" 
+                                @click="platform = 'ecommerce'; platformName = 'Toko Online E-Commerce & Katalog'; platformPrice = 3500000; hasCalculated = false"
+                                :class="platform === 'ecommerce' ? 'border-[#3E5CE7] bg-blue-50/70 dark:bg-blue-950/50 text-[#3E5CE7] font-bold ring-2 ring-blue-500/30' : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200'"
+                                class="p-3 rounded-xl border text-left transition-all">
+                            <span class="px-1.5 py-0.2 rounded text-[8px] font-bold bg-slate-100 text-slate-800 dark:bg-slate-700 dark:text-slate-200 mb-0.5 inline-block">Bisnis</span>
+                            <span class="font-extrabold block text-xs text-[#07153f] dark:text-white">Toko Online / Katalog</span>
+                            <span class="text-[10px] text-slate-500">Keranjang, Checkout &amp; Ongkir</span>
+                        </button>
+
+                        <!-- Mobile Flutter -->
+                        <button type="button" 
+                                @click="platform = 'mobile_flutter'; platformName = 'Aplikasi Mobile (Flutter / React Native)'; platformPrice = 5000000; hasCalculated = false"
+                                :class="platform === 'mobile_flutter' ? 'border-[#3E5CE7] bg-blue-50/70 dark:bg-blue-950/50 text-[#3E5CE7] font-bold ring-2 ring-blue-500/30' : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200'"
+                                class="p-3 rounded-xl border text-left transition-all">
+                            <span class="px-1.5 py-0.2 rounded text-[8px] font-bold bg-cyan-100 text-cyan-800 dark:bg-cyan-900 dark:text-cyan-200 mb-0.5 inline-block">Mobile</span>
+                            <span class="font-extrabold block text-xs text-[#07153f] dark:text-white">Mobile App Multiplatform</span>
+                            <span class="text-[10px] text-slate-500">Android &amp; iOS Responsif</span>
+                        </button>
+
+                        <!-- E-Klinik RME -->
+                        <button type="button" 
+                                @click="platform = 'klinik_rme'; platformName = 'E-Klinik Rekam Medis Elektronik (RME) & ERP'; platformPrice = 6500000; hasCalculated = false"
+                                :class="platform === 'klinik_rme' ? 'border-[#3E5CE7] bg-blue-50/70 dark:bg-blue-950/50 text-[#3E5CE7] font-bold ring-2 ring-blue-500/30' : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200'"
+                                class="p-3 rounded-xl border text-left transition-all">
+                            <span class="px-1.5 py-0.2 rounded text-[8px] font-bold bg-rose-100 text-rose-800 dark:bg-rose-900 dark:text-rose-200 mb-0.5 inline-block">Kesehatan / ERP</span>
+                            <span class="font-extrabold block text-xs text-[#07153f] dark:text-white">E-Klinik RME / ERP</span>
+                            <span class="text-[10px] text-slate-500">Rekam Medis, Apotek &amp; Kasir</span>
+                        </button>
+
                     </div>
                 </div>
 

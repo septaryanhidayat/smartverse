@@ -139,9 +139,38 @@ class AdminFinanceController extends Controller
         }
     }
 
+    private function syncInvoicesToLedger(): void
+    {
+        if (!Schema::hasTable('invoices') || !Schema::hasTable('financial_records')) {
+            return;
+        }
+
+        $paidInvoices = Invoice::where('paid_amount', '>', 0)->get();
+        foreach ($paidInvoices as $inv) {
+            $trx = is_array($inv->transactions) ? $inv->transactions : (is_string($inv->transactions) ? json_decode($inv->transactions, true) : []);
+            $payMethod = !empty($trx) && isset($trx[0]['payment_method']) ? $trx[0]['payment_method'] : 'Transfer Bank';
+
+            FinancialRecord::updateOrCreate(
+                ['invoice_id' => $inv->id],
+                [
+                    'type' => 'income',
+                    'category' => 'project_invoice',
+                    'title' => 'Pembayaran Faktur #' . $inv->invoice_number . ' - ' . $inv->client_name,
+                    'amount' => (float) $inv->paid_amount,
+                    'transaction_date' => $inv->invoice_date,
+                    'payment_method' => $payMethod,
+                    'reference_number' => 'INV-' . $inv->invoice_number,
+                    'notes' => 'Otomatis terintegrasi dari Modul Faktur & Invoice SmartVerse (' . strtoupper($inv->status) . '). ' . ($inv->notes ?? ''),
+                    'created_by' => Auth::id() ?? 1,
+                ]
+            );
+        }
+    }
+
     public function index(Request $request)
     {
         $this->ensureTableExists();
+        $this->syncInvoicesToLedger();
 
         $period = $request->get('period', 'this_month');
         $typeFilter = $request->get('type', 'all');
@@ -199,18 +228,19 @@ class AdminFinanceController extends Controller
         $invoicePartialCount = $invoices->where('status', 'partial')->count();
         $invoiceUnpaidCount = $invoices->whereIn('status', ['unpaid', 'pending', 'overdue'])->count();
 
-        // 2. PULL FINANCIAL LEDGER DATA (Income & Expense)
-        $recordsQuery = FinancialRecord::query();
+        // 2. PULL FINANCIAL LEDGER DATA (Unified Income & Expense, including synced Invoices)
+        $recordsQuery = FinancialRecord::with('invoice');
         if ($period !== 'all') {
             $recordsQuery->whereBetween('transaction_date', [$startDate->format('Y-m-d'), $endDate->format('Y-m-d')]);
         }
         $allPeriodRecords = $recordsQuery->get();
 
-        $manualIncome = (float) $allPeriodRecords->where('type', 'income')->sum('amount');
+        $invoiceIncomeInPeriod = (float) $allPeriodRecords->where('type', 'income')->whereNotNull('invoice_id')->sum('amount');
+        $manualIncome = (float) $allPeriodRecords->where('type', 'income')->whereNull('invoice_id')->sum('amount');
+        $totalCashInflow = (float) $allPeriodRecords->where('type', 'income')->sum('amount');
         $totalExpenses = (float) $allPeriodRecords->where('type', 'expense')->sum('amount');
 
         // 3. EXECUTIVE FINANCIAL AGGREGATES
-        $totalCashInflow = $invoiceTotalPaid + $manualIncome;
         $netProfit = $totalCashInflow - $totalExpenses;
         $profitMargin = $totalCashInflow > 0 ? round(($netProfit / $totalCashInflow) * 100, 1) : 0;
         $expenseRatio = $totalCashInflow > 0 ? round(($totalExpenses / $totalCashInflow) * 100, 1) : 0;
@@ -370,9 +400,15 @@ class AdminFinanceController extends Controller
             $receiptPath = UploadHelper::upload($request->file('receipt_file'), 'finances');
         }
 
+        $category = $validated['category'];
+        if (($category === 'custom' || empty($category)) && $request->filled('custom_category')) {
+            $cleaned = trim(preg_replace('/[^a-zA-Z0-9_ -]/', '', $request->input('custom_category')));
+            $category = strtolower(str_replace(' ', '_', $cleaned));
+        }
+
         FinancialRecord::create([
             'type' => $validated['type'],
-            'category' => $validated['category'],
+            'category' => $category,
             'title' => $validated['title'],
             'amount' => $validated['amount'],
             'transaction_date' => $validated['transaction_date'],
@@ -411,9 +447,15 @@ class AdminFinanceController extends Controller
             }
         }
 
+        $category = $validated['category'];
+        if (($category === 'custom' || empty($category)) && $request->filled('custom_category')) {
+            $cleaned = trim(preg_replace('/[^a-zA-Z0-9_ -]/', '', $request->input('custom_category')));
+            $category = strtolower(str_replace(' ', '_', $cleaned));
+        }
+
         $record->update([
             'type' => $validated['type'],
-            'category' => $validated['category'],
+            'category' => $category,
             'title' => $validated['title'],
             'amount' => $validated['amount'],
             'transaction_date' => $validated['transaction_date'],
@@ -436,6 +478,7 @@ class AdminFinanceController extends Controller
     public function printReport(Request $request)
     {
         $this->ensureTableExists();
+        $this->syncInvoicesToLedger();
 
         $period = $request->get('period', 'this_month');
         $now = Carbon::now();
@@ -469,13 +512,13 @@ class AdminFinanceController extends Controller
         $invoiceTotalPaid = (float) $invoices->sum('paid_amount');
         $invoiceTotalRemaining = (float) $invoices->sum('remaining_amount');
 
-        $records = FinancialRecord::whereBetween('transaction_date', [$startDate->format('Y-m-d'), $endDate->format('Y-m-d')])
+        $records = FinancialRecord::with('invoice')
+            ->whereBetween('transaction_date', [$startDate->format('Y-m-d'), $endDate->format('Y-m-d')])
             ->orderBy('transaction_date', 'asc')
             ->get();
 
-        $manualIncome = (float) $records->where('type', 'income')->sum('amount');
+        $totalCashInflow = (float) $records->where('type', 'income')->sum('amount');
         $totalExpenses = (float) $records->where('type', 'expense')->sum('amount');
-        $totalCashInflow = $invoiceTotalPaid + $manualIncome;
         $netProfit = $totalCashInflow - $totalExpenses;
         $profitMargin = $totalCashInflow > 0 ? round(($netProfit / $totalCashInflow) * 100, 1) : 0;
 

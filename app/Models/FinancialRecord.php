@@ -42,21 +42,24 @@ class FinancialRecord extends Model
     {
         $labels = [
             // Expense Categories
-            'server_hosting'    => 'Server, Domain & Cloud',
-            'ai_tools'          => 'Lisensi AI & Dev Tools',
-            'salary_honor'      => 'Honor Tim & Developer',
-            'marketing_ads'     => 'Pemasaran & Iklan',
-            'office_ops'        => 'Operasional & Listrik/Net',
-            'transport_meeting' => 'Transport & Meeting Klien',
-            'tax_legal'         => 'Pajak & Legalitas Usaha',
-            'equipment'         => 'Peralatan & Hardware',
+            'server_hosting'      => 'Server, VPS & Cloud',
+            'domain_registration' => 'Pembelian Domain Baru',
+            'domain_renewal'      => 'Perpanjangan Domain & SSL',
+            'ai_tools'            => 'Lisensi AI & Dev Tools',
+            'salary_honor'        => 'Honor Tim & Developer',
+            'marketing_ads'       => 'Pemasaran & Iklan',
+            'office_ops'          => 'Operasional & Listrik/Net',
+            'transport_meeting'   => 'Transport & Meeting Klien',
+            'tax_legal'           => 'Pajak & Legalitas Usaha',
+            'equipment'           => 'Peralatan & Hardware',
             
             // Income Categories
-            'project_direct'    => 'Proyek Jasa Langsung',
-            'training_workshop' => 'Pelatihan & Workshop IT',
-            'consultation'      => 'Konsultasi Software & AI',
-            'maintenance'       => 'Retainer & Maintenance',
-            'other'             => 'Lain-lain',
+            'project_invoice'     => 'Faktur Invoice Klien',
+            'project_direct'      => 'Proyek Jasa Langsung',
+            'training_workshop'   => 'Pelatihan & Workshop IT',
+            'consultation'        => 'Konsultasi Software & AI',
+            'maintenance'         => 'Retainer & Maintenance',
+            'other'               => 'Lain-lain',
         ];
 
         return $labels[$category] ?? ucfirst(str_replace('_', ' ', $category));

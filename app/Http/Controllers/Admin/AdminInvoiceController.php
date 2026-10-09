@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Mail\InvoiceClientMail;
+use App\Models\FinancialRecord;
 use App\Models\Invoice;
 use App\Models\Setting;
 use Illuminate\Http\Request;
@@ -225,6 +226,9 @@ class AdminInvoiceController extends Controller
             'notes' => $validated['notes'],
         ]);
 
+        // Auto-integrate with Financial Ledger (Analisa Keuangan)
+        $this->syncInvoiceToLedger($invoice, $transactions);
+
         $emailMsg = '';
         if (!empty($invoice->client_email) && $request->boolean('send_email_now', true)) {
             $delivery = $this->deliverInvoiceEmail($invoice);
@@ -352,6 +356,9 @@ class AdminInvoiceController extends Controller
             'notes' => $validated['notes'],
         ]);
 
+        // Auto-integrate with Financial Ledger (Analisa Keuangan)
+        $this->syncInvoiceToLedger($invoice, $transactions);
+
         $emailMsg = '';
         if (!empty($invoice->client_email) && $request->boolean('send_email_now')) {
             $delivery = $this->deliverInvoiceEmail($invoice);
@@ -366,8 +373,42 @@ class AdminInvoiceController extends Controller
     public function destroy(Invoice $invoice)
     {
         $this->ensureTableExists();
+
+        // Remove linked financial ledger record
+        FinancialRecord::where('invoice_id', $invoice->id)->delete();
+
         $invoice->delete();
         return redirect()->route('admin.invoices.index')->with('success', 'Invoice berhasil dihapus.');
+    }
+
+    private function syncInvoiceToLedger(Invoice $invoice, array $transactions = []): void
+    {
+        if (!Schema::hasTable('financial_records')) {
+            return;
+        }
+
+        if ($invoice->paid_amount > 0) {
+            $payMethod = !empty($transactions) && isset($transactions[0]['payment_method'])
+                ? $transactions[0]['payment_method']
+                : 'Transfer Bank';
+
+            FinancialRecord::updateOrCreate(
+                ['invoice_id' => $invoice->id],
+                [
+                    'type' => 'income',
+                    'category' => 'project_invoice',
+                    'title' => 'Pembayaran Faktur #' . $invoice->invoice_number . ' - ' . $invoice->client_name,
+                    'amount' => (float) $invoice->paid_amount,
+                    'transaction_date' => $invoice->invoice_date,
+                    'payment_method' => $payMethod,
+                    'reference_number' => 'INV-' . $invoice->invoice_number,
+                    'notes' => 'Otomatis terintegrasi dari Modul Faktur & Invoice SmartVerse (' . strtoupper($invoice->status) . '). ' . ($invoice->notes ?? ''),
+                    'created_by' => auth()->id() ?? 1,
+                ]
+            );
+        } else {
+            FinancialRecord::where('invoice_id', $invoice->id)->delete();
+        }
     }
 
     public function sendEmail(Invoice $invoice)

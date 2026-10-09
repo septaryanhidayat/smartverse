@@ -33,15 +33,17 @@
                     <p class="text-[10px] text-slate-400 font-medium">📍 {{ $gal->location ?? 'Indonesia' }}</p>
                 </div>
 
-                <div class="p-4 pt-0 flex items-center justify-between border-t border-slate-100 text-xs">
-                    <a href="{{ route('admin.galleries.edit', $gal->id) }}" class="text-[#3E5CE7] font-bold hover:underline">
-                        Edit
+                <div class="p-3 pt-0 flex items-center justify-between border-t border-slate-100 text-xs">
+                    <a href="{{ route('admin.galleries.edit', $gal->id) }}" class="whitespace-nowrap inline-flex items-center gap-1 px-2.5 py-1.5 rounded-xl bg-blue-50 hover:bg-blue-100 text-[#3E5CE7] border border-blue-200/60 font-bold text-xs shadow-2xs transition-all">
+                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
+                        <span>Edit</span>
                     </a>
-                    <form action="{{ route('admin.galleries.destroy', $gal->id) }}" method="POST" onsubmit="return confirm('Hapus dokumentasi event ini?');">
+                    <form action="{{ route('admin.galleries.destroy', $gal->id) }}" method="POST" onsubmit="return confirm('Hapus dokumentasi event ini?');" class="inline">
                         @csrf
                         @method('DELETE')
-                        <button type="submit" class="text-rose-500 font-bold hover:underline">
-                            Hapus
+                        <button type="submit" class="whitespace-nowrap inline-flex items-center gap-1 px-2.5 py-1.5 rounded-xl bg-rose-50 hover:bg-rose-100 text-rose-600 border border-rose-200/60 font-bold text-xs shadow-2xs transition-all">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
+                            <span>Hapus</span>
                         </button>
                     </form>
                 </div>

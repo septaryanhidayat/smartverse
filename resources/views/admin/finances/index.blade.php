@@ -6,6 +6,7 @@
 <div class="space-y-6" x-data="{ 
     createModalOpen: false, 
     editModalOpen: false,
+    createCategory: 'office_ops',
     editData: {
         id: '',
         type: 'expense',
@@ -414,6 +415,14 @@
                                 <div class="text-[11px] font-bold text-slate-600 mt-1">
                                     {{ \App\Models\FinancialRecord::getCategoryLabel($rec->category) }}
                                 </div>
+                                @if($rec->invoice_id)
+                                    <div class="mt-1">
+                                        <a href="{{ route('admin.invoices.print', $rec->invoice_id) }}" target="_blank" class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-blue-50 border border-blue-200 text-blue-700 text-[10px] font-extrabold hover:bg-blue-100 transition-colors" title="Buka Faktur Invoice Terintegrasi">
+                                            <span>🧾 Faktur #{{ $rec->invoice ? $rec->invoice->invoice_number : $rec->invoice_id }}</span>
+                                            <span class="text-[9px]">&rarr;</span>
+                                        </a>
+                                    </div>
+                                @endif
                             </td>
                             <td class="py-3 px-3 min-w-[200px]">
                                 <div class="font-bold text-[#071330]">{{ $rec->title }}</div>
@@ -431,7 +440,7 @@
                                 {{ $rec->type === 'income' ? '+' : '-' }} Rp {{ number_format($rec->amount, 0, ',', '.') }}
                             </td>
                             <td class="py-3 px-3 text-center whitespace-nowrap">
-                                <div class="flex items-center justify-center gap-1">
+                                <div class="flex items-center justify-center gap-1.5 whitespace-nowrap">
                                     <!-- Edit Button -->
                                     <button @click="
                                         editData = {
@@ -446,16 +455,18 @@
                                             notes: '{{ addslashes($rec->notes ?? '') }}'
                                         };
                                         editModalOpen = true;
-                                    " class="p-1.5 rounded-lg bg-blue-50 text-blue-600 hover:bg-blue-100 transition-colors" title="Edit Transaksi">
+                                    " class="whitespace-nowrap inline-flex items-center gap-1 px-2.5 py-1.5 rounded-xl bg-blue-50 text-blue-700 hover:bg-blue-600 hover:text-white transition-all font-bold text-xs border border-blue-200/60 shadow-2xs" title="Edit Transaksi">
                                         <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
+                                        <span>Edit</span>
                                     </button>
 
                                     <!-- Delete Button -->
-                                    <form action="{{ route('admin.finances.destroy', $rec->id) }}" method="POST" onsubmit="return confirm('Apakah Anda yakin ingin menghapus catatan transaksi ini?')">
+                                    <form action="{{ route('admin.finances.destroy', $rec->id) }}" method="POST" onsubmit="return confirm('Apakah Anda yakin ingin menghapus catatan transaksi ini?')" class="inline">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="p-1.5 rounded-lg bg-rose-50 text-rose-600 hover:bg-rose-100 transition-colors" title="Hapus Transaksi">
+                                        <button type="submit" class="whitespace-nowrap inline-flex items-center gap-1 px-2.5 py-1.5 rounded-xl bg-rose-50 text-rose-600 hover:bg-rose-600 hover:text-white transition-all font-bold text-xs border border-rose-200/60 shadow-2xs" title="Hapus Transaksi">
                                             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
+                                            <span>Hapus</span>
                                         </button>
                                     </form>
                                 </div>
@@ -514,8 +525,10 @@
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <div class="space-y-1">
                         <label class="block text-xs font-bold text-slate-700">Kategori Transaksi *</label>
-                        <select name="category" required class="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs font-medium focus:ring-2 focus:ring-[#3E5CE7] focus:outline-none">
+                        <select name="category" x-model="createCategory" required class="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs font-medium focus:ring-2 focus:ring-[#3E5CE7] focus:outline-none">
                             <optgroup label="Pengeluaran / Beban Operasional">
+                                <option value="domain_registration">🌐 Pembelian Domain Baru</option>
+                                <option value="domain_renewal">🔄 Perpanjangan Domain & SSL</option>
                                 <option value="server_hosting">Server VPS & Cloud Hosting</option>
                                 <option value="ai_tools">Lisensi AI, API & Dev Tools</option>
                                 <option value="salary_honor">Honor Developer & Tim</option>
@@ -525,12 +538,16 @@
                                 <option value="tax_legal">Pajak, Notaris & Legalitas</option>
                                 <option value="equipment">Peralatan Hardware & Aset</option>
                             </optgroup>
-                            <optgroup label="Pemasukan Lainnya">
+                            <optgroup label="Pemasukan Kas Lembaga">
+                                <option value="project_invoice">Faktur Invoice Proyek Klien</option>
                                 <option value="project_direct">Proyek Jasa Langsung</option>
                                 <option value="training_workshop">Workshop & Pelatihan IT</option>
                                 <option value="consultation">Konsultasi Software</option>
                                 <option value="maintenance">Retainer & Maintenance</option>
-                                <option value="other">Lain-lain</option>
+                                <option value="other">Pemasukan Lain-lain</option>
+                            </optgroup>
+                            <optgroup label="Kategori Kustom Baru">
+                                <option value="custom">✨ + Tambah Kategori Baru...</option>
                             </optgroup>
                         </select>
                     </div>
@@ -539,6 +556,16 @@
                         <label class="block text-xs font-bold text-slate-700">Nominal Transaksi (Rp) *</label>
                         <input type="number" name="amount" min="0" step="1000" placeholder="1500000" required class="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs font-mono font-bold focus:ring-2 focus:ring-[#3E5CE7] focus:outline-none" />
                     </div>
+                </div>
+
+                <!-- Custom Category Input (shown when 'custom' selected) -->
+                <div x-show="createCategory === 'custom'" class="p-3 bg-blue-50/70 border-2 border-blue-200 rounded-2xl space-y-1" x-cloak>
+                    <label class="block text-xs font-bold text-blue-900 flex items-center gap-1.5">
+                        <span>✨</span>
+                        <span>Nama Kategori Baru (Pemasukan / Pengeluaran) *</span>
+                    </label>
+                    <input type="text" name="custom_category" placeholder="Contoh: Perpanjangan Domain Klien / Lisensi Figma" class="w-full px-3 py-2 rounded-xl border border-blue-300 bg-white text-xs font-bold text-blue-900 focus:ring-2 focus:ring-[#3E5CE7] focus:outline-none" />
+                    <p class="text-[10px] text-blue-700">Kategori baru akan otomatis tersimpan dalam modul analisa keuangan.</p>
                 </div>
 
                 <!-- Title / Description -->
@@ -639,6 +666,8 @@
                         <label class="block text-xs font-bold text-slate-700">Kategori Transaksi *</label>
                         <select name="category" x-model="editData.category" required class="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs font-medium focus:ring-2 focus:ring-[#3E5CE7] focus:outline-none">
                             <optgroup label="Pengeluaran / Beban Operasional">
+                                <option value="domain_registration">🌐 Pembelian Domain Baru</option>
+                                <option value="domain_renewal">🔄 Perpanjangan Domain & SSL</option>
                                 <option value="server_hosting">Server VPS & Cloud Hosting</option>
                                 <option value="ai_tools">Lisensi AI, API & Dev Tools</option>
                                 <option value="salary_honor">Honor Developer & Tim</option>
@@ -648,12 +677,16 @@
                                 <option value="tax_legal">Pajak, Notaris & Legalitas</option>
                                 <option value="equipment">Peralatan Hardware & Aset</option>
                             </optgroup>
-                            <optgroup label="Pemasukan Lainnya">
+                            <optgroup label="Pemasukan Kas Lembaga">
+                                <option value="project_invoice">Faktur Invoice Proyek Klien</option>
                                 <option value="project_direct">Proyek Jasa Langsung</option>
                                 <option value="training_workshop">Workshop & Pelatihan IT</option>
                                 <option value="consultation">Konsultasi Software</option>
                                 <option value="maintenance">Retainer & Maintenance</option>
-                                <option value="other">Lain-lain</option>
+                                <option value="other">Pemasukan Lain-lain</option>
+                            </optgroup>
+                            <optgroup label="Kategori Kustom Baru">
+                                <option value="custom">✨ + Tambah Kategori Baru...</option>
                             </optgroup>
                         </select>
                     </div>
@@ -662,6 +695,15 @@
                         <label class="block text-xs font-bold text-slate-700">Nominal Transaksi (Rp) *</label>
                         <input type="number" name="amount" min="0" step="1000" x-model="editData.amount" required class="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs font-mono font-bold focus:ring-2 focus:ring-[#3E5CE7] focus:outline-none" />
                     </div>
+                </div>
+
+                <!-- Custom Category Input when editing and 'custom' selected -->
+                <div x-show="editData.category === 'custom'" class="p-3 bg-blue-50/70 border-2 border-blue-200 rounded-2xl space-y-1" x-cloak>
+                    <label class="block text-xs font-bold text-blue-900 flex items-center gap-1.5">
+                        <span>✨</span>
+                        <span>Nama Kategori Baru *</span>
+                    </label>
+                    <input type="text" name="custom_category" placeholder="Contoh: Perpanjangan Domain Klien / Lisensi Figma" class="w-full px-3 py-2 rounded-xl border border-blue-300 bg-white text-xs font-bold text-blue-900 focus:ring-2 focus:ring-[#3E5CE7] focus:outline-none" />
                 </div>
 
                 <!-- Title / Description -->

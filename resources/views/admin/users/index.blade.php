@@ -173,12 +173,12 @@
                                 <td class="py-4 px-4 text-slate-500 font-mono text-[11px]">
                                     {{ optional($u->created_at)->format('d M Y') }}
                                 </td>
-                                <td class="py-4 px-6 text-right">
-                                    <div class="flex items-center justify-end gap-2">
+                                <td class="py-4 px-6 text-right whitespace-nowrap">
+                                    <div class="flex items-center justify-end gap-1.5 whitespace-nowrap">
                                         <!-- Edit Button -->
                                         <button type="button" 
                                                 @click="startEdit({ id: {{ $u->id }}, name: '{{ addslashes($u->name) }}', email: '{{ addslashes($u->email) }}', avatar: '{{ $u->avatar ? asset($u->avatar) : '' }}' })"
-                                                class="px-3 py-1.5 rounded-lg bg-blue-50 hover:bg-blue-100 text-[#3E5CE7] font-bold text-xs transition-all flex items-center gap-1 border border-blue-200/60 shadow-2xs">
+                                                class="whitespace-nowrap inline-flex items-center gap-1 px-2.5 py-1.5 rounded-xl bg-blue-50 hover:bg-blue-100 text-[#3E5CE7] font-bold text-xs transition-all border border-blue-200/60 shadow-2xs">
                                             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/></svg>
                                             <span>Edit</span>
                                         </button>
@@ -188,8 +188,9 @@
                                             <form action="{{ route('admin.users.destroy', $u->id) }}" method="POST" class="inline" onsubmit="return confirm('Hapus user {{ addslashes($u->name) }}?');">
                                                 @csrf
                                                 @method('DELETE')
-                                                <button type="submit" class="px-2.5 py-1.5 rounded-lg bg-rose-50 hover:bg-rose-100 text-rose-600 font-bold text-xs transition-all border border-rose-200/60 shadow-2xs">
-                                                    Hapus
+                                                <button type="submit" class="whitespace-nowrap inline-flex items-center gap-1 px-2.5 py-1.5 rounded-xl bg-rose-50 hover:bg-rose-100 text-rose-600 font-bold text-xs transition-all border border-rose-200/60 shadow-2xs">
+                                                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
+                                                    <span>Hapus</span>
                                                 </button>
                                             </form>
                                         @endif

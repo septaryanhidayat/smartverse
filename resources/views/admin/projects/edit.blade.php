@@ -140,10 +140,16 @@
                 <input type="url" name="project_url" value="{{ old('project_url', $project->project_url) }}" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs focus:ring-2 focus:ring-[#3E5CE7] focus:outline-none" />
             </div>
 
+            <div class="space-y-1.5 md:col-span-2">
+                <label class="block text-xs font-bold text-[#071330]">Nomor Urutan Tampilan (Angka)</label>
+                <input type="number" name="order" value="{{ old('order', $project->order ?? 0) }}" min="0" max="999" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs focus:ring-2 focus:ring-[#3E5CE7] focus:outline-none" />
+                <span class="text-[10px] text-slate-400">Angka lebih kecil tampil lebih awal (0, 1, 2, dst).</span>
+            </div>
+
             <div class="flex items-center gap-6 md:col-span-2 pt-2">
-                <label class="flex items-center gap-2 cursor-pointer text-xs font-bold text-[#07153f]">
+                <label class="flex items-center gap-2 cursor-pointer text-xs font-bold text-[#071330]">
                     <input type="checkbox" name="is_featured" value="1" {{ old('is_featured', $project->is_featured) ? 'checked' : '' }} class="rounded text-[#3E5CE7]" />
-                    <span>Tampilkan sebagai Proyek Unggulan di Beranda (Featured)</span>
+                    <span>Tampilkan di Baris Awal Prioritas (⭐ Featured Project)</span>
                 </label>
             </div>
 

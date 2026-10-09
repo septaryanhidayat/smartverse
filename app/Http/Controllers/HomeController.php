@@ -14,16 +14,13 @@ class HomeController extends Controller
 {
     public function index()
     {
-        // 1. Featured Projects (12 items for 4 columns x 3 rows showcase)
+        // 1. Featured Projects (Prioritizes is_featured = true, followed by order asc)
         $featuredProjects = Project::with('category')
+            ->orderByDesc('is_featured')
             ->orderBy('order', 'asc')
+            ->latest()
             ->take(12)
             ->get();
-
-        if ($featuredProjects->count() < 12) {
-            $extra = Project::with('category')->latest()->take(12)->get();
-            $featuredProjects = $featuredProjects->merge($extra)->unique('id')->take(12);
-        }
 
         // 2. The 5 Flagship Digital Products of SmartVerse (SmartNews, SmartEdu, SmartFeed, SmartSDM, SmartSynth)
         $flagshipProducts = DigitalProduct::with('category')
