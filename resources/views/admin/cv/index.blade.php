@@ -103,7 +103,7 @@
                     <h1 class="text-xl sm:text-2xl font-black text-white tracking-tight flex items-center gap-2">
                         {{ $profile->full_name }}
                     </h1>
-                    <p class="text-xs sm:text-sm text-cyan-200 font-semibold line-clamp-1">
+                    <p class="text-xs sm:text-sm text-cyan-200 font-semibold leading-relaxed">
                         {{ $profile->title }}
                     </p>
                     <p class="text-[11px] text-slate-300 font-mono">
@@ -816,9 +816,7 @@
             <!-- Form -->
             <form :action="activityFormAction" method="POST" enctype="multipart/form-data" class="space-y-4">
                 @csrf
-                <template x-if="activityModalMode === 'edit'">
-                    <input type="hidden" name="_method" value="PUT">
-                </template>
+                <input type="hidden" name="_method" :value="activityModalMode === 'edit' ? 'PUT' : 'POST'">
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <!-- Tipe Kegiatan -->

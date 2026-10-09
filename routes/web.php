@@ -153,9 +153,9 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'throttle:60,1'])->g
 
     // Curriculum Vitae (CV) & Portfolio Management (Editable, Flyer/PDF Uploads, One-Click Print)
     Route::get('/cv', [AdminCvController::class, 'index'])->name('cv.index');
-    Route::put('/cv/profile', [AdminCvController::class, 'updateProfile'])->name('cv.profile.update');
+    Route::match(['put', 'post'], '/cv/profile', [AdminCvController::class, 'updateProfile'])->name('cv.profile.update');
     Route::post('/cv/activities', [AdminCvController::class, 'storeActivity'])->name('cv.activity.store');
-    Route::put('/cv/activities/{activity}', [AdminCvController::class, 'updateActivity'])->name('cv.activity.update');
+    Route::match(['put', 'post'], '/cv/activities/{activity}', [AdminCvController::class, 'updateActivity'])->name('cv.activity.update');
     Route::delete('/cv/activities/{activity}', [AdminCvController::class, 'destroyActivity'])->name('cv.activity.destroy');
     Route::post('/cv/reset', [AdminCvController::class, 'resetDefault'])->name('cv.reset');
 

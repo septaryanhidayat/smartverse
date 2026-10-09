@@ -607,7 +607,7 @@ INSERT INTO `settings` (`id`, `key`, `value`, `group`, `label`, `type`, `created
   ('5', 'trainer_name', 'Septa Ryan Hidayat', 'trainer', 'Nama Trainer / Speaker', 'text', '2026-08-19 10:57:35', '2026-08-30 15:28:41'),
   ('6', 'trainer_title', 'Founder & Lead Technology Architect SmartVerse, AI Speaker', 'trainer', 'Gelar / Jabatan', 'text', '2026-08-19 10:57:35', '2026-09-08 15:13:29'),
   ('7', 'trainer_bio', 'Founder & Lead Technology Architect di SmartVerse. Dewan Pakar IGI Ogan Ilir, Narasumber Komdigi & Media Nasional, serta Trainer Nasional di bidang Vibe Coding, AI RAG Document, dan Pengembangan Aplikasi Web/Mobile Enterprise.', 'trainer', 'Bio Trainer', 'textarea', '2026-08-19 10:57:35', '2026-09-08 15:13:29'),
-  ('8', 'trainer_avatar', '/images/Insight-Talks-Komdigi.webp', 'trainer', 'Foto Profile Trainer', 'text', '2026-08-19 10:57:35', '2026-09-08 15:27:04'),
+  ('8', 'trainer_avatar', '/images/smartverse/ryan-trainer-hero.webp', 'trainer', 'Foto Profile Trainer', 'text', '2026-08-19 10:57:35', '2026-10-09 19:40:00'),
   ('9', 'trainer_stats_years', '8+', 'trainer', 'Pengalaman Tahun', 'text', '2026-08-19 10:57:35', '2026-08-19 10:57:35'),
   ('10', 'trainer_stats_events', '85+', 'trainer', 'Workshop & Seminar', 'text', '2026-08-19 10:57:35', '2026-08-19 10:57:35'),
   ('11', 'trainer_stats_alumni', '5,000+', 'trainer', 'Peserta Pelatihan', 'text', '2026-08-19 10:57:35', '2026-08-19 10:57:35'),

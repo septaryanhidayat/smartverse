@@ -5,8 +5,8 @@
 @section('content')
 <div class="space-y-6">
     
-    <!-- Executive Command Center Hero Banner -->
-    <div class="rounded-3xl bg-gradient-to-br from-[#071330] via-[#0d1e47] to-[#0a1738] p-6 sm:p-8 text-white shadow-2xl border-2 border-blue-500/25 relative overflow-hidden">
+    <!-- Executive Command Center Hero Banner (Kontras Tinggi & Tajam) -->
+    <div class="rounded-3xl bg-[#071330] p-6 sm:p-8 text-white shadow-2xl border-2 border-blue-500/30 relative overflow-hidden">
         <!-- Ambient Decorative Glows -->
         <div class="absolute -right-20 -top-20 w-80 h-80 bg-blue-500/20 rounded-full blur-3xl pointer-events-none"></div>
         <div class="absolute -left-20 -bottom-20 w-80 h-80 bg-cyan-500/15 rounded-full blur-3xl pointer-events-none"></div>
@@ -17,18 +17,18 @@
             <div class="lg:col-span-7 space-y-4">
                 <!-- Meta Pill Bar: Date & System Status -->
                 <div class="flex flex-wrap items-center gap-2.5">
-                    <span class="px-3 py-1.5 rounded-full bg-white/10 text-white text-xs font-bold border border-white/20 backdrop-blur-md flex items-center gap-2 shadow-xs">
+                    <span class="px-3 py-1.5 rounded-full bg-white/15 text-white text-xs font-extrabold border border-white/30 backdrop-blur-md flex items-center gap-2 shadow-xs">
                         <svg class="w-3.5 h-3.5 text-cyan-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-                        <span>{{ \Carbon\Carbon::now()->isoFormat('dddd, D MMMM Y') }}</span>
+                        <span class="text-white">{{ \Carbon\Carbon::now()->isoFormat('dddd, D MMMM Y') }}</span>
                     </span>
                     
                     @if(isset($unreadInquiryCount) && $unreadInquiryCount > 0)
-                        <span class="px-3.5 py-1.5 rounded-full bg-[#fe6000] text-white text-xs font-black border border-white/30 flex items-center gap-2 shadow-md shadow-orange-500/40">
+                        <span class="px-3.5 py-1.5 rounded-full bg-[#fe6000] text-white text-xs font-black border border-white/40 flex items-center gap-2 shadow-md shadow-orange-500/40">
                             <span class="w-2 h-2 rounded-full bg-white animate-ping"></span>
                             <span>{{ $unreadInquiryCount }} Pesan Baru Menunggu Respon</span>
                         </span>
                     @else
-                        <span class="px-3.5 py-1.5 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-bold border border-emerald-400/30 flex items-center gap-1.5 backdrop-blur-sm">
+                        <span class="px-3.5 py-1.5 rounded-full bg-emerald-500/25 text-emerald-200 text-xs font-black border border-emerald-400/40 flex items-center gap-1.5 backdrop-blur-sm">
                             <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
                             <span>Sistem Operasional Normal</span>
                         </span>
@@ -40,8 +40,8 @@
                     <h1 class="text-2xl sm:text-3xl font-black text-white tracking-tight drop-shadow-sm">
                         Selamat Datang, {{ Auth::user()->name ?? 'Admin SmartVerse' }}!
                     </h1>
-                    <p class="text-xs sm:text-sm text-slate-100 font-medium leading-relaxed mt-1.5 max-w-xl">
-                        Pusat Komando Operasional <strong class="text-cyan-300 font-bold">SmartVerse (smartverse.id)</strong>. Pantau kinerja bisnis, arus kas, status domain & hosting klien, serta terbitkan invoice resmi dalam satu platform terintegrasi.
+                    <p class="text-xs sm:text-sm text-slate-100 font-semibold leading-relaxed mt-1.5 max-w-xl">
+                        Pusat Komando Operasional <strong class="text-cyan-300 font-black">SmartVerse (smartverse.id)</strong>. Pantau kinerja bisnis, arus kas, status domain & hosting klien, serta terbitkan invoice resmi dalam satu platform terintegrasi.
                     </p>
                 </div>
 
@@ -80,25 +80,25 @@
 
             <!-- Right Column: Executive Live Pulse Card (5 cols) -->
             <div class="lg:col-span-5">
-                <div class="rounded-2xl bg-white/[0.08] backdrop-blur-md border border-white/20 p-4 sm:p-5 shadow-xl space-y-3">
+                <div class="rounded-2xl bg-[#0d1e47] border border-blue-400/30 p-4 sm:p-5 shadow-2xl space-y-3">
                     
                     <!-- Header Pulse -->
-                    <div class="flex items-center justify-between pb-2 border-b border-white/15">
+                    <div class="flex items-center justify-between pb-2 border-b border-white/20">
                         <div class="flex items-center gap-2">
                             <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse shadow-sm shadow-emerald-400"></span>
-                            <span class="text-[11px] font-extrabold uppercase tracking-wider text-white">Ringkasan Eksekutif SmartVerse</span>
+                            <span class="text-[11px] font-black uppercase tracking-wider text-white">Ringkasan Eksekutif SmartVerse</span>
                         </div>
-                        <span class="px-2.5 py-0.5 rounded-full bg-cyan-500/20 text-cyan-200 text-[10px] font-black border border-cyan-400/40">Real-Time</span>
+                        <span class="px-2.5 py-0.5 rounded-full bg-cyan-500/30 text-cyan-200 text-[10px] font-black border border-cyan-400/50">Real-Time</span>
                     </div>
 
                     <!-- Micro Metric 1: Kas Bersih / Omset -->
-                    <div class="flex items-center justify-between gap-3 p-2.5 rounded-xl bg-white/[0.06] border border-white/10 hover:bg-white/[0.12] transition-all">
+                    <div class="flex items-center justify-between gap-3 p-2.5 rounded-xl bg-white/10 border border-white/20 hover:bg-white/15 transition-all">
                         <div class="flex items-center gap-3">
-                            <div class="w-8 h-8 rounded-lg bg-emerald-500/25 text-emerald-300 border border-emerald-400/40 flex items-center justify-center shrink-0">
+                            <div class="w-8 h-8 rounded-lg bg-emerald-500/30 text-emerald-300 border border-emerald-400/50 flex items-center justify-center shrink-0">
                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                             </div>
                             <div>
-                                <div class="text-[11px] text-slate-200 font-semibold">Kas & Omset Lembaga</div>
+                                <div class="text-[11px] text-slate-100 font-bold">Kas & Omset Lembaga</div>
                                 <div class="text-sm font-black text-white mono">
                                     Rp {{ number_format($financeNetProfit ?? $totalInvoicePaid ?? 0, 0, ',', '.') }}
                                 </div>
@@ -110,20 +110,20 @@
                     </div>
 
                     <!-- Micro Metric 2: Status Domain & Hosting -->
-                    <div class="flex items-center justify-between gap-3 p-2.5 rounded-xl bg-white/[0.06] border border-white/10 hover:bg-white/[0.12] transition-all">
+                    <div class="flex items-center justify-between gap-3 p-2.5 rounded-xl bg-white/10 border border-white/20 hover:bg-white/15 transition-all">
                         <div class="flex items-center gap-3">
-                            <div class="w-8 h-8 rounded-lg bg-indigo-500/25 text-indigo-300 border border-indigo-400/40 flex items-center justify-center shrink-0">
+                            <div class="w-8 h-8 rounded-lg bg-indigo-500/30 text-indigo-300 border border-indigo-400/50 flex items-center justify-center shrink-0">
                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                             </div>
                             <div>
-                                <div class="text-[11px] text-slate-200 font-semibold">Aset Domain & Hosting</div>
+                                <div class="text-[11px] text-slate-100 font-bold">Aset Domain & Hosting</div>
                                 <div class="text-xs font-bold">
                                     @if(isset($domainCriticalCount) && $domainCriticalCount > 0)
-                                        <span class="text-rose-300 font-extrabold">{{ $domainCriticalCount }} Butuh Perpanjangan Segera</span>
+                                        <span class="text-rose-300 font-black">{{ $domainCriticalCount }} Butuh Perpanjangan Segera</span>
                                     @elseif(isset($domainWarningCount) && $domainWarningCount > 0)
                                         <span class="text-amber-300 font-bold">{{ $domainWarningCount }} Expired &lt; 30 Hari</span>
                                     @else
-                                        <span class="text-emerald-300 font-bold">{{ $domainCount ?? 0 }} Layanan Aktif & Aman</span>
+                                        <span class="text-emerald-300 font-black">{{ $domainCount ?? 0 }} Layanan Aktif & Aman</span>
                                     @endif
                                 </div>
                             </div>
@@ -134,16 +134,16 @@
                     </div>
 
                     <!-- Micro Metric 3: Pengunjung & Trafik -->
-                    <div class="flex items-center justify-between gap-3 p-2.5 rounded-xl bg-white/[0.06] border border-white/10 hover:bg-white/[0.12] transition-all">
+                    <div class="flex items-center justify-between gap-3 p-2.5 rounded-xl bg-white/10 border border-white/20 hover:bg-white/15 transition-all">
                         <div class="flex items-center gap-3">
-                            <div class="w-8 h-8 rounded-lg bg-blue-500/25 text-blue-300 border border-blue-400/40 flex items-center justify-center shrink-0">
+                            <div class="w-8 h-8 rounded-lg bg-blue-500/30 text-blue-300 border border-blue-400/50 flex items-center justify-center shrink-0">
                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
                             </div>
                             <div>
-                                <div class="text-[11px] text-slate-200 font-semibold">Trafik Web Publik</div>
+                                <div class="text-[11px] text-slate-100 font-bold">Trafik Web Publik</div>
                                 <div class="text-xs font-bold text-white flex items-center gap-1.5 mono">
-                                    <span>{{ number_format($totalVisitors ?? 153563, 0, ',', '.') }} Kunjungan</span>
-                                    <span class="text-[10px] text-emerald-300 font-bold">({{ $onlineVisitors ?? 1 }} Online)</span>
+                                    <span class="font-black">{{ number_format($totalVisitors ?? 153563, 0, ',', '.') }} Kunjungan</span>
+                                    <span class="text-[10px] text-emerald-300 font-black">({{ $onlineVisitors ?? 1 }} Online)</span>
                                 </div>
                             </div>
                         </div>
@@ -192,7 +192,7 @@
             </div>
             <div>
                 <div class="text-2xl sm:text-3xl font-black text-slate-900 mono tracking-tight leading-none">{{ $projectCount }}</div>
-                <div class="text-xs font-semibold text-slate-500 mt-1.5">Portofolio Selesai</div>
+                <div class="text-xs font-bold text-slate-700 mt-1.5">Portofolio Selesai</div>
             </div>
         </a>
 
@@ -206,7 +206,7 @@
             </div>
             <div>
                 <div class="text-2xl sm:text-3xl font-black text-slate-900 mono tracking-tight leading-none">{{ $productCount }}</div>
-                <div class="text-xs font-semibold text-slate-500 mt-1.5">Produk Digital & SaaS</div>
+                <div class="text-xs font-bold text-slate-700 mt-1.5">Produk Digital & SaaS</div>
             </div>
         </a>
 
@@ -220,7 +220,7 @@
             </div>
             <div>
                 <div class="text-2xl sm:text-3xl font-black text-slate-900 mono tracking-tight leading-none">{{ $trainingCount }}</div>
-                <div class="text-xs font-semibold text-slate-500 mt-1.5">Modul Pelatihan IT</div>
+                <div class="text-xs font-bold text-slate-700 mt-1.5">Modul Pelatihan IT</div>
             </div>
         </a>
 
@@ -234,7 +234,7 @@
             </div>
             <div>
                 <div class="text-2xl sm:text-3xl font-black text-slate-900 mono tracking-tight leading-none">{{ $galleryCount }}</div>
-                <div class="text-xs font-semibold text-slate-500 mt-1.5">Dokumentasi & Event</div>
+                <div class="text-xs font-bold text-slate-700 mt-1.5">Dokumentasi & Event</div>
             </div>
         </a>
 
@@ -248,7 +248,7 @@
             </div>
             <div>
                 <div class="text-2xl sm:text-3xl font-black text-slate-900 mono tracking-tight leading-none">{{ $postCount }}</div>
-                <div class="text-xs font-semibold text-slate-500 mt-1.5">Artikel & Wawasan</div>
+                <div class="text-xs font-bold text-slate-700 mt-1.5">Artikel & Wawasan</div>
             </div>
         </a>
 
@@ -264,7 +264,7 @@
             </div>
             <div>
                 <div class="text-2xl sm:text-3xl font-black text-slate-900 mono tracking-tight leading-none">{{ number_format($totalVisitors, 0, ',', '.') }}</div>
-                <div class="text-xs font-semibold text-slate-500 mt-1.5">Total Pembaca Web</div>
+                <div class="text-xs font-bold text-slate-700 mt-1.5">Total Pembaca Web</div>
             </div>
         </a>
 
@@ -278,7 +278,7 @@
             </div>
             <div>
                 <div class="text-2xl sm:text-3xl font-black text-slate-900 mono tracking-tight leading-none">{{ $invoiceCount }}</div>
-                <div class="text-xs font-semibold text-slate-500 mt-1.5">Faktur Tagihan Klien</div>
+                <div class="text-xs font-bold text-slate-700 mt-1.5">Faktur Tagihan Klien</div>
             </div>
         </a>
 
@@ -288,13 +288,13 @@
                 <div class="w-9 h-9 rounded-xl bg-rose-50 border border-rose-200/80 text-rose-600 flex items-center justify-center text-base">
                     ✉️
                 </div>
-                <span class="px-2 py-0.5 rounded-md {{ $unreadInquiryCount > 0 ? 'bg-rose-100 text-rose-800 border border-rose-200 font-extrabold' : 'bg-slate-100 text-slate-600 border border-slate-200 font-bold' }} text-[10px] uppercase">
+                <span class="px-2 py-0.5 rounded-md {{ $unreadInquiryCount > 0 ? 'bg-rose-100 text-rose-800 border border-rose-200 font-extrabold' : 'bg-slate-100 text-slate-700 border border-slate-200 font-bold' }} text-[10px] uppercase">
                     {{ $unreadInquiryCount > 0 ? $unreadInquiryCount . ' Baru' : 'Inbox' }}
                 </span>
             </div>
             <div>
                 <div class="text-2xl sm:text-3xl font-black text-slate-900 mono tracking-tight leading-none">{{ $inquiryCount }}</div>
-                <div class="text-xs font-semibold text-slate-500 mt-1.5">Pesan Konsultasi Klien</div>
+                <div class="text-xs font-bold text-slate-700 mt-1.5">Pesan Konsultasi Klien</div>
             </div>
         </a>
 
@@ -316,7 +316,7 @@
             </div>
             <div>
                 <div class="text-2xl sm:text-3xl font-black text-slate-900 mono tracking-tight leading-none">{{ $domainCount }}</div>
-                <div class="text-xs font-semibold text-slate-500 mt-1.5">Domain & Server Terdaftar</div>
+                <div class="text-xs font-bold text-slate-700 mt-1.5">Domain & Server Terdaftar</div>
             </div>
         </a>
 
@@ -338,7 +338,7 @@
                             Cash Intelligence
                         </span>
                     </div>
-                    <p class="text-xs text-slate-500 font-medium mt-0.5">Realisasi kas masuk invoice, beban operasional kas, dan saldo laba bersih lembaga</p>
+                    <p class="text-xs text-slate-600 font-semibold mt-0.5">Realisasi kas masuk invoice, beban operasional kas, dan saldo laba bersih lembaga</p>
                 </div>
             </div>
 
@@ -401,7 +401,7 @@
                             </span>
                         @endif
                     </div>
-                    <p class="text-xs text-slate-500 font-medium mt-0.5">
+                    <p class="text-xs text-slate-600 font-semibold mt-0.5">
                         Monitoring batas waktu jatuh tempo, status registrar (Rumahweb, Spaceship, IDwebhost, Porkbun, dll), dan notifikasi tagihan klien.
                     </p>
                 </div>
@@ -419,7 +419,7 @@
         <div class="overflow-x-auto">
             <table class="w-full text-left border-collapse text-xs">
                 <thead>
-                    <tr class="bg-slate-50 border-b border-slate-200 text-slate-500 font-extrabold uppercase tracking-wider text-[10px]">
+                    <tr class="bg-slate-100 border-b border-slate-200 text-slate-700 font-black uppercase tracking-wider text-[10px]">
                         <th class="py-3 px-4 min-w-[240px]">Domain & Layanan</th>
                         <th class="py-3 px-4 min-w-[150px]">Provider / Registrar</th>
                         <th class="py-3 px-4 min-w-[170px]">Masa Aktif & Status</th>
@@ -561,13 +561,13 @@
                         <span>🧾</span>
                         <span>Faktur & Invoice Klien Terakhir</span>
                     </h2>
-                    <p class="text-[11px] text-slate-500 font-medium mt-0.5">Total tagihan terbit: <strong class="text-slate-800 mono">Rp {{ number_format($totalInvoiceAmount, 0, ',', '.') }}</strong></p>
+                    <p class="text-[11px] text-slate-600 font-semibold mt-0.5">Total tagihan terbit: <strong class="text-slate-900 mono">Rp {{ number_format($totalInvoiceAmount, 0, ',', '.') }}</strong></p>
                 </div>
                 <div class="flex items-center gap-1.5">
                     <a href="{{ route('admin.invoices.create') }}" class="px-2.5 py-1 rounded-lg bg-[#2563eb] text-white font-bold text-xs hover:brightness-110 transition-all flex items-center gap-1">
                         <span>+ Buat</span>
                     </a>
-                    <a href="{{ route('admin.invoices.index') }}" class="px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-[#2563eb] hover:text-white text-xs font-bold text-slate-700 transition-all">
+                    <a href="{{ route('admin.invoices.index') }}" class="px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-[#2563eb] hover:text-white text-xs font-bold text-slate-800 transition-all">
                         Semua &rarr;
                     </a>
                 </div>
@@ -576,7 +576,7 @@
             <div class="overflow-x-auto">
                 <table class="w-full text-left border-collapse text-xs">
                     <thead>
-                        <tr class="bg-slate-50 text-slate-500 font-extrabold uppercase text-[9px] tracking-wider border-b border-slate-200">
+                        <tr class="bg-slate-100 text-slate-700 font-black uppercase text-[9px] tracking-wider border-b border-slate-200">
                             <th class="py-2 px-2.5 text-center min-w-[90px]">No. Invoice</th>
                             <th class="py-2 px-2.5 min-w-[180px]">Klien & Lembaga</th>
                             <th class="py-2 px-2.5 text-center min-w-[70px]">Status</th>
@@ -589,24 +589,24 @@
                             <tr class="hover:bg-slate-50 transition-colors">
                                 <td class="py-2.5 px-2.5 text-center whitespace-nowrap">
                                     <span class="font-extrabold text-[#071330] mono">#{{ $inv->invoice_number }}</span>
-                                    <div class="text-[9px] text-slate-400 mono">{{ $inv->invoice_date ? $inv->invoice_date->format('d/m/Y') : '-' }}</div>
+                                    <div class="text-[9px] text-slate-500 mono font-semibold">{{ $inv->invoice_date ? $inv->invoice_date->format('d/m/Y') : '-' }}</div>
                                 </td>
 
                                 <!-- NO TEXT TRUNCATION ON CLIENT NAMES -->
                                 <td class="py-2.5 px-2.5">
                                     <div class="font-extrabold text-slate-900 leading-snug">{{ $inv->client_name }}</div>
                                     @if($inv->client_attn)
-                                        <div class="text-[10px] text-slate-500 font-semibold leading-tight mt-0.5">{{ $inv->client_attn }}</div>
+                                        <div class="text-[10px] text-slate-600 font-semibold leading-tight mt-0.5">{{ $inv->client_attn }}</div>
                                     @endif
                                 </td>
 
                                 <td class="py-2.5 px-2.5 text-center whitespace-nowrap">
                                     @if($inv->status === 'PAID')
-                                        <span class="px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 font-bold text-[9px] border border-emerald-200">PAID</span>
+                                        <span class="px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-800 font-extrabold text-[9px] border border-emerald-200">PAID</span>
                                     @elseif($inv->status === 'PARTIAL')
-                                        <span class="px-2 py-0.5 rounded-full bg-amber-50 text-amber-700 font-bold text-[9px] border border-amber-200">DP</span>
+                                        <span class="px-2 py-0.5 rounded-full bg-amber-50 text-amber-800 font-extrabold text-[9px] border border-amber-200">DP</span>
                                     @else
-                                        <span class="px-2 py-0.5 rounded-full bg-rose-50 text-rose-700 font-bold text-[9px] border border-rose-200">UNPAID</span>
+                                        <span class="px-2 py-0.5 rounded-full bg-rose-50 text-rose-800 font-extrabold text-[9px] border border-rose-200">UNPAID</span>
                                     @endif
                                 </td>
                                 <td class="py-2.5 px-2.5 text-right font-extrabold text-slate-900 mono whitespace-nowrap">
@@ -625,7 +625,7 @@
                             </tr>
                         @empty
                             <tr>
-                                <td colspan="5" class="py-6 text-center text-xs text-slate-500">
+                                <td colspan="5" class="py-6 text-center text-xs text-slate-600 font-medium">
                                     Belum ada invoice. <a href="{{ route('admin.invoices.create') }}" class="text-[#2563eb] font-bold hover:underline">Buat invoice sekarang &rarr;</a>
                                 </td>
                             </tr>
@@ -643,9 +643,9 @@
                         <span>✉️</span>
                         <span>Pesan Masuk Terbaru</span>
                     </h2>
-                    <p class="text-[11px] text-slate-500 font-medium">Formulir penawaran dari website</p>
+                    <p class="text-[11px] text-slate-600 font-semibold">Formulir penawaran dari website</p>
                 </div>
-                <a href="{{ route('admin.inquiries.index') }}" class="px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-[#2563eb] hover:text-white text-xs font-bold text-slate-700 transition-all">
+                <a href="{{ route('admin.inquiries.index') }}" class="px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-[#2563eb] hover:text-white text-xs font-bold text-slate-800 transition-all">
                     Lihat Semua &rarr;
                 </a>
             </div>
@@ -660,16 +660,16 @@
                                     <span class="px-1.5 py-0.2 rounded-full bg-[#fe6000] text-white font-extrabold text-[8px] shrink-0">BARU</span>
                                 @endif
                             </div>
-                            <div class="text-[10px] text-slate-500 font-medium">
+                            <div class="text-[10px] text-slate-600 font-semibold">
                                 {{ $inq->email }} &bull; {{ $inq->phone ?? '-' }}
                             </div>
                         </div>
-                        <span class="text-[9px] text-slate-400 mono font-bold shrink-0">{{ $inq->created_at->diffForHumans() }}</span>
+                        <span class="text-[9px] text-slate-500 mono font-bold shrink-0">{{ $inq->created_at->diffForHumans() }}</span>
                     </a>
                 @empty
-                    <div class="text-center py-6 text-xs text-slate-500 space-y-1">
+                    <div class="text-center py-6 text-xs text-slate-600 space-y-1">
                         <div class="text-xl">📬</div>
-                        <p class="font-medium">Belum ada pesan penawaran masuk.</p>
+                        <p class="font-semibold">Belum ada pesan penawaran masuk.</p>
                     </div>
                 @endforelse
             </div>

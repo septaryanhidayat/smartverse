@@ -111,32 +111,32 @@
                     <div class="pt-2 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2.5 text-xs text-slate-200">
                         <a href="mailto:{{ $profile->email }}" class="p-2.5 rounded-xl bg-white/10 hover:bg-white/15 transition-colors flex items-center gap-2 border border-white/5">
                             <span class="text-cyan-300">✉️</span>
-                            <span class="truncate font-medium">{{ $profile->email }}</span>
+                            <span class="break-all font-medium text-xs">{{ $profile->email }}</span>
                         </a>
 
                         <a href="https://wa.me/6285267774878" target="_blank" class="p-2.5 rounded-xl bg-white/10 hover:bg-white/15 transition-colors flex items-center gap-2 border border-white/5">
                             <span class="text-emerald-400">📱</span>
-                            <span class="font-medium">{{ $profile->phone }}</span>
+                            <span class="font-medium text-xs">{{ $profile->phone }}</span>
                         </a>
 
                         <a href="https://{{ preg_replace('#^https?://#', '', $profile->website_1) }}" target="_blank" class="p-2.5 rounded-xl bg-white/10 hover:bg-white/15 transition-colors flex items-center gap-2 border border-white/5">
                             <span class="text-amber-400">🌐</span>
-                            <span class="truncate font-medium">{{ $profile->website_1 }}</span>
+                            <span class="break-all font-medium text-xs">{{ $profile->website_1 }}</span>
                         </a>
 
                         <a href="https://{{ preg_replace('#^https?://#', '', $profile->website_2) }}" target="_blank" class="p-2.5 rounded-xl bg-white/10 hover:bg-white/15 transition-colors flex items-center gap-2 border border-white/5">
                             <span class="text-blue-300">🏢</span>
-                            <span class="truncate font-medium">{{ $profile->website_2 }}</span>
+                            <span class="break-all font-medium text-xs">{{ $profile->website_2 }}</span>
                         </a>
 
                         <a href="https://{{ preg_replace('#^https?://#', '', $profile->github) }}" target="_blank" class="p-2.5 rounded-xl bg-white/10 hover:bg-white/15 transition-colors flex items-center gap-2 border border-white/5">
                             <span class="text-purple-300">🐙</span>
-                            <span class="truncate font-medium font-mono text-[11px]">{{ $profile->github }}</span>
+                            <span class="break-all font-medium font-mono text-[11px]">{{ $profile->github }}</span>
                         </a>
 
                         <div class="p-2.5 rounded-xl bg-white/10 flex items-center gap-2 border border-white/5">
                             <span class="text-rose-400">📍</span>
-                            <span class="truncate font-medium">{{ $profile->city }}</span>
+                            <span class="break-words font-medium text-xs">{{ $profile->city }}</span>
                         </div>
                     </div>
                 </div>
@@ -323,7 +323,7 @@
                          class="bg-white dark:bg-slate-900 rounded-3xl p-6 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all flex flex-col justify-between space-y-4">
                         <div class="space-y-3">
                             <div class="flex items-center justify-between gap-2">
-                                <span class="px-2.5 py-0.5 rounded-full bg-cyan-50 dark:bg-cyan-950 text-cyan-700 dark:text-cyan-300 text-[10px] font-bold uppercase truncate max-w-[180px]">
+                                <span class="px-2.5 py-0.5 rounded-full bg-cyan-50 dark:bg-cyan-950 text-cyan-700 dark:text-cyan-300 text-[10px] font-bold uppercase whitespace-normal">
                                     {{ $prj->category ?? 'Software' }}
                                 </span>
                                 <span class="text-xs font-mono font-bold text-slate-400">{{ $prj->year }}</span>
@@ -459,7 +459,7 @@
 
                             <div class="p-4 space-y-1">
                                 <span class="text-[10px] font-bold text-blue-600 dark:text-blue-400 uppercase block">{{ $flyerItem->organizer ?? 'Kegiatan' }} &bull; {{ $flyerItem->year }}</span>
-                                <h4 class="text-xs font-extrabold text-[#07153f] dark:text-white line-clamp-2 leading-snug">{{ $flyerItem->title }}</h4>
+                                <h4 class="text-xs font-extrabold text-[#07153f] dark:text-white leading-snug">{{ $flyerItem->title }}</h4>
                             </div>
                         </div>
                     @endforeach

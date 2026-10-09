@@ -148,14 +148,19 @@
 
                         <!-- Speaker Photo with Gentle Bottom Feather/Fade (Blends seamlessly into pedestal) -->
                         <div class="relative w-full flex justify-center items-end z-10 -mb-6">
-                            <img src="{{ asset($settings['trainer_avatar'] ?? 'images/smartverse/ryan-trainer-hero.webp') }}" 
+                            @php
+                                $heroPhoto = $settings['trainer_avatar'] ?? null;
+                                if (empty($heroPhoto) || str_contains($heroPhoto, 'Insight-Talks-Komdigi')) {
+                                    $heroPhoto = 'images/smartverse/ryan-trainer-hero.webp';
+                                }
+                            @endphp
+                            <img src="{{ asset($heroPhoto) }}" 
                                  alt="Septa Ryan Hidayat - Founder SmartVerseID" 
                                  fetchpriority="high" 
                                  loading="eager" 
                                  decoding="async" 
                                  width="600" 
                                  height="800" 
-                                 style="mask-image: linear-gradient(to bottom, black 65%, transparent 95%); -webkit-mask-image: linear-gradient(to bottom, black 65%, transparent 95%);"
                                  class="relative w-auto max-h-[380px] sm:max-h-[430px] lg:max-h-[460px] object-contain drop-shadow-[0_20px_35px_rgba(7,21,63,0.35)] dark:drop-shadow-[0_20px_45px_rgba(6,182,212,0.3)] hover:scale-[1.02] transition-transform duration-500 select-none" />
                         </div>
 
@@ -1442,42 +1447,46 @@
         </div>
 
 
-        <!-- Calculator Grid Layout -->
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <!-- Calculator Grid Layout (Simetris Seimbang Kiri & Kanan) -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
             
-            <!-- Left 7 Columns: Compact Options Selector -->
-            <div class="lg:col-span-7 bg-white dark:bg-slate-900 p-6 sm:p-7 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-xl space-y-6 reveal-on-scroll">
+            <!-- Left 7 Columns: Options Selector (Tanpa Scrollbar, Bersih & Terstruktur) -->
+            <div class="lg:col-span-7 bg-white dark:bg-slate-900 p-6 sm:p-7 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-xl space-y-6 flex flex-col justify-between reveal-on-scroll">
                 
-                <!-- 1. Pilihan Solusi / Platform Digital (Multi-Sektor Lengkap) -->
+                <!-- 1. Pilihan Solusi / Platform Digital (Multi-Sektor Lengkap + Politik & Pemilu) -->
                 <div class="space-y-3" x-data="{ sectorFilter: 'all' }">
                     <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                         <label class="text-xs font-black uppercase tracking-wider text-[#07153f] dark:text-white flex items-center gap-2">
                             <span class="w-5 h-5 rounded-full bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-400 flex items-center justify-center text-[10px]">1</span>
                             <span>Pilih Solusi / Platform Digital:</span>
                         </label>
-                        <span class="text-[10px] text-slate-500 dark:text-slate-400">14 Solusi Lintas Sektor</span>
+                        <span class="text-[10px] text-slate-500 dark:text-slate-400 font-bold">18 Solusi Lintas Sektor</span>
                     </div>
 
-                    <!-- Sector Filter Pills -->
+                    <!-- Sector Filter Pills (Termasuk Kategori Politik & Tokoh) -->
                     <div class="flex flex-wrap items-center gap-1.5 pb-1">
-                        <button type="button" @click="sectorFilter = 'all'" :class="sectorFilter === 'all' ? 'bg-[#3E5CE7] text-white' : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200'" class="px-2.5 py-1 rounded-lg text-[10px] font-extrabold transition-all">
+                        <button type="button" @click="sectorFilter = 'all'" :class="sectorFilter === 'all' ? 'bg-[#3E5CE7] text-white shadow-xs' : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200'" class="px-2.5 py-1 rounded-lg text-[10px] font-extrabold transition-all">
                             Semua Sektor
                         </button>
-                        <button type="button" @click="sectorFilter = 'edu'" :class="sectorFilter === 'edu' ? 'bg-[#3E5CE7] text-white' : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200'" class="px-2.5 py-1 rounded-lg text-[10px] font-extrabold transition-all">
+                        <button type="button" @click="sectorFilter = 'politics'" :class="sectorFilter === 'politics' ? 'bg-[#3E5CE7] text-white shadow-xs' : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200'" class="px-2.5 py-1 rounded-lg text-[10px] font-extrabold transition-all">
+                            🗳️ Politik &amp; Tokoh
+                        </button>
+                        <button type="button" @click="sectorFilter = 'edu'" :class="sectorFilter === 'edu' ? 'bg-[#3E5CE7] text-white shadow-xs' : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200'" class="px-2.5 py-1 rounded-lg text-[10px] font-extrabold transition-all">
                             🎓 Pendidikan &amp; Kampus
                         </button>
-                        <button type="button" @click="sectorFilter = 'fin_hr'" :class="sectorFilter === 'fin_hr' ? 'bg-[#3E5CE7] text-white' : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200'" class="px-2.5 py-1 rounded-lg text-[10px] font-extrabold transition-all">
+                        <button type="button" @click="sectorFilter = 'fin_hr'" :class="sectorFilter === 'fin_hr' ? 'bg-[#3E5CE7] text-white shadow-xs' : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200'" class="px-2.5 py-1 rounded-lg text-[10px] font-extrabold transition-all">
                             💼 Keuangan &amp; HR
                         </button>
-                        <button type="button" @click="sectorFilter = 'social'" :class="sectorFilter === 'social' ? 'bg-[#3E5CE7] text-white' : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200'" class="px-2.5 py-1 rounded-lg text-[10px] font-extrabold transition-all">
-                            🤝 Sosial, Jurnalis &amp; Komunitas
+                        <button type="button" @click="sectorFilter = 'social'" :class="sectorFilter === 'social' ? 'bg-[#3E5CE7] text-white shadow-xs' : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200'" class="px-2.5 py-1 rounded-lg text-[10px] font-extrabold transition-all">
+                            🤝 Sosial &amp; Komunitas
                         </button>
-                        <button type="button" @click="sectorFilter = 'biz'" :class="sectorFilter === 'biz' ? 'bg-[#3E5CE7] text-white' : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200'" class="px-2.5 py-1 rounded-lg text-[10px] font-extrabold transition-all">
+                        <button type="button" @click="sectorFilter = 'biz'" :class="sectorFilter === 'biz' ? 'bg-[#3E5CE7] text-white shadow-xs' : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200'" class="px-2.5 py-1 rounded-lg text-[10px] font-extrabold transition-all">
                             🏢 Bisnis &amp; Layanan
                         </button>
                     </div>
 
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs max-h-[380px] overflow-y-auto pr-1">
+                    <!-- Cards Grid (Tanpa Scrollbar, Tampil Penuh & Rapi) -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs">
                         
                         <!-- PENDIDIKAN & KAMPUS -->
                         <button type="button" 
@@ -1665,6 +1674,59 @@
                             <span class="text-xl">🏥</span>
                         </button>
 
+                        <!-- SEKTOR POLITIK, PARTAI & RELAWAN (BARU) -->
+                        <button type="button" 
+                                x-show="sectorFilter === 'all' || sectorFilter === 'politics'"
+                                @click="setPlatform('web_tokoh', 'Website Tokoh & Caleg / Kepala Daerah', 2500000)"
+                                :class="platform === 'web_tokoh' ? 'border-[#3E5CE7] bg-blue-50/70 dark:bg-blue-950/50 text-blue-700 dark:text-blue-400 font-bold ring-2 ring-blue-500/30' : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800/80 text-slate-700 dark:text-slate-200 hover:border-blue-300'"
+                                class="p-3 rounded-2xl border text-left transition-all flex items-center justify-between gap-2">
+                            <div>
+                                <span class="px-1.5 py-0.2 rounded text-[9px] font-bold bg-amber-100 text-amber-800 dark:bg-amber-900 dark:text-amber-200 mb-0.5 inline-block">Tokoh Publik</span>
+                                <strong class="block text-xs text-[#07153f] dark:text-white">Web Tokoh / Caleg / Kepala Daerah</strong>
+                                <span class="text-[10px] text-slate-500 dark:text-slate-400">Profil, Visi Misi, Aspirasi &amp; Galeri Dukungan</span>
+                            </div>
+                            <span class="text-xl">🗳️</span>
+                        </button>
+
+                        <button type="button" 
+                                x-show="sectorFilter === 'all' || sectorFilter === 'politics'"
+                                @click="setPlatform('web_partai', 'Portal Web Resmi Partai Politik (DPD/DPC)', 3500000)"
+                                :class="platform === 'web_partai' ? 'border-[#3E5CE7] bg-blue-50/70 dark:bg-blue-950/50 text-blue-700 dark:text-blue-400 font-bold ring-2 ring-blue-500/30' : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800/80 text-slate-700 dark:text-slate-200 hover:border-blue-300'"
+                                class="p-3 rounded-2xl border text-left transition-all flex items-center justify-between gap-2">
+                            <div>
+                                <span class="px-1.5 py-0.2 rounded text-[9px] font-bold bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200 mb-0.5 inline-block">Partai Politik</span>
+                                <strong class="block text-xs text-[#07153f] dark:text-white">Portal Web Resmi Partai Politik</strong>
+                                <span class="text-[10px] text-slate-500 dark:text-slate-400">Struktur DPD/DPC, Berita Fraksi &amp; KTA Kader</span>
+                            </div>
+                            <span class="text-xl">🏛️</span>
+                        </button>
+
+                        <button type="button" 
+                                x-show="sectorFilter === 'all' || sectorFilter === 'politics'"
+                                @click="setPlatform('hitung_suara', 'Aplikasi Hitung Suara (Real / Quick Count TPS)', 4500000)"
+                                :class="platform === 'hitung_suara' ? 'border-[#3E5CE7] bg-blue-50/70 dark:bg-blue-950/50 text-blue-700 dark:text-blue-400 font-bold ring-2 ring-blue-500/30' : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800/80 text-slate-700 dark:text-slate-200 hover:border-blue-300'"
+                                class="p-3 rounded-2xl border text-left transition-all flex items-center justify-between gap-2">
+                            <div>
+                                <span class="px-1.5 py-0.2 rounded text-[9px] font-bold bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200 mb-0.5 inline-block">Hitung Suara</span>
+                                <strong class="block text-xs text-[#07153f] dark:text-white">Aplikasi Real Count &amp; Quick Count</strong>
+                                <span class="text-[10px] text-slate-500 dark:text-slate-400">Tabulasi Suara TPS Real-Time &amp; Rekap Form C1</span>
+                            </div>
+                            <span class="text-xl">📊</span>
+                        </button>
+
+                        <button type="button" 
+                                x-show="sectorFilter === 'all' || sectorFilter === 'politics'"
+                                @click="setPlatform('saksi_relawan', 'Aplikasi Saksi TPS & Manajemen Relawan Pemilu', 5000000)"
+                                :class="platform === 'saksi_relawan' ? 'border-[#3E5CE7] bg-blue-50/70 dark:bg-blue-950/50 text-blue-700 dark:text-blue-400 font-bold ring-2 ring-blue-500/30' : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800/80 text-slate-700 dark:text-slate-200 hover:border-blue-300'"
+                                class="p-3 rounded-2xl border text-left transition-all flex items-center justify-between gap-2">
+                            <div>
+                                <span class="px-1.5 py-0.2 rounded text-[9px] font-bold bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-200 mb-0.5 inline-block">Relawan &amp; Saksi</span>
+                                <strong class="block text-xs text-[#07153f] dark:text-white">Aplikasi Saksi TPS &amp; Relawan Pemilu</strong>
+                                <span class="text-[10px] text-slate-500 dark:text-slate-400">Database Relawan, Penugasan &amp; Form C1</span>
+                            </div>
+                            <span class="text-xl">👥</span>
+                        </button>
+
                     </div>
                 </div>
 
@@ -1761,11 +1823,11 @@
 
             </div>
 
-            <!-- Right 5 Columns: Result Display Box (Hidden Until Calculated!) -->
-            <div class="lg:col-span-5 space-y-6">
+            <!-- Right 5 Columns: Result Display Box (Seimbang & Simetris dengan Kolom Kiri) -->
+            <div class="lg:col-span-5 flex flex-col justify-between space-y-6">
                 
                 <!-- 1. State: Sebelum Ditekan (Panduan & Fasilitas Free) -->
-                <div x-show="!hasCalculated" class="bg-white dark:bg-slate-900 p-6 sm:p-7 rounded-3xl border-2 border-dashed border-slate-300 dark:border-slate-700 text-center space-y-4">
+                <div x-show="!hasCalculated" class="flex-1 flex flex-col justify-between bg-white dark:bg-slate-900 p-6 sm:p-7 rounded-3xl border-2 border-dashed border-slate-300 dark:border-slate-700 text-center space-y-4">
                     <div class="w-14 h-14 mx-auto rounded-2xl bg-orange-50 dark:bg-orange-950/60 text-orange-700 dark:text-orange-400 flex items-center justify-center text-2xl font-black shadow-inner">
                         🧮
                     </div>
@@ -1797,7 +1859,7 @@
                      x-transition:enter="transition ease-out duration-300"
                      x-transition:enter-start="opacity-0 translate-y-4"
                      x-transition:enter-end="opacity-100 translate-y-0"
-                     class="bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-7 border-2 border-emerald-500 shadow-2xl space-y-5 relative overflow-hidden">
+                     class="flex-1 flex flex-col justify-between bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-7 border-2 border-emerald-500 shadow-2xl space-y-5 relative overflow-hidden">
                     
                     <div class="flex items-center justify-between pb-3 border-b border-slate-100 dark:border-slate-800">
                         <span class="px-3 py-1 rounded-full bg-emerald-50 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-400 dark:text-emerald-400 font-extrabold text-[10px] uppercase tracking-wider">
