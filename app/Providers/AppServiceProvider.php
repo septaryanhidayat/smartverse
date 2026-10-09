@@ -19,14 +19,18 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        if (\Illuminate\Support\Facades\Schema::hasTable('settings')) {
-            try {
+        try {
+            if (\Illuminate\Support\Facades\Schema::hasTable('settings')) {
                 $siteSettings = \App\Models\Setting::all()->pluck('value', 'key');
                 \Illuminate\Support\Facades\View::share('siteSettings', $siteSettings);
                 \Illuminate\Support\Facades\View::share('settings', $siteSettings);
-            } catch (\Throwable $e) {
-                // Ignore during migrations / early setup
+            } else {
+                \Illuminate\Support\Facades\View::share('siteSettings', collect());
+                \Illuminate\Support\Facades\View::share('settings', collect());
             }
+        } catch (\Throwable $e) {
+            \Illuminate\Support\Facades\View::share('siteSettings', collect());
+            \Illuminate\Support\Facades\View::share('settings', collect());
         }
 
         // Share real-time visitor and branding counter to public layout

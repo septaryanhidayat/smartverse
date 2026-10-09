@@ -14,40 +14,60 @@ class HomeController extends Controller
 {
     public function index()
     {
-        // 1. Featured Projects (Prioritizes is_featured = true, followed by order asc)
-        $featuredProjects = Project::with('category')
-            ->orderByDesc('is_featured')
-            ->orderBy('order', 'asc')
-            ->latest()
-            ->take(12)
-            ->get();
+        // 1. Featured Projects
+        try {
+            $featuredProjects = Project::with('category')
+                ->orderByDesc('is_featured')
+                ->orderBy('order', 'asc')
+                ->latest()
+                ->take(12)
+                ->get();
+        } catch (\Throwable $e) {
+            $featuredProjects = collect();
+        }
 
-        // 2. The 5 Flagship Digital Products of SmartVerse (SmartNews, SmartEdu, SmartFeed, SmartSDM, SmartSynth)
-        $flagshipProducts = DigitalProduct::with('category')
-            ->orderBy('order', 'asc')
-            ->take(5)
-            ->get();
+        // 2. The 5 Flagship Digital Products of SmartVerse
+        try {
+            $flagshipProducts = DigitalProduct::with('category')
+                ->orderBy('order', 'asc')
+                ->take(5)
+                ->get();
+        } catch (\Throwable $e) {
+            $flagshipProducts = collect();
+        }
 
         $featuredProducts = $flagshipProducts;
 
         // 3. Featured Trainings
-        $trainings = Training::where('is_featured', true)
-            ->orderBy('order', 'asc')
-            ->take(2)
-            ->get();
+        try {
+            $trainings = Training::where('is_featured', true)
+                ->orderBy('order', 'asc')
+                ->take(2)
+                ->get();
+        } catch (\Throwable $e) {
+            $trainings = collect();
+        }
 
         // 4. Featured Galleries
-        $galleries = Gallery::where('is_featured', true)
-            ->orderBy('order', 'asc')
-            ->take(4)
-            ->get();
+        try {
+            $galleries = Gallery::where('is_featured', true)
+                ->orderBy('order', 'asc')
+                ->take(4)
+                ->get();
+        } catch (\Throwable $e) {
+            $galleries = collect();
+        }
 
         // 5. Latest Posts
-        $latestPosts = Post::with(['category', 'author'])
-            ->where('status', 'published')
-            ->latest('published_at')
-            ->take(6)
-            ->get();
+        try {
+            $latestPosts = Post::with(['category', 'author'])
+                ->where('status', 'published')
+                ->latest('published_at')
+                ->take(6)
+                ->get();
+        } catch (\Throwable $e) {
+            $latestPosts = collect();
+        }
 
         // 6. Settings
         $siteName = Setting::getValue('site_name', 'SmartVerse');

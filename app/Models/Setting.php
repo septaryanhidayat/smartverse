@@ -19,7 +19,11 @@ class Setting extends Model
 
     public static function getValue(string $key, ?string $default = null): ?string
     {
-        $setting = static::where('key', $key)->first();
-        return $setting ? $setting->value : $default;
+        try {
+            $setting = static::where('key', $key)->first();
+            return $setting ? $setting->value : $default;
+        } catch (\Throwable $e) {
+            return $default;
+        }
     }
 }
