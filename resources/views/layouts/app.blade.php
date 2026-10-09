@@ -602,6 +602,7 @@
                             <li><a href="{{ route('projects.index') }}" class="hover:text-cyan-200 transition-colors inline-flex items-center gap-1"><span class="text-cyan-400">›</span> Portofolio</a></li>
                             <li><a href="{{ route('trainer.index') }}" class="hover:text-cyan-200 transition-colors inline-flex items-center gap-1"><span class="text-cyan-400">›</span> Trainer & Galeri</a></li>
                             <li><a href="{{ route('blog.index') }}" class="hover:text-cyan-200 transition-colors inline-flex items-center gap-1"><span class="text-cyan-400">›</span> Wawasan IT</a></li>
+                            <li class="col-span-2 pt-1"><a href="{{ route('order-guide.show') }}" class="hover:text-cyan-200 transition-colors inline-flex items-center gap-1 text-cyan-200 font-bold"><span class="text-cyan-300">📄</span> Panduan & SOP Pemesanan</a></li>
                         </ul>
                     </div>
                 </div>

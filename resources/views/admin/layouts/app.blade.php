@@ -148,6 +148,7 @@
                     $isAnalyticsActive = request()->routeIs('admin.analytics.*') || request()->is('admin/analytics*');
                     $isFinancesActive = request()->routeIs('admin.finances.*') || request()->is('admin/finances*');
                     $isInvoicesActive = request()->routeIs('admin.invoices.*') || request()->is('admin/invoices*');
+                    $isOrderGuideActive = request()->routeIs('admin.order-guide.*') || request()->is('admin/panduan-pemesanan*') || request()->is('admin/order-guide*');
                     $isDomainsActive = request()->routeIs('admin.domain-renewals.*') || request()->is('admin/domain-renewals*');
                     $isInquiriesActive = request()->routeIs('admin.inquiries.*') || request()->is('admin/inquiries*');
                     $isProjectsActive = request()->routeIs('admin.projects.*') || request()->is('admin/projects*');
@@ -224,6 +225,19 @@
                         @if($isInvoicesActive)
                             <span class="w-2 h-2 rounded-full bg-white shadow-xs"></span>
                         @endif
+                    </a>
+
+                    <!-- Dokumen Panduan & SOP Order Klien -->
+                    <a href="{{ route('admin.order-guide.index') }}" 
+                       class="side-nav-link {{ $isOrderGuideActive ? 'active-blue' : '' }}"
+                       style="{{ $isOrderGuideActive ? 'background-color: #2563eb !important; color: #ffffff !important;' : '' }}">
+                        <div class="flex items-center gap-3">
+                            <svg class="w-4 h-4 {{ $isOrderGuideActive ? 'text-white' : 'text-teal-400' }}" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+                            <span class="{{ $isOrderGuideActive ? 'font-bold text-white' : '' }}">SOP & Panduan Order</span>
+                        </div>
+                        <span class="px-1.5 py-0.5 rounded-full text-[9px] font-extrabold {{ $isOrderGuideActive ? 'bg-white/25 text-white' : 'bg-teal-500/20 text-teal-300 border border-teal-500/30' }}">
+                            Klien
+                        </span>
                     </a>
 
                     <!-- Aset Domain & Hosting (Multi-Provider Tracker) -->

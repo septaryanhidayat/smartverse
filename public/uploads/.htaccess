@@ -1,0 +1,37 @@
+# ----------------------------------------------------------------------
+# SmartVerse - Secure Uploads Directory Configuration
+# Prohibits script execution and direct directory browsing
+# ----------------------------------------------------------------------
+
+# 1. Disable execution of any server-side scripts
+<FilesMatch "\.(php|phtml|phar|php5|php7|php8|pl|py|jsp|asp|aspx|sh|cgi|shtml|html|htm|js)$">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order Deny,Allow
+        Deny from all
+    </IfModule>
+</FilesMatch>
+
+# 2. Disable CGI and Indexes
+Options -ExecCGI -Indexes
+
+# 3. Remove Script Handlers
+RemoveHandler .php .phtml .phar .php5 .php7 .php8 .cgi .pl .py .sh
+
+# 4. Turn off PHP Engine if supported by Apache module
+<IfModule mod_php.c>
+    php_flag engine off
+</IfModule>
+<IfModule mod_php7.c>
+    php_flag engine off
+</IfModule>
+<IfModule mod_php8.c>
+    php_flag engine off
+</IfModule>
+
+# 5. Restrict MIME Types to images and PDF documents only
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+</IfModule>

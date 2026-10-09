@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\AdminFinanceController;
 use App\Http\Controllers\Admin\AdminGalleryController;
 use App\Http\Controllers\Admin\AdminInquiryController;
 use App\Http\Controllers\Admin\AdminInvoiceController;
+use App\Http\Controllers\Admin\AdminOrderGuideController;
 use App\Http\Controllers\Admin\AdminPostController;
 use App\Http\Controllers\Admin\AdminProductController;
 use App\Http\Controllers\Admin\AdminProfileController;
@@ -21,6 +22,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DigitalProductController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\InvoiceVerificationController;
+use App\Http\Controllers\OrderGuidePublicController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\TrainerController;
 use Illuminate\Support\Facades\Route;
@@ -30,6 +32,11 @@ Route::get('/invoices/{invoice_number}/print', [InvoiceVerificationController::c
 Route::get('/invoices/{invoice_number}/verify', [InvoiceVerificationController::class, 'verify'])->where('invoice_number', '.*')->name('invoices.verify');
 Route::get('/invoices/{invoice_number}/verif', [InvoiceVerificationController::class, 'verify'])->where('invoice_number', '.*');
 Route::get('/invoices/{invoice_number}', [InvoiceVerificationController::class, 'verify'])->where('invoice_number', '.*');
+
+// Public SOP & Panduan Pemesanan Website/Aplikasi (Client-Accessible, Shareable & Printable)
+Route::get('/panduan-pemesanan', [OrderGuidePublicController::class, 'show'])->name('order-guide.show');
+Route::get('/order-guide', [OrderGuidePublicController::class, 'show']);
+Route::get('/sop-pemesanan', [OrderGuidePublicController::class, 'show']);
 
 // Standard Authentication Fallback
 Route::get('/login', fn() => redirect()->route('admin.login'))->name('login');
@@ -126,6 +133,11 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'throttle:60,1'])->g
     Route::get('/invoices/{invoice}/print', [AdminInvoiceController::class, 'print'])->withoutMiddleware(['auth'])->name('invoices.print');
     Route::post('/invoices/{invoice}/send-email', [AdminInvoiceController::class, 'sendEmail'])->name('invoices.send-email');
     Route::resource('invoices', AdminInvoiceController::class);
+
+    // SOP & Panduan Pemesanan Web/App (Shareable Document to Clients & Word-like Editor)
+    Route::get('/panduan-pemesanan', [AdminOrderGuideController::class, 'index'])->name('order-guide.index');
+    Route::post('/panduan-pemesanan', [AdminOrderGuideController::class, 'update'])->name('order-guide.update');
+    Route::post('/panduan-pemesanan/reset', [AdminOrderGuideController::class, 'reset'])->name('order-guide.reset');
 
     // Profile & Account Settings
     Route::get('/profile', [AdminProfileController::class, 'index'])->name('profile.index');

@@ -37,6 +37,32 @@ DirectoryIndex index.php
     RewriteCond %{HTTP:x-xsrf-token} .
     RewriteRule .* - [E=HTTP_X_XSRF_TOKEN:%{HTTP:X-XSRF-Token}]
 
+    # ══════════════════════════════════════════════════════════
+    # SECURITY LAYER 1: Block Access to Sensitive Files
+    # ══════════════════════════════════════════════════════════
+    <FilesMatch "\.(env|git|cpanel\.yml|sql|log|bak|old|swp|dist|orig|save|tmp|DS_Store|yml|yaml|ini)$">
+        Require all denied
+    </FilesMatch>
+
+    <FilesMatch "^(composer\.(json|lock)|package(-lock)?\.json|phpunit\.xml|\.gitignore|\.gitattributes|\.editorconfig|\.npmrc|artisan|berandadigital\.sql|smartverse\.sql|phpinfo\.php|design\.md|README\.md)$">
+        Require all denied
+    </FilesMatch>
+
+    # ══════════════════════════════════════════════════════════
+    # SECURITY LAYER 2: Block Common Attack Patterns
+    # ══════════════════════════════════════════════════════════
+    # Block path traversal attempts
+    RewriteCond %{QUERY_STRING} (\.\./|\.\.) [NC]
+    RewriteRule .* - [F,L]
+
+    # Block null byte injection
+    RewriteCond %{QUERY_STRING} %00 [NC]
+    RewriteRule .* - [F,L]
+
+    # Block common CMS exploit scanners
+    RewriteCond %{REQUEST_URI} (wp-admin|wp-login|wp-content|xmlrpc\.php) [NC]
+    RewriteRule .* - [R=404,L]
+
     # Redirect Trailing Slashes If Not A Folder...
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_URI} (.+)/$

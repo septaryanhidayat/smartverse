@@ -375,6 +375,96 @@
             </div>
         </div>
 
+        <!-- SECTION 6: STATISTIK & COUNTER PERFORMA (HOMEPAGE STATS BAND) -->
+        <div class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm space-y-6">
+            <div class="border-b border-slate-100 pb-3 flex items-center justify-between">
+                <div>
+                    <h2 class="text-base font-extrabold text-[#071330] flex items-center gap-2">
+                        <span>📊</span>
+                        <span>Statistik & Counter Performa (Homepage Stats Band)</span>
+                    </h2>
+                    <p class="text-xs text-slate-400 font-medium">Ubah 4 kartu angka pencapaian perusahaan yang tampil di landing page</p>
+                </div>
+                <span class="px-3 py-1 rounded-full bg-blue-50 text-[#3E5CE7] font-bold text-[10px]">Homepage Stats</span>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- 1. Happy Clients -->
+                <div class="p-5 rounded-2xl bg-blue-50/50 border border-blue-100 space-y-2">
+                    <label class="block text-xs font-extrabold text-[#071330] uppercase tracking-wider">
+                        Happy Clients
+                    </label>
+                    <input type="text" name="stats_clients" value="{{ $settings['stats_clients']->value ?? '150+' }}" class="w-full px-4 py-2.5 rounded-xl border border-blue-200 text-lg font-mono font-black text-blue-700 focus:ring-2 focus:ring-[#3E5CE7] focus:outline-none bg-white shadow-xs" />
+                    <p class="text-[11px] text-slate-500 font-medium">Contoh: 150+, 200+, 500+</p>
+                </div>
+
+                <!-- 2. Projects Done -->
+                <div class="p-5 rounded-2xl bg-blue-50/50 border border-blue-100 space-y-2">
+                    <label class="block text-xs font-extrabold text-[#071330] uppercase tracking-wider">
+                        Projects Done
+                    </label>
+                    <input type="text" name="stats_projects" value="{{ $settings['stats_projects']->value ?? '85+' }}" class="w-full px-4 py-2.5 rounded-xl border border-blue-200 text-lg font-mono font-black text-blue-700 focus:ring-2 focus:ring-[#3E5CE7] focus:outline-none bg-white shadow-xs" />
+                    <p class="text-[11px] text-slate-500 font-medium">Contoh: 85+, 99+, 120+</p>
+                </div>
+
+                <!-- 3. Top Reviews & Event -->
+                <div class="p-5 rounded-2xl bg-blue-50/50 border border-blue-100 space-y-2">
+                    <label class="block text-xs font-extrabold text-[#071330] uppercase tracking-wider">
+                        Top Reviews & Event
+                    </label>
+                    <input type="text" name="stats_reviews" value="{{ $settings['stats_reviews']->value ?? '85+' }}" class="w-full px-4 py-2.5 rounded-xl border border-blue-200 text-lg font-mono font-black text-blue-700 focus:ring-2 focus:ring-[#3E5CE7] focus:outline-none bg-white shadow-xs" />
+                    <p class="text-[11px] text-slate-500 font-medium">Contoh: 85+, 95+, 100%</p>
+                </div>
+
+                <!-- 4. Years Experience -->
+                <div class="p-5 rounded-2xl bg-orange-50/50 border border-orange-100 space-y-2">
+                    <label class="block text-xs font-extrabold text-[#071330] uppercase tracking-wider">
+                        Years Experience
+                    </label>
+                    <input type="text" name="stats_experience" value="{{ $settings['stats_experience']->value ?? '8+ Thn' }}" class="w-full px-4 py-2.5 rounded-xl border border-orange-200 text-lg font-mono font-black text-orange-600 focus:ring-2 focus:ring-[#fe6000] focus:outline-none bg-white shadow-xs" />
+                    <p class="text-[11px] text-slate-500 font-medium">Contoh: 8+ Thn, 10+ Thn</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 7: CLIENT & PARTNER KAMI (MITRA KERJASAMA) -->
+        <div class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm space-y-6">
+            <div class="border-b border-slate-100 pb-3 flex items-center justify-between">
+                <div>
+                    <h2 class="text-base font-extrabold text-[#071330] flex items-center gap-2">
+                        <span>🤝</span>
+                        <span>Client & Partner Kami (Mitra Kerjasama)</span>
+                    </h2>
+                    <p class="text-xs text-slate-400 font-medium">Kustomisasi judul, subjudul, dan daftar nama instansi/mitra kerjasama</p>
+                </div>
+                <span class="px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 font-bold text-[10px]">Mitra Kerjasama</span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="space-y-1.5">
+                    <label class="block text-xs font-bold text-[#071330]">Judul Utama Section *</label>
+                    <input type="text" name="client_partner_title" value="{{ $settings['client_partner_title']->value ?? 'Client & Partner Kami' }}" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs focus:ring-2 focus:ring-[#3E5CE7] focus:outline-none font-extrabold text-[#071330]" />
+                </div>
+
+                <div class="space-y-1.5">
+                    <label class="block text-xs font-bold text-[#071330]">Subjudul / Deskripsi Kecil *</label>
+                    <input type="text" name="client_partner_subtitle" value="{{ $settings['client_partner_subtitle']->value ?? 'Dipercaya Oleh Instansi Pemerintah, Perguruan Tinggi & Perusahaan Mitra' }}" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs focus:ring-2 focus:ring-[#3E5CE7] focus:outline-none font-medium" />
+                </div>
+
+                <div class="space-y-1.5">
+                    <label class="block text-xs font-bold text-[#071330]">Daftar Mitra Baris 1 (Bergerak Kiri ke Kanan)</label>
+                    <textarea name="client_partner_list_1" rows="6" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs font-mono focus:ring-2 focus:ring-[#3E5CE7] focus:outline-none leading-relaxed">{{ $settings['client_partner_list_1']->value ?? "Kementerian Komunikasi dan Digital RI (Komdigi)\nNew Zealand BodyTalk Alliance (Selandia Baru)\nUniversitas Sriwijaya (Unsri)\nPoliteknik Akamigas Palembang\nDinas Koperasi Kab. Ogan Ilir\nMaster Your Muscles (Kuala Lumpur, Malaysia)\nPemerintah Desa Senuro Timur Ogan Ilir\nIkatan Guru Indonesia (IGI) Ogan Ilir\nPT. Duta Solusi Rumput Palembang" }}</textarea>
+                    <span class="text-[11px] text-slate-400">Tulis satu nama instansi/mitra per baris.</span>
+                </div>
+
+                <div class="space-y-1.5">
+                    <label class="block text-xs font-bold text-[#071330]">Daftar Mitra Baris 2 (Bergerak Kanan ke Kiri)</label>
+                    <textarea name="client_partner_list_2" rows="6" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs font-mono focus:ring-2 focus:ring-[#3E5CE7] focus:outline-none leading-relaxed">{{ $settings['client_partner_list_2']->value ?? "Yayasan As-Salam Jayapura, Papua\nSIT Robbani Ogan Ilir\nDompet Sosial Robbani (DSRP)\nSMAIT Ishlahul Ummah Prabumulih\nSMAIT Raudhatul Ulum\nYayasan Pendidikan Islam Ash-Shaff\nRalenta Learning Center\nKoperasi Pegawai Robbani\nPenerbit Laya Aksara Jaya\nPortal Berita Kabar32.com\nIin's Cake (Katalog Kuliner & UMKM)" }}</textarea>
+                    <span class="text-[11px] text-slate-400">Tulis satu nama institusi/sekolah/organisasi/UMKM per baris.</span>
+                </div>
+            </div>
+        </div>
+
         <!-- Submit Button Bottom -->
         <div class="flex justify-end">
             <button type="submit" class="px-8 py-4 rounded-xl bg-[#3E5CE7] hover:bg-blue-700 text-white font-extrabold text-xs uppercase tracking-wider shadow-xl hover:shadow-blue-600/30 transition-all flex items-center gap-2">
