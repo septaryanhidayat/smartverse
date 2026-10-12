@@ -1,8 +1,5 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/pesonaas/public_html/
-    - /bin/cp -R * $DEPLOYPATH
-    - /bin/cp -R public/* $DEPLOYPATH
-    - /bin/cp .htaccess $DEPLOYPATH
-    - /bin/cp index.php $DEPLOYPATH
+    - echo "SmartVerse is served directly from repository: /home/pesonaas/repositories/smartverse"
+    - /usr/local/bin/ea-php84 artisan optimize:clear 2>/dev/null || php artisan optimize:clear 2>/dev/null || true
