@@ -97,22 +97,27 @@
         }
 
         /* ═══════════════════════ HERO RESPONSIVE GRID LAYOUT ═══════════════════════ */
+        /* ═══════════════════════ HERO RESPONSIVE GRID LAYOUT ═══════════════════════ */
         @media (min-width: 1024px) {
             .hero-grid-container {
                 display: grid;
                 grid-template-columns: repeat(12, minmax(0, 1fr));
-                column-gap: 2.5rem;
+                column-gap: 2rem;
                 align-items: center;
             }
             .hero-left-wrapper {
                 grid-column: 1 / span 7;
                 display: flex;
                 flex-direction: column;
-                gap: 1.25rem;
+                gap: 1.35rem;
+                justify-content: center;
             }
             .hero-grid-photo {
                 grid-column: 8 / span 5;
-                align-self: center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
             }
         }
         @media (max-width: 1023.98px) {
@@ -121,7 +126,7 @@
                 flex-direction: column;
                 align-items: center;
                 text-align: center;
-                gap: 1.25rem;
+                gap: 1.5rem;
             }
             .hero-left-wrapper {
                 display: contents;
@@ -134,9 +139,9 @@
             .hero-grid-photo {
                 order: 2;
                 width: 100%;
-                max-width: 22rem;
-                margin-top: 0.75rem;
-                margin-bottom: 0.75rem;
+                max-width: 26rem;
+                margin-top: 0.5rem;
+                margin-bottom: 0.5rem;
             }
             .hero-grid-body {
                 order: 3;
