@@ -16,138 +16,63 @@
     <div class="hidden sm:block absolute top-20 right-20 text-blue-700 dark:text-blue-400/30 text-5xl font-black pointer-events-none select-none anim-shape-rotate" aria-hidden="true">✦</div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+        <div class="hero-grid-container">
             
-            <!-- Left Column: Typography, Competency Pillars & Action Buttons -->
-            <div class="lg:col-span-7 space-y-4 sm:space-y-6 text-center lg:text-left hero-content">
-                
+            <!-- Section A: Eyebrow Badge & Main Dynamic Heading -->
+            <div class="hero-grid-title space-y-3 sm:space-y-4 text-center lg:text-left">
                 <!-- Subtitle / Eyebrow Badge -->
                 <div class="flex items-center justify-center lg:justify-start">
-                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50/90 dark:bg-blue-950/60 border border-blue-200/80 dark:border-blue-800/60 text-blue-700 dark:text-blue-400 text-[11px] sm:text-xs font-extrabold tracking-wide uppercase shadow-xs">
-                        <span class="w-2 h-2 rounded-full bg-cyan-500 animate-pulse"></span>
-                        <span>{{ $settings['hero_badge'] ?? $siteSettings['hero_badge'] ?? 'Enterprise Software Solution & Layanan Narasumber IT / AI' }}</span>
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-50/90 dark:bg-blue-950/60 border border-blue-200/80 dark:border-blue-800/60 text-blue-700 dark:text-blue-400 text-[10px] sm:text-xs font-extrabold tracking-wide uppercase shadow-xs text-center max-w-full">
+                        <span class="w-2 h-2 rounded-full bg-cyan-500 animate-pulse shrink-0"></span>
+                        <span class="truncate sm:whitespace-normal">{{ $settings['hero_badge'] ?? $siteSettings['hero_badge'] ?? 'Enterprise Software Solution & Ahli IT / AI' }}</span>
                     </div>
                 </div>
 
                 <!-- Main Dynamic Headline -->
-                <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-[50px] xl:text-[56px] font-black tracking-tight text-[#07153f] dark:text-white leading-[1.12] max-w-2xl">
+                <h1 class="text-2xl sm:text-4xl md:text-5xl lg:text-[44px] xl:text-[50px] font-black tracking-tight text-[#07153f] dark:text-white leading-[1.15] max-w-2xl mx-auto lg:mx-0">
                     {{ $settings['hero_title_1'] ?? $siteSettings['hero_title_1'] ?? 'SMARTVERSE.ID' }}
-                    <span class="block text-xl sm:text-2xl md:text-3xl lg:text-[28px] font-extrabold text-blue-700 dark:text-blue-400 pt-2 sm:pt-2.5 leading-snug tracking-normal">
+                    <span class="block text-lg sm:text-2xl md:text-3xl lg:text-[25px] font-extrabold text-blue-700 dark:text-blue-400 pt-1.5 sm:pt-2 leading-snug tracking-normal">
                         {{ $settings['hero_title_2'] ?? $siteSettings['hero_title_2'] ?? 'Solusi Digital Enterprise & Layanan Narasumber Ahli IT / AI' }}
                     </span>
                 </h1>
-
-                <!-- Subtitle Description -->
-                <p class="text-xs sm:text-sm md:text-base text-slate-600 dark:text-slate-300 max-w-xl mx-auto lg:mx-0 leading-relaxed font-medium">
-                    {!! nl2br(e($settings['hero_description'] ?? $siteSettings['hero_description'] ?? 'Mitra strategis transformasi digital terpadu. Kami merancang dan membangun rekayasa perangkat lunak skala enterprise & 5 produk digital siap pakai, sekaligus menghadirkan layanan narasumber, instruktur, dan pembicara ahli di bidang koding, rekayasa pemrograman web/mobile, arsitektur cloud, serta adopsi kecerdasan buatan (Artificial Intelligence) untuk seminar, workshop, dan in-house training korporasi.')) !!}
-                </p>
-
-                <!-- 3 Dedicated Competency Pillars (Visual Cards) -->
-                <div class="pt-1 pb-1 grid grid-cols-1 sm:grid-cols-3 gap-2.5 text-left">
-                    <div class="p-2.5 sm:p-3 rounded-2xl bg-white/80 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800 shadow-xs flex items-center gap-2.5 hover:border-blue-300 dark:hover:border-blue-700 transition-all">
-                        <div class="w-9 h-9 rounded-xl bg-blue-100 dark:bg-blue-950 text-blue-600 dark:text-blue-400 flex items-center justify-center text-base shrink-0 font-bold">💻</div>
-                        <div class="leading-tight">
-                            <div class="text-[11px] font-black text-[#07153f] dark:text-white">Software Enterprise</div>
-                            <div class="text-[9px] text-slate-500 dark:text-slate-400 font-semibold">Web, Mobile, ERP &amp; Cloud</div>
-                        </div>
-                    </div>
-                    <div class="p-2.5 sm:p-3 rounded-2xl bg-white/80 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800 shadow-xs flex items-center gap-2.5 hover:border-purple-300 dark:hover:border-purple-700 transition-all">
-                        <div class="w-9 h-9 rounded-xl bg-purple-100 dark:bg-purple-950 text-purple-600 dark:text-purple-400 flex items-center justify-center text-base shrink-0 font-bold">🎤</div>
-                        <div class="leading-tight">
-                            <div class="text-[11px] font-black text-[#07153f] dark:text-white">Narasumber Koding</div>
-                            <div class="text-[9px] text-slate-500 dark:text-slate-400 font-semibold">Laravel, React, Python, API</div>
-                        </div>
-                    </div>
-                    <div class="p-2.5 sm:p-3 rounded-2xl bg-white/80 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800 shadow-xs flex items-center gap-2.5 hover:border-cyan-300 dark:hover:border-cyan-700 transition-all">
-                        <div class="w-9 h-9 rounded-xl bg-cyan-100 dark:bg-cyan-950 text-cyan-600 dark:text-cyan-400 flex items-center justify-center text-base shrink-0 font-bold">🤖</div>
-                        <div class="leading-tight">
-                            <div class="text-[11px] font-black text-[#07153f] dark:text-white">Trainer AI Enterprise</div>
-                            <div class="text-[9px] text-slate-500 dark:text-slate-400 font-semibold">AI RAG, LLM &amp; Forensik</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Strategic Action Buttons (3 High-Impact CTAs) -->
-                <div class="pt-3 flex flex-wrap items-center justify-center lg:justify-start gap-3">
-                    <!-- Primary CTA 1: Konsultasi Proyek (Solid Orange) -->
-                    <a href="https://wa.me/6289695249089?text=Halo%20SmartVerse,%20saya%20tertarik%20konsultasi%20kebutuhan%20solusi%20digital%20dan%20software%20enterprise" 
-                       target="_blank" 
-                       rel="noopener noreferrer"
-                       class="px-6 py-3.5 rounded-xl font-black text-xs uppercase tracking-wider shadow-xl shadow-orange-500/25 hover:shadow-orange-500/40 hover:scale-105 active:scale-98 transition-all flex items-center justify-center gap-2 border border-orange-300"
-                       style="background: linear-gradient(135deg, #fe6000 0%, #ff7a29 100%) !important; color: #ffffff !important;">
-                        <span class="font-black drop-shadow-xs" style="color: #ffffff !important;">💬 KONSULTASI PROYEK</span>
-                        <svg class="w-4 h-4" style="color: #ffffff !important;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                        </svg>
-                    </a>
-
-                    <!-- Primary CTA 2: Undang Narasumber IT/AI (Vibrant Indigo/Blue) -->
-                    <a href="https://wa.me/6289695249089?text=Halo%20SmartVerse,%20saya%20ingin%20mengundang%20Bapak%20Septa%20Ryan%20Hidayat%20sebagai%20narasumber/trainer%20IT%20(Koding/Pemrograman/AI)" 
-                       target="_blank" 
-                       rel="noopener noreferrer"
-                       class="px-6 py-3.5 rounded-xl font-black text-xs uppercase tracking-wider shadow-xl shadow-blue-600/25 hover:shadow-blue-600/40 hover:scale-105 active:scale-98 transition-all flex items-center justify-center gap-2 border border-blue-400/30 text-white"
-                       style="background: linear-gradient(135deg, #1d4ed8 0%, #3b82f6 100%) !important; color: #ffffff !important;">
-                        <span class="font-black" style="color: #ffffff !important;">🎤 UNDANG NARASUMBER</span>
-                        <svg class="w-4 h-4" style="color: #ffffff !important;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                        </svg>
-                    </a>
-                    
-                    <!-- Secondary CTA 3: Jelajahi 5 Produk -->
-                    <a href="#flagship-products" 
-                       class="px-5 py-3.5 rounded-xl font-black text-xs uppercase tracking-wider border-2 border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-200 hover:border-blue-600 hover:text-blue-600 dark:hover:border-cyan-400 dark:hover:text-cyan-400 active:scale-98 transition-all flex items-center justify-center gap-1.5 shadow-xs">
-                        <span>🚀 5 PRODUK UNGGULAN</span>
-                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
-                        </svg>
-                    </a>
-                </div>
-
-                <!-- Trust Micro Badges -->
-                <div class="pt-2 sm:pt-3 flex flex-wrap items-center justify-center lg:justify-start gap-x-4 gap-y-2 text-[11px] sm:text-xs text-slate-500 dark:text-slate-400 font-semibold">
-                    <span class="inline-flex items-center gap-1.5"><span class="text-emerald-500 font-bold">✓</span> Narasumber Resmi Bank Indonesia, Komdigi &amp; Media Nasional</span>
-                    <span class="inline-flex items-center gap-1.5"><span class="text-cyan-500 font-bold">✓</span> Trainer Tersertifikasi Google, Microsoft, AWS &amp; Red Hat</span>
-                    <span class="inline-flex items-center gap-1.5"><span class="text-amber-500 font-bold">✓</span> Full Source Code &amp; Standar Enterprise</span>
-                </div>
-
             </div>
 
-            <!-- Right Column: Keynote Speaker Stage & Seamless Glass Pedestal (No cut-off image) -->
-            <div class="lg:col-span-5 relative mt-8 lg:mt-0 flex items-center justify-center reveal-on-scroll">
+            <!-- Section B: Keynote Speaker Stage & Showcase Card (Photo Hero) -->
+            <div class="hero-grid-photo relative flex items-center justify-center reveal-on-scroll">
                 <div class="relative w-full max-w-md mx-auto">
                     
                     <!-- Soft Ambient Glow Disk Behind Stage -->
                     <div class="absolute -inset-3 bg-gradient-to-tr from-cyan-500/25 via-blue-600/20 to-indigo-600/30 rounded-[44px] blur-3xl pointer-events-none" aria-hidden="true"></div>
 
                     <!-- Floating Badge 1: Speaker & Tech Consultant (Top Left) -->
-                    <div class="absolute -top-4 -left-2 sm:-left-4 z-30 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md px-3.5 py-2 rounded-2xl shadow-xl border border-slate-200/80 dark:border-slate-800 flex items-center gap-2.5 hover:scale-105 transition-transform">
-                        <span class="w-8 h-8 rounded-xl bg-blue-100 dark:bg-blue-950 text-blue-600 dark:text-blue-400 flex items-center justify-center text-sm font-black shadow-xs">🎤</span>
-                        <div class="text-left">
-                            <div class="text-[11px] font-black text-[#07153f] dark:text-white leading-tight">Narasumber &amp; Speaker IT</div>
-                            <div class="text-[9px] text-slate-500 dark:text-slate-400 font-bold">Koding • Pemrograman • AI</div>
+                    <div class="absolute -top-3 left-1 sm:-top-4 sm:-left-3 z-30 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md px-2.5 sm:px-3.5 py-1.5 sm:py-2 rounded-2xl shadow-xl border border-slate-200/80 dark:border-slate-800 flex items-center gap-2 sm:gap-2.5 max-w-[48%] sm:max-w-none hover:scale-105 transition-transform">
+                        <span class="w-7 h-7 sm:w-8 sm:h-8 rounded-xl bg-blue-100 dark:bg-blue-950 text-blue-600 dark:text-blue-400 flex items-center justify-center text-xs sm:text-sm font-black shadow-xs shrink-0">🎤</span>
+                        <div class="text-left min-w-0">
+                            <div class="text-[10px] sm:text-[11px] font-black text-[#07153f] dark:text-white leading-tight truncate">Narasumber &amp; Speaker</div>
+                            <div class="text-[8.5px] sm:text-[9px] text-slate-500 dark:text-slate-400 font-bold truncate">Koding &bull; Pemrograman &bull; AI</div>
                         </div>
                     </div>
 
-                    <!-- Floating Badge 2: Certifications (Top Right, Includes Google) -->
-                    <div class="absolute top-6 -right-2 sm:-right-4 z-30 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md px-3.5 py-2 rounded-2xl shadow-xl border border-slate-200/80 dark:border-slate-800 flex items-center gap-2.5 hover:scale-105 transition-transform">
-                        <span class="w-8 h-8 rounded-xl bg-emerald-100 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-sm font-black shadow-xs">🏆</span>
-                        <div class="text-left">
-                            <div class="text-[11px] font-black text-emerald-600 dark:text-emerald-400 leading-tight">Certified Professional</div>
-                            <div class="text-[9px] text-slate-500 dark:text-slate-400 font-bold">{{ $settings['founder_certifications'] ?? 'Google • Microsoft • AWS • Red Hat' }}</div>
+                    <!-- Floating Badge 2: Certifications (Top Right) -->
+                    <div class="absolute top-4 right-1 sm:top-6 sm:-right-3 z-30 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md px-2.5 sm:px-3.5 py-1.5 sm:py-2 rounded-2xl shadow-xl border border-slate-200/80 dark:border-slate-800 flex items-center gap-2 sm:gap-2.5 max-w-[48%] sm:max-w-none hover:scale-105 transition-transform">
+                        <span class="w-7 h-7 sm:w-8 sm:h-8 rounded-xl bg-emerald-100 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-xs sm:text-sm font-black shadow-xs shrink-0">🏆</span>
+                        <div class="text-left min-w-0">
+                            <div class="text-[10px] sm:text-[11px] font-black text-emerald-600 dark:text-emerald-400 leading-tight truncate">Certified Pro</div>
+                            <div class="text-[8.5px] sm:text-[9px] text-slate-500 dark:text-slate-400 font-bold truncate">Google &bull; AWS &bull; Red Hat</div>
                         </div>
                     </div>
 
                     <!-- Keynote Arch Showcase Card -->
-                    <div class="relative rounded-[38px] bg-gradient-to-b from-slate-100/90 via-blue-50/50 to-slate-200/80 dark:from-slate-900/90 dark:via-[#07153f]/60 dark:to-slate-950 border border-slate-200/90 dark:border-blue-500/30 shadow-2xl overflow-hidden pt-10 sm:pt-12 px-4 sm:px-6 flex flex-col items-center justify-end">
+                    <div class="relative rounded-[36px] sm:rounded-[38px] bg-gradient-to-b from-slate-100/90 via-blue-50/50 to-slate-200/80 dark:from-slate-900/90 dark:via-[#07153f]/60 dark:to-slate-950 border border-slate-200/90 dark:border-blue-500/30 shadow-2xl overflow-hidden pt-8 sm:pt-12 px-3 sm:px-6 flex flex-col items-center justify-end">
                         
                         <!-- Tech Grid Lines & Watermark -->
                         <div class="absolute inset-0 bg-[radial-gradient(#3b82f6_1px,transparent_1px)] [background-size:16px_16px] opacity-25 pointer-events-none" aria-hidden="true"></div>
-                        <div class="absolute top-5 right-6 font-mono text-[10px] font-bold text-blue-500/40 dark:text-cyan-400/30 select-none pointer-events-none tracking-widest">
+                        <div class="absolute top-4 right-5 font-mono text-[9px] sm:text-[10px] font-bold text-blue-500/40 dark:text-cyan-400/30 select-none pointer-events-none tracking-widest">
                             &lt;AI_ARCHITECTURE /&gt;
                         </div>
 
-                        <!-- Speaker Photo with Gentle Bottom Feather/Fade (Blends seamlessly into pedestal) -->
-                        <div class="relative w-full flex justify-center items-end z-10 -mb-6">
+                        <!-- Speaker Photo with Gentle Bottom Feather/Fade -->
+                        <div class="relative w-full flex justify-center items-end z-10 -mb-5 sm:-mb-6">
                             @php
                                 $heroPhoto = $settings['trainer_avatar'] ?? null;
                                 if (empty($heroPhoto) || str_contains($heroPhoto, 'Insight-Talks-Komdigi')) {
@@ -161,36 +86,122 @@
                                  decoding="async" 
                                  width="600" 
                                  height="800" 
-                                 class="relative w-auto max-h-[380px] sm:max-h-[430px] lg:max-h-[460px] object-contain drop-shadow-[0_20px_35px_rgba(7,21,63,0.35)] dark:drop-shadow-[0_20px_45px_rgba(6,182,212,0.3)] hover:scale-[1.02] transition-transform duration-500 select-none" />
+                                 class="relative w-auto max-h-[320px] sm:max-h-[420px] lg:max-h-[450px] object-contain drop-shadow-[0_20px_35px_rgba(7,21,63,0.35)] dark:drop-shadow-[0_20px_45px_rgba(6,182,212,0.3)] hover:scale-[1.02] transition-transform duration-500 select-none" />
                         </div>
 
-                        <!-- Executive Presenter Console / Pedestal Bar (Anchors the photo bottom perfectly) -->
-                        <div class="w-full p-4 rounded-2xl bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl border border-slate-200/90 dark:border-slate-700 shadow-2xl relative z-20 space-y-2.5 mb-2">
+                        <!-- Executive Presenter Console / Pedestal Bar -->
+                        <div class="w-full p-3 sm:p-4 rounded-2xl bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl border border-slate-200/90 dark:border-slate-700 shadow-2xl relative z-20 space-y-2 mb-2">
                             <div class="flex items-center justify-between gap-2">
-                                <div>
-                                    <h3 class="text-sm sm:text-base font-black text-[#07153f] dark:text-white leading-tight">
+                                <div class="min-w-0 flex-1">
+                                    <h3 class="text-sm sm:text-base font-black text-[#07153f] dark:text-white leading-tight break-words">
                                         Septa Ryan Hidayat
                                     </h3>
-                                    <p class="text-[11px] font-extrabold text-blue-700 dark:text-cyan-400">
+                                    <p class="text-[10px] sm:text-[11px] font-extrabold text-blue-700 dark:text-cyan-400">
                                         {{ $settings['founder_title'] ?? 'Founder SmartVerseID' }}
                                     </p>
                                 </div>
-                                <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-600 dark:text-emerald-400 text-[10px] font-bold shrink-0">
-                                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
+                                <span class="inline-flex items-center gap-1.5 px-2 sm:px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-600 dark:text-emerald-400 text-[9.5px] sm:text-[10px] font-bold shrink-0">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping"></span>
                                     <span>Tersedia Diundang</span>
                                 </span>
                             </div>
 
-                            <!-- Competencies Chips (Clean, Symmetrical & Non-Wrapping) -->
-                            <div class="flex items-center justify-between gap-1.5 pt-1.5 border-t border-slate-100 dark:border-slate-800 text-[10px] font-bold overflow-hidden">
-                                <span class="px-2 py-0.5 rounded-md bg-blue-50 dark:bg-blue-950/70 text-blue-700 dark:text-blue-300 border border-blue-200/60 dark:border-blue-800/60 whitespace-nowrap shrink-0">💻 Pemrograman</span>
-                                <span class="px-2 py-0.5 rounded-md bg-purple-50 dark:bg-purple-950/70 text-purple-700 dark:text-purple-300 border border-purple-200/60 dark:border-purple-800/60 whitespace-nowrap shrink-0">🤖 AI &amp; Otomasi</span>
-                                <span class="px-2 py-0.5 rounded-md bg-cyan-50 dark:bg-cyan-950/70 text-cyan-700 dark:text-cyan-300 border border-cyan-200/60 dark:border-cyan-800/60 whitespace-nowrap shrink-0">🛡️ Cyber Forensik</span>
+                            <!-- Competencies Chips (Clean, Symmetrical, No Overflow Truncation) -->
+                            <div class="flex flex-wrap items-center justify-between gap-1 pt-1.5 border-t border-slate-100 dark:border-slate-800 text-[9.5px] sm:text-[10px] font-bold">
+                                <span class="px-2 py-0.5 rounded-md bg-blue-50 dark:bg-blue-950/70 text-blue-700 dark:text-blue-300 border border-blue-200/60 dark:border-blue-800/60 whitespace-nowrap">💻 Pemrograman</span>
+                                <span class="px-2 py-0.5 rounded-md bg-purple-50 dark:bg-purple-950/70 text-purple-700 dark:text-purple-300 border border-purple-200/60 dark:border-purple-800/60 whitespace-nowrap">🤖 AI &amp; Otomasi</span>
+                                <span class="px-2 py-0.5 rounded-md bg-cyan-50 dark:bg-cyan-950/70 text-cyan-700 dark:text-cyan-300 border border-cyan-200/60 dark:border-cyan-800/60 whitespace-nowrap">🛡️ Forensik AI</span>
                             </div>
                         </div>
 
                     </div>
                 </div>
+            </div>
+
+            <!-- Section C: Description, 3 Pillars, CTAs, and Trust Badges -->
+            <div class="hero-grid-body space-y-4 sm:space-y-5 text-center lg:text-left">
+                <!-- Subtitle Description -->
+                <p class="text-xs sm:text-sm md:text-base text-slate-600 dark:text-slate-300 max-w-xl mx-auto lg:mx-0 leading-relaxed font-medium">
+                    {!! nl2br(e($settings['hero_description'] ?? $siteSettings['hero_description'] ?? 'Mitra transformasi digital terpadu: rekayasa software enterprise skala korporasi, 5 produk digital siap pakai, serta narasumber ahli koding, web/mobile, dan AI untuk workshop maupun in-house corporate training.')) !!}
+                </p>
+
+                <!-- 3 Dedicated Competency Pillars (Visual Cards) -->
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 text-left">
+                    <div class="p-2.5 sm:p-3 rounded-2xl bg-white/80 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800 shadow-xs flex items-center gap-2.5 hover:border-blue-300 dark:hover:border-blue-700 transition-all">
+                        <div class="w-9 h-9 rounded-xl bg-blue-100 dark:bg-blue-950 text-blue-600 dark:text-blue-400 flex items-center justify-center text-base shrink-0 font-bold">💻</div>
+                        <div class="leading-tight min-w-0">
+                            <div class="text-[11px] font-black text-[#07153f] dark:text-white truncate">Software Enterprise</div>
+                            <div class="text-[9px] text-slate-500 dark:text-slate-400 font-semibold truncate">Web, Mobile, ERP &amp; Cloud</div>
+                        </div>
+                    </div>
+                    <div class="p-2.5 sm:p-3 rounded-2xl bg-white/80 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800 shadow-xs flex items-center gap-2.5 hover:border-purple-300 dark:hover:border-purple-700 transition-all">
+                        <div class="w-9 h-9 rounded-xl bg-purple-100 dark:bg-purple-950 text-purple-600 dark:text-purple-400 flex items-center justify-center text-base shrink-0 font-bold">🎤</div>
+                        <div class="leading-tight min-w-0">
+                            <div class="text-[11px] font-black text-[#07153f] dark:text-white truncate">Narasumber Koding</div>
+                            <div class="text-[9px] text-slate-500 dark:text-slate-400 font-semibold truncate">Laravel, React, Python, API</div>
+                        </div>
+                    </div>
+                    <div class="p-2.5 sm:p-3 rounded-2xl bg-white/80 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800 shadow-xs flex items-center gap-2.5 hover:border-cyan-300 dark:hover:border-cyan-700 transition-all">
+                        <div class="w-9 h-9 rounded-xl bg-cyan-100 dark:bg-cyan-950 text-cyan-600 dark:text-cyan-400 flex items-center justify-center text-base shrink-0 font-bold">🤖</div>
+                        <div class="leading-tight min-w-0">
+                            <div class="text-[11px] font-black text-[#07153f] dark:text-white truncate">Trainer AI Enterprise</div>
+                            <div class="text-[9px] text-slate-500 dark:text-slate-400 font-semibold truncate">AI RAG, LLM &amp; Forensik</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Strategic Action Buttons (3 High-Impact CTAs) -->
+                <div class="pt-1 flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center justify-center lg:justify-start gap-2.5 sm:gap-3">
+                    <!-- Primary CTA 1: Konsultasi Proyek (Solid Orange) -->
+                    <a href="https://wa.me/6289695249089?text=Halo%20SmartVerse,%20saya%20tertarik%20konsultasi%20kebutuhan%20solusi%20digital%20dan%20software%20enterprise" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       class="w-full sm:w-auto min-h-[46px] px-5 sm:px-6 py-3 rounded-xl font-black text-xs uppercase tracking-wider shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40 hover:scale-105 active:scale-98 transition-all flex items-center justify-center gap-2 border border-orange-300 text-center"
+                       style="background: linear-gradient(135deg, #fe6000 0%, #ff7a29 100%) !important; color: #ffffff !important;">
+                        <span class="font-black drop-shadow-xs" style="color: #ffffff !important;">💬 Konsultasi Proyek</span>
+                        <svg class="w-4 h-4 shrink-0" style="color: #ffffff !important;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg>
+                    </a>
+
+                    <!-- Primary CTA 2: Undang Narasumber IT/AI (Vibrant Indigo/Blue) -->
+                    <a href="https://wa.me/6289695249089?text=Halo%20SmartVerse,%20saya%20ingin%20mengundang%20Bapak%20Septa%20Ryan%20Hidayat%20sebagai%20narasumber/trainer%20IT%20(Koding/Pemrograman/AI)" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       class="w-full sm:w-auto min-h-[46px] px-5 sm:px-6 py-3 rounded-xl font-black text-xs uppercase tracking-wider shadow-lg shadow-blue-600/25 hover:shadow-blue-600/40 hover:scale-105 active:scale-98 transition-all flex items-center justify-center gap-2 border border-blue-400/30 text-white text-center"
+                       style="background: linear-gradient(135deg, #1d4ed8 0%, #3b82f6 100%) !important; color: #ffffff !important;">
+                        <span class="font-black" style="color: #ffffff !important;">🎤 Undang Narasumber</span>
+                        <svg class="w-4 h-4 shrink-0" style="color: #ffffff !important;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                    </a>
+                    
+                    <!-- Secondary CTA 3: Jelajahi 5 Produk -->
+                    <a href="#flagship-products" 
+                       class="w-full sm:w-auto min-h-[46px] px-5 py-3 rounded-xl font-black text-xs uppercase tracking-wider border-2 border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-200 hover:border-blue-600 hover:text-blue-600 dark:hover:border-cyan-400 dark:hover:text-cyan-400 active:scale-98 transition-all flex items-center justify-center gap-1.5 shadow-xs text-center">
+                        <span>🚀 5 Produk Unggulan</span>
+                        <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Trust Micro Badges (Top-aligned checkmarks, concise text) -->
+                <div class="pt-2 sm:pt-3 grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-3 text-xs text-slate-600 dark:text-slate-400 font-medium">
+                    <div class="flex items-start gap-1.5 text-left">
+                        <span class="text-emerald-500 font-black shrink-0 mt-0.5">✓</span>
+                        <span class="leading-snug">Narasumber BI, Komdigi &amp; Media</span>
+                    </div>
+                    <div class="flex items-start gap-1.5 text-left">
+                        <span class="text-blue-500 font-black shrink-0 mt-0.5">✓</span>
+                        <span class="leading-snug">Trainer Google, AWS &amp; Microsoft</span>
+                    </div>
+                    <div class="flex items-start gap-1.5 text-left">
+                        <span class="text-amber-500 font-black shrink-0 mt-0.5">✓</span>
+                        <span class="leading-snug">Source Code &amp; Standar Enterprise</span>
+                    </div>
+                </div>
+
             </div>
 
         </div>
@@ -291,29 +302,29 @@
 
                         <!-- Special Action for SmartSynth vs others -->
                         @if($prod->slug === 'smartsynth-lab-forensik-ai')
-                            <div class="grid grid-cols-2 gap-2">
+                            <div class="grid grid-cols-2 gap-2 w-full">
                                 <a href="{{ route('products.show', $prod->slug) }}" 
-                                   class="px-3 py-2.5 rounded-xl border border-slate-300 dark:border-slate-600 text-[#07153f] dark:text-white font-bold text-xs hover:bg-slate-100 dark:hover:bg-slate-700 text-center transition-all">
+                                   class="min-h-[44px] px-3 py-2 rounded-xl border border-slate-300 dark:border-slate-600 text-[#07153f] dark:text-white font-bold text-xs hover:bg-slate-100 dark:hover:bg-slate-700 flex items-center justify-center text-center transition-all leading-tight">
                                     Detail Produk
                                 </a>
                                 <a href="{{ asset('forensic/index.html') }}" 
                                    target="_blank" 
-                                   class="px-3 py-2.5 rounded-xl font-black text-xs text-white text-center shadow-md shadow-indigo-500/20 hover:shadow-indigo-500/40 hover:scale-[1.02] active:scale-95 transition-all flex items-center justify-center gap-1 bg-gradient-to-r from-indigo-600 to-cyan-600">
+                                   class="min-h-[44px] px-3 py-2 rounded-xl font-black text-xs text-white text-center shadow-md shadow-indigo-500/20 hover:shadow-indigo-500/40 hover:scale-[1.02] active:scale-95 transition-all flex items-center justify-center gap-1.5 bg-gradient-to-r from-indigo-600 to-cyan-600 leading-tight">
                                     <span>🔬 Buka Lab</span>
-                                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                                    <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
                                 </a>
                             </div>
                         @else
-                            <div class="grid grid-cols-2 gap-2">
+                            <div class="grid grid-cols-2 gap-2 w-full">
                                 <a href="{{ route('products.show', $prod->slug) }}" 
-                                   class="px-3 py-2.5 rounded-xl border border-slate-300 dark:border-slate-600 text-[#07153f] dark:text-white font-bold text-xs hover:bg-slate-100 dark:hover:bg-slate-700 text-center transition-all">
+                                   class="min-h-[44px] px-3 py-2 rounded-xl border border-slate-300 dark:border-slate-600 text-[#07153f] dark:text-white font-bold text-xs hover:bg-slate-100 dark:hover:bg-slate-700 flex items-center justify-center text-center transition-all leading-tight">
                                     Detail Produk
                                 </a>
                                 <a href="{{ $prod->buy_url ?? 'https://wa.me/6289695249089?text=Halo%20SmartVerse,%20saya%20tertarik%20dengan%20produk%20' . urlencode($prod->title) }}" 
                                    target="_blank" 
-                                   class="px-3 py-2.5 rounded-xl font-black text-xs text-white text-center shadow-md shadow-emerald-500/20 hover:shadow-emerald-500/40 hover:scale-[1.02] active:scale-95 transition-all flex items-center justify-center gap-1 bg-emerald-600 hover:bg-emerald-500">
-                                    <span>Konsultasi Demo</span>
-                                    <span>&rarr;</span>
+                                   class="min-h-[44px] px-3 py-2 rounded-xl font-black text-xs text-white text-center shadow-md shadow-emerald-500/20 hover:shadow-emerald-500/40 hover:scale-[1.02] active:scale-95 transition-all flex items-center justify-center gap-1 bg-emerald-600 hover:bg-emerald-500 leading-tight">
+                                    <span>Coba Demo</span>
+                                    <span class="shrink-0">&rarr;</span>
                                 </a>
                             </div>
                         @endif

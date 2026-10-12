@@ -4,6 +4,48 @@
     display: none !important;
 }
 
+/* ═══════════════════════ HERO RESPONSIVE GRID LAYOUT ═══════════════════════ */
+@media (min-width: 1024px) {
+    .hero-grid-container {
+        display: grid;
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+        align-items: center;
+        column-gap: 2.5rem;
+        row-gap: 1.25rem;
+    }
+    .hero-grid-title {
+        grid-column: span 7 / span 7;
+        grid-row: 1;
+    }
+    .hero-grid-photo {
+        grid-column: span 5 / span 5;
+        grid-row: span 2 / span 2;
+        align-self: center;
+    }
+    .hero-grid-body {
+        grid-column: span 7 / span 7;
+        grid-row: 2;
+    }
+}
+@media (max-width: 1023.98px) {
+    .hero-grid-container {
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+    }
+    .hero-grid-title {
+        order: 1;
+    }
+    .hero-grid-photo {
+        order: 2;
+        margin-top: 0.25rem;
+        margin-bottom: 0.5rem;
+    }
+    .hero-grid-body {
+        order: 3;
+    }
+}
+
 @custom-variant dark (&:where(.dark, .dark *));
 
 @source '../views';
