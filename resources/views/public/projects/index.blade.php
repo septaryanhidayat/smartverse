@@ -126,10 +126,10 @@
                     $waProductUrl = "https://wa.me/6289695249089?text=" . urlencode("Halo SmartVerse, saya tertarik konsultasi portofolio sistem: {$displayTitle}");
                 @endphp
 
-                <div class="project-card-item w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)] xl:w-[calc(25%-1.25rem)] max-w-sm bg-white dark:bg-slate-900 rounded-2xl sm:rounded-3xl overflow-hidden border border-slate-200/90 dark:border-slate-800 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group">
+                <div class="project-card-item w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)] xl:w-[calc(25%-1.25rem)] max-w-sm bg-white dark:bg-slate-900 rounded-2xl sm:rounded-3xl overflow-hidden border border-slate-200/90 dark:border-slate-800 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between h-full group">
                     
                     <!-- Top Visual Image Container with Interactive Click to Open Gallery Slider (Auto Fit Lebar, Tidak Terpotong) -->
-                    <div>
+                    <div class="flex-1 flex flex-col">
                         <div class="aspect-video overflow-hidden relative border-b border-slate-100 dark:border-slate-800 bg-slate-950 cursor-pointer group/img"
                              @click="openModal('{{ addslashes($displayTitle) }}', '{{ addslashes($project->client_name) }}', '{{ $project->app_type ?? 'web' }}', '{{ $waProductUrl }}', {{ $slidesJson }})"
                              title="Klik untuk membuka preview screenshot antarmuka">
@@ -156,8 +156,8 @@
                             </div>
 
                             <!-- Floating Badges Top -->
-                            <div class="absolute top-2.5 inset-x-2.5 flex items-center justify-between pointer-events-none z-10">
-                                <span class="px-2.5 py-0.5 rounded-full bg-white/95 dark:bg-slate-900/95 backdrop-blur-md text-blue-700 dark:text-blue-400 font-extrabold text-[10px] border border-blue-100 dark:border-blue-900/60 shadow-xs line-clamp-1 max-w-[65%]">
+                            <div class="absolute top-2.5 inset-x-2.5 flex items-center justify-between pointer-events-none z-10 gap-2">
+                                <span class="px-2.5 py-0.5 rounded-full bg-white/95 dark:bg-slate-900/95 backdrop-blur-md text-blue-700 dark:text-blue-400 font-extrabold text-[10px] border border-blue-100 dark:border-blue-900/60 shadow-xs">
                                     {{ $badgeCategory }}
                                 </span>
                                 <span class="px-2 py-0.5 rounded-full bg-emerald-600/90 text-white font-bold text-[9px] shadow-xs backdrop-blur-sm shrink-0">
@@ -166,8 +166,8 @@
                             </div>
 
                             <!-- Client Badge Bottom Left & Layar Count Bottom Right -->
-                            <div class="absolute bottom-2.5 inset-x-2.5 flex items-center justify-between pointer-events-none z-10">
-                                <span class="text-[10px] font-semibold text-white/95 drop-shadow-md flex items-center gap-1 bg-black/50 backdrop-blur-md px-2 py-0.5 rounded-lg border border-white/15 line-clamp-1 max-w-[70%]">
+                            <div class="absolute bottom-2.5 inset-x-2.5 flex items-center justify-between pointer-events-none z-10 gap-2">
+                                <span class="text-[10px] font-semibold text-white/95 drop-shadow-md flex items-center gap-1 bg-black/60 backdrop-blur-md px-2 py-0.5 rounded-lg border border-white/20">
                                     <span>📍</span> <span>{{ $project->client_name }}</span>
                                 </span>
                                 <span class="text-[9px] font-bold text-white bg-black/70 backdrop-blur-md px-2 py-0.5 rounded-lg border border-white/20 flex items-center gap-1 shadow-xs shrink-0">
@@ -176,37 +176,37 @@
                             </div>
                         </div>
 
-                        <!-- Card Content Body (Versi Lama yang Rapi & Lengkap Sesuai Permintaan) -->
-                        <div class="p-4 sm:p-5 space-y-3">
+                        <!-- Card Content Body (Teks Lengkap & Rapi Tanpa Terpotong) -->
+                        <div class="p-4 sm:p-5 space-y-3 flex-1 flex flex-col justify-between">
                             
-                            <div class="space-y-1">
-                                <h3 class="text-sm sm:text-base font-extrabold text-[#07153f] dark:text-white group-hover:text-[#3E5CE7] dark:group-hover:text-blue-400 transition-colors leading-snug line-clamp-1" title="{{ $displayTitle }}">
+                            <div class="space-y-1.5">
+                                <h3 class="text-sm sm:text-base font-extrabold text-[#07153f] dark:text-white group-hover:text-[#3E5CE7] dark:group-hover:text-blue-400 transition-colors leading-snug" title="{{ $displayTitle }}">
                                     {{ $displayTitle }}
                                 </h3>
-                                <p class="text-[11px] text-slate-600 dark:text-slate-300 leading-relaxed font-normal line-clamp-2">
+                                <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
                                     {{ $displaySubtitle }}
                                 </p>
                             </div>
 
-                            <!-- Feature Checklist Highlights (Versi Lama) -->
-                            <div class="space-y-1.5 pt-2 border-t border-slate-100 dark:border-slate-800/80">
-                                <ul class="space-y-1 text-[11px] text-slate-700 dark:text-slate-300">
+                            <div class="space-y-2 pt-2 border-t border-slate-100 dark:border-slate-800/80">
+                                <!-- Feature Checklist Highlights (Teks Lengkap) -->
+                                <ul class="space-y-1.5 text-[11px] text-slate-700 dark:text-slate-300">
                                     @foreach($keyFeatures as $feat)
-                                        <li class="flex items-start gap-1.5 line-clamp-1">
-                                            <span class="text-emerald-500 font-bold shrink-0">✓</span>
-                                            <span class="leading-tight truncate">{{ $feat }}</span>
+                                        <li class="flex items-start gap-1.5">
+                                            <span class="text-emerald-500 font-bold shrink-0 mt-0.5">✓</span>
+                                            <span class="leading-snug">{{ $feat }}</span>
                                         </li>
                                     @endforeach
                                 </ul>
-                            </div>
 
-                            <!-- Tech Stack Pills -->
-                            <div class="flex flex-wrap gap-1 pt-1">
-                                @foreach($techPills as $tp)
-                                    <span class="px-2 py-0.5 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 font-medium text-[9px] mono">
-                                        {{ $tp }}
-                                    </span>
-                                @endforeach
+                                <!-- Tech Stack Pills -->
+                                <div class="flex flex-wrap gap-1 pt-1">
+                                    @foreach($techPills as $tp)
+                                        <span class="px-2 py-0.5 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 font-medium text-[9px] mono">
+                                            {{ $tp }}
+                                        </span>
+                                    @endforeach
+                                </div>
                             </div>
                         </div>
                     </div>
