@@ -31,40 +31,62 @@
                 <!-- Main Dynamic Headline -->
                 <h1 class="text-2xl sm:text-4xl md:text-5xl lg:text-5xl font-black tracking-tight text-[#07153f] dark:text-white leading-[1.12] max-w-2xl mx-auto lg:mx-0">
                     {{ $settings['hero_title_1'] ?? $siteSettings['hero_title_1'] ?? 'SMARTVERSE.ID' }}
-                    <span class="block text-lg sm:text-2xl md:text-3xl font-extrabold text-blue-700 dark:text-blue-400 pt-1.5 leading-snug tracking-normal">
+                    <span class="block text-xl sm:text-3xl md:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-600 to-orange-500 dark:from-blue-400 dark:via-cyan-300 dark:to-orange-400 pt-1.5 sm:pt-2 leading-snug tracking-normal">
                         {{ $settings['hero_title_2'] ?? $siteSettings['hero_title_2'] ?? 'Solusi Digital Enterprise & Layanan Narasumber Ahli IT / AI' }}
                     </span>
                 </h1>
             </div>
 
-            <!-- Section B: Keynote Speaker Stage & Showcase Card (Photo Hero) -->
+            <!-- Section B: Keynote Speaker Stage & Showcase Card (Photo Hero inspired by pwiba.or.id) -->
             <div class="hero-grid-photo relative flex flex-col items-center justify-center reveal-on-scroll">
                 <div class="relative w-full max-w-sm sm:max-w-md mx-auto">
                     
-                    <!-- Soft Ambient Glow Disk Behind Stage -->
-                    <div class="absolute -inset-3 bg-gradient-to-tr from-cyan-500/25 via-blue-600/20 to-indigo-600/30 rounded-[44px] blur-3xl pointer-events-none" aria-hidden="true"></div>
+                    <!-- Ambient Glow Disk Behind Stage (Inspired by pwiba.or.id) -->
+                    <div class="absolute -inset-3 bg-gradient-to-tr from-cyan-500/25 via-blue-600/20 to-orange-400/20 rounded-[44px] blur-3xl pointer-events-none" aria-hidden="true"></div>
 
-                    <!-- Speaker & Certifications Pill Bar (Symmetrical & Centered, Zero Overlap) -->
-                    <div class="flex flex-wrap items-center justify-center gap-2 mb-2.5 relative z-30">
-                        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border border-blue-200/90 dark:border-blue-800 text-blue-700 dark:text-blue-300 text-[10.5px] font-black shadow-xs">
-                            <span>🎤</span> <span>Narasumber &amp; Speaker IT</span>
-                        </span>
-                        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border border-emerald-200/90 dark:border-emerald-800 text-emerald-700 dark:text-emerald-300 text-[10.5px] font-black shadow-xs">
-                            <span>🏆</span> <span>Google &bull; AWS &bull; Red Hat</span>
-                        </span>
+                    <!-- 2 Credential Badges (Konsep Badge Lengkap yang Rapi, Proporsional & Tanpa Bertumpuk) -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 w-full mb-3 relative z-30">
+                        <!-- Badge 1: Narasumber & Speaker IT -->
+                        <div class="bg-white/95 dark:bg-slate-900/95 backdrop-blur-md p-2.5 sm:p-3 rounded-2xl shadow-md border border-slate-200/90 dark:border-slate-800 flex items-center gap-2.5 hover:border-blue-400 dark:hover:border-blue-600 hover:shadow-lg transition-all">
+                            <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-blue-100 dark:bg-blue-950 text-blue-600 dark:text-blue-400 flex items-center justify-center text-sm font-black shadow-2xs shrink-0">🎤</div>
+                            <div class="text-left min-w-0">
+                                <div class="text-[11px] sm:text-xs font-black text-[#07153f] dark:text-white leading-tight">Narasumber &amp; Speaker IT</div>
+                                <div class="text-[9px] sm:text-[9.5px] text-slate-500 dark:text-slate-400 font-semibold mt-0.5 leading-snug">Koding &bull; Pemrograman &bull; AI</div>
+                            </div>
+                        </div>
+
+                        <!-- Badge 2: Certified Professional -->
+                        <div class="bg-white/95 dark:bg-slate-900/95 backdrop-blur-md p-2.5 sm:p-3 rounded-2xl shadow-md border border-slate-200/90 dark:border-slate-800 flex items-center gap-2.5 hover:border-emerald-400 dark:hover:border-emerald-600 hover:shadow-lg transition-all">
+                            <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-emerald-100 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-sm font-black shadow-2xs shrink-0">🏆</div>
+                            <div class="text-left min-w-0">
+                                <div class="text-[11px] sm:text-xs font-black text-emerald-600 dark:text-emerald-400 leading-tight">Certified Professional</div>
+                                <div class="text-[9px] sm:text-[9.5px] text-slate-500 dark:text-slate-400 font-semibold mt-0.5 leading-snug">Google &bull; Microsoft &bull; AWS &bull; Red Hat</div>
+                            </div>
+                        </div>
                     </div>
 
-                    <!-- Keynote Arch Showcase Card -->
-                    <div class="relative rounded-[36px] sm:rounded-[38px] bg-gradient-to-b from-slate-100/90 via-blue-50/50 to-slate-200/80 dark:from-slate-900/90 dark:via-[#07153f]/60 dark:to-slate-950 border border-slate-200/90 dark:border-blue-500/30 shadow-2xl overflow-hidden pt-6 sm:pt-8 px-3 sm:px-6 flex flex-col items-center justify-end">
+                    <!-- Keynote Arch Showcase Card (Tatanan Frame Rapi Terinspirasi pwiba.or.id) -->
+                    <div class="relative rounded-[32px] sm:rounded-[36px] bg-gradient-to-b from-slate-100/90 via-blue-50/50 to-slate-200/80 dark:from-slate-900/90 dark:via-[#07153f]/60 dark:to-slate-950 border border-slate-200/90 dark:border-blue-500/30 shadow-2xl overflow-hidden pt-8 sm:pt-9 px-3 sm:px-6 flex flex-col items-center justify-end">
                         
+                        <!-- Top Official Tag Pills (Seperti pwiba.or.id) -->
+                        <div class="absolute top-3 inset-x-4 z-20 flex items-center justify-between pointer-events-none">
+                            <div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-slate-950/70 dark:bg-black/60 backdrop-blur-md border border-white/20 text-white shadow-md">
+                                <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span>
+                                <span class="text-[9.5px] font-black tracking-wider uppercase">SmartVerseID</span>
+                            </div>
+                            <div class="px-2.5 py-1 rounded-full text-[9.5px] font-black bg-blue-600 text-white shadow-md">
+                                Tech Lead &amp; Speaker
+                            </div>
+                        </div>
+
                         <!-- Tech Grid Lines & Watermark -->
                         <div class="absolute inset-0 bg-[radial-gradient(#3b82f6_1px,transparent_1px)] [background-size:16px_16px] opacity-25 pointer-events-none" aria-hidden="true"></div>
-                        <div class="absolute top-3 right-4 font-mono text-[9px] font-bold text-blue-500/40 dark:text-cyan-400/30 select-none pointer-events-none tracking-widest">
+                        <div class="absolute top-10 right-4 font-mono text-[9px] font-bold text-blue-500/30 dark:text-cyan-400/20 select-none pointer-events-none tracking-widest">
                             &lt;AI_ARCHITECTURE /&gt;
                         </div>
 
                         <!-- Speaker Photo with Gentle Bottom Feather/Fade -->
-                        <div class="relative w-full flex justify-center items-end z-10 -mb-5 sm:-mb-6">
+                        <div class="relative w-full flex justify-center items-end z-10 -mb-4 sm:-mb-5">
                             @php
                                 $heroPhoto = $settings['trainer_avatar'] ?? null;
                                 if (empty($heroPhoto) || str_contains($heroPhoto, 'Insight-Talks-Komdigi')) {
@@ -78,7 +100,7 @@
                                  decoding="async" 
                                  width="600" 
                                  height="800" 
-                                 class="relative w-auto max-h-[290px] sm:max-h-[350px] lg:max-h-[380px] object-contain drop-shadow-[0_20px_35px_rgba(7,21,63,0.35)] dark:drop-shadow-[0_20px_45px_rgba(6,182,212,0.3)] hover:scale-[1.02] transition-transform duration-500 select-none" />
+                                 class="relative w-auto max-h-[290px] sm:max-h-[330px] lg:max-h-[360px] object-contain drop-shadow-[0_20px_35px_rgba(7,21,63,0.35)] dark:drop-shadow-[0_20px_45px_rgba(6,182,212,0.3)] hover:scale-[1.02] transition-transform duration-500 select-none" />
                         </div>
 
                         <!-- Executive Presenter Console / Pedestal Bar (Rata Tengah di Mobile & Symmetrical) -->
@@ -92,7 +114,7 @@
                                         {{ $settings['founder_title'] ?? 'Founder SmartVerseID' }}
                                     </p>
                                 </div>
-                                <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-600 dark:text-emerald-400 text-[10px] font-bold shrink-0 mt-0.5 sm:mt-0">
+                                <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-600 dark:text-emerald-400 text-[10px] font-bold shrink-0 mt-0.5 sm:mt-0 shadow-2xs">
                                     <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
                                     <span>Tersedia Diundang</span>
                                 </span>
@@ -100,9 +122,9 @@
 
                             <!-- Competencies Chips (Rata Tengah di Mobile, Rapi & Symmetrical) -->
                             <div class="flex flex-wrap items-center justify-center sm:justify-start gap-1.5 pt-2 border-t border-slate-100 dark:border-slate-800 text-[10px] font-bold">
-                                <span class="px-2.5 py-0.5 rounded-md bg-blue-50 dark:bg-blue-950/70 text-blue-700 dark:text-blue-300 border border-blue-200/60 dark:border-blue-800/60">💻 Pemrograman</span>
-                                <span class="px-2.5 py-0.5 rounded-md bg-purple-50 dark:bg-purple-950/70 text-purple-700 dark:text-purple-300 border border-purple-200/60 dark:border-purple-800/60">🤖 AI &amp; Otomasi</span>
-                                <span class="px-2.5 py-0.5 rounded-md bg-cyan-50 dark:bg-cyan-950/70 text-cyan-700 dark:text-cyan-300 border border-cyan-200/60 dark:border-cyan-800/60">🛡️ Forensik AI</span>
+                                <span class="px-2.5 py-0.5 rounded-md bg-blue-50 dark:bg-blue-950/70 text-blue-700 dark:text-blue-300 border border-blue-200/60 dark:border-blue-800/60 shadow-2xs">💻 Pemrograman</span>
+                                <span class="px-2.5 py-0.5 rounded-md bg-purple-50 dark:bg-purple-950/70 text-purple-700 dark:text-purple-300 border border-purple-200/60 dark:border-purple-800/60 shadow-2xs">🤖 AI &amp; Otomasi</span>
+                                <span class="px-2.5 py-0.5 rounded-md bg-cyan-50 dark:bg-cyan-950/70 text-cyan-700 dark:text-cyan-300 border border-cyan-200/60 dark:border-cyan-800/60 shadow-2xs">🛡️ Forensik AI</span>
                             </div>
                         </div>
 
