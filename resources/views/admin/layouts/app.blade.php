@@ -102,12 +102,17 @@
         ::-webkit-scrollbar-thumb:hover {
             background: #334155;
         }
+        /* Alpine Cloak */
+        [x-cloak] {
+            display: none !important;
+        }
     </style>
 </head>
 <body class="bg-[#f1f5f9] text-slate-800 min-h-screen flex selection:bg-[#3E5CE7] selection:text-white antialiased" x-data="{ sidebarOpen: false }">
 
     <!-- Mobile Sidebar Backdrop -->
     <div x-show="sidebarOpen" 
+         x-cloak
          @click="sidebarOpen = false" 
          class="fixed inset-0 bg-slate-950/60 backdrop-blur-sm z-40 lg:hidden"
          x-transition.opacity></div>

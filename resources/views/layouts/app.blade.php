@@ -91,6 +91,11 @@
     @endphp
 
     <style>
+        /* Alpine.js FOUC Shield (Prevents Flash of Mobile Menu / Modals on Page Reload) */
+        [x-cloak] {
+            display: none !important;
+        }
+
         @font-face {
             font-family: 'Poppins-Fallback';
             src: local('Segoe UI'), local('Arial'), local('Helvetica');
@@ -364,7 +369,7 @@
                         style="color: var(--text);">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path x-show="!open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6h16M4 12h16M4 18h16" />
-                        <path x-show="open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12" />
+                        <path x-show="open" x-cloak stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12" />
                     </svg>
                 </button>
             </div>
@@ -372,6 +377,7 @@
 
         <!-- Mobile Drawer Menu -->
         <div x-show="open" 
+             x-cloak
              x-transition:enter="transition ease-out duration-200"
              x-transition:enter-start="opacity-0 -translate-y-2"
              x-transition:enter-end="opacity-100 translate-y-0"
@@ -597,6 +603,7 @@
         
         <!-- Back to Top Button -->
         <button x-show="showTop" 
+                x-cloak
                 x-transition 
                 @click="window.scrollTo({ top: 0, behavior: 'smooth' })" 
                 type="button" 
