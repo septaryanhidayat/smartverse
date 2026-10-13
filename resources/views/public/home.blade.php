@@ -132,8 +132,8 @@
                     <!-- Ambient Glow Behind Card -->
                     <div class="absolute inset-x-2 top-8 bottom-2 bg-gradient-to-tr from-cyan-500/20 via-blue-600/15 to-orange-400/15 rounded-[44px] blur-3xl pointer-events-none" aria-hidden="true"></div>
 
-                    <!-- Floating Badge 1: Top-Left (Konsep Foto 2 Asli) -->
-                    <div class="absolute top-0 left-0 z-30 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md px-3 sm:px-3.5 py-2 sm:py-2.5 rounded-2xl shadow-xl border border-slate-200/90 dark:border-slate-800 flex items-center gap-2.5 max-w-[210px] sm:max-w-[225px] transition-transform hover:scale-105 pointer-events-auto">
+                    <!-- Floating Badge 1: Top-Left (Dinaikkan sedikit ke atas agar tidak memotong foto) -->
+                    <div class="absolute -top-3 sm:-top-4.5 left-0 sm:-left-2 z-30 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md px-3 sm:px-3.5 py-2 sm:py-2.5 rounded-2xl shadow-xl border border-slate-200/90 dark:border-slate-800 flex items-center gap-2.5 max-w-[210px] sm:max-w-[225px] transition-transform hover:scale-105 pointer-events-auto">
                         <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-blue-100 dark:bg-blue-950 text-blue-600 dark:text-blue-400 flex items-center justify-center text-sm font-black shadow-2xs shrink-0">🎤</div>
                         <div class="text-left min-w-0">
                             <div class="text-[11px] sm:text-xs font-black text-[#07153f] dark:text-white leading-tight">Narasumber &amp; Speaker IT</div>
@@ -141,8 +141,8 @@
                         </div>
                     </div>
 
-                    <!-- Floating Badge 2: Top-Right (Konsep Foto 2 Asli - Vertically Staggered Below Badge 1) -->
-                    <div class="absolute top-10 sm:top-11 right-0 z-30 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md px-3 sm:px-3.5 py-2 sm:py-2.5 rounded-2xl shadow-xl border border-slate-200/90 dark:border-slate-800 flex items-center gap-2.5 max-w-[215px] sm:max-w-[235px] transition-transform hover:scale-105 pointer-events-auto">
+                    <!-- Floating Badge 2: Top-Right (Digeser sedikit ke kanan agar tidak menutupi foto) -->
+                    <div class="absolute top-8 sm:top-9 -right-3 sm:-right-6 lg:-right-7 z-30 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md px-3 sm:px-3.5 py-2 sm:py-2.5 rounded-2xl shadow-xl border border-slate-200/90 dark:border-slate-800 flex items-center gap-2.5 max-w-[215px] sm:max-w-[235px] transition-transform hover:scale-105 pointer-events-auto">
                         <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-emerald-100 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-sm font-black shadow-2xs shrink-0">🏆</div>
                         <div class="text-left min-w-0">
                             <div class="text-[11px] sm:text-xs font-black text-emerald-600 dark:text-emerald-400 leading-tight">Certified Professional</div>
