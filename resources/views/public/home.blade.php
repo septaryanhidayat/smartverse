@@ -132,32 +132,32 @@
                     <!-- Ambient Glow Behind Card -->
                     <div class="absolute inset-x-2 top-8 bottom-2 bg-gradient-to-tr from-cyan-500/20 via-blue-600/15 to-orange-400/15 rounded-[44px] blur-3xl pointer-events-none" aria-hidden="true"></div>
 
-                    <!-- Floating Badge 1: Top-Left (Dinaikkan sedikit ke atas agar tidak memotong foto) -->
-                    <div class="absolute -top-3 sm:-top-4.5 left-0 sm:-left-2 z-30 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md px-3 sm:px-3.5 py-2 sm:py-2.5 rounded-2xl shadow-xl border border-slate-200/90 dark:border-slate-800 flex items-center gap-2.5 max-w-[210px] sm:max-w-[225px] transition-transform hover:scale-105 pointer-events-auto">
-                        <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-blue-100 dark:bg-blue-950 text-blue-600 dark:text-blue-400 flex items-center justify-center text-sm font-black shadow-2xs shrink-0">🎤</div>
+                    <!-- Floating Badge 1: Top-Left (Kompak & Elegan, Tidak Menutupi Foto) -->
+                    <div class="absolute -top-2.5 sm:-top-3.5 left-1 sm:left-0 z-30 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md px-2.5 py-1.5 sm:px-3 sm:py-2 rounded-xl sm:rounded-2xl shadow-lg border border-slate-200/90 dark:border-slate-800 flex items-center gap-2 max-w-[155px] sm:max-w-[185px] transition-transform hover:scale-105 pointer-events-auto">
+                        <div class="w-6 h-6 sm:w-7 sm:h-7 rounded-lg bg-blue-100 dark:bg-blue-950 text-blue-600 dark:text-blue-400 flex items-center justify-center text-xs font-black shadow-2xs shrink-0">🎤</div>
                         <div class="text-left min-w-0">
-                            <div class="text-[11px] sm:text-xs font-black text-[#07153f] dark:text-white leading-tight">Narasumber &amp; Speaker IT</div>
-                            <div class="text-[9px] sm:text-[9.5px] text-slate-500 dark:text-slate-400 font-semibold mt-0.5 leading-tight truncate">Koding &bull; Pemrograman &bull; AI</div>
+                            <div class="text-[10px] sm:text-[11px] font-black text-[#07153f] dark:text-white leading-tight truncate">Narasumber &amp; Speaker IT</div>
+                            <div class="text-[8px] sm:text-[8.5px] text-slate-500 dark:text-slate-400 font-semibold leading-tight truncate">Koding &bull; Pemrograman &bull; AI</div>
                         </div>
                     </div>
 
-                    <!-- Floating Badge 2: Top-Right (Digeser sedikit ke kanan agar tidak menutupi foto) -->
-                    <div class="absolute top-8 sm:top-9 -right-3 sm:-right-6 lg:-right-7 z-30 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md px-3 sm:px-3.5 py-2 sm:py-2.5 rounded-2xl shadow-xl border border-slate-200/90 dark:border-slate-800 flex items-center gap-2.5 max-w-[215px] sm:max-w-[235px] transition-transform hover:scale-105 pointer-events-auto">
-                        <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-emerald-100 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-sm font-black shadow-2xs shrink-0">🏆</div>
+                    <!-- Floating Badge 2: Top-Right (Kompak & Geser Kanan, Bebas Dari Wajah Foto) -->
+                    <div class="absolute top-5 sm:top-6 -right-1 sm:-right-4 lg:-right-5 z-30 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md px-2.5 py-1.5 sm:px-3 sm:py-2 rounded-xl sm:rounded-2xl shadow-lg border border-slate-200/90 dark:border-slate-800 flex items-center gap-2 max-w-[160px] sm:max-w-[195px] transition-transform hover:scale-105 pointer-events-auto">
+                        <div class="w-6 h-6 sm:w-7 sm:h-7 rounded-xl bg-emerald-100 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-xs font-black shadow-2xs shrink-0">🏆</div>
                         <div class="text-left min-w-0">
-                            <div class="text-[11px] sm:text-xs font-black text-emerald-600 dark:text-emerald-400 leading-tight">Certified Professional</div>
-                            <div class="text-[9px] sm:text-[9.5px] text-slate-500 dark:text-slate-400 font-semibold mt-0.5 leading-tight truncate">Google &bull; Microsoft &bull; AWS &bull; Red Hat</div>
+                            <div class="text-[10px] sm:text-[11px] font-black text-emerald-600 dark:text-emerald-400 leading-tight truncate">Certified Professional</div>
+                            <div class="text-[8px] sm:text-[8.5px] text-slate-500 dark:text-slate-400 font-semibold leading-tight truncate">Google &bull; Microsoft &bull; AWS &bull; Red Hat</div>
                         </div>
                     </div>
 
                     <!-- Keynote Arch Showcase Card (Frame Bersih, Elegan Sesuai Foto 2) -->
-                    <div class="relative rounded-[32px] sm:rounded-[36px] bg-gradient-to-b from-slate-100/90 via-blue-50/50 to-slate-200/80 dark:from-slate-900/90 dark:via-[#07153f]/60 dark:to-slate-950 border border-slate-200/90 dark:border-blue-500/30 shadow-2xl overflow-hidden pt-20 sm:pt-24 px-3 sm:px-5 flex flex-col items-center justify-end">
+                    <div class="relative rounded-[32px] sm:rounded-[36px] bg-gradient-to-b from-slate-100/90 via-blue-50/50 to-slate-200/80 dark:from-slate-900/90 dark:via-[#07153f]/60 dark:to-slate-950 border border-slate-200/90 dark:border-blue-500/30 shadow-2xl overflow-hidden pt-12 sm:pt-14 px-3 sm:px-5 flex flex-col items-center justify-end">
                         
                         <!-- Tech Dot Grid Pattern -->
                         <div class="absolute inset-0 bg-[radial-gradient(#3b82f6_1.2px,transparent_1.2px)] [background-size:16px_16px] opacity-25 pointer-events-none" aria-hidden="true"></div>
 
-                        <!-- Speaker Photo (Balanced Proportions, Head sits cleanly below badges) -->
-                        <div class="relative w-full flex justify-center items-end z-10 -mb-3 sm:-mb-4">
+                        <!-- Speaker Photo (Foto Lebih Besar, Bagian Bawah Dipotong di Belakang Pedestal Bar) -->
+                        <div class="relative w-full flex justify-center items-end z-10 -mb-8 sm:-mb-10">
                             @php
                                 $heroPhoto = $settings['trainer_avatar'] ?? null;
                                 if (empty($heroPhoto) || str_contains($heroPhoto, 'Insight-Talks-Komdigi')) {
@@ -171,7 +171,7 @@
                                  decoding="async" 
                                  width="600" 
                                  height="800" 
-                                 class="relative w-auto max-h-[260px] sm:max-h-[285px] lg:max-h-[300px] object-contain drop-shadow-[0_20px_35px_rgba(7,21,63,0.35)] dark:drop-shadow-[0_20px_45px_rgba(6,182,212,0.3)] hover:scale-[1.02] transition-transform duration-500 select-none" />
+                                 class="relative w-auto max-h-[305px] sm:max-h-[335px] lg:max-h-[355px] object-contain drop-shadow-[0_20px_35px_rgba(7,21,63,0.35)] dark:drop-shadow-[0_20px_45px_rgba(6,182,212,0.3)] hover:scale-[1.02] transition-transform duration-500 select-none" />
                         </div>
 
                         <!-- Executive Presenter Console / Pedestal Bar (Foto 2) -->
