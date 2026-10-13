@@ -97,7 +97,6 @@
         }
 
         /* ═══════════════════════ HERO RESPONSIVE GRID LAYOUT ═══════════════════════ */
-        /* ═══════════════════════ HERO RESPONSIVE GRID LAYOUT ═══════════════════════ */
         @media (min-width: 1024px) {
             .hero-grid-container {
                 display: grid;
