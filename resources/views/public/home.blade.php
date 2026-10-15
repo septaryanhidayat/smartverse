@@ -125,39 +125,39 @@
                 </div>
             </div>
 
-            <!-- Section B: Keynote Speaker Stage & Showcase Card (Photo Hero - Simetris, Kompak & Proporsional) -->
+            <!-- Section B: Keynote Speaker Stage & Showcase Card (Photo Hero - Proporsional & Seimbang dengan Banner Kiri) -->
             <div class="hero-grid-photo relative flex flex-col items-center justify-center reveal-on-scroll">
-                <div class="relative w-full max-w-[310px] sm:max-w-[325px] lg:max-w-[335px] mx-auto pt-2 pb-0 px-1 sm:px-2">
+                <div class="relative w-full max-w-[340px] sm:max-w-[360px] lg:max-w-[375px] mx-auto pt-4 pb-1 px-1 sm:px-2">
                     
                     <!-- Ambient Glow Behind Card -->
-                    <div class="absolute inset-x-2 top-4 bottom-2 bg-gradient-to-tr from-cyan-500/20 via-blue-600/15 to-orange-400/15 rounded-[40px] blur-3xl pointer-events-none" aria-hidden="true"></div>
+                    <div class="absolute inset-x-2 top-4 bottom-2 bg-gradient-to-tr from-cyan-500/20 via-blue-600/15 to-orange-400/15 rounded-[44px] blur-3xl pointer-events-none" aria-hidden="true"></div>
 
-                    <!-- Floating Badge 1: Top-Left (Ramping, Teks Lengkap Rapi & Tidak Memotong) -->
-                    <div class="hero-badge-left absolute top-0 sm:-top-1 -left-1 sm:-left-3 lg:-left-5 z-30 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-xl shadow-md border border-slate-200/90 dark:border-slate-800 flex items-center gap-1.5 sm:gap-2 transition-transform hover:scale-105 pointer-events-auto">
-                        <div class="w-[18px] h-[18px] sm:w-5 sm:h-5 rounded-lg bg-blue-100 dark:bg-blue-950 text-blue-600 dark:text-blue-400 flex items-center justify-center text-[9px] sm:text-[10px] font-black shadow-2xs shrink-0">🎤</div>
+                    <!-- Floating Badge 1: Top-Left (Ramping & Proporsional) -->
+                    <div class="hero-badge-left absolute top-0 sm:-top-1 left-0 sm:-left-2 lg:-left-3 z-30 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-xl shadow-md border border-slate-200/90 dark:border-slate-800 flex items-center gap-1.5 sm:gap-2 transition-transform hover:scale-105 pointer-events-auto">
+                        <div class="w-5 h-5 rounded-lg bg-blue-100 dark:bg-blue-950 text-blue-600 dark:text-blue-400 flex items-center justify-center text-[10px] font-black shadow-2xs shrink-0">🎤</div>
                         <div class="text-left">
-                            <div class="text-[8.5px] sm:text-[9.5px] font-black text-[#07153f] dark:text-white leading-tight whitespace-nowrap">Narasumber &amp; Speaker IT</div>
-                            <div class="text-[7px] sm:text-[7.5px] text-slate-500 dark:text-slate-400 font-semibold leading-tight whitespace-nowrap">Koding &bull; Pemrograman &bull; AI</div>
+                            <div class="text-[9px] sm:text-[10px] font-black text-[#07153f] dark:text-white leading-tight whitespace-nowrap">Narasumber &amp; Speaker IT</div>
+                            <div class="text-[7.5px] sm:text-[8px] text-slate-500 dark:text-slate-400 font-semibold leading-tight whitespace-nowrap">Koding &bull; Pemrograman &bull; AI</div>
                         </div>
                     </div>
 
                     <!-- Floating Badge 2: Right / Below Top-Left (Geser ke Kanan & Sedikit ke Bawah Bebas dari Foto & Badge 1) -->
-                    <div class="hero-badge-right absolute top-9 sm:top-11 lg:top-12 -right-2 sm:-right-5 lg:-right-7 xl:-right-8 z-30 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-xl shadow-md border border-slate-200/90 dark:border-slate-800 flex items-center gap-1.5 sm:gap-2 transition-transform hover:scale-105 pointer-events-auto">
-                        <div class="w-[18px] h-[18px] sm:w-5 sm:h-5 rounded-lg bg-emerald-100 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-[9px] sm:text-[10px] font-black shadow-2xs shrink-0">🏆</div>
+                    <div class="hero-badge-right absolute top-10 sm:top-12 lg:top-13 -right-2 sm:-right-4 lg:-right-6 xl:-right-7 z-30 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-xl shadow-md border border-slate-200/90 dark:border-slate-800 flex items-center gap-1.5 sm:gap-2 transition-transform hover:scale-105 pointer-events-auto">
+                        <div class="w-5 h-5 rounded-lg bg-emerald-100 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-[10px] font-black shadow-2xs shrink-0">🏆</div>
                         <div class="text-left">
-                            <div class="text-[8.5px] sm:text-[9.5px] font-black text-emerald-600 dark:text-emerald-400 leading-tight whitespace-nowrap">Certified Professional</div>
-                            <div class="text-[7px] sm:text-[7.5px] text-slate-500 dark:text-slate-400 font-semibold leading-tight whitespace-nowrap">Google &bull; Microsoft &bull; AWS &bull; Red Hat</div>
+                            <div class="text-[9px] sm:text-[10px] font-black text-emerald-600 dark:text-emerald-400 leading-tight whitespace-nowrap">Certified Professional</div>
+                            <div class="text-[7.5px] sm:text-[8px] text-slate-500 dark:text-slate-400 font-semibold leading-tight whitespace-nowrap">Google &bull; Microsoft &bull; AWS &bull; Red Hat</div>
                         </div>
                     </div>
 
                     <!-- Keynote Arch Showcase Card (Frame Proporsional & Seimbang Batas Atas-Bawah) -->
-                    <div class="relative rounded-[24px] sm:rounded-[28px] bg-gradient-to-b from-slate-100/90 via-blue-50/50 to-slate-200/80 dark:from-slate-900/90 dark:via-[#07153f]/60 dark:to-slate-950 border border-slate-200/90 dark:border-blue-500/30 shadow-2xl overflow-hidden pt-6 sm:pt-7 px-2.5 sm:px-3 flex flex-col items-center justify-end">
+                    <div class="relative rounded-[28px] sm:rounded-[32px] bg-gradient-to-b from-slate-100/90 via-blue-50/50 to-slate-200/80 dark:from-slate-900/90 dark:via-[#07153f]/60 dark:to-slate-950 border border-slate-200/90 dark:border-blue-500/30 shadow-2xl overflow-hidden pt-9 sm:pt-10 px-3 sm:px-4 flex flex-col items-center justify-end">
                         
                         <!-- Tech Dot Grid Pattern -->
                         <div class="absolute inset-0 bg-[radial-gradient(#3b82f6_1.2px,transparent_1.2px)] [background-size:16px_16px] opacity-25 pointer-events-none" aria-hidden="true"></div>
 
-                        <!-- Speaker Photo (Proporsional & Tidak Terlalu Besar, Terpotong Rapi di Belakang Pedestal) -->
-                        <div class="relative w-full flex justify-center items-end z-10 -mb-5 sm:-mb-6">
+                        <!-- Speaker Photo (Proporsional & Seimbang dengan Banner Kiri) -->
+                        <div class="relative w-full flex justify-center items-end z-10 -mb-6 sm:-mb-7">
                             @php
                                 $heroPhoto = $settings['trainer_avatar'] ?? null;
                                 if (empty($heroPhoto) || str_contains($heroPhoto, 'Insight-Talks-Komdigi')) {
@@ -171,31 +171,31 @@
                                  decoding="async" 
                                  width="600" 
                                  height="800" 
-                                 class="hero-speaker-photo relative w-auto max-h-[175px] sm:max-h-[190px] lg:max-h-[205px] object-contain drop-shadow-[0_16px_28px_rgba(7,21,63,0.3)] dark:drop-shadow-[0_16px_36px_rgba(6,182,212,0.25)] hover:scale-[1.02] transition-transform duration-500 select-none" />
+                                 class="hero-speaker-photo relative w-auto max-h-[220px] sm:max-h-[245px] lg:max-h-[260px] xl:max-h-[270px] object-contain drop-shadow-[0_18px_32px_rgba(7,21,63,0.32)] dark:drop-shadow-[0_18px_40px_rgba(6,182,212,0.28)] hover:scale-[1.02] transition-transform duration-500 select-none" />
                         </div>
 
                         <!-- Executive Presenter Console / Pedestal Bar -->
-                        <div class="w-full p-2.5 sm:p-2.5 rounded-xl sm:rounded-2xl bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl border border-slate-200/90 dark:border-slate-700 shadow-lg relative z-20 space-y-1.5 mb-1.5 text-left">
-                            <div class="flex items-center justify-between gap-1.5">
+                        <div class="w-full p-3 sm:p-3.5 rounded-2xl bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl border border-slate-200/90 dark:border-slate-700 shadow-xl relative z-20 space-y-2 mb-2 text-left">
+                            <div class="flex items-center justify-between gap-2">
                                 <div class="min-w-0">
-                                    <h3 class="text-xs sm:text-[13px] font-black text-[#07153f] dark:text-white leading-tight truncate">
+                                    <h3 class="text-xs sm:text-sm font-black text-[#07153f] dark:text-white leading-tight truncate">
                                         Septa Ryan Hidayat
                                     </h3>
-                                    <p class="text-[9px] sm:text-[10px] font-bold text-blue-700 dark:text-cyan-400 mt-0.5 truncate">
+                                    <p class="text-[9.5px] sm:text-[10.5px] font-bold text-blue-700 dark:text-cyan-400 mt-0.5 truncate">
                                         {{ $settings['founder_title'] ?? 'Founder SmartVerseID' }}
                                     </p>
                                 </div>
-                                <span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-600 dark:text-emerald-400 text-[8.5px] sm:text-[9px] font-bold shrink-0 shadow-2xs">
+                                <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-600 dark:text-emerald-400 text-[9px] sm:text-[9.5px] font-bold shrink-0 shadow-2xs">
                                     <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping"></span>
                                     <span>Tersedia Diundang</span>
                                 </span>
                             </div>
 
                             <!-- Competencies Chips (Single Row) -->
-                            <div class="flex items-center justify-between gap-1 pt-1.5 border-t border-slate-100 dark:border-slate-800 text-[8px] sm:text-[9px] font-bold">
-                                <span class="px-1.5 sm:px-2 py-0.5 rounded-md bg-blue-50 dark:bg-blue-950/70 text-blue-700 dark:text-blue-300 border border-blue-200/60 dark:border-blue-800/60 shadow-2xs whitespace-nowrap">💻 Pemrograman</span>
-                                <span class="px-1.5 sm:px-2 py-0.5 rounded-md bg-purple-50 dark:bg-purple-950/70 text-purple-700 dark:text-purple-300 border border-purple-200/60 dark:border-purple-800/60 shadow-2xs whitespace-nowrap">🤖 AI &amp; Otomasi</span>
-                                <span class="px-1.5 sm:px-2 py-0.5 rounded-md bg-cyan-50 dark:bg-cyan-950/70 text-cyan-700 dark:text-cyan-300 border border-cyan-200/60 dark:border-cyan-800/60 shadow-2xs whitespace-nowrap">🛡️ Forensik AI</span>
+                            <div class="flex items-center justify-between gap-1 sm:gap-1.5 pt-1.5 border-t border-slate-100 dark:border-slate-800 text-[8.5px] sm:text-[9.5px] font-bold">
+                                <span class="px-2 py-0.5 rounded-md bg-blue-50 dark:bg-blue-950/70 text-blue-700 dark:text-blue-300 border border-blue-200/60 dark:border-blue-800/60 shadow-2xs whitespace-nowrap">💻 Pemrograman</span>
+                                <span class="px-2 py-0.5 rounded-md bg-purple-50 dark:bg-purple-950/70 text-purple-700 dark:text-purple-300 border border-purple-200/60 dark:border-purple-800/60 shadow-2xs whitespace-nowrap">🤖 AI &amp; Otomasi</span>
+                                <span class="px-2 py-0.5 rounded-md bg-cyan-50 dark:bg-cyan-950/70 text-cyan-700 dark:text-cyan-300 border border-cyan-200/60 dark:border-cyan-800/60 shadow-2xs whitespace-nowrap">🛡️ Forensik AI</span>
                             </div>
                         </div>
 

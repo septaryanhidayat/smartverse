@@ -151,62 +151,67 @@
 
         /* ═══════════════════════ HERO PHOTO & FLOATING BADGES PROPORTIONS ═══════════════════════ */
         .hero-speaker-photo {
-            max-height: 175px !important;
+            max-height: 220px !important;
             width: auto !important;
             object-fit: contain !important;
         }
         @media (min-width: 640px) {
             .hero-speaker-photo {
-                max-height: 190px !important;
+                max-height: 245px !important;
             }
         }
         @media (min-width: 1024px) {
             .hero-speaker-photo {
-                max-height: 205px !important;
+                max-height: 260px !important;
+            }
+        }
+        @media (min-width: 1280px) {
+            .hero-speaker-photo {
+                max-height: 270px !important;
             }
         }
 
         .hero-badge-left {
             position: absolute;
             top: 0;
-            left: -0.25rem;
+            left: 0;
             z-index: 30;
         }
         @media (min-width: 640px) {
+            .hero-badge-left {
+                top: -0.25rem;
+                left: -0.5rem;
+            }
+        }
+        @media (min-width: 1024px) {
             .hero-badge-left {
                 top: -0.25rem;
                 left: -0.75rem;
             }
         }
-        @media (min-width: 1024px) {
-            .hero-badge-left {
-                top: -0.25rem;
-                left: -1.25rem;
-            }
-        }
 
         .hero-badge-right {
             position: absolute;
-            top: 2.25rem;
+            top: 2.5rem;
             right: -0.5rem;
             z-index: 30;
         }
         @media (min-width: 640px) {
             .hero-badge-right {
-                top: 2.75rem;
-                right: -1.25rem;
+                top: 2.85rem;
+                right: -1rem;
             }
         }
         @media (min-width: 1024px) {
             .hero-badge-right {
-                top: 3rem;
-                right: -1.75rem;
+                top: 3.15rem;
+                right: -1.5rem;
             }
         }
         @media (min-width: 1280px) {
             .hero-badge-right {
-                top: 3rem;
-                right: -2rem;
+                top: 3.25rem;
+                right: -1.75rem;
             }
         }
 
